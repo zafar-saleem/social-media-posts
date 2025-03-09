@@ -11,6 +11,9 @@ export default function Home() {
   return (
     <div className={`${globals.center}`}>
       <h1>Git basics</h1>
+      <article>
+        <h2>Feature branch and rebase</h2>
+      </article>
     </div>
   );
 }
