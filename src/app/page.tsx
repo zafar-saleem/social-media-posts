@@ -10,7 +10,7 @@ import { text } from "stream/consumers";
 export default function Home() {
   return (
     <div className={`${globals.center}`}>
-      
+      <h1>Git basics</h1>
     </div>
   );
 }
