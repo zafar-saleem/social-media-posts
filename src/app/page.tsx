@@ -1,0 +1,16 @@
+"use client";
+
+import globals from "./page.module.css";
+import callback from "./callback.module.css";
+import { ChildComponent } from "./ChildComponent";
+import React from "react";
+import { IEvent } from "./IEvent";
+import { text } from "stream/consumers";
+
+export default function Home() {
+  return (
+    <div className={`${globals.center}`}>
+      
+    </div>
+  );
+}

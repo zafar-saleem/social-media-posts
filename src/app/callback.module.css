@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 25vw;
+}
+
+.textbox {
+  width: 25vw;
+  padding: 1rem;
+}
+
+.button {
+  padding: 1rem;
+  cursor: pointer;
+}

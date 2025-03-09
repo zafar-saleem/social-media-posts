@@ -1,0 +1,19 @@
+.center {
+  display: grid;
+  height: 100dvh;
+  place-items: center;
+  gap: 0;
+}
+
+.page {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
