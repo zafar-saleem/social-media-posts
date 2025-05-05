@@ -44,7 +44,7 @@ export async function GET(request: NextRequest, { params }: any) {
   const messageParam = searchParams.get("message");
 
   return new NextResponse(
-    JSON.stringify({ success: true, data }),
+    JSON.stringify([...data]),
     { status: 200, headers: { 'content-type': 'application/json' } }
   );
 }

@@ -1,0 +1,29 @@
+.box {
+  width: 400px;
+  height: 500px;
+  padding: 1rem;
+  background-color: aqua;
+  perspective: 10000em;
+  transition: all 1s;
+  /* transform-style: preserve-3d; */
+  /* perspective-origin: bottom right; */
+  /* perspective-origin: 0 400px; */
+  /* perspective-origin: 0 0px; */
+  perspective-origin: 100% 100%;
+  /* position: relative; */
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background-color: rgb(2, 54, 54);
+  transition: all 1s;
+  /* transform-style: preserve-3d; */
+  z-index: 2;
+
+  &:hover {
+    transform: rotateX(45deg);
+  }
+}
