@@ -1,0 +1,103 @@
+.notification_container {
+  --primary-color: #a3a3a3;
+  --hover-state-color: #f7f7f7;
+  --bg-color: #ffffff;
+  --border-color: #ebebeb;
+  --text-color-primary: #1b1b1c;
+  --text-color-secondary: #a3a3a3;
+  --text-color-tertiary: #a4a4a4;
+  --text-color-btn: #5c5c5c;
+  --padding: 2rem;
+  --rounded: 2rem;
+
+  min-width: 25rem;
+  background-color: var(--bg-color);
+  padding: var(--padding);
+  border-radius: var(--rounded);
+
+  .container_header {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 1rem;
+    display: flex;
+
+    .notification_title {
+      font-weight: bold;
+    }
+
+    .settings_icon {
+      margin-left: auto;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  .notification_contents {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+
+    .notification_item_container {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      transition: all .6s;
+      padding: .75rem;
+      border-radius: 1rem;
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--hover-state-color);
+      }
+
+      .notification_item_icon {
+        border-radius: var(--rounded);
+        border: 1px solid var(--border-color);
+        width: 30px;
+        height: 30px;
+        padding: .35rem;
+      }
+
+      .notification_item_box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .notification_item_title {
+          font-weight: bold;
+          color: var(--text-color-primary);
+        }
+
+        .notification_item_description {
+          color: var(--text-color-secondary);
+          font-size: 0.9rem;
+        }
+
+        .notification_item_timeago {
+          font-size: 0.7rem;
+          color: var(--text-color-tertiary);
+        }
+      }
+    }
+  }
+
+  .btn_archive {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color-btn);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: background-color .6s;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--hover-state-color);
+    }
+  }
+}
