@@ -1,0 +1,118 @@
+.btn_like {
+  --opacity-0: 0;
+
+  anchor-name: --btn-like;
+  z-index: 1;
+  background-color: #e3e2e2;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  transition: all .3s;
+  position: relative;
+
+  &:hover {
+    background-color: #dfdede;
+  }
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.reaction_popover {
+  position-anchor: --btn-like;
+  position-area: top center;
+  float: left;
+  position: absolute;
+  width: 176px;
+  scale: 0 0;
+  z-index: -1;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  transition: all .3s;
+  bottom: 5px;
+
+  &:popover-open {
+    scale: 1 1;
+
+    @starting-style {
+      scale: 0 0;
+    }
+  }
+
+  .btn_reaction:nth-child(n+1) {
+    margin-right: 15px;
+  }
+
+  .btn_reaction:is(:nth-child(4)) {
+    margin-right: 0;
+  }
+
+  .btn_reaction {
+    animation: shake_and_bounce .4s linear forwards .3s;
+    opacity: var(--opacity-0);
+
+    &:hover {
+      animation: shake_and_bounce .4s linear infinite;
+    }
+  }
+}
+
+@keyframes shake_and_bounce {
+  0% {
+    opacity: var(--opacity-0);
+    rotate: 0deg;
+    translate: 0 0;
+  }
+  50% {
+    opacity: 1;
+    rotate: 4deg;
+    translate: 0px -6px;
+  }
+  55% {
+    rotate: -4deg;
+    translate: -4px 0;
+  }
+  60% {
+    rotate: 4deg;
+    translate: 0px 4px;
+  }
+  65% {
+    rotate: -4deg;
+    translate: -4px 0px;
+  }
+  70% {
+    rotate: 4deg;
+    translate: 0 -4px;
+  }
+  75% {
+    rotate: -4deg;
+    translate: -4px 0;
+  }
+  80% {
+    rotate: 8deg;
+    translate: 0 -4px;
+  }
+  85% {
+    rotate: -8deg;
+    translate: -4px 0px;
+  }
+  90% {
+    rotate: 8deg;
+    translate: 0px -4px;
+  }
+  90% {
+    rotate: -8deg;
+    translate: -4px 0;
+  }
+  100% {
+    opacity: 1;
+    rotate: 0deg;
+    translate: 0 0;
+  }
+}
