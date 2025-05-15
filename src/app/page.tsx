@@ -2,13 +2,13 @@
 
 import styles from "./page.module.css";
 import React from "react";
-import { ProductCard } from "@/components/cards/product";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
     <main className={styles.center}>
       {/* <MegaMenu /> */}
-      <ProductCard />
+      <Footer />
     </main>
   );
 }

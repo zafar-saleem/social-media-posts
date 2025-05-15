@@ -1,0 +1,105 @@
+.footer_container {
+  --dot: #909090;
+  --text-color-primary: #141414;
+  --text-color-secondary: #7e7e7e;
+  --radius: 20rem;
+  --scale-down: 0.0;
+  --scale-up: 1;
+  --scale: .4s ease-in-out forwards;
+  position: relative;
+  border-radius: var(--radius);
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr .5fr;
+    gap: 1rem;
+    place-items: center;
+    background-color: #e6e6e6;
+    border-radius: var(--radius);
+    padding-block: 2rem;
+    padding-inline: 4rem;
+    padding-bottom: 0;
+    transform-origin: bottom center;
+    transform: scale(0.14, 0.17);
+    transition: .4s;
+
+    .footer_copy_right {
+      display: block;
+      width: 100%;
+      text-align: center;
+      transform: scale(0);
+      position: absolute;
+      bottom: 25px;
+      font-size: 0.8rem;
+    }
+
+    &:hover {
+      animation: scale var(--scale);
+
+      .link {
+        animation: scale var(--scale);
+      }
+
+      .footer_copy_right {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    transform: scale(0);
+    align-items: center;
+    transform-origin: bottom center;
+  }
+
+  .btn_show {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    font-size: 2rem;
+    height: 30px;
+    text-align: center;
+    z-index: 1;
+    cursor: pointer;
+    background-color: transparent;
+    opacity: 1;
+    transition: all .4s;
+
+    &:hover {
+      & + .footer {
+        animation: scale var(--scale);
+  
+        .link {
+          animation: scale var(--scale) 10ms;
+        }
+  
+        .footer_copy_right {
+          animation: scale var(--scale-up) ease-in-out forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes scale {
+  60% {
+    transform: scale(1.10);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  90% {
+    transform: scale(1.05);
+  }
+  95% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(var(--scale-up));
+  }
+}
