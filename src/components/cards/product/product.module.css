@@ -9,7 +9,8 @@
   --card-timer: 0.4s;
   --image-timer: 0.3s;
   --image-delay: 0.1s;
-  --animation-props: ease-out forwards alternate;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+  --animation-props: var(--bounce) forwards alternate;
   cursor: pointer;
   position: relative;
   width: 350px;
