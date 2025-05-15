@@ -1,0 +1,199 @@
+.container {
+  --gradient-dark: #1aa7df;
+  --gradient-light: #4dc8f1;
+  --surface-color: #f7f7f7;
+  --bg-color: #ffffff;
+  --primary-text-color: #040404;
+  --secondary-text-color: #555555;
+  --tertiary-text-color: #bfbebf;
+  --gradient-bg-color: #eff4e7;
+  --rounded: 1.5rem;
+  position: relative;
+  
+  .subscription_container {
+    position: relative;
+    display: flex;
+    min-width: 350px;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: var(--rounded);
+    gap: 1rem;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    z-index: 2;
+
+    .subscription_header {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid var(--tertiary-text-color);
+      padding-bottom: 1.5rem;
+
+      .subscription_media {
+        width: 100%;
+        height: 150px;
+        background: url(./assets/static_sub.png) no-repeat;
+        background-position: 50%;
+        background-size: contain;
+        transition: .4s;
+      }
+
+      .subscription_subtitle {
+        color: var(--tertiary-text-color);
+        font-size: 0.9rem;
+        margin-top: -5px;
+      }
+    }
+
+    .subscription_contents {
+      .contents_list {
+        list-style-type: none;
+        padding: 0;
+
+        .contents_list_item {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-block: 0.8rem;
+
+          .icon_arrow {
+            rotate: 180deg;
+            width: 20px;
+            height: 20px;
+          }
+
+          .labels {
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+
+    .subscription_footer {
+      display: flex;
+      flex-direction: column;
+
+      .footer_price {
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+
+      .footer_occurence {
+        font-size: 0.9rem;
+        color: var(--tertiary-text-color);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 50%;
+      height: 100px;
+      border-top-right-radius: 1.2rem;
+      background: 
+        linear-gradient(
+          to bottom left,
+          var(--gradient-bg-color) 20%,
+          transparent,
+          transparent
+        );
+    }
+  }
+
+  .subscription_cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-color);
+    font-weight: bold;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+    background: #1aa7df;
+    padding-top: 3rem;
+    border: 3px solid #2fa3d0;
+    background: radial-gradient(var(--gradient-light), var(--gradient-dark));
+    border-bottom-right-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    animation: slide_up linear .2s forwards;
+  }
+
+  &:hover .subscription_cta {
+    animation: slide_down linear .3s forwards .1s;
+  }
+
+  &:hover {
+    .list_item_label_100 {
+      animation: toggle_inline_push .3s ease-in-out forwards;
+    }
+    .list_item_label_200 {
+      animation: toggle_inline_push .3s ease-in-out forwards .1s;
+    }
+    .list_item_label_300 {
+      animation: toggle_inline_push .3s ease-in-out forwards .2s;
+    }
+    .list_item_label_400 {
+      animation: toggle_inline_push .3s ease-in-out forwards .3s;
+    }
+  }
+
+  &:hover .subscription_container .subscription_header {
+    .subscription_media {
+      background: url(./assets/hover_sub.gif) no-repeat;
+      background-position: 50%;
+      background-size: contain;
+      scale: 1.1 1.1;
+    }
+  }
+}
+
+@keyframes slide_down {
+  0% {
+    bottom: 0;
+  }
+  70% {
+    bottom: -58px;
+  }
+  90% {
+    bottom: -28px;
+  }
+  100% {
+    bottom: -48px;
+  }
+}
+
+@keyframes slide_up {
+  from {
+    bottom: -48px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes toggle_inline_push {
+  0% {
+    margin-left: 0;
+    color: var(--primary-text-color);
+  }
+  40% {
+    margin-left: 10px;
+    color: var(--tertiary-text-color);
+  }
+  60% {
+    margin-left: 10px;
+    color: var(--tertiary-text-color);
+  }
+  100% {
+    margin-left: 0;
+    color: var(--primary-text-color);
+  }
+}

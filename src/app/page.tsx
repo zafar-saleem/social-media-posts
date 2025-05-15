@@ -2,13 +2,13 @@
 
 import styles from "./page.module.css";
 import React from "react";
-import { Footer } from "@/components/footer";
+import { Subscription } from "@/components/subscription";
 
 export default function Home() {
   return (
     <main className={styles.center}>
       {/* <MegaMenu /> */}
-      <Footer />
+      <Subscription />
     </main>
   );
 }
