@@ -2,13 +2,13 @@
 
 import styles from "./page.module.css";
 import React from "react";
-import { Subscription } from "@/components/subscription";
+import { Plan } from "@/components/plan";
 
 export default function Home() {
   return (
     <main className={styles.center}>
       {/* <MegaMenu /> */}
-      <Subscription />
+      <Plan />
     </main>
   );
 }
