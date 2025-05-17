@@ -2,12 +2,12 @@
 
 import styles from "./page.module.css";
 import React from "react";
-import { Signup } from "@/components/forms/signup";
+import { Button } from "@/components/buttons/CTA";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <Signup />
+      <Button />
     </main>
   );
 }
