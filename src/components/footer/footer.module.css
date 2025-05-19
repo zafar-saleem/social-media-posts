@@ -29,6 +29,7 @@
       width: 100%;
       text-align: center;
       transform: scale(0);
+      transform-origin: bottom center;
       position: absolute;
       bottom: 25px;
       font-size: 0.8rem;
