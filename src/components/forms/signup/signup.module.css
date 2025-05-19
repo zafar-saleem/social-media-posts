@@ -54,7 +54,7 @@
 
   .form_wrapper {
     padding: 2rem;
-    border-radius: var(--round);
+    border-radius: 1.5rem;
     background-color: var(--bg-color);
 
     .title {
@@ -71,6 +71,7 @@
 
     .form_field_label {
       font-weight: bold;
+      margin-bottom: 0.5rem;
     }
 
     .form_field_group {
@@ -87,7 +88,7 @@
       
       .form_field_icon {
         position: absolute;
-        top: 1.75rem;
+        top: 2.20rem;
         left: 0.5rem;
       }
     }
