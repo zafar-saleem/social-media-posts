@@ -14,7 +14,6 @@
   padding: 1.5rem;
   background-color: var(--card-bg-color);
   margin: auto;
-  margin-top: 50%;
   transition: all .3s;
 
   & > *:not(:last-child) {
