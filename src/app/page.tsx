@@ -6,8 +6,8 @@ import { WildCard } from "@/components/cards/wild-card";
 
 export default function Home() {
   return (
-    <main className={styles.center}>
+    // <main className={styles.center}>
       <WildCard />
-    </main>
+    // </main>
   );
 }
