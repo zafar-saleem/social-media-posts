@@ -1,0 +1,9 @@
+.ticket_container {
+  .btn {
+    border-radius: var(--btn-border-radius);
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: 1px solid var(--text-regular-color);
+    cursor: pointer;
+  }
+}
