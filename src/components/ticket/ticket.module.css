@@ -13,7 +13,7 @@
   --gap-items-block: 0.5rem;
   --btn-border-radius: 0.5rem;
 
-  width: min(35rem);
+  width: min(30rem);
   border-radius: var(--radius);
   background-color: var(--light-color);
 
