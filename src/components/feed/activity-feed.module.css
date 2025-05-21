@@ -1,0 +1,190 @@
+.feed_container {
+  --bg-color: #fbfbfb;
+  --list-item-bg-color: #f4f5f8;
+  --list-item-daanger-light: #faeceb;
+  --status-danger-light: #feeaed;
+  --status-danger-regular: #ffc0c4;
+  --status-danger-dark: #ca5553;
+  --status-success-light: #eefaf0;
+  --status-success-dark: #338a6e;
+  --status-warning-light: #fcebeb;
+  --status-warning-dark: #d46260;
+  --text-color: #7f7f7f;
+
+  width: minmax(40rem, 60rem);
+  position: relative;
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 10px 20px 30px 0 #b7b7b7;
+
+  .feed_title {
+    font-size: 1.1rem;
+  }
+
+  .feed_timeline {
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+    width: 2px;
+    height: 84%;
+    background-color: #c5c6c7;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      height: 30px;
+      background: linear-gradient(to bottom, transparent, #ffffff);
+    }
+  }
+
+  .feed_box {
+    position: relative;
+    padding-inline: 1rem;
+    padding-top: 1rem;
+    font-size: 1rem;
+
+    .feed_box_title_container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+      font-size: 0.9rem;
+
+      .feed_tracking_info_container {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        align-items: center;
+        
+
+        .feed_tracking_icon {
+          padding: 0.5rem;
+          padding-top: 0.35rem;
+          padding-bottom: 0;
+          border-radius: 0.25rem;
+          box-shadow: 0 1.5px 3px 0px #8f8e8e;
+        }
+      }
+    }
+
+    .feed_date {
+      color: var(--text-color);
+      margin-bottom: 0.25rem;
+      display: block;
+      font-size: 0.8rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 1.2rem;
+        left: 5px;
+        width: 8px;
+        height: 8px;
+        border-radius: 1rem;
+        z-index: 1;
+      }
+  
+      &.feed_current::before {
+        background-color: var(--status-danger-regular);
+      }
+  
+      &.feed_regular::before {
+        background-color: var(--text-color);
+      }
+  
+      &.feed_risk::before {
+        top: 3.7rem;
+        background-color: var(--status-danger-dark);
+      }
+  
+      &.feed_success::before {
+        background-color: var(--status-success-dark);
+      }
+  
+      &.feed_success_initial::before {
+        top: 3.7rem;
+        background-color: var(--status-success-dark);
+      }
+    }
+
+    .feed_progress_container {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      padding: 0.25rem;
+      border-radius: 0.5rem;
+      background-color: var(--list-item-bg-color);
+
+      &.feed_alert_risk {
+        background-color: var(--list-item-daanger-light);
+      }
+
+      .feed_icon {
+        padding: 0.15rem;
+        padding-bottom: 0.05rem;
+        border-radius: 0.25rem;
+
+        &.feed_icon_container {
+          background-color: var(--bg-color);
+        }
+  
+        .feed_user_icon {
+          padding: 0.05rem 0.10rem;
+          padding-bottom: 0;
+          border-radius: inherit;
+          background-color: #747373;
+        }
+      }
+
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.15rem;
+        padding-right: 0.35rem;
+        font-weight: bold;
+        border-radius: 0.25rem;
+        font-size: 0.9rem;
+
+        &.feed_status_warning {
+          color: var(--status-warning-dark);
+          background-color: var(--status-warning-light);
+        }
+
+        &.feed_status_success {
+          color: var(--status-success-dark);
+          background-color: var(--status-success-light);
+        }
+
+        &.feed_status_danger {
+          color: var(--status-danger-dark);
+          background-color: var(--status-danger-regular);
+        }
+      }
+
+      .feed_text_box_bold {
+        font-weight: bold;
+      }
+
+      .feed_user_container {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
+      .feed_text_user {
+        font-weight: bold;
+      }
+
+      .feed_text_target_page {
+        margin-left: auto;
+      }
+    }
+  }
+}
