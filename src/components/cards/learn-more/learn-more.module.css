@@ -9,10 +9,10 @@
   border-radius: 1rem;
   background-color: var(--bg-color);
   container-type: inline-size;
-  font-size: 3cqi;
+  font-size: 1.1rem;
 
   .card_header_title {
-    font-size: 6cqi;
+    font-size: 1.2rem;
     font-weight: bold;
     padding-block: 1rem;
     margin-bottom: 1rem;
