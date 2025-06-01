@@ -1,12 +1,12 @@
 import styles from "./page.module.css";
 import React from "react";
 import { Navbar } from "@/components/nav/nav-bar";
-import { TodoDoneEffect } from "@/components/todo-done";
+import { PaymentRecord } from "@/components/payment-record";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <TodoDoneEffect />
+      <PaymentRecord />
     </main>
   );
 }
