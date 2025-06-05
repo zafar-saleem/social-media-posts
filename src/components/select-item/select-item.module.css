@@ -1,0 +1,107 @@
+.item_container {
+  --card-bg-color: rgb(250 250 250);
+  --card-active-bg-color: rgb(240, 239, 239);
+  --support-bg-color: rgb(34 197 95);
+  --checkbox-color: rgb(191 250 208);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  .card {
+    width: min(10rem);
+    height: min(10rem);
+
+    .card_item {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      background-color: var(--card-bg-color);
+      transition: background-color 0.3s;
+
+      &:has(.card_check_item:checked) {
+        background-color: var(--card-active-bg-color);
+      }
+
+      &:hover {
+        background-color: var(--card-active-bg-color);
+      }
+
+      .card_check_item {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        transition: .3s;
+        opacity: 0;
+        scale: 0 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -3px;
+          right: -3px;
+          width: 20px;
+          height: 20px;
+          border-radius: 10rem;
+          background-color: var(--support-bg-color);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 3px;
+          right: 2px;
+          width: 8px;
+          height: 4px;
+          rotate: -45deg;
+          border-left: 2px solid #ffffff;
+          border-bottom: 2px solid #ffffff;
+          
+        }
+
+        &:checked {
+          scale: 1 1;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .actions_container {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    width: min(8rem);
+    margin: auto;
+    padding-block: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-radius: 10rem;
+    margin-top: 4rem;
+    background-color: var(--card-active-bg-color);
+    opacity: 0;
+    transition: .3s;
+
+    .actions_btns_container {
+      display: flex;
+      gap: 1rem;
+
+       & > li > button {
+        cursor: pointer;
+        border: none;
+        background: transparent;
+       }
+    }
+  }
+
+  &:has(.card_check_item:checked) {
+    .actions_container {
+      opacity: 1;
+      margin-top: 2rem;
+    }
+  }
+}
