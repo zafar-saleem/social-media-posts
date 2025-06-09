@@ -26,6 +26,7 @@ pnpm dev
 ```
 
 This repo contains code and case studies for my social media posts.
+
 <table style="width:100%">
   <caption>Feature Bento Card</caption>
   <tr>
@@ -65,6 +66,60 @@ This repo contains code and case studies for my social media posts.
     <td>
       <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/cards/bento">
         https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/cards/bento
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+
+<table style="width:100%">
+  <caption>Call To Action Button</caption>
+  <tr>
+    <th>Linkedin Post</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_code-coding-programming-activity-7330203114362368001-AGw2/?utm_source=share&utm_medium=member_ios&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs">
+        https://www.linkedin.com/posts/zeesaleem_code-coding-programming-activity-7330203114362368001-AGw2
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1924438196848337105?s=12">
+        https://x.com/zafartalks/status/1924438196848337105
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=555038560986142&id=100094400083251&mibextid=wwXIfr&rdid=9Dl7DKWfAbDhU4GC#">
+        https://www.facebook.com/story.php?story_fbid=555038560986142&id=100094400083251&mibextid=wwXIfr&rdid=9Dl7DKWfAbDhU4GC#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DJ1bJmxtBak/?igsh=NDF0am5oZ3N4YXQ0">
+        https://www.instagram.com/reel/DJ1bJmxtBak/?igsh=NDF0am5oZ3N4YXQ0
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Threads</th>
+    <td>
+      <a href="https://www.threads.com/@dakalcodeografy/post/DJ1bOswo15W?xmt=AQF0jYrClRK4DZE9vBAremJWVJQSUEfENnZED6vaTg1phA">
+        https://www.threads.com/@dakalcodeografy/post/DJ1bOswo15W?xmt=AQF0jYrClRK4DZE9vBAremJWVJQSUEfENnZED6vaTg1phA
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/buttons/CTA">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/buttons/CTA
       </a>
     </td>
   </tr>
