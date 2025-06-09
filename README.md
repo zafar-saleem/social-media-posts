@@ -27,6 +27,50 @@ pnpm dev
 
 This repo contains code and case studies for my social media posts.
 <table style="width:100%">
+  <caption>Feature Bento Card</caption>
+  <tr>
+    <th>Linkedin Post</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_projects-web-webdev-activity-7337795549221257216-TxNP?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs">
+        https://www.linkedin.com/posts/zeesaleem_projects-web-webdev-activity-7337795549221257216-TxNP
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1932030545573081364">
+        https://x.com/zafartalks/status/1932030545573081364
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/share/v/19nGRkBA1Z/">
+        https://www.facebook.com/share/v/19nGRkBA1Z/
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href="https://www.youtube.com/watch?v=BDI8e3cHyuc">
+        https://www.youtube.com/watch?v=BDI8e3cHyuc
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/cards/bento">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/cards/bento
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
   <caption>Dropdown Menu</caption>
   <tr>
     <th>Linkedin Post</th>
