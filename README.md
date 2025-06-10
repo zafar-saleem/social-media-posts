@@ -28,6 +28,66 @@ pnpm dev
 This repo contains code and case studies for my social media posts.
 
 <table style="width:100%">
+  <caption>Testimonial Card</caption>
+  <tr>
+    <th>Linkedin Post</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_code-coding-programming-activity-7338150297531265024-nILd/?utm_medium=ios_app&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs&utm_source=social_share_send&utm_campaign=share_via">
+        https://www.linkedin.com/posts/zeesaleem_code-coding-programming-activity-7338150297531265024-nILd
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1932385155693379710?s=12">
+        https://x.com/zafartalks/status/1932385155693379710?s=12
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=571078029382195&id=100094400083251&mibextid=wwXIfr&rdid=RDG49reQCepEpVqX#">
+        https://www.facebook.com/story.php?story_fbid=571078029382195&id=100094400083251&mibextid=wwXIfr&rdid=RDG49reQCepEpVqX#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href="https://www.youtube.com/shorts/mCNSGnr-Ubo">
+        https://www.youtube.com/shorts/mCNSGnr-Ubo
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Threads</th>
+    <td>
+      <a href="https://www.threads.com/@dakalcodeografy/post/DKt5DUEo77w?xmt=AQF0lBPZ0soDYBbFP0VEQbfpr_41Ij3AMGMeLBTR4JG1hA">
+        https://www.threads.com/@dakalcodeografy/post/DKt5DUEo77w?xmt=AQF0lBPZ0soDYBbFP0VEQbfpr_41Ij3AMGMeLBTR4JG1hA
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DKt4-0ZtwCg/?igsh=MWMyMHNhaTF0cm5mbA%3D%3D">
+        https://www.instagram.com/reel/DKt4-0ZtwCg/?igsh=MWMyMHNhaTF0cm5mbA%3D%3D
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/cards/testimonial">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/cards/testimonial
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
   <caption>Feature Bento Card</caption>
   <tr>
     <th>Linkedin Post</th>
