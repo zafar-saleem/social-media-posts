@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { TaskOverview } from "@/components/task-overview";
+import { ShareLink } from "@/components/share-link";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <TaskOverview />
+      <ShareLink />
     </main>
   );
 }
