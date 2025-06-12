@@ -28,6 +28,66 @@ pnpm dev
 This repo contains code and case studies for my social media posts.
 
 <table style="width:100%">
+  <caption>Storage Plan Component</caption>
+  <tr>
+    <th>Linkedin Post</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_web-webdev-websites-activity-7338520567731425280-XknZ/?utm_medium=ios_app&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs&utm_source=social_share_send&utm_campaign=share_via">
+        https://www.linkedin.com/posts/zeesaleem_web-webdev-websites-activity-7338520567731425280-XknZ
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1932755907445997659">
+        https://x.com/zafartalks/status/1932755907445997659
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=571838269306171&id=100094400083251&mibextid=wwXIfr&rdid=Hcq0yLsxUCv5s9J9#">
+        https://www.facebook.com/story.php?story_fbid=571838269306171&id=100094400083251&mibextid=wwXIfr&rdid=Hcq0yLsxUCv5s9J9#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href="https://www.youtube.com/shorts/9MW0QIFUPd8">
+        https://www.youtube.com/shorts/9MW0QIFUPd8
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Threads</th>
+    <td>
+      <a href="https://www.threads.com/@dakalcodeografy/post/DKwiKn_Iaz3?xmt=AQF0WVcNoC3qhbxwDcrpTY9m4dcCcjylOXOrGjvDhUMPoA">
+        https://www.threads.com/@dakalcodeografy/post/DKwiKn_Iaz3?xmt=AQF0WVcNoC3qhbxwDcrpTY9m4dcCcjylOXOrGjvDhUMPoA
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DKwhqmONWBd/?igsh=ejdrMzQyOTY3MGZw">
+        https://www.instagram.com/reel/DKwhqmONWBd/?igsh=ejdrMzQyOTY3MGZw
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/storage-plan">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/storage-plan
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
   <caption>Testimonial Card</caption>
   <tr>
     <th>Linkedin Post</th>
