@@ -28,6 +28,58 @@ pnpm dev
 This repo contains code and case studies for my social media posts.
 
 <table style="width:100%">
+  <caption>Task Overview Component</caption>
+  <tr>
+    <th>Linkedin Post</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_projects-jobs-opentowork-activity-7338883849763835905-VVHw/?utm_medium=ios_app&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs&utm_source=social_share_send&utm_campaign=share_via">
+        https://www.linkedin.com/posts/zeesaleem_projects-jobs-opentowork-activity-7338883849763835905-VVHw/
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1933119277755687167?s=12">
+        https://x.com/zafartalks/status/1933119277755687167
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=572577655898899&id=100094400083251&mibextid=wwXIfr&rdid=ejL9OppjydKr58tB#">
+        https://www.facebook.com/story.php?story_fbid=572577655898899&id=100094400083251&mibextid=wwXIfr&rdid=ejL9OppjydKr58tB#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href=https://www.youtube.com/shorts/guI3oxrzT_Y">
+        https://www.youtube.com/shorts/guI3oxrzT_Y
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DKzG0zdNa_m/?igsh=b3hwdjhyd3B0aTVo">
+        https://www.instagram.com/reel/DKzG0zdNa_m/?igsh=b3hwdjhyd3B0aTVo
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/task-overview">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/task-overview
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
   <caption>Storage Plan Component</caption>
   <tr>
     <th>Linkedin Post</th>
