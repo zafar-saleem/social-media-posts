@@ -100,6 +100,27 @@ export const Meeting = () => {
               <button>Add</button>
             </span>
           </li>
+          <li className={styles.meeting_user_item}>
+            <span className={styles.meeting_avatar} />
+            <span className={styles.meeting_user_info}>
+              <span className={styles.meeting_username}>Hansely M</span>
+              <span className={styles.meeting_user_email}>hansley@email.com</span>
+            </span>
+            <span className={styles.meeting_actions}>
+              <button>Add</button>
+            </span>
+          </li>
+          
+          <li className={styles.meeting_user_item}>
+            <span className={styles.meeting_avatar} />
+            <span className={styles.meeting_user_info}>
+              <span className={styles.meeting_username}>Dan R</span>
+              <span className={styles.meeting_user_email}>dan@email.com</span>
+            </span>
+            <span className={styles.meeting_actions}>
+              <button>Add</button>
+            </span>
+          </li>
         </ul>
       </main>
 
