@@ -28,6 +28,18 @@ pnpm dev
 This repo contains code and case studies for my social media posts.
 
 <table style="width:100%">
+  <caption>Sidebar Component</caption>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/nav/sidebar">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/nav/sidebar
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
   <caption>Meeting Component</caption>
   <tr>
     <th>Code on Github</th>
