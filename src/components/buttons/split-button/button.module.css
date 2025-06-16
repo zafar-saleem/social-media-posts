@@ -1,0 +1,66 @@
+.container {
+  --radius: 0.5rem;
+  position: relative;
+
+  .btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    background-color: #000000;
+    anchor-name: --button;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.4);
+
+    .btn_type {
+      text-transform: uppercase;
+    }
+  }
+
+  .divider {
+    position: relative;
+    z-index: 1;
+    border-right: 1px solid #ffffff;
+  }
+
+  .btn_reveal_types {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    margin-left: -2px;
+  }
+
+  .btn_menu {
+    position: absolute;
+    position-anchor: --button;
+    position-area: bottom center;
+    margin-top: 0.15rem;
+    margin-left: -7.25rem;
+    /* margin-left: var(--width); */
+    width: 350%;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.2);
+
+    & > li > button {
+      width: 100%;
+      background: transparent;
+      color: #000000;
+      border: none;
+      padding-block: 0.75rem;
+      padding-inline: 1rem;
+      cursor: pointer;
+      text-align: left;
+      transition: 0.5s;
+
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+        background: transparent;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(2px);
+      }
+    }
+  }
+}
