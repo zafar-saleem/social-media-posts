@@ -1,0 +1,128 @@
+.product {
+  --border-color: rgba(245, 156, 34, 0.5);
+  --gradient-color-100: rgb(246 147 14);
+  --gradient-color-200: rgb(255 201 39);
+  --gradient-color-300: rgb(191 66 6);
+  --gradient-color-400: rgb(26 4 0);
+  --content-bg-color: rgba(93, 36, 2, 0.6);
+  --text-base-color: rgb(254 226 207);
+  --text-secondary-color: rgb(237 188 154);
+  --button-bg-color: rgb(20 7 2);
+  --padding: 1rem;
+  --border-radius: 1rem;
+  --text-size-100: 1.1rem;
+  --text-size-200: 1rem;
+  --height: 35rem;
+
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  max-width: 30rem;
+  min-height: var(--height);
+  padding: var(--padding);
+  font-size: var(--text-size-200);
+  border-radius: calc(var(--border-radius) + 0.5rem);
+  background: linear-gradient(
+    var(--gradient-color-100),
+    var(--gradient-color-200),
+    var(--gradient-color-300) 50%,
+    var(--gradient-color-400)
+  );
+
+  .product_media {
+    width: 100%;
+    margin: calc(var(--height) - 100%) auto;
+  }
+
+  .product_contents {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    padding: var(--padding);
+    color: var(--text-secondary-color);
+    border-radius: var(--padding);
+    background-color: var(--content-bg-color);
+
+    .product_title_container {
+      font-size: var(--text-size-100);
+      font-weight: bold;
+      display: flex;
+      color: var(--text-base-color);
+
+      & > .product_price {
+        text-align: right;
+        margin-left: auto;
+      }
+    }
+
+    .product_action {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+
+      & > button {
+        border-radius: 10rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        cursor: pointer;
+
+        &:first-child {
+          padding-block: 0.65rem;
+          border: 1px solid rgb(124 98 60);
+          background-color: rgb(103 44 4);
+        }
+        &:nth-child(2) {
+          display: flex;
+          gap: 0.25rem;
+          align-items: center;
+          background-color: var(--button-bg-color);
+          position: relative;
+
+          .left, .right {
+            position: absolute;
+            transition: 0.3s;
+          }
+
+          .left {
+            top: 9px;
+            right: calc(15px + 10.5px);
+            transform-origin: bottom left;
+            rotate: 55deg;
+          }
+
+          .right {
+            top: 9px;
+            right: calc(15px + 3.5px);
+            transform-origin: bottom right;
+            rotate: -55deg;
+          }
+
+          @media (hover) {
+            &:hover {
+              .left {
+                rotate: 10deg;
+              }
+
+              .right {
+                rotate: -13deg;
+              }
+            }
+          }
+
+          @media (hover: none) {
+            &:active {
+              .left, .right {
+                rotate: 0deg;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
