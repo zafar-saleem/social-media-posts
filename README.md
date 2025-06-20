@@ -52,7 +52,107 @@ This repo contains code and case studies for my social media posts.
 </table>
 
 <table style="width:100%">
+  <caption>Setup Accordion</caption>
+  <tr>
+    <th>Linkedin</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_jobs-projects-opentowork-activity-7341784953279385600-6Q6S/?utm_medium=ios_app&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs&utm_source=social_share_send&utm_campaign=share_via">
+        https://www.linkedin.com/posts/zeesaleem_jobs-projects-opentowork-activity-7341784953279385600-6Q6S
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1936019777702465845?s=12">
+        https://x.com/zafartalks/status/1936019777702465845?s=12
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=578534871969844&id=100094400083251&mibextid=wwXIfr&rdid=ckpZnPnYTJvm2RfC#">
+        https://www.facebook.com/story.php?story_fbid=578534871969844&id=100094400083251&mibextid=wwXIfr&rdid=ckpZnPnYTJvm2RfC#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DLHt1KCtpD4/?igsh=MTl5cXMwZWpxa2puMQ%3D%3D">
+        https://www.instagram.com/reel/DLHt1KCtpD4/?igsh=MTl5cXMwZWpxa2puMQ%3D%3D
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Threads</th>
+    <td>
+      <a href="https://www.threads.com/@dakalcodeografy/post/DLHt675Ij3O?xmt=AQF0_TbzcJYoAisiaPDGrRgOaubDFXBpJ3tKH68U7qtz3w">
+        https://www.threads.com/@dakalcodeografy/post/DLHt675Ij3O?xmt=AQF0_TbzcJYoAisiaPDGrRgOaubDFXBpJ3tKH68U7qtz3w
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href="https://www.youtube.com/shorts/7vdSV8Hr4UM">
+        https://www.youtube.com/shorts/7vdSV8Hr4UM
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/account-setup">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/account-setup
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
   <caption>Sidebar Component</caption>
+  <tr>
+    <th>Linkedin</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_jobs-projects-opentowork-activity-7341435167925776385-sbFy/?utm_medium=ios_app&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs&utm_source=social_share_send&utm_campaign=share_via">
+        https://www.linkedin.com/posts/zeesaleem_jobs-projects-opentowork-activity-7341435167925776385-sbFy
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1935684756865425858?s=12">
+        https://x.com/zafartalks/status/1935684756865425858?s=12
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=577824822040849&id=100094400083251&mibextid=wwXIfr&rdid=ohNkVePKCFsGiN1w#">
+        https://www.facebook.com/story.php?story_fbid=577824822040849&id=100094400083251&mibextid=wwXIfr&rdid=ohNkVePKCFsGiN1w#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DLFO6TPtRam/?igsh=d21vZ2g5c3kzZWd2">
+        https://www.instagram.com/reel/DLFO6TPtRam/?igsh=d21vZ2g5c3kzZWd2
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href="https://www.youtube.com/shorts/OWLm3gEhC2c">
+        https://www.youtube.com/shorts/OWLm3gEhC2c
+      </a>
+    </td>
+  </tr>
   <tr>
     <th>Code on Github</th>
     <td>
@@ -64,7 +164,175 @@ This repo contains code and case studies for my social media posts.
 </table>
 
 <table style="width:100%">
+  <caption>Task Memo Component</caption>
+  <tr>
+    <th>Linkedin</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_projects-jobs-opentowork-activity-7341054574125899777-LGxd/?utm_medium=ios_app&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs&utm_source=social_share_send&utm_campaign=share_via">
+        https://www.linkedin.com/posts/zeesaleem_projects-jobs-opentowork-activity-7341054574125899777-LGxd
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1935289341254738364?s=12">
+        https://x.com/zafartalks/status/1935289341254738364?s=12
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=577053998784598&id=100094400083251&mibextid=wwXIfr&rdid=YYLwDyYEyLDtjLPu#">
+        https://www.facebook.com/story.php?story_fbid=577053998784598&id=100094400083251&mibextid=wwXIfr&rdid=YYLwDyYEyLDtjLPu#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DLChq4qNa5r/?igsh=OHNuMW1uM2xjNHhi">
+        https://www.instagram.com/reel/DLChq4qNa5r/?igsh=OHNuMW1uM2xjNHhi
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Threads</th>
+    <td>
+      <a href="https://www.threads.com/@dakalcodeografy/post/DLChvetIM9Z?xmt=AQF0esJKBod1mpIM60QKyhPY2Aps-0e5oCkHdALWJxtPCA">
+        https://www.threads.com/@dakalcodeografy/post/DLChvetIM9Z?xmt=AQF0esJKBod1mpIM60QKyhPY2Aps-0e5oCkHdALWJxtPCA
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href="https://www.youtube.com/shorts/itijEQqE6Zk">
+        https://www.youtube.com/shorts/itijEQqE6Zk
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/task-memo">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/task-memo
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
+  <caption>Nike Card</caption>
+  <tr>
+    <th>Linkedin</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_projects-jobs-opentowork-activity-7340706788935151616-qW6x/?utm_medium=ios_app&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs&utm_source=social_share_send&utm_campaign=share_via">
+        https://www.linkedin.com/posts/zeesaleem_projects-jobs-opentowork-activity-7340706788935151616-qW6x
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1934941872574611966?s=12">
+        https://x.com/zafartalks/status/1934941872574611966?s=12
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=576369945519670&id=100094400083251&mibextid=wwXIfr&rdid=CPvIALp4W0jD2wiY#">
+        https://www.facebook.com/story.php?story_fbid=576369945519670&id=100094400083251&mibextid=wwXIfr&rdid=CPvIALp4W0jD2wiY#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DLADt_zttJS/?igsh=Y3cyNms2cnVieG5u">
+        https://www.instagram.com/reel/DLADt_zttJS/?igsh=Y3cyNms2cnVieG5u
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Threads</th>
+    <td>
+      <a href="https://www.threads.com/@dakalcodeografy/post/DLADyguI0fT?xmt=AQF07G8zlf_9NG61FbBIXHz36MMHj_6MwHeym8Bi0GTAcg">
+        https://www.threads.com/@dakalcodeografy/post/DLADyguI0fT?xmt=AQF07G8zlf_9NG61FbBIXHz36MMHj_6MwHeym8Bi0GTAcg
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href="https://www.youtube.com/shorts/qIcnn9HGeEY">
+        https://www.youtube.com/shorts/qIcnn9HGeEY
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/cards/nike">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/cards/nike
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
   <caption>Meeting Component</caption>
+  <tr>
+    <th>Linkedin</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_jobs-projects-opentowork-activity-7340331156153741312-9DmC/?utm_medium=ios_app&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs&utm_source=social_share_send&utm_campaign=share_via">
+        https://www.linkedin.com/posts/zeesaleem_jobs-projects-opentowork-activity-7340331156153741312-9DmC
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1934566080304824352?s=12">
+        https://x.com/zafartalks/status/1934566080304824352?s=12
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=575598392263492&id=100094400083251&mibextid=wwXIfr&rdid=xn4XevE9RORXHqHK#">
+        https://www.facebook.com/story.php?story_fbid=575598392263492&id=100094400083251&mibextid=wwXIfr&rdid=xn4XevE9RORXHqHK#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DK9YxaStgg6/?igsh=MTFvcDc2bjhjd2c2dQ%3D%3D">
+        https://www.instagram.com/reel/DK9YxaStgg6/?igsh=MTFvcDc2bjhjd2c2dQ%3D%3D
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Threads</th>
+    <td>
+      <a href="https://www.threads.com/@dakalcodeografy/post/DK9Y14CISP3?xmt=AQF0DmEl_j-r4OxjjnirIk79kXMHLFkDwHuGx25pIjwocg">
+        https://www.threads.com/@dakalcodeografy/post/DK9Y14CISP3?xmt=AQF0DmEl_j-r4OxjjnirIk79kXMHLFkDwHuGx25pIjwocg
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href="https://www.youtube.com/shorts/ERmz2lJiCRU">
+        https://www.youtube.com/shorts/ERmz2lJiCRU
+      </a>
+    </td>
+  </tr>
   <tr>
     <th>Code on Github</th>
     <td>
