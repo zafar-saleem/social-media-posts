@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { ProductBento } from "@/components/cards/bento-product";
+import { Statistics } from "@/components/statistics";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <ProductBento />
+      <Statistics />
     </main>
   );
 }
