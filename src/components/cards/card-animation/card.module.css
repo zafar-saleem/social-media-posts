@@ -1,0 +1,108 @@
+.container {
+  --rotate: 5deg;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+  
+  position: relative;
+  width: 20rem;
+  height: 27rem;
+  display: grid;
+  place-content: center;
+  box-shadow: 0 1rem 1rem 1rem rgb(0 0 0 / .1);
+
+  &:hover {
+    & > div:nth-child(4) {
+      --rotate: -13deg;
+      translate: -15rem 1rem;
+      rotate: var(--rotate);
+    }
+
+    & > div:nth-child(3) {
+      --rotate: -5deg;
+      translate: -5rem -0.5rem;
+      rotate: var(--rotate);
+    }
+
+    & > div:nth-child(2) {
+      --rotate: 5deg;
+      translate: 6rem -0.5rem;
+      rotate: var(--rotate);
+    }
+
+    & > div:nth-child(1) {
+      translate: 15rem 1.5rem;
+    }
+  }
+
+  & > *:nth-child(3) {
+    rotate: var(--rotate);
+  }
+  
+  & > *:nth-child(2) {
+    rotate: calc(var(--rotate) * 2);
+  }
+
+  & > *:nth-child(1) {
+    rotate: calc(var(--rotate) * 3);
+  }
+
+  .card {
+    position: relative;
+    transition: .4s var(--bounce);
+    grid-area: 1 / 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1rem 1rem 1rem rgb(0 0 0 / .05);
+    outline: 1px solid rgb(206, 206, 206);
+    outline-offset: -0.5rem;
+
+    .card_header {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+
+      & > * {
+        font-size: 0.6rem;
+        display: flex;
+        flex-direction: column;
+
+        & > *:not(:last-child) {
+          font-weight: bold;
+          display: block;
+        }
+      }
+
+      & > span:first-child {
+        font-weight: bold;
+      }
+    }
+
+    .card_contents {
+      .card_media {
+        & > img {
+          width: 100%;
+          aspect-ratio: 1;
+          object-fit: cover;
+        }
+
+        & > figcaption {
+          font-size: 1.5rem;
+          font-weight: bold;
+
+          & > span {
+            display: block;
+            color: rgb(145 145 145);
+          }
+        }
+      }
+
+      .card_description {
+        line-height: 1.4;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
