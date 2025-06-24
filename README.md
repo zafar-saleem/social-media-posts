@@ -40,7 +40,55 @@ This repo contains code and case studies for my social media posts.
 </table>
 
 <table style="width:100%">
-  <caption>Statistics Component</caption>
+  <caption>Statistics/Analytics Component</caption>
+  <tr>
+    <th>Linkedin</th>
+    <td>
+      <a href="https://www.linkedin.com/posts/zeesaleem_jobs-projects-opentowork-activity-7342866382423842816-WOLy/?utm_medium=ios_app&rcm=ACoAADAmdNEBgLgxVHNYkqxYAfUlfNqhdoKhJJs&utm_source=social_share_send&utm_campaign=share_via">
+        https://www.linkedin.com/posts/zeesaleem_jobs-projects-opentowork-activity-7342866382423842816-WOLy
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>X/Twitter</th>
+    <td>
+      <a href="https://x.com/zafartalks/status/1937101349629379019?s=12">
+        https://x.com/zafartalks/status/1937101349629379019?s=12
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Facebook</th>
+    <td>
+      <a href="https://www.facebook.com/story.php?story_fbid=581128885043776&id=100094400083251&mibextid=wwXIfr&rdid=S9aIqIdi4OTUlnI0#">
+        https://www.facebook.com/story.php?story_fbid=581128885043776&id=100094400083251&mibextid=wwXIfr&rdid=S9aIqIdi4OTUlnI0#
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Instagram</th>
+    <td>
+      <a href="https://www.instagram.com/reel/DLPZriPtxI_/?igsh=bjAwZWl4N2JpZWZz">
+        https://www.instagram.com/reel/DLPZriPtxI_/?igsh=bjAwZWl4N2JpZWZz
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Threads</th>
+    <td>
+      <a href="https://www.threads.com/@dakalcodeografy/post/DLPZwshoTHn?xmt=AQF0EI2FqRNZWBkNaaSkgd1F8YDIXZPGDM3a1Zb-nzcvQg">
+        https://www.threads.com/@dakalcodeografy/post/DLPZwshoTHn?xmt=AQF0EI2FqRNZWBkNaaSkgd1F8YDIXZPGDM3a1Zb-nzcvQg
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Youtube</th>
+    <td>
+      <a href="https://www.youtube.com/watch?v=5migVLGMut0">
+        https://www.youtube.com/watch?v=5migVLGMut0
+      </a>
+    </td>
+  </tr>
   <tr>
     <th>Code on Github</th>
     <td>
