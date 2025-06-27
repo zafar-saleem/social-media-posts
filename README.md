@@ -28,6 +28,18 @@ pnpm dev
 This repo contains code and case studies for my social media posts.
 
 <table style="width:100%">
+  <caption>CTA Button</caption>
+  <tr>
+    <th>Code on Github</th>
+    <td>
+      <a href="https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/buttons/cta-2">
+        https://github.com/zafar-saleem/social-media-posts/tree/main/src/components/buttons/cta-2
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
   <caption>Apple Products Card</caption>
   <tr>
     <th>Code on Github</th>
