@@ -1,0 +1,90 @@
+.btn {
+  --icon-border-color: rgba(37, 101, 66, 0.5);
+  --opacity: 1;
+  --rotation: -30deg;
+  --blur: 2px;
+  
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.3rem;
+  background: linear-gradient(
+    110deg,
+    rgb(6 29 20),
+    rgb(6 29 20),
+    rgb(93 219 142) 50%,
+    rgb(17 59 34) 100%
+  );
+  background-size: 200%;
+  background-position: 100%;
+  cursor: pointer;
+  transition: 1s;
+  position: relative;
+  width: 15rem;
+  height: 4rem;
+  box-shadow: 0 0 1rem 0.15rem rgb(0 0 0 / 0.5);
+  overflow: hidden;
+
+  &:hover {
+    background-position: 0%;
+
+    .btn_initial_label {
+      --opacity: 0;
+      --blur: 2px;
+      translate: -5rem 0;
+    }
+
+    .btn_label {
+      --opacity: 1;
+      --blur: 0;
+      left: -4rem;
+    }
+
+    .btn_icon_container {
+      --opacity: 1;
+      --rotation: 0deg;
+      --blur: 0;
+      rotate: var(--rotation);
+    }
+  }
+
+  .btn_initial_label {
+    --blur: 0;
+    transition: 1s;
+    inset: 0;
+    top: calc(4rem / 2 - 0.75rem);
+    position: absolute;
+    opacity: var(--opacity);
+    filter: blur(var(--blur));
+  }
+
+  .btn_label {
+    --opacity: 0;
+    transition: 1s;
+    inset: 0;
+    left: 3rem;
+    top: calc(4rem / 2 - 0.75rem);
+    position: absolute;
+    opacity: var(--opacity);
+    filter: blur(var(--blur));
+  }
+
+  .btn_icon_container {
+    --opacity: 0;
+    right: 1rem;
+    position: absolute;
+    top: calc(4rem / 2 - 1rem);
+    padding: 0.25rem;
+    padding-bottom: 0;
+    border-radius: 0.5rem;
+    border: 1px solid var(--icon-border-color);
+    rotate: calc(var(--rotation) + 15deg);
+    opacity: var(--opacity);
+    transition: 1s;
+    filter: blur(var(--blur));
+
+    & > img {
+      rotate: var(--rotation);
+      transition: 1s;
+    }
+  }
+}
