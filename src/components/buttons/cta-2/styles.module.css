@@ -3,6 +3,7 @@
   --opacity: 1;
   --rotation: -30deg;
   --blur: 2px;
+  --speed: 0.5s;
   
   border-radius: 1rem;
   border: none;
@@ -17,7 +18,7 @@
   background-size: 200%;
   background-position: 100%;
   cursor: pointer;
-  transition: 1s;
+  transition: var(--speed);
   position: relative;
   width: 15rem;
   height: 4rem;
@@ -49,7 +50,7 @@
 
   .btn_initial_label {
     --blur: 0;
-    transition: 1s;
+    transition: var(--speed);
     inset: 0;
     top: calc(4rem / 2 - 0.75rem);
     position: absolute;
@@ -59,7 +60,7 @@
 
   .btn_label {
     --opacity: 0;
-    transition: 1s;
+    transition: var(--speed);
     inset: 0;
     left: 3rem;
     top: calc(4rem / 2 - 0.75rem);
@@ -79,12 +80,12 @@
     border: 1px solid var(--icon-border-color);
     rotate: calc(var(--rotation) + 15deg);
     opacity: var(--opacity);
-    transition: 1s;
+    transition: var(--speed);
     filter: blur(var(--blur));
 
     & > img {
       rotate: var(--rotation);
-      transition: 1s;
+      transition: var(--speed);
     }
   }
 }
