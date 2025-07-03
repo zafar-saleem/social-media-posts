@@ -1,0 +1,123 @@
+.work_card {
+  --bg-color: rgb(254 254 254);
+  --badge-color-bg: rgb(240 240 240);
+  --badge-color-text: rgb(118 118 118);
+  --text-color-primary: rgb(16 16 16);
+  --text-color-secondary: rgb(139 139 139);
+  --filled-button-bg-color: rgb(16 16 16);
+  --filled-button-text-color: rgb(254 254 254);
+  --outline-button-bg-color: rgb(254 254 254);
+  --outline-button-border-color: rgb(16 16 16);
+  --outline-button-text-color: rgb(16 16 16);
+  --mini-card-bg-color: rgb(239 239 239);
+  --border-radius: 1rem;
+  --title-size: 3.5rem;
+  --regular-text-size: 1rem;
+  --badge-text-size: 0.6rem;
+
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.25rem 1rem 0 rgb(0 0 0 / 0.1);
+  min-width: 25rem;
+
+  .badge_container {
+    display: flex;
+    gap: 0.5rem;
+    font-size: var(--badge-text-size);
+
+    .badge {
+      display: flex;
+      gap: 0.25rem;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      color: var(--text-color-secondary);
+      background-color: var(--badge-color-bg);
+    }
+  }
+
+  .main_contents {
+    .title {
+      font-size: var(--title-size);
+      font-weight: bold;
+      line-height: 1;
+      max-width: 10rem;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    .description {
+      margin-block: 1rem;
+      margin-bottom: 2rem;
+      color: var(--text-color-secondary);
+    }
+
+    .images_container {
+      position: relative;
+      margin-bottom: 1rem;
+      min-height: 166px;
+
+      & > * {
+        transition: all 1s;
+      }
+
+      &:hover {
+        & > figure:nth-child(3) {
+          translate: 220px -110px;
+          rotate: -55deg;
+        }
+
+        & > figure:nth-child(2) {
+          translate: 135px -30px;
+          rotate: -25deg;
+        }
+      }
+
+      & > figure {
+        position: absolute;
+        padding: 0.25rem;
+        padding-bottom: 0.05rem;
+        background-color: rgb(224, 224, 224);
+        border-radius: 1rem;
+        box-shadow: 0 .5rem 1rem 0 rgb(0 0 0 / 0.2);
+
+        &:nth-child(3) {
+          translate: 100px 0;
+        }
+
+        &:nth-child(2) {
+          translate: 50px 0;
+        }
+
+        & > img {
+          width: 130px;
+          aspect-ratio: 1;
+          object-fit: cover;
+          transition: 1s;
+          border-radius: 0.75rem;
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    gap: 1rem;
+
+    & > * {
+      background-color: transparent;
+      border: none;
+      border-radius: 10rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    & > *:nth-child(2) {
+      color: var(--outline-button-text-color);
+      border: 1px solid rgb(0 0 0);
+    }
+
+    & > *:not(button:nth-child(2)) {
+      background-color: var(--filled-button-bg-color);
+    }
+  }
+}

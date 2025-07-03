@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { Command } from "@/components/command";
+import { RecentWorkCard } from "@/components/cards/work";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <Command />
+      <RecentWorkCard />
     </main>
   );
 }
