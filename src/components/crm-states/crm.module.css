@@ -1,0 +1,210 @@
+.crm_container {
+  --bg-color-surface: rgb(247 247 247);
+  --bg-color: rgb(255 255 255);
+  --base-text-color: rgb(94 94 94);
+  --regular-tab-text-color: rgb(140 140 140);
+  --text-color: rgb(32 32 32);
+
+  --positive-trend-bg-color: rgb(226 247 239);
+  --positive-trend-text-color: rgb(24 104 70);
+  --positive-trend-icon-bg-color: rgb(23 105 69);
+
+  --negative-trend-bg-color: rgb(255 226 234);
+  --negative-trend-text-color: rgb(151 19 54);
+  --negative-trend-icon-bg-color: rgb(156 15 55);
+
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  --padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.9rem;
+
+  .divider {
+    height: 100%;
+    width: 1px;
+    background-color: rgb(233 233 233);
+  }
+
+  .crm_tabs {
+    padding: 0.70rem .25rem 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--bg-color-surface);
+
+    & > ul {
+      list-style: none;
+      display: flex;
+      color: var(--regular-tab-text-color);
+
+      & > li {
+        padding: 0;
+        margin: 0;
+
+        & > a {
+          padding: 0.5rem;
+        }
+
+        .active {
+          color: var(--base-text-color);
+          border-radius: 0.5rem;
+          background-color: var(--bg-color);
+        }
+      }
+    }
+  }
+
+  .card_block {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    gap: 1rem;
+    background-color: var(--bg-color-surface);
+
+    & > div:first-child {
+      display: flex;
+      padding-right: var(--padding);
+    }
+
+    .card_block_title {
+      font-size: 1.4rem;
+      padding: var(--padding);
+    }
+
+    .card_block_info {
+      width: 15px;
+      aspect-ratio: 1;
+      border: none;
+      margin-left: auto;
+      align-self: center;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 0.5rem;
+      font-weight: bold;
+      background-color: rgb(135 135 135);
+
+      &.btn_init {
+        anchor-name: --init-info;
+      }
+
+      &.btn_engage {
+        anchor-name: --engage-info;
+      }
+
+      &.btn_outcome {
+        anchor-name: --outcome-info;
+      }
+    }
+
+    .info {
+      padding: 0.5rem;
+      position-area: top center;
+      width: 10rem;
+      text-align: center;
+      position: relative;
+      scale: 0 0;
+      border-radius: 0.5rem;
+      color: var(--base-text-color);
+      font-size: 0.8rem;
+      border: none;
+      background-color: var(--bg-color);
+      border: 1px solid var(--bg-color-surface);
+      transition: scale 0.4s var(--bounce);
+      box-shadow: 0 2px 5px 1px rgb(0 0 0 / 0.5);
+
+      & > img {
+        display: block;
+        margin: auto;
+        margin-bottom: 0.5rem;
+      }
+
+      &.init_info {
+        position-anchor: --init-info;
+      }
+
+      &.engage_info {
+        position-anchor: --engage-info;
+      }
+
+      &.outcome_info {
+        position-anchor: --outcome-info;
+      }
+
+      &:popover-open {
+        scale: 1 1;
+
+        @starting-style {
+          scale: 0 0;
+        }
+      }
+    }
+
+    .card_content {
+      display: flex;
+      gap: 1rem;
+      border-radius: 1rem;
+      background-color: var(--bg-color);
+      border: 1px solid rgb(233 233 233);
+
+      & > div {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        flex-basis: 50%;
+
+        & > span:first-child {
+          font-size: 1.2rem;
+        }
+
+        & > div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.25rem;
+
+          & > span:nth-child(2) {
+            font-weight: bold;
+            font-size: 1.1rem;
+          }
+
+          .trend {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            margin-left: auto;
+            
+            &.up_trend {
+              background-color: var(--positive-trend-bg-color);
+              color: var(--positive-trend-text-color);
+
+              & > span:first-child {
+                padding: 0.10rem;
+                padding-block: 0;
+                border-radius: 0.25rem;
+                background-color: var(--positive-trend-icon-bg-color);
+              }
+            }
+
+            &.down_trend {
+              color: var(--negative-trend-text-color);
+              background-color: var(--negative-trend-bg-color);
+
+              & > span:first-child {
+                padding: 0.05rem;
+                padding-block: 0;
+                border-radius: 0.25rem;
+                background-color: var(--negative-trend-icon-bg-color);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
