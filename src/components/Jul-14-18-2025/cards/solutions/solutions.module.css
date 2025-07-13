@@ -1,0 +1,215 @@
+.solutions {
+  --border-opacity: 1;
+  --brand-color: rgb(220 90 213 / var(--border-opacity));
+  --padding: 2rem;
+  --speed: 0.5s;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  --border-opacity: 0.1;
+  padding: var(--padding);
+  border-radius: 1rem;
+  outline: 2px solid var(--brand-color);
+  outline-offset: -2px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+  box-shadow: 0 1rem 1rem rgb(0 0 0 / 0.1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.95rem;
+    transition: 0.2s;
+    background: linear-gradient(to bottom right, #fbeefa, transparent, transparent);
+    z-index: -1;
+  }
+
+  .solutions_header {
+    --position-x: 0;
+    --position-y: 0;
+
+    .header_icon {
+      width: 50px;
+      aspect-ratio: 1;
+      display: grid;
+      gap: 0.25rem;
+      align-items: center;
+      justify-content: center;
+      
+      & > * {
+        margin: 0;
+        margin-bottom: -3.5px;
+        grid-area: 1 / 1;
+        margin-bottom: 0px;
+
+        &:nth-child(1) {
+          --position-y: -0.70rem;
+          --position-x: 0;
+          translate: var(--position-x) var(--position-y);
+          animation: top_to_original var(--speed) var(--bounce) forwards;
+        }
+        &:nth-child(2) {
+          --position-y: 0.15rem;
+          --position-x: 0.45rem;
+          translate: var(--position-x) var(--position-y);
+          animation: right_to_original var(--speed) var(--bounce) forwards;
+        }
+        &:nth-child(3) {
+          --position-y: 0.13rem;
+          --position-x: -0.55rem;
+          translate: var(--position-x) var(--position-y);
+          animation: left_to_original var(--speed) var(--bounce) forwards;
+        }
+      }
+    }
+  }
+
+  .solutions_contents {
+    height: 10rem;
+    .solutions_article {
+      & > .solutions_description {
+        transition: var(--speed) var(--bounce);
+        margin-top: 1rem;
+        translate: 0 calc(10rem - 2rem);
+      }
+    }
+  }
+
+  .solutions_footer {
+    & > a {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+      font-weight: bold;
+      transition: var(--speed) var(--bounce);
+      translate: 0 1rem;
+      opacity: 0;
+      width: fit-content;
+    }
+  }
+
+
+  &:hover {
+    &::before {
+      top: 0;
+      left: 0;
+    }
+
+    .header_icon {
+      transform-origin: center center;
+      transition: 0.2s 60ms;
+
+      & > *:nth-child(1) {
+        animation: top_to_center var(--speed) var(--bounce) forwards;
+      }
+      & > *:nth-child(2) {
+        animation: right_to_center var(--speed) var(--bounce) forwards;
+      }
+      & > *:nth-child(3) {
+        animation: left_to_center var(--speed) var(--bounce) forwards;
+      }
+    }
+
+    .solutions_contents {
+      .solutions_description {
+        translate: 0 0;
+      }
+    }
+
+    .solutions_footer {
+      & > a {
+        translate: 0 0;
+        opacity: 1;
+      }
+    }
+  }
+
+  
+}
+
+@keyframes top_to_center {
+  0% {
+    translate: 0 -0.70rem;
+  }
+  25% {
+    translate: 0 0;
+    scale: 0 0;
+  }
+  100% {
+    translate: 0 0.70rem;
+    scale: 1 1;
+  }
+}
+
+@keyframes top_to_original {
+  0% {
+    translate: 0 0.70rem;
+  }
+  25% {
+    translate: 0 0;
+    scale: 0 0;
+  }
+  100% {
+    translate: 0 -0.70rem;
+    scale: 1 1;
+  }
+}
+
+@keyframes left_to_center {
+  0% {
+    translate: -0.55rem 0.13rem;
+  }
+  25% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 0.55rem -0.13rem;
+  }
+}
+
+@keyframes left_to_original {
+  0% {
+    translate: 0.55rem -0.13rem;
+  }
+  25% {
+    translate: 0 0;
+  }
+  100% {
+    translate: -0.55rem 0.13rem;
+  }
+}
+
+@keyframes right_to_center {
+  0% {
+    translate: 0.45rem 0.15rem;
+  }
+  25% {
+    translate: 0 0;
+    scale: 0 0;
+  }
+  100% {
+    translate: -0.45rem -0.15rem;
+    scale: 1 1;
+  }
+}
+
+@keyframes right_to_original {
+  0% {
+    translate: -0.45rem -0.15rem;
+  }
+  25% {
+    translate: 0 0;
+    scale: 0 0;
+  }
+  100% {
+    translate: 0.45rem 0.15rem;
+    scale: 1 1;
+  }
+}
