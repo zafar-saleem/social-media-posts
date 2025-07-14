@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const url = 'images.pexels.com';
+// const url = 'cdn.dribbble.com';
 
 const nextConfig: NextConfig = {
   cacheHandler: require.resolve('./cache.js'),
@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.dribbble.com',
+        hostname: 'images.pexels.com',
         port: '',
         // pathname: '/account123/**',
         search: '',

@@ -1,0 +1,165 @@
+.bento {
+  --color: rgb(62 62 62);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  min-height: 30rem;
+
+
+  .bento_item {
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 5px 15px 0px rgb(0 0 0 / 0.3);
+    cursor: pointer;
+    transition: 1.5s ease-in-out;
+
+    .author {
+      display: block;
+      margin-top: 0.75rem;
+    }
+
+    .action_learn {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+      font-size: 0.7rem;
+      text-decoration: underline;
+    }
+
+    &.bento_item_one {
+      color: rgb(255 255 255);
+      grid-row: span 2;
+      background: url(https://images.pexels.com/photos/18960521/pexels-photo-18960521.jpeg) no-repeat;
+      background-size: cover;
+
+      &:hover {
+        background-position: 100% 0;
+      }
+    }
+
+    &.bento_item_two { 
+      color: rgb(255 255 255);
+      background: var(--color);
+      background-size: cover;
+    }
+
+
+
+    &.bento_item_three {
+
+      color: rgb(0 0 0);
+      background: url(https://images.pexels.com/photos/32302344/pexels-photo-32302344.jpeg) no-repeat;
+      background-size: cover;
+
+      &:hover {
+        background-position: 55% 0;
+      }
+    }
+
+    .contents {
+      height: 100%;
+    }
+
+    .breadcrumb {
+      text-transform: uppercase;
+    }
+  }
+
+  .btn {
+    color: rgb(0 0 0);
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: rgb(255 255 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-transform: capitalize;
+    overflow: hidden;
+
+    & > *:nth-child(1) {
+      animation: original_spot 0.1s ease-in-out forwards;
+    }
+
+    & > *:nth-child(2) {
+      animation: back 0.5s ease-in-out forwards;
+    }
+
+    &:hover {
+      & > *:nth-child(1) {
+        animation: pushed 0.1s 0.3s ease-in-out forwards;
+      }
+      & > *:nth-child(2) {
+        animation: push 0.5s ease-in-out forwards;
+      }
+    }
+  }
+}
+
+@keyframes push {
+  0% {
+    translate: 0 0;
+  }
+  25% {
+    translate: 100px 0;
+    opacity: 0;
+  }
+  50% {
+    translate: -250px 0;
+  }
+  75% {
+    translate: -140px 0;
+    opacity: 1;
+  }
+  100% {
+    translate: -150px 0;
+    opacity: 1;
+  }
+}
+
+@keyframes back {
+  0% {
+    translate: -150px 0;
+    opacity: 1;
+  }
+  25% {
+    translate: -250px 0;
+    opacity: 0;
+  }
+  50% {
+    translate: 250px 0;
+    opacity: 0;
+  }
+  75% {
+    translate: 100px 0;
+    opacity: 1;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+@keyframes pushed {
+  0% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 30px 0;
+  }
+}
+
+@keyframes original_spot {
+  0% {
+    translate: 30px 0;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
