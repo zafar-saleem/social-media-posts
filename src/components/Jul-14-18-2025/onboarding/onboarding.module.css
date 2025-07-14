@@ -65,7 +65,11 @@
           flex-direction: column;
           font-size: 0.8rem;
 
-          & > iframe {
+          &:hover {
+            opacity: 1;
+          }
+
+          & > iframe, & > img {
             border-radius: 0.75rem;
           }
 
@@ -97,10 +101,6 @@
             }
           }
         }
-
-        /* & > div:nth-child(1) {
-          opacity: 1;
-        } */
       }
     }
   }
