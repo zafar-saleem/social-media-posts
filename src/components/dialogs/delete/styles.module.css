@@ -1,0 +1,37 @@
+.box {
+
+}
+
+.box_container {
+  opacity: 0;
+  transition: 1s;
+}
+
+.box_icon {
+
+}
+
+.box_content {
+
+}
+
+.box_delete {
+  border-radius: 10rem;
+  border: none;
+  background-color: #fe0303;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 1s;
+
+  &:active {
+    animation: update_delete_state 1s linear forwards;
+  }
+}
+
+@keyframes update_delete_state {
+  to {
+    width: 20rem;
+    translate: 20px 0;
+  }
+}

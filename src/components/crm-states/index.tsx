@@ -28,12 +28,6 @@ export const CRMStates = () => {
           <li>
             <Link href="#" className={styles.tab_item}>Custom</Link>
           </li>
-          <li>
-            <div>
-              <input type="date" className={styles.tab_item_from} />
-              <input type="date" className={styles.tab_item_to} />
-            </div>
-          </li>
         </ul>
       </form>
 
@@ -50,7 +44,9 @@ export const CRMStates = () => {
               height={15}
               alt=""
             />
-            Lorem ipsum dolor sit amet consectetur.
+            <span>
+              Lorem ipsum dolor sit amet consectetur.
+            </span>
           </span>
         </div>
         <div className={styles.card_content}>

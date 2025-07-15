@@ -21,6 +21,7 @@
   flex-direction: column;
   gap: 1rem;
   font-size: 0.9rem;
+  min-width: 30rem;
 
   .divider {
     height: 100%;
@@ -29,7 +30,7 @@
   }
 
   .crm_tabs {
-    padding: 0.70rem .25rem 0.5rem;
+    padding: 0.70rem .25rem 0.75rem;
     border-radius: 0.5rem;
     background-color: var(--bg-color-surface);
 

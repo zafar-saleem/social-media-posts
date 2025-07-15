@@ -5,13 +5,13 @@
   flex-direction: column;
   position: relative;
   padding: 4rem;
-  height: 300dvh;
+  height: 100dvh;
   /* background-color: #f1f1f1; */
   /* margin-top: -1rem;
   margin-left: -1rem; */
   /* max-width: 450px; */
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   gap: 1rem;
   padding: 1rem;
   /* z-index: -100; */

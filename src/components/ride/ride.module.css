@@ -1,0 +1,191 @@
+.container {
+  --base-color: rgb(0 0 0 / 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 25rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 0.75rem 0 rgb(0 0 0 / 0.5);
+  overflow: hidden;
+  height: 15rem;
+
+  & *:is(button) {
+    cursor: pointer;
+  }
+
+  .header {
+    position: relative;
+
+    .title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .btn_reload {
+      position: absolute;
+      right: 0;
+      border: none;
+      border-radius: 10rem;
+      padding: 0.25rem;
+      padding-bottom: 0;
+      background-color: var(--base-color);
+    }
+  }
+
+  .contents {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+    .qr_code_container {
+      margin: auto;
+    }
+
+    .slide_up {
+      animation: slide_up 1s forwards;
+    }
+
+    .slide_down {
+      animation: slide_down 1s forwards;
+    }
+
+    .contents_container {
+      display: flex;
+      gap: 0.5rem;
+      flex-direction: column;
+      justify-content: center;
+
+      & > p {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .footer {
+    --position: -1.25rem;
+
+    .btn_start {
+      border-radius: 10rem;
+      background-color: var(--base-color);
+      align-items: center;
+      overflow: hidden;
+      transition: 1s;
+      height: 34px;
+
+      &:has( > .btn_icon > .btn:checked) {
+        & > .btn_icon {
+          --position: -2.25rem;
+          width: 100%;
+          text-align: center;
+          animation: switch 1s forwards 1.3s;
+        }
+
+        & > .qr_code {
+          --position: -1.60rem;
+          animation: switch 1s forwards 1.3s;
+        }
+
+        & > .btn_label {
+          flex-basis: 0%;
+          display: none;
+          opacity: 0;
+
+          @starting-style {
+            & {
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      & > .btn_icon {
+        padding: 0.35rem 0.35rem 0.20rem;
+        border: none;
+        border-radius: 10rem;
+        background-color: rgb(0 0 0);
+        cursor: pointer;
+        transition: 1s;
+        text-align: left;
+        display: inline-block;
+
+        .btn {
+          display: none;
+        }
+      }
+
+      & > .btn_label {
+        display: inline-block;
+        font-size: 0.8rem;
+        transition: 0.7s allow-discrete;
+        text-align: center;
+        width: calc(100% - 1rem - 20px);
+      }
+
+      &:has(> .btn_icon > .btn:not(:checked)) {
+        & > .btn_icon {
+          width: 2rem;
+          /* animation: switch_back 1s forwards; */
+          translate: 0 0;
+        }
+
+        & > .qr_code {
+          background-color: red;
+          /* animation: switch_back 1s forwards; */
+          translate: 0 50px;
+        }
+      }
+    }
+
+    .qr_code {
+      font-size: 0.8rem;
+      text-align: center;
+      grid-column: span 2;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      color: rgb(0 0 0);
+      transition: 1s;
+    }
+  }
+}
+
+@keyframes switch {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 var(--position);
+  }
+}
+
+@keyframes switch_back {
+  from {
+    translate: 0 -1.60rem;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes slide_up {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 -5rem;
+  }
+}
+
+@keyframes slide_down {
+  from {
+    translate: 0 -5rem;
+  }
+  to {
+    translate: 0 0;
+  }
+}

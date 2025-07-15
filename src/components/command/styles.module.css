@@ -31,7 +31,6 @@
     padding-left: 2.8rem;
     border-radius: 1rem;
     transition: 1s;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     &::selection {
       color: rgb(255 255 255);

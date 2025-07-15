@@ -1,0 +1,61 @@
+.container {
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+
+  .navbar {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+
+    & > ul {
+      list-style: none;
+      display: flex;
+      flex: row;
+      gap: 1rem;
+
+      & > li > a {
+        padding: 1rem;
+      }
+    }
+  }
+
+  &:has(> .navbar > ul > li > a:hover) {
+    .contents {
+      translate: 0 0;
+
+      .item {
+        opacity: 1;
+        translate: 0 0;
+      }
+    }
+  }
+
+  .contents {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    transition: 1s;
+    translate: 0 -13rem;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      translate: 10px 0;
+      transition: 1s 1s;
+      opacity: 0;
+
+      & > img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    }
+  }
+}

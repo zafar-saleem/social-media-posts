@@ -1,0 +1,54 @@
+& > body {
+  
+}
+
+.feature {
+  position: sticky;
+  top: 50vh;
+
+  .cards_container {
+    transform-style: preserve-3d;
+    perspective: 1500px;
+    display: inline-grid;
+    margin-inline: 0.25rem;
+    width: 0px;
+
+    .card {
+      transform-origin: top left;
+      grid-area: 1 / 1;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      border: 1px solid rgb(0 0 0 / 0.2);
+      transform: rotateY(90deg);
+
+      animation-timeline: scroll();
+      animation-range: entry 0% cover 75%;
+      animation-name: reveal_cards;
+      animation-fill-mode: both;
+      /* background-color: rgb(255 255 255); */
+      box-shadow: 0 0 3px 2px rgb(0 0 0 / 0.2);
+      transition: 1s;
+    }
+
+    & > *:first-child {
+      /* translate: 0 0 -100px; */
+      transform: translateZ(-100px);
+      padding: 1rem;
+      background-color: green;
+    }
+
+    & > *:nth-child(1) {
+      translate: 0 0 0px;
+      background-color: red;
+    }
+  }
+}
+
+@keyframes reveal_cards {
+  from {
+    transform: rotateY(90deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}

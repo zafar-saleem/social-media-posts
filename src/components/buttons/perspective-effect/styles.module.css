@@ -1,0 +1,145 @@
+.btn {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: none;
+  transform-style: preserve-3d;
+  perspective: 1500px;
+  cursor: pointer;
+  box-shadow: 0 0 0.5rem 0.25rem rgb(49, 49, 49);
+  background-color: pink;
+  color: var(--color);
+  /* transform: rotate(var(--rotateX)deg, var(--rotateY)deg); */
+  /* transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)); */
+  overflow: hidden;
+  transition: overflow 1s;
+  position: relative;
+
+  &:hover {
+    animation: overflow 1s forwards;
+    animation-delay: .1s;
+    transition-delay: 1s;
+
+    .btn_label {
+      animation: animate 1s forwards;
+    }
+
+    .me {
+      animation: animateMe 1s forwards;
+      animation-delay: 0.3s;
+    }
+    .phone {
+      animation: animatePhone 1s forwards;
+      animation-delay: 0.4s;
+    }
+    .client {
+      animation: animateClient 1s forwards;
+      animation-delay: 0.5s;
+    }
+  }
+
+  & > *:not(:last-child) {
+    position: absolute;
+    transform: translateZ(0) translateY(150px);
+  }
+
+  & > .btn_label {
+    display: block;
+    background-color: red;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    transform: translateZ(0) translateY(30px);
+  }
+
+  & > .me {
+    display: block;
+    /* padding: 1rem; */
+    border-radius: 10rem;
+    opacity:0;
+  }
+
+  & > .phone, & > .client {
+    opacity:0;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateZ(0) translateY(30px);
+  }
+  25% {
+    transform: translateZ(0px) translateY(10px);
+  }
+  50% {
+    box-shadow: 0 0 0.5rem 0.25rem rgb(49, 49, 49);
+    transform: translateZ(10px) translateY(10px);
+  }
+  100% {
+    box-shadow: 0 0 0.5rem 0.25rem rgb(49, 49, 49);
+    transform: translateZ(10px) translateY(30px);
+  }
+}
+
+@keyframes overflow {
+  from {
+    overflow: hidden;
+  }
+  to {
+    overflow: visible;
+  }
+}
+
+@keyframes animateMe {
+  0% {
+    transform: translateZ(0) translateY(40px) translateX(0);
+  }
+  25% {
+    transform: translateZ(0px) translateY(-10px) translateX(-30px);
+  }
+  50% {
+    /* box-shadow: 0 0 0.5rem 0.25rem rgb(49, 49, 49); */
+    transform: translateZ(10px) translateY(-10px) translateX(-40px);
+  }
+  100% {
+    /* box-shadow: 0 0 0.5rem 0.25rem rgb(49, 49, 49); */
+    transform: translateZ(10px) translateY(-10px) translateX(-40px) scale(3);
+    background-color: #ffffff;
+    opacity:1;
+  }
+}
+
+@keyframes animatePhone {
+  0% {
+    transform: translateZ(0) translateY(40px) translateX(0);
+  }
+  25% {
+    transform: translateZ(0px) translateY(-10px) translateX(-20px);
+  }
+  50% {
+    transform: translateZ(10px) translateY(-10px) translateX(-20px);
+  }
+  100% {
+    transform: translateZ(10px) translateY(-60px) translateX(-20px) scale(2);
+    /* background-color: #ffffff; */
+    opacity:1;
+  }
+}
+
+@keyframes animateClient {
+  0% {
+    transform: translateZ(0) translateY(40px) translateX(0);
+  }
+  25% {
+    transform: translateZ(0px) translateY(-10px) translateX(30px);
+  }
+  50% {
+    /* box-shadow: 0 0 0.5rem 0.25rem rgb(49, 49, 49); */
+    transform: translateZ(10px) translateY(-10px) translateX(40px);
+  }
+  100% {
+    /* box-shadow: 0 0 0.5rem 0.25rem rgb(49, 49, 49); */
+    transform: translateZ(10px) translateY(-10px) translateX(40px);
+    /* background-color: #ffffff; */
+    opacity:1;
+  }
+}

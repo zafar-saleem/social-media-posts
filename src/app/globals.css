@@ -1,4 +1,4 @@
-::view-transition-old(box) {
+/* ::view-transition-old(box) {
   animation: slide-out .5s
     cubic-bezier(.47,1.64,.41,.8);
 }
@@ -53,7 +53,7 @@
   text-align: center;
   padding: 1rem;
   background-color: #5ce2fa;
-}
+} */
 
 
 
@@ -132,6 +132,7 @@ body {
   /* overflow-x: clip; */
   /* overflow-x: hidden; */
   /* min-block-size: 300dvh; */
+  inset: 0;
 }
 
 body {
@@ -140,10 +141,11 @@ body {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100vw;
+  inset: 0;
+  /* width: 100vw;
   height: 100svh;
   background: url(https://images.pexels.com/photos/32843030/pexels-photo-32843030.jpeg) no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 * {
