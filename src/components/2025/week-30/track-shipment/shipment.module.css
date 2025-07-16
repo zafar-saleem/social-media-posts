@@ -1,0 +1,110 @@
+.shipment {
+  --opacity: 1;
+  --bg-color: 89 56 235;
+  --color: rgb(var(--bg-color) / var(--opacity));
+  --radius: 1.5rem;
+  --padding: 1rem;
+  --gap: 0.5rem;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  --opacity: 0.3;
+  min-width: 15rem;
+  max-width: 100%;
+  border-radius: var(--radius);
+  background-color: rgb(var(--bg-color) / var(--opacity));
+
+  .btn_shipment {
+    --opacity: 1;
+    width: 100%;
+    padding: var(--padding);
+    border-radius: var(--radius);
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(var(--bg-color) / var(--opacity));
+    box-shadow: 0 20px 10px -10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+      &::before, &::after {
+        --opacity: 0.1;
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -30px;
+        width: 10px;
+        height: 200%;
+        background-color: rgb(224, 216, 252);;
+        z-index: 1;
+        rotate: 25deg;
+        filter: blur(5px);
+        transition: 0.3s 0.3s;
+      }
+      &::after {
+        transition: 0.3s 0.4s;
+      }
+
+    .icon > svg > * {
+      transition: .3s var(--bounce);
+    }
+
+    &:hover {
+      &::before {
+        left: 100%;
+      }
+      &::after {
+        left: 100%;
+      }
+      .icon {
+        .box_top {
+          translate: 4.5px -3px;
+        }
+      }
+    }
+  }
+
+  .status {
+    --opacity: 0.6;
+    --_width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: calc(var(--padding)) var(--padding);
+    color: rgb(var(--bg-color) / var(--opacity));
+    font-weight: bold;
+    width: var(--_width);
+
+    & > span > span:nth-child(2) {
+      display: inline-block;
+      vertical-align: super;
+    }
+
+    & > progress[value] {
+      appearance: none;
+      accent-color: rgb(var(--bg-color) / var(--opacity));
+      background-color: grey;
+      border-radius: 10rem;
+      height: 5px;
+      width: calc(var(--_width) / 2);
+
+      &::-webkit-progress-bar {
+        border-radius: 10rem;
+        background-color: rgb(224, 216, 252);
+      }
+
+      &::-webkit-progress-value {
+        --opacity: 1;
+
+        border-radius: 10rem;
+        background-color: rgb(var(--bg-color) / var(--opacity));
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { Onboarding } from "@/components/Jul-14-18-2025/onboarding";
+import { TrackShipment } from "@/components/2025/week-30/track-shipment";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <Onboarding />
+      <TrackShipment />
     </main>
   );
 }
