@@ -10,7 +10,7 @@
   --table-heading-color: rgb(102 104 113);
   --table-cell-color: rgb(51 51 56);
 
-  /* border-radius: var(--radius); */
+  border-radius: var(--radius);
   --speed: 0.5s;
   --bounce: cubic-bezier(.47, 1.64, .41, .8);
   border: 1px solid var(--border-color);
