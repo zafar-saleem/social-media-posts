@@ -1,0 +1,50 @@
+.button {
+  cursor: pointer;
+  border-radius: 10rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  font-size: 1rem;
+  background: linear-gradient(to bottom, rgb(38 23 19), rgb(75 50 20));
+  position: relative;
+
+  --position-y: 0;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+  --speed: 0.5s;
+  overflow: hidden;
+
+  & > * {
+    transition: 1s;
+    display: inline-block;
+  }
+
+  &:hover {
+    & > span:nth-child(1) {
+      --position-y: -2.5rem;
+      animation: slide_text_in var(--speed) var(--bounce) forwards;
+    }
+
+    & > span:nth-child(2) {
+      --position-y: 2.5rem;
+      animation: slide_text_in var(--speed) var(--bounce) forwards;
+    }
+
+    & > span:nth-child(3) {
+      --position-y: -2.5rem;
+      animation: slide_text_in var(--speed) var(--bounce) forwards;
+    }
+  }
+}
+
+@keyframes slide_text_in {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 var(--position-y);
+    filter: blur(5px);
+  }
+  100% {
+    transform: 0 0;
+  }
+}

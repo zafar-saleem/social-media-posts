@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { ProfileCard } from "@/components/2025/week-31/profile-card";
+import { Actions } from "@/components/2025/week-31/row-level-actions";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <ProfileCard />
+      <Actions />
     </main>
   );
 }
