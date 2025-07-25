@@ -1,0 +1,307 @@
+.profile_card {
+  --surface-color: rgb(255 255 255);
+  --brand-color: rgb(34 41 54);
+  --brand-text-color: rgb(232 236 240);
+  --primary-text-color: rgb(21 22 29);
+  --secondary-text-color: rgb(127 129 139);
+  --title-font-size: 1.2rem;
+  --base-font-size: 1rem;
+  --supporting-font-size: 0.8rem;
+  --tertiary-font-size: 0.6rem;
+  --status-bg-color: rgb(246 247 249);
+  --status-text-color: rgb(89 162 122);
+  --position-y: 0;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+  --speed: 0.5s;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgb(--surface-color);
+  box-shadow: 0 0px 1rem 0.25rem rgb(0 0 0 / 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+
+  .profile_container {
+    --img-width: 100px;
+    --img-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .profile_photo {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+
+      .photo {
+        position: relative;
+
+        & > img {
+          width: var(--img-width);
+          height: var(--img-height);
+          object-fit: cover;
+          border-radius: 100%;
+        }
+
+        &::after {
+          --width: 10px;
+          --height: 10px;
+          content: "";
+          position: absolute;
+          bottom: calc(var(--img-width) - 88%);
+          right: calc(var(--img-height) - 88%);
+          width: var(--width);
+          height: var(--height);
+          border-radius: 100%;
+          outline: 2.5px solid #ffffff;
+          background-color: rgb(113 226 157);
+        }
+      }
+
+      .exp_level {
+        padding: 0.15rem 0.35rem;
+        font-size: var(--supporting-font-size);
+        color: var(--brand-text-color);
+        border-radius: 0.25rem;
+        background-color: var(--brand-color);
+      }
+    }
+
+    .status_badge {
+      width: var(--img-width);
+      text-align: center;
+      color: var(--status-text-color);
+      font-size: var(--supporting-font-size);
+      font-weight: bold;
+      padding: 0.25rem;
+      border-radius: 0.35rem;
+      background-color: var(--status-bg-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+  }
+
+  .profile_personal_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .profile_title {
+      font-weight: bold;
+      font-size: var(--title-font-size);
+    }
+
+    .profile_desc {
+      color: var(--secondary-text-color);
+    }
+  }
+
+  .profile_states_action {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+
+    & > div:first-child {
+      flex-basis: 100%;
+    }
+
+    .button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      padding: 0.5rem;
+      border-radius: 10rem;
+      border: none;
+      color: var(--brand-text-color);
+      background-color: var(--brand-color);
+
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+
+      & > * {
+        transition: 1s;
+        display: inline-block;
+      }
+
+      &:hover {
+        & > span:nth-child(1) {
+          --position-y: -2.5rem;
+          animation: slide_text_in var(--speed) var(--bounce) forwards;
+        }
+
+        & > span:nth-child(2) {
+          --position-y: 2.5rem;
+          animation: slide_text_in var(--speed) var(--bounce) forwards;
+        }
+
+        & > span:nth-child(3) {
+          --position-y: -2.5rem;
+          animation: slide_text_in var(--speed) var(--bounce) forwards;
+        }
+      }
+    }
+
+    .icon_state, .icon_share {
+      border: 1px solid rgb(215 215 223);
+      border-radius: 100%;
+      padding: 0.5rem 0.65rem;
+    }
+
+    .icon_state {
+      .line {
+        stroke-dasharray: 0px;
+        stroke-dashoffset: 100px;
+      }
+
+      &:hover {
+        .line {
+          animation: lines 1s linear forwards;
+
+          &:nth-child(1) {
+            animation-delay: 0.1s;
+          }
+
+          &:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: 0.3s;
+          }
+        }
+      }
+    }
+
+    .icon_share {
+      background-color: transparent;
+      cursor: pointer;
+
+      .arrow {
+        transition: 0.5s;
+      }
+
+      &:hover {
+        .arrow {
+          animation: share 0.5s linear infinite;
+        }
+      }
+    }
+  }
+
+  .profile_meta {
+    display: flex;
+    gap: 1rem;
+    border: 1px solid rgb(232 232 234);
+    padding: 1rem;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    & > section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+
+      .value {
+        font-weight: bold;
+        display: flex;
+        gap: 0.05rem;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .label {
+        color: var(--secondary-text-color);
+        font-size: var(--supporting-font-size);
+      }
+    }
+  }
+
+  .platform_states {
+    width: 75%;
+    background-color: rgb(246 247 249);
+    border: none;
+    border-radius: 0.75rem;
+    color: var(--brand-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid rgb(230 231 235);
+    overflow: hidden;
+    cursor: pointer;
+
+    & > span > img {
+      width: 26px;
+      height: 26px;
+    }
+
+    &:hover {
+      &:hover {
+        & > span:nth-child(1) {
+          --position-y: -2.5rem;
+          animation: slide_text_in var(--speed) var(--bounce) forwards;
+        }
+
+        & > span:nth-child(2) {
+          --position-y: 2.5rem;
+          animation: slide_text_in var(--speed) var(--bounce) forwards;
+        }
+
+        & > span:nth-child(3) {
+          --position-y: -2.5rem;
+          animation: slide_text_in var(--speed) var(--bounce) forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide_text_in {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 var(--position-y);
+    filter: blur(5px);
+  }
+  100% {
+    transform: 0 0;
+  }
+}
+
+@keyframes share {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 -20px;
+  }
+}
+
+@keyframes lines {
+  0% {
+    stroke-dasharray: 0px;
+    stroke-dashoffset: 0px;
+  }
+  50% {
+    stroke-dasharray: 100px;
+    stroke-dashoffset: 100px;
+  }
+  100% {
+    stroke-dasharray: 0px;
+    stroke-dashoffset: 0px;
+  }
+}
