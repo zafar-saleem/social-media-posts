@@ -1,4 +1,4 @@
-.button {
+.button_slide_scale {
   --position-y: 0;
   --speed: 0.5s;
   --bounce: cubic-bezier(.47, 1.64, .41, .8);

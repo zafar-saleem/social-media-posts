@@ -1,11 +1,10 @@
 import styles from "./actions.module.css";
-import sharedStyles from "../../../shared-styles/buttons/soul.module.css";
 
 export const Actions = () => {
   return (
     <div className={styles.table_container}>
       <div className={styles.table_header}>
-        <button className={`${sharedStyles.button}`}>
+        <button className="button_slide_scale">
           <div>
             <span>+</span> <span>Add</span> <span>Contact</span>
           </div>
