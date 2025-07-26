@@ -1,15 +1,13 @@
-.button_slide_scale {
+.button_two {
   --position-y: 0;
   --speed: 0.5s;
   --bounce: cubic-bezier(.47, 1.64, .41, .8);
 
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  
   border: none;
   font-weight: bold;
   cursor: pointer;
   overflow: hidden;
-  background: linear-gradient(to bottom, var(--btn-bg-start-color), var(--btn-bg-end-color));
   transition: var(--speed);
   translate: 0 var(--position-y);
   display: grid;

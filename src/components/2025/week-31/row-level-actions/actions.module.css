@@ -16,6 +16,12 @@
   border: 1px solid var(--border-color);
   box-shadow: 0 0 1rem 10px rgb(0 0 0 / 0.1);
 
+  .button {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(to bottom, var(--btn-bg-start-color), var(--btn-bg-end-color));
+  }
+
   .table_header {
     display: flex;
     justify-content: flex-end;

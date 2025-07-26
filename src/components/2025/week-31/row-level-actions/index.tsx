@@ -4,7 +4,7 @@ export const Actions = () => {
   return (
     <div className={styles.table_container}>
       <div className={styles.table_header}>
-        <button className="button_slide_scale">
+        <button className={`${styles.button} button_two`}>
           <div>
             <span>+</span> <span>Add</span> <span>Contact</span>
           </div>
