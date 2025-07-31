@@ -1,0 +1,116 @@
+.payments_form {
+  --primary-text-color: rgb(14 14 14);
+  --secondary-text-color: rgb(143 143 143);
+  --badge-bg-color: rgb(233 250 238);
+  --badge-text-color: rgb(24 120 77);
+  --brand-color: rgb(37 100 237);
+  --brand-text-color: rgb(255 255 255);
+
+  --base-text-size: 1rem;
+  --large-text-size: 2rem;
+  --medium-text-size: 0.8rem;
+  --small-text-size: 0.6rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1px solid rgb(233 233 233);
+  padding: 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem 0 rgb(0 0 0 / 0.1);
+
+  .success {
+    background: var(--badge-bg-color);
+    color: var(--badge-text-color);
+  }
+
+  .disable {
+    background: rgb(240 240 240);
+    color: rgb(102 102 102);
+  }
+
+  .button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+
+    .icon {
+      display: flex;
+    }
+  }
+
+  .form_title {
+    font-size: var(--large-text-size);
+    font-weight: bold;
+    text-wrap: balance;
+  }
+
+  .form_desc {
+    color: var(--secondary-text-color);
+  }
+
+  .input_block {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    gap: 1rem;
+    border: 1px solid rgb(233 233 233);
+    padding: 1rem;
+    border-radius: 1rem;
+
+    .input_container {
+      .form_element {
+        accent-color: var(--brand-color);
+      }
+    }
+
+    .input_text {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .input_label {
+        font-weight: bold;
+      }
+
+      .input_desc {
+        color: var(--secondary-text-color);
+        font-size:var(--medium-text-size);
+      }
+
+      .input_badge {
+        position: absolute;
+        font-size: var(--small-text-size);
+        right: 1rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 10rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .proceed_actions {
+    display: flex;
+
+    .skip_back {
+      gap: 0.15rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .button_save {
+      margin-left: auto;
+      padding: 0.5rem 0.75rem;
+      background-color: var(--brand-color);
+      border: none;
+      border-radius: 0.25rem;
+      box-shadow: 0 10px 10px 0px rgb(0 0 0 / 0.2);
+      cursor: pointer;
+    }
+  }
+}
