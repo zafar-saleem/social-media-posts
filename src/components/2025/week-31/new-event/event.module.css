@@ -10,6 +10,7 @@
 }
 
 .event {
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
   --secondary-text-color: rgb(100 100 101);
   --border-color: rgb(221 221 221);
   --input-hover-state: rgb(247 247 247);
@@ -174,7 +175,7 @@
             height: 0;
             overflow: hidden;
             opacity: 0;
-            transition: var(--speed);
+            transition: var(--speed) var(--bounce);
             z-index: 3;
             box-shadow: 0 10px 10px 0 rgb(0 0 0 / 0.2);
 
