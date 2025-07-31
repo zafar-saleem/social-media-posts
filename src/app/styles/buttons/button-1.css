@@ -1,11 +1,6 @@
-.button_slide_up_down {
+.button_one {
   cursor: pointer;
-  border-radius: 10rem;
   border: none;
-  padding: 0.5rem 1rem;
-  position: relative;
-  font-size: 1rem;
-  background: linear-gradient(to bottom, rgb(38 23 19), rgb(75 50 20));
   position: relative;
 
   --position-y: 0;
@@ -31,6 +26,11 @@
 
     & > span:nth-child(3) {
       --position-y: -2.5rem;
+      animation: slide_text_in var(--speed) var(--bounce) forwards;
+    }
+
+    & > span:nth-child(4) {
+      --position-y: 2.5rem;
       animation: slide_text_in var(--speed) var(--bounce) forwards;
     }
   }
