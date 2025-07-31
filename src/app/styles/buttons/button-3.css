@@ -1,4 +1,5 @@
 .button_three {
+  --speed: 0.4s;
   cursor: pointer;
   overflow: hidden;
   position: relative;
