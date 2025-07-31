@@ -137,6 +137,7 @@ body {
   /* overflow-x: hidden; */
   /* min-block-size: 300dvh; */
   inset: 0;
+  overflow-x: hidden;
 }
 
 body {
