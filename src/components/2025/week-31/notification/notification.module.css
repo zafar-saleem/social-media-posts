@@ -9,6 +9,7 @@
   .button {
     position: relative;
     display: block;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 0.2);
 
     &::before, &::after {
       background-color: rgb(10, 237, 37);
