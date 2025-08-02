@@ -1,0 +1,45 @@
+.button_four {
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+  border: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    & > span:first-child {
+      scale: 1 1;
+    }
+
+    & > span:last-child {
+      transform: perspective(1000px) rotateX(80deg);
+    }
+
+    & > span:nth-child(2) {
+      transform: perspective(1000px) rotateX(-80deg);
+    }
+  }
+
+  & > * {
+    grid-area: 1 / 1;
+    padding: 0.5rem 1rem;
+    display: block;
+    transform-style: preserve-3d;
+
+    &:first-child {
+      scale: 0 0;
+      transition: 1s var(--bounce);
+    }
+
+    &:nth-of-type(2) {
+      transform-origin: top center;
+      transition: 1s var(--bounce);
+    }
+
+    &:last-child {
+      transform-origin: bottom center;
+      transition: 1s var(--bounce);
+    }
+  }
+}
