@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { Notification } from "@/components/2025/week-31/notification";
+import { Billing } from "@/components/2025/week-32/billing";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <Notification />
+      <Billing />
     </main>
   );
 }

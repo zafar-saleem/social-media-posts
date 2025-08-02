@@ -1,0 +1,268 @@
+.billing {
+  --surface-color: rgb(255 255 255);
+  --text-color-100: rgb(35 35 35);
+  --text-color-200: rgb(126 126 126);
+  --text-color-300: rgb(128 128 128);
+  --text-color-400: rgb(81 81 81);
+  --switch-bg-color: rgb(88 101 242);
+  --switch-color: rgb(255 255 255);
+  --button-bg-color: rgb(250 250 250);
+  --border-color: rgb(230 230 230);
+  --section-bg-color: rgb(240 240 240);
+  --padding: 1rem;
+  --border-radius: 1rem;
+  --speed: 0.5s;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  background-color: var(--surface-color);
+  padding: var(--padding) calc(var(--padding) * 2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  transition: var(--speed);
+  box-shadow: 0 10px 10px 0 rgb(0 0 0 / 0.2);
+
+  .billing_title {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .tabs {
+    inset: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: calc(var(--padding) - 0.75rem);
+    background-color: var(--section-bg-color);
+    border-radius: calc(var(--border-radius) - 0.25rem);
+
+    .tab_item {
+      .tab_button {
+        background-color: transparent;
+        color: var(--text-color-300);
+        padding: calc(var(--padding) - 0.5rem) var(--padding);
+        border-radius: 0.60rem;
+        border: none;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: var(--surface-color);
+        }
+
+        &.active {
+          background-color: var(--surface-color);
+        }
+      }
+    }
+  }
+
+  .contents {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: var(--speed);
+    opacity: 0;
+    display: none;
+    overflow: hidden;
+
+    &.reveal {
+      opacity: 1;
+      display: flex;
+      filter: blur(0);
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(5px);
+      }
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+
+    .content_item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      justify-content: center;
+
+      .content_label {
+        color: var(--text-color-100);
+        font-weight: bold;
+      }
+
+      .info {
+        color: var(--text-color-200);
+        font-size: 0.9rem;
+      }
+    }
+
+    .content_action {
+      margin-left: auto;
+      margin-right: 1.75rem;
+
+      & > select {
+        background-color: rgb(255 255 255);
+        border: 1px solid rgb(230 230 230);
+        color: rgb(66, 66, 66);
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+        outline: none;
+        margin-right: -1.75rem;
+      }
+
+      & > .button_edit {
+        background-color: rgb(232, 232, 232);
+        color: rgb(66, 66, 66);
+        border: none;
+        border: 1px solid rgb(210, 210, 210);
+        border-radius: 0.5rem;
+        margin-right: -1.75rem;
+
+        & > span:first-child {
+          background-color: rgb(255, 255, 255);
+        }
+
+        & > span:nth-of-type(2) {
+          background-color: rgb(243, 243, 243);
+        }
+    
+        & > span:last-child {
+          background-color: rgb(243, 243, 243);
+        }
+      }
+
+      & > input {
+        position: relative;
+
+        &:checked {
+          &::after {
+            translate: 12px 2px;
+          }
+          &::before {
+            background-color: var(--switch-bg-color);
+          }
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 2.5rem;
+          height: 1.25rem;
+          z-index: 1;
+          background-color: rgb(230 230 230);
+          border-radius: 10rem;
+          translate: -10px 0;
+          transition: 0.4s var(--bounce);
+          cursor: pointer;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: 2;
+          width: 1rem;
+          height: 1rem;
+          translate: -8px 2px;
+          border-radius: 10rem;
+          background-color: var(--switch-color);
+          transition: 0.4s var(--bounce);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &.payment {
+      opacity: 0;
+      display: none;
+      transition: var(--speed);
+
+      &.reveal {
+        opacity: 1;
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+
+      .content_item {
+        align-items: flex-start;
+        justify-content: flex-start;
+        background-color: var(--section-bg-color);
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        & > div:first-child {
+          display: flex;
+          gap: 0.5rem;
+          flex-direction: column;
+
+          .card_number {
+            color: var(--text-color-100);
+            display: flex;
+          }
+
+          & > p:nth-child(2) {
+            font-size: 0.8rem;
+            color: var(--text-color-300);
+          }
+        }
+
+        & > div:last-child {
+          margin-left: auto;
+
+          & > button {
+            background-color: rgb(232, 232, 232);
+            color: rgb(66, 66, 66);
+            border: none;
+            border: 1px solid rgb(210, 210, 210);
+            border-radius: 0.5rem;
+
+            & > span:first-child {
+              background-color: rgb(255, 255, 255);
+            }
+
+            & > span:nth-of-type(2) {
+              background-color: rgb(243, 243, 243);
+            }
+        
+            & > span:last-child {
+              background-color: rgb(243, 243, 243);
+            }
+          }
+        }
+      }
+
+      .content_action {
+        margin: 0;
+
+        & > button {
+          background-color: rgb(250 250 250);
+          border: 1px solid rgb(230 230 230);
+          color: var(--text-color-100);
+          border-radius: 0.5rem;
+
+          & > span:first-child {
+            background-color: rgb(255, 255, 255);
+          }
+
+          & > span:nth-of-type(2) {
+            background-color: rgb(243, 243, 243);
+          }
+      
+          & > span:last-child {
+            background-color: rgb(243, 243, 243);
+          }
+        }
+      }
+    }
+  }
+}

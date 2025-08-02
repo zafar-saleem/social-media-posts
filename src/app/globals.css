@@ -1,6 +1,7 @@
 @import url(./styles/buttons/button-1.css);
 @import url(./styles/buttons/button-2.css);
 @import url(./styles/buttons/button-3.css);
+@import url(./styles/buttons/button-4.css);
 
 /* ::view-transition-old(box) {
   animation: slide-out .5s
@@ -137,7 +138,6 @@ body {
   /* overflow-x: hidden; */
   /* min-block-size: 300dvh; */
   inset: 0;
-  overflow-x: hidden;
 }
 
 body {
