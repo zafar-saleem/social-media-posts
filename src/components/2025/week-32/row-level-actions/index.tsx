@@ -13,21 +13,39 @@ export const Actions = () => {
           </div>
         </button>
       </div>
-      <div className={styles.table_title}>Contacts</div>
+      <div className={styles.table_title}>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-tabs-icon lucide-notebook-tabs"><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M15 2v20"/><path d="M15 7h5"/><path d="M15 12h5"/><path d="M15 17h5"/></svg>
+        </span>
+        <span>Contacts</span>
+      </div>
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>City</th>
-            <th>Listing</th>
-            <th>Last contacted</th>
+            <th>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <span>Name</span>
+            </th>
+            <th>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2-icon lucide-building-2"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+              </span>
+              <span>City</span>
+            </th>
+            <th>
+              <span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-fold-icon lucide-calendar-fold"><path d="M8 2v4"/><path d="M16 2v4"/><path d="M21 17V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11Z"/><path d="M3 10h18"/><path d="M15 22v-4a2 2 0 0 1 2-2h4"/></svg>
+              </span>
+              <span>Last contacted</span>
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Lorem Ipsum</td>
             <td>Lisboa</td>
-            <td>Luxury Villas</td>
             <td>
               <span className={styles.date}>10 Jul, 2025</span>
               <span className={styles.actions}>
@@ -82,7 +100,6 @@ export const Actions = () => {
           <tr>
             <td>Dolor Sit</td>
             <td>Porto</td>
-            <td>Bayview Loft</td>
             <td>
               <span className={styles.date}>17 Aug, 2025</span>
               <span className={styles.actions}>
@@ -137,7 +154,6 @@ export const Actions = () => {
           <tr>
             <td>Amet Consectetur</td>
             <td>Coimbra</td>
-            <td>Farmhouse</td>
             <td>
               <span className={styles.date}>14 Oct, 2025</span>
               <span className={styles.actions}>
@@ -192,7 +208,6 @@ export const Actions = () => {
           <tr>
             <td className={styles.last_first_cell}>Adipisicing Elit</td>
             <td>Lisboa</td>
-            <td>Woodlands</td>
             <td className={styles.last_cell}>
               <span className={styles.date}>13 Sep, 2025</span>
               <span className={styles.actions}>

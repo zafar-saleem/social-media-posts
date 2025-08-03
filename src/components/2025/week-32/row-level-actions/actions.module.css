@@ -32,6 +32,9 @@
 
   .table_title {
     padding: var(--padding);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
   }
 
   .table {
@@ -42,10 +45,15 @@
       & > tr {
         & > th {
           border: 1px solid var(--border-color);
-          padding: 0.5rem;
+          padding: 0.5rem 1.5rem;
           text-align: left;
           font-weight: normal;
           color: var(--table-heading-color);
+          font-size: 0.9rem;
+
+          & > span:first-child {
+            margin-right: 0.5rem;
+          }
         }
       }
     }
@@ -54,7 +62,7 @@
       & > tr {
         & > td {
           border: 1px solid var(--border-color);
-          padding: 0.5rem;
+          padding: 0.5rem 1.5rem;
           color: var(--table-cell-color);
 
           &:last-child {
@@ -64,6 +72,7 @@
             
             & > * {
               grid-area: 1 / 1;
+              border: none;
             }
 
             .actions {
