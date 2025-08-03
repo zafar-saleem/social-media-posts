@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-// cdn.dribbble.com
-
 const nextConfig: NextConfig = {
   cacheHandler: require.resolve('./cache.js'),
   cacheMaxMemorySize: 0,
@@ -9,12 +7,18 @@ const nextConfig: NextConfig = {
     viewTransition: true,
   },
   images: {
+    // domains: ['images.pexels.com', 'cdn.dribbble.com'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'images.pexels.com',
         port: '',
-        // pathname: '/account123/**',
+        search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.dribbble.com',
+        port: '',
         search: '',
       },
     ],

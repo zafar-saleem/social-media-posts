@@ -1,0 +1,137 @@
+.menu {
+  --color: rgb(36 36 36);
+  --bg-color: rgb(255 255 255);
+  --speed: 1s;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  --bg-color: rgb(213, 213, 213);
+  
+  list-style: none;
+  inset: 0;
+  transition: var(--speed) var(--bounce);
+  background-color: var(--bg-color);
+  padding-inline: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.75rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  box-shadow: 0 10px 10px 0 rgb(0 0 0 / 0.2);
+
+  .menu_item {
+    transition: var(--speed) var(--bounce);
+
+    .item_link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      transition: var(--speed) var(--bounce);
+      width: 20px;
+      overflow: hidden;
+      padding-right: 0.25rem;
+
+      &:hover {
+        width: fit-content;
+
+        @starting-style {
+          width: 20px;
+        }
+
+        .icon_container {
+          .icon {
+            /* rotate: 45deg; */
+            animation: ring calc(var(--speed) - 0.6s) ease-in-out both;
+
+            .right_bell, 
+            .left_bell {
+              opacity: 1;
+            }
+          }
+
+          .folder_icon {
+            rotate: 360deg;
+          }
+          
+          .icon_like {
+            rotate: 360deg;
+
+            &.icon_heart {
+              opacity: 1;
+            }
+
+            &.icon_thumb {
+              opacity: 0;
+            }
+          }
+        }
+
+        .item_label {
+          width: auto;
+          opacity: 1;
+          display: flex;
+          filter: blur(0);
+
+          @starting-style {
+            opacity: 0;
+            width: 100px;
+          }
+        }
+      }
+
+      .icon_container {
+        display: grid;
+
+        .icon_like {
+          grid-area: 1 / 1;
+          transition: calc(var(--speed) - 0.6s);
+        }
+
+        .icon_heart {
+          opacity: 0;
+        }
+
+        .icon {
+          transition: var(--speed);
+
+          .right_bell, .left_bell {
+            transition: calc(var(--speed) - 0.8s);
+            opacity: 0;
+          }
+        }
+
+        .folder_icon {
+          transition: calc(var(--speed) - 0.4s) var(--bounce);
+        }
+      }
+
+      .item_label {
+        display: block;
+        opacity: 0;
+        width: 0px;
+        transition: var(--speed) var(--bounce) 0.1s;
+        filter: blur(5px);
+      }
+    }
+  }
+}
+
+@keyframes ring {
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: 70deg;
+  }
+  50% {
+    rotate: -70deg;
+  }
+  75% {
+    rotate: 70deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
