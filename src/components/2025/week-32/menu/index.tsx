@@ -1,10 +1,5 @@
 import Link from "next/link";
 import styles from "./menu.module.css";
-// FOLDER: 
-
-
-// LIKE HEART: 
-// LIKE THUMBS: 
 
 export const Menu = () => {
   return (
