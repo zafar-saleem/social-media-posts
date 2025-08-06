@@ -1,0 +1,129 @@
+.blog_container {
+  --base-text-color: rgb(30 29 31);
+  --supporting-text-color: rgb(117 121 125);
+  --surface-color: rgb(240 241 244);
+  --btn-color: rgb(255 255 255);
+  --timestamp-color: rgb(155 156 158);
+  --speed: 0.5s;
+
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--surface-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  .blog_info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .desc {
+      color: var(--supporting-text-color);
+    }
+
+    .btn_see_all {
+      background-color: var(--btn-color);
+      
+      border-top-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+      width: fit-content;
+
+      & > * {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .blog_list {
+    display: flex;
+    gap: 1rem;
+    background-color: var(--btn-color);
+    padding: 0.5rem;
+    padding-bottom: 3px;
+    border-radius: 0.5rem;
+    
+    
+    &:hover {
+      .blog > .media_container {
+        &::before {
+          animation: blink var(--speed) forwards;
+        }
+      }
+    }
+
+    .blog {
+      display: flex;
+      gap: 1rem;
+
+      .media_container {
+        --speed: 0.3s;
+        position: relative;
+
+        .media {
+          border-radius: 0.35rem;
+          object-fit: cover;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      & > section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .timestamp {
+          color: var(--timestamp-color);
+          font-size: 0.8rem;
+        }
+
+        .brief {
+          font-weight: bold;
+        }
+      }
+    }
+
+    
+  }
+
+  .blog_list_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media screen and (max-width: 800px) {
+      margin-top: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes blink {
+  0% {
+    background-color: rgb(255 255 255 / 0);
+  }
+  25% {
+    background-color: rgb(255 255 255 / 0.5);
+  }
+  50% {
+    background-color: rgb(255 255 255 / 0);
+  }
+  75% {
+    background-color: rgb(255 255 255 / 0.5);
+  }
+  100% {
+    background-color: rgb(255 255 255 / 0);
+  }
+}
