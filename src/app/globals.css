@@ -2,6 +2,7 @@
 @import url(./styles/buttons/button-2.css);
 @import url(./styles/buttons/button-3.css);
 @import url(./styles/buttons/button-4.css);
+@import url(./styles/buttons/button-5.css);
 
 /* ::view-transition-old(box) {
   animation: slide-out .5s
