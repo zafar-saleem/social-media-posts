@@ -1,0 +1,70 @@
+.button_five {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: 0.2s;
+
+  & > svg {
+    z-index: 2;
+    position: relative;
+    transition: 0.7s;
+  }
+
+  & > span {
+    z-index: 1;
+    transition: 0.7s;
+
+    &::before, &::after {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 100px;
+      scale: 0;
+      background-color: rgb(23, 68, 247);
+      top: -25px;
+      left: calc(100% / 2 - 2rem);
+      z-index: -1;
+      transition: 0.7s;
+      border-radius: 100%;
+    }
+
+    &::before {
+      transition-delay: 0.1s;
+    }
+
+    &::after {
+      width: 110px;
+      height: 110px;
+      background-color: rgb(23, 150, 247);
+      top: -30px;
+      left: calc(100% / 2 - 2.30rem);
+      z-index: -2;
+      filter: blur(5px);
+    }
+  }
+
+  &:hover {
+    & > svg {
+      stroke: rgb(255 255 255);
+    }
+    
+    & > span {
+      color: rgb(255 255 255);
+
+      &::before,
+      &::after {
+        scale: 4.5 3;
+      }
+    }
+  }
+
+  &:active {
+    scale: 0.99;
+  }
+  
+}
