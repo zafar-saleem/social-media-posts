@@ -1,15 +1,8 @@
-"use client";
-
 import React from "react";
 import styles from "./task.module.css";
 import Link from "next/link";
 
 export const AddTask = () => {
-  const [date] = React.useState(Date.now());
-  const [selected_option, setOption] = React.useState<any>("Assign Task");
-
-  console.log(new Date(date));
-
   return (
     <>
       <div className={styles.overlay}></div>
