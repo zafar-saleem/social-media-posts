@@ -1,0 +1,184 @@
+.container {
+  --bg-color: rgb(247 247 247);
+  --badge-disconnected-color: rgb(220 220 220);
+  --badge-disconnected-text-color: rgb(139 139 139);
+  --badge-connected-color: rgb(222 250 231);
+  --badge-connected-text-color: rgb(43 111 80);
+  --separator-color: rgb(232 232 232);
+
+  --primary-text-color: rgb(80 80 80);
+  --secondary-text-color: rgb(133 133 133);
+
+  --toggle-bar-bg-color: rgb(239 239 239);
+  --toggle-handle-color: rgb(251 251 251);
+  --toggle-enabled-handle-color: rgb(220 255 211);
+  --toggle-enabled-bar-color: rgb(216 237 230);
+
+  --border-color: rgb(181 181 183);
+
+  .integrations {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(216, 217, 217);
+    display: flex;
+    flex-direction: column;
+    min-width: 30rem;
+    box-shadow: 0 0.75rem 10px 0rem rgb(0 0 0 /0.1);
+    z-index: 1;
+    position: relative;
+
+    .column_separator {
+      padding: 0.15rem;
+      border-radius: 1rem;
+      background-color: rgb(217 217 217);
+    }
+
+    .separator {
+      border-top: 1px solid var(--separator-color);
+      border-bottom: 1px solid rgb(235 235 235);
+    }
+
+    .header {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding-block: 1rem;
+
+      .logo_container {
+        border: 1px solid rgb(230 230 230);
+        border-radius: 0.75rem;
+        box-shadow: 0 5px 8px 0 rgb(0 0 0 /0.1);
+        padding: 0.25rem 0.35rem;
+      }
+
+      .title {
+        font-weight: bold;
+        color: var(--primary-text-color);
+      }
+
+      .badge {
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+        width: 8rem;
+        text-align: center;
+        opacity: 0;
+        transition: 0.3s;
+        display: none;
+        scale: 0;
+
+        &.disconnected {
+          background-color: var(--badge-disconnected-color);
+          color: var(--badge-disconnected-text-color);
+        }
+        
+        &.connected {
+          background: var(--badge-connected-color);
+          color: var(--badge-connected-text-color);
+        }
+
+        &.reveal {
+          display: block;
+          opacity: 1;
+          scale: 1;
+
+          @starting-style {
+            opacity: 0;
+            scale: 0;
+          }
+        }
+      }
+
+      .toggle_platform {
+        margin-left: auto;
+
+        .toggle {
+          position: relative;
+          right: 2rem;
+          cursor: pointer;
+          --speed: 0.3s;
+
+          &::before, &::after {
+            position: absolute;
+            content: "";
+            border-radius: 10rem;
+            border: 1px solid rgb(212, 211, 211);
+          }
+          
+          &::before {
+            top: -5px;
+            left: -5px;
+            width: 3rem;
+            height: 1.5rem;
+            background-color: var(--toggle-bar-bg-color);
+            transition: var(--speed);
+            box-shadow: 0 1px 1px 0px rgb(0 0 0 /0.4) inset;
+          }
+
+          &::after {
+            top: -2.5px;
+            left: -3px;
+            height: 1.25rem;
+            width: 1.25rem;
+            background-color: var(--toggle-handle-color);
+            transition: var(--speed);
+          }
+
+          &:checked {
+            &::before {
+              background-color: var(--toggle-enabled-bar-color);
+            }
+
+            &::after {
+              left: 1.35rem;
+              background-color: var(--toggle-enabled-handle-color);
+            }
+          }
+        }
+      }
+    }
+
+    .desc {
+      font-size: 0.9rem;
+      color: var(--secondary-text-color);
+      padding-top: 1rem;
+    }
+  }
+
+  .controls {
+    background-color: rgb(245 245 245);
+    padding: 1rem;
+    width: 28rem;
+    margin: auto;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    display: flex;
+    box-shadow: 0 0.75rem 10px 0rem rgb(0 0 0 /0.1);
+    border: 1px solid rgb(216, 217, 217);
+    border-top: none;
+
+    .btn {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: rgb(251 251 251);
+      color: var(--primary-text-color);
+      border: 1px solid rgb(226 226 226);
+      box-shadow: 0 2px 2px 0 rgb(0 0 0 /0.1);
+      cursor: pointer;
+
+      .btn_icon {
+        display: flex;
+      }
+
+      &.btn_docs {
+        margin-left: auto;
+      }
+    }
+  }
+}
