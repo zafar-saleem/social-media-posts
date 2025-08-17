@@ -14,7 +14,7 @@
     margin-inline: auto;
     padding: 1rem;
     color: rgb(255 255 255);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(8px);
     border-top: 1px solid rgb(255 255 255 / .2);
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
