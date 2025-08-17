@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 0.2);
+  border-radius: 0.75rem;
+
+  .title, .button {
+    text-transform: uppercase;
+  }
+
+  .description {
+    color: rgb(80 80 80);
+  }
+
+  .field_container {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      left: 0.5rem;
+      top: 0.80rem;
+
+      & svg {
+        .map {
+          transition: 0.3s;
+          translate: 0 15px;
+        }
+
+        .arrow {
+          transition: 0.3s;
+        }
+      }
+    }
+
+    & input {
+      padding: 1rem 1rem 1rem 2.5rem;
+      background-color: rgb(255 255 255);
+      border: 1px solid rgb(209 213 220);
+      width: 100%;
+      border-radius: 0.5rem;
+      color: rgb(0 0 0);
+      outline: none;
+
+      &:focus + span > svg > .map {
+        translate: 0px 0px;
+      }
+      
+      &:focus + span > svg > .arrow {
+        translate: 0px 15px;
+        animation: departure 0.5s infinite alternate;
+      }
+      
+      &:focus + span > svg > .return {
+        translate: 0px -15px;
+        animation: return 0.5s infinite alternate;
+      }
+    }
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(0 0 0);
+  }
+}
+
+@keyframes departure {
+  from {
+    translate: 0 15px;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes return {
+  from {
+    translate: 0 -25px;
+  }
+  to {
+    translate: 0 0;
+  }
+}
