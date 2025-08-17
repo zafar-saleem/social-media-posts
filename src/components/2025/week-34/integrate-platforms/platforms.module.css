@@ -1,0 +1,110 @@
+.container {
+  --text-color: rgb(121 122 137);
+  --border-color: rgb(239 239 239);
+  --toggle-bar-color: rgb(87 72 224);
+  --toggle-handle-color: rgb(255 255 255);
+  --speed: 0.5s;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+  
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .description {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    .card {
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      border-radius: 0.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .card_header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .card_brand {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .controls {
+          margin-left: auto;
+
+          & > input {
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: -5px;
+              left: -49px;
+              width: calc(100% + 50px);
+              height: calc(100% + 10px);
+              background-color: rgb(214 214 214);
+              border-radius: 10rem;
+              transition: var(--speed) var(--bounce);
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              top: -3.5px;
+              left: -47px;
+              width: 20px;
+              aspect-ratio: 1;
+              background-color: var(--toggle-handle-color);
+              border-radius: 10rem;
+              transition: var(--speed) var(--bounce);
+            }
+
+            &:checked {
+              &::before {
+                background-color: var(--toggle-bar-color);
+              }
+
+              &::after {
+                left: -7.5px;
+              }
+            }
+          }
+        }
+      }
+
+      .contents {
+        padding-bottom: 1rem;
+        color: var(--text-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .card_footer {
+        text-align: right;
+
+        & a {
+          color: rgb(108 96 228);
+          font-weight: bold;
+        }
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    @media screen and (max-width: 500px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
