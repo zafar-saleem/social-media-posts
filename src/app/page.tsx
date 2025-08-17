@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { TripCard } from "@/components/2025/week-34/trip-card";
+import { AddPaymentMethod } from "@/components/2025/week-34/payment";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <TripCard />
+      <AddPaymentMethod />
     </main>
   );
 }
