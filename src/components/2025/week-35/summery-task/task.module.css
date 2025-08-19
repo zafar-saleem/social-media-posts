@@ -31,6 +31,10 @@
     border-radius: var(--element-border-radius);
   }
 
+  & .title {
+    font-weight: bold;
+  }
+
   .task_header {
     display: grid;
     grid-template-columns: 1fr 0.25fr;
@@ -132,10 +136,6 @@
           flex-direction: column;
           gap: var(--text-gap);
 
-          .meeting_name {
-            font-weight: bold;
-          }
-
           .meeting_timestamp {
             display: flex;
             gap: 0.5rem;
@@ -216,10 +216,6 @@
 
       .section_title {
         display: flex;
-
-        .title {
-          font-weight: bold;
-        }
 
         .see_action {
           margin-left: auto;
@@ -304,10 +300,6 @@
         scroll-snap-type: x mandatory;
       }
 
-      & > .title {
-        font-weight: bold;
-      }
-
       .ticket_card {
         padding: 1rem;
         border-radius: var(--element-border-radius);
@@ -334,10 +326,6 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-
-            .title {
-              font-weight: bold;
-            }
 
             .status {
               display: flex;

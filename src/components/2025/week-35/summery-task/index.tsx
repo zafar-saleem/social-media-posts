@@ -50,7 +50,7 @@ export const SummaryTask = () => {
         <div className={styles.task_meeting}>
           <section className={styles.meeting_title}>
             <span className={styles.meeting}>
-              <span className={styles.meeting_name}>Meeting with BOD</span>
+              <span className={styles.title}>Meeting with BOD</span>
               <span className={styles.meeting_timestamp}>
                 <span className={styles.timestamp_icon}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(144 159 173)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-calendar-icon lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
