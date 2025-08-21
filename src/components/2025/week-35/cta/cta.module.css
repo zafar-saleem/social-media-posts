@@ -1,0 +1,110 @@
+.button {
+  --bg-color: rgb(35 35 35);
+  --text-color: rgb(248 248 248);
+  --speed: 0.5s;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+  --email-input-width: 11rem;
+  --label-width: 5rem;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  width: 10rem;
+  transition: calc(var(--speed) - 0.2s);
+  position: relative;
+  padding-right: 0;
+  box-shadow: 0 5px 5px 0 rgb(0 0 0 / 0.3);
+
+  .button_icon {
+    transition: var(--speed) var(--bounce);
+    position: absolute;
+    translate: calc(calc(var(--label-width) + 0.25rem - 30px) * -1);
+  }
+
+  .button_label {
+    font-weight: bold;
+    opacity: 1;
+    display: block;
+    width: calc(var(--label-width));
+  }
+
+  & > div {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+      grid-area: 1 / 1;
+      transition: var(--speed) var(--bounce);
+
+      &.button_email {
+        display: none;
+        opacity: 0;
+        translate: 20px 0;
+        background-color: transparent;
+        border: none;
+        width: 7rem;
+        outline: none;
+        cursor: pointer;
+        transition: var(--speed) var(--bounce) 0.1s;
+        font-weight: bold;
+        width: var(--email-input-width);
+      }
+    }
+  }
+
+  .button_copy {
+    display: none;
+    opacity: 0;
+    background-color: rgb(74 74 74);
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: var(--speed) 0.1s;
+  }
+
+  &:hover {
+    width: calc(var(--email-input-width) + 30px + 12ch + 1rem);
+
+    .button_icon {
+      translate: calc(calc(var(--email-input-width) - 1rem - 30px) * -1);
+    }
+
+    .button_label {
+      opacity: 0;
+      display: none;
+
+      @starting-style {
+        opacity: 1;
+      }
+    }
+
+    .button_email {
+      translate: 10px 0;
+      opacity: 1;
+      display: block;
+
+      @starting-style {
+        opacity: 0;
+        translate: 20px 0;
+      }
+    }
+
+    .button_copy {
+      opacity: 1;
+      display: block;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+}
