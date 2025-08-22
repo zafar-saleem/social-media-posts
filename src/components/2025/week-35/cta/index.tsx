@@ -7,8 +7,6 @@ export const CTA = () => {
   const [isCopied, setIsCopied] = React.useState<boolean>(false);
   const emailRef = React.useRef(null);
 
-  
-
   return (
     <button className={styles.button}>
       <span className={styles.button_icon}>
