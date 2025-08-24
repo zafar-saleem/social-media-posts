@@ -193,12 +193,12 @@
 
       & > a {
         background-color: var(--icon);
-        padding: 0.25rem 0.25rem 0.05rem 0.25rem;
+        padding: 0.25rem;
         border-radius: 0.15rem;
         scale: 0;
         transition: 0.3s 0.5s var(--bounce);
 
-        &.socials_linkedin {
+        &.socials_linkedin, &.socials_insta {
           display: grid;
 
           & > * {
