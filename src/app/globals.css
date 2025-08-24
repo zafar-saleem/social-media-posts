@@ -146,6 +146,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+  background: linear-gradient(45deg, pink, lime, purple);
   font-family: 'Manrope', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
