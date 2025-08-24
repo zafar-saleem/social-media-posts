@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 @import url(./styles/buttons/button-1.css);
 @import url(./styles/buttons/button-2.css);
 @import url(./styles/buttons/button-3.css);
@@ -144,10 +146,11 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Manrope', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   inset: 0;
+  font-size: 0.75rem;
   /* width: 100vw;
   height: 100svh;
   background: url(https://images.pexels.com/photos/32843030/pexels-photo-32843030.jpeg) no-repeat;
