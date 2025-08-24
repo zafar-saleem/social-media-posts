@@ -1,0 +1,219 @@
+.button_filter {
+  --text-color: rgb(77 77 77);
+  --state-hover: rgb(240 240 240);
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--text-color);
+  transition: 0.3s;
+
+  &:hover {
+    background-color: var(--state-hover);
+  }
+}
+
+.filter_menu {
+  --border-color: rgb(232 232 232);
+  --border-radius: 0.5rem;
+  --state-hover: rgb(240 240 240);
+  --checkbox-checked-color: rgb(2 139 250);
+  --x: -1rem;
+  --y: -1rem;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.1);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: rgb(255 255 255);
+  color: var(--text-color);
+
+  height: 10px;
+  opacity: 0;
+  translate: -1rem 0;
+  transition: 0.3s;
+
+  &.filter_layer_one {
+    position-area: end center;
+
+    height: 10px;
+    opacity: 0;
+    translate: 0 -1rem;
+    transition: 0.3s;
+
+    &:popover-open {
+      opacity: 1;
+      translate: 0 0;
+      height: fit-content;
+
+      @starting-style {
+        opacity: 0;
+        translate: 0 -1rem;
+      }
+    }
+  }
+
+  &.filter_status {
+    position-area: end end;
+
+    height: 10px;
+    opacity: 0;
+    translate: -1rem 0;
+    transition: 0.3s;
+
+    &:popover-open {
+      opacity: 1;
+      translate: 0 0;
+      height: fit-content;
+
+      @starting-style {
+        opacity: 0;
+        translate: -1rem 0;
+      }
+    }
+  }
+
+  &.filter_assignee {
+    position-area: end end;
+
+    height: 10px;
+    opacity: 0;
+    translate: -1rem 0;
+    transition: 0.3s;
+
+    &:popover-open {
+      opacity: 1;
+      translate: 0 0;
+      height: fit-content;
+
+      @starting-style {
+        opacity: 0;
+        translate: -1rem 0;
+      }
+    }
+
+    & > li:nth-child(2) {
+      border-bottom: 0px solid var(--border-color);
+      border: none;
+    }
+  }
+
+  & > li {
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+    transition: 0.3s;
+
+    & > label {
+      position: relative;
+        
+        transition: 0.2s;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -2px;
+          left: -6px;
+          width: calc(100% + calc(2px * 3));
+          height: calc(100% - 2px);
+          background-color: rgb(252 254 252);
+          border: 1px solid rgb(211 212 212);
+          border-radius: 0.25rem;
+          opacity: 0;
+          transition: 0.2s;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 0px;
+          width: 8px;
+          height: 4px;
+          z-index: 1;
+          opacity: 0;
+          rotate: -45deg;
+          transition: 0.2s;
+        }
+      & > input[type="checkbox"] {
+        opacity: 0;
+      }
+    }
+
+    & > a, & > button {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      /* padding: 0.5rem 1rem; */
+      transition: 0.3s;
+      background: none;
+      border: none;
+      color: var(--text-color);
+      cursor: pointer;
+    }
+
+    &:has( > label > input[type="checkbox"]:checked) {
+      & > label {
+        opacity: 1;
+      
+        &::before {
+          background-color: var(--checkbox-checked-color);
+          border: 1px solid var(--checkbox-checked-color);
+          opacity: 1;
+        }
+        
+        &::after {
+          /* background-color: var(--checkbox-checked-color); */
+          border-left: 1.5px solid rgb(255 255 255);
+          border-bottom: 1.5px solid rgb(255 255 255);
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: var(--state-hover);
+
+      & > label {
+        opacity: 1;
+
+        &::before, &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:first-child {
+      
+      border-bottom: 1px solid var(--border-color);
+
+      & > input {
+        padding: 0.25rem 1rem;
+        background: none;
+        border: none;
+        outline: none;
+        color: var(--text-color);
+      }
+
+      & > a {
+        padding: 0;
+      }
+    }
+    
+    &:nth-child(2) {
+      border-bottom: 1px solid rgb(224 224 224);
+    }
+  }
+}
