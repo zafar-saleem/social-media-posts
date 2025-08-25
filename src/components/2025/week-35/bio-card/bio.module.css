@@ -127,11 +127,11 @@
 
           .icon > .arrow {
             rotate: 180deg;
-            transition: 0.4s;
+            transition: 0.4s var(--bounce);
           }
 
           .button:checked + .icon > .arrow {
-            rotate: -180deg;
+            rotate: 0deg;
           }
 
           &:has(> .button:checked) {
