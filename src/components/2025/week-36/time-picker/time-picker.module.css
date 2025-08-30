@@ -1,0 +1,246 @@
+.timepicker_container {
+  --base-text-color: rgb(34 34 34);
+  --secondary-text-color: rgb(112 112 112);
+  --placeholder-text-color: rgb(158 158 158);
+
+  --tooltip-bg-color: rgb(35 35 35);
+  --tooltip-text-color: rgb(255 255 255);
+
+  --border-size: 1px;
+  --border-style: solid;
+  --border-color: rgb(234 234 234);
+  --border: var(--border-size) var(--border-styles) var(--border-color);
+  --border-radius: 0.75rem;
+
+  --interacted-state-bg-color: rgb(242 242 242);
+  --selected-button-bg-color: rgb(54 174 120);
+  --speed: 0.5s;
+
+  min-width: 20rem;
+
+  & ul {
+    list-style: none;
+  }
+
+  & label, & button {
+    cursor: pointer;
+  }
+
+  .timepicker_input {
+    padding: 0.75rem 1rem;
+    border-radius: calc(var(--border-radius) - 0.25rem);
+    background-color: rgb(255 255 255);
+    border: var(--border-size) var(--border-style) var(--border-color);
+    box-shadow: 0 0.5rem 0.75rem 0 rgb(0 0 0 / 0.2);
+    color: var(--base-text-color);
+    width: 100%;
+    outline: none;
+
+    &::placeholder {
+      color: var(--placeholder-text-color);
+    }
+
+    &:focus {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:focus + .timepicker_dropdown {
+      display: block;
+      opacity: 1;
+      height: fit-content;
+      filter: blur(0px);
+
+      & + .timepicker_dropdown {
+        display: block;
+        opacity: 1;
+      }
+
+      @starting-style {
+        opacity: 0;
+        height: 0;
+        filter: blur(10px);
+      }
+    } 
+  }
+
+  &:has(> .timepicker_dropdown:hover) {
+    .timepicker_input {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  
+
+  .timepicker_dropdown {
+    width: 100%;
+    background-color: rgb(255 255 255);
+    z-index: 1;
+    position: relative;
+    display: none;
+    opacity: 0;
+    border: var(--border-size) var(--border-style) var(--border-color);
+    border-top: none;
+    box-shadow: 0 0.5rem 0.75rem 0 rgb(0 0 0 / 0.2);
+    border-radius: calc(var(--border-radius) - 0.25rem);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    transition: opacity 0.6s, height 0.2s, filter var(--speed);
+    height: 0;
+    filter: blur(10px);
+
+    &:hover {
+      display: block;
+      opacity: 1;
+      height: fit-content;
+      filter: blur(0px);
+    }
+
+    .dropdown_item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.5rem;
+      
+      .item_label {
+        display: flex;
+        gap: 1rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        transition: var(--speed);
+
+        & > input {
+          display: none;
+        }
+
+        & > span > span:last-child {
+          color: var(--secondary-text-color);
+        }
+
+        &:has(> input:checked) + .item_controls {
+          display: flex;
+          opacity: 1;
+          filter: blur(0);
+
+          @starting-style {
+            opacity: 0;
+            filter: blur(5px);
+          }
+        }
+
+        &:has(> input:checked), &:hover {
+          background-color: var(--interacted-state-bg-color);
+        }
+      }
+
+      .item_controls {
+        display: none;
+        opacity: 0;
+        filter: blur(5px);
+        margin-left: auto;
+        gap: 0.5rem;
+        transition: calc(var(--speed) - 0.2s);
+
+        & > label > input {
+          display: none;
+        }
+
+        .control {
+          --padding: 0.20rem;
+          --icon: 20px;
+          --width: calc(var(--icon) + calc(var(--padding) * 2) + calc(var(--border-size) * 2));
+          --height: calc(var(--icon) + var(--padding) + calc(var(--border-size) * 2));
+
+          border: var(--border-size) var(--border-style) var(--border-color);
+          padding: var(--padding);
+          padding-bottom: 0.00rem;
+          border-radius: 0.5rem;
+          position: relative;
+          transition: var(--speed);
+
+          &:hover {
+            background-color: var(--interacted-state-bg-color);
+          }
+
+          &:has(> input:checked) {
+            background-color: var(--selected-button-bg-color);
+            border-color: var(--selected-button-bg-color);
+
+            & svg {
+              stroke: rgb(255 255 255);
+            }
+          }
+
+          & input:hover + * + .control_tooltip {
+            opacity: 1;
+          }
+
+          .control_tooltip {
+            position: absolute;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--tooltip-bg-color);
+            color: var(--tooltip-text-color);
+            border-radius: calc(var(--border-radius) - 0.5rem);
+            box-shadow: 0 5px 8px 0 rgb(0 0 0 / 0.2);
+            opacity: 0;
+            user-select: none;
+            transition: var(--speed);
+            text-wrap: nowrap;
+            
+            &.repeat_tooltip {
+              text-align: center;
+              translate: calc(calc(var(--width) + 2rem) * -1) calc(calc(var(--height) + 0.5rem) * -1);
+            }
+
+            &.skip_tooltip {
+              translate: calc(calc(var(--width) + 4.65rem) * -1) calc(calc(var(--height) + 0.5rem) * -1);
+              text-align: center;
+            }
+
+            &::after {
+              content: "";
+              background-color: var(--tooltip-bg-color);
+              z-index: -1;
+              width: 15px;
+              aspect-ratio: 1;
+              translate: -10px 10px;
+              position: absolute;
+              rotate: 45deg;
+            }
+          }
+        }
+      }
+
+      padding-block: 0.25rem;
+
+      &:last-child {
+        border-top: var(--border-size) var(--border-style) var(--border-color);
+        padding-top: 0.5rem;
+        padding-left: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        & > button {
+          background-color: rgb(255 255 255);
+          color: var(--base-text-color);
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          
+          gap: 0.5rem;
+          border: none;
+
+          &:hover {
+            background-color: var(--interacted-state-bg-color);
+            
+          }
+        }
+
+        & > span:last-child {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
