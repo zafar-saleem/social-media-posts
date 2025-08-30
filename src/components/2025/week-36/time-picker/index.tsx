@@ -1,13 +1,7 @@
-"use client";
-
 import React from "react";
 import styles from "./time-picker.module.css";
 
 export const TimePicker = () => {
-  const [reveal, setReveal] = React.useState(false);
-  const menuRef = React.useRef(null);
-  console.log(reveal);
-
   return (
     <div className={styles.timepicker_container}>
       <input
