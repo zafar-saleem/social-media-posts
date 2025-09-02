@@ -1,0 +1,212 @@
+.card_container {
+  --normal-state-color: #000000;
+  --hover-state-color: #5d672e;
+  --card-bg-color: #fcfcfb;
+  --text-color: #7c7c7a;
+  --rounded: 1.5rem;
+  --timer: 0.3s;
+
+  width: min(300px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--rounded);
+  padding: 1.5rem;
+  background-color: var(--card-bg-color);
+  margin: auto;
+  transition: all .3s;
+
+  & > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .card_title {
+    transition: color 1s;
+    position: relative;
+    
+    .card_title_icon {
+      transition: .1s;
+      padding: 0.5rem;
+      width: 30px;
+      height: 50px;
+      margin-left: 5px;
+      display: inline-flex;
+      justify-content: center;
+      gap: 1rem;
+      align-items: center;
+      overflow: hidden;
+
+      .normal_icon {
+        transition: .2s;
+      }
+
+      .hover_icon {
+        transition: .2s;
+        margin-left: -40px;
+      }
+    }
+  }
+
+  &:hover .card_title_icon > .hover_icon {
+    margin-left: 40px;
+  }
+
+  &:hover .card_title {
+    color: var(--hover-state-color);
+  }
+
+  .card_hike_info {
+    gap: 1rem;
+
+    .info_container {
+      align-items: center;
+      gap: .5rem;
+      font-size: 0.725rem;
+    }
+  }
+
+  .text_contents {
+    text-wrap: pretty;
+    line-height: 1.4rem;
+  }
+  
+  .card_photo {
+    position: absolute;
+    border-radius: var(--rounded);
+    width: 180px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    box-shadow: 0 10px 40px 0 #8b8b8b;
+  
+    &.card_photo_one {
+      background: url(./assets/hiking-1.jpg) no-repeat;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      animation: photo_one_reverse .1s ease-in-out forwards;
+      transform-origin: top right;
+    }
+  
+    &.card_photo_two {
+      background: url(./assets/hiking-2.jpeg) no-repeat;
+      background-size: 100% 100%;
+      z-index: -2;
+      right: 0;
+      top: 0;
+      animation: photo_two_reverse .1s ease-in-out forwards;
+      transform-origin: top left;
+    }
+  
+    &.card_photo_three {
+      background: url(./assets/hiking-3.jpg) no-repeat;
+      background-size: 100% 110%;
+      z-index: -3;
+      right: 0;
+      bottom: 0;
+      animation: photo_three_reverse .1s ease-in-out forwards;
+      transform-origin: bottom left;
+    }
+  
+    &.card_photo_four {
+      background: url(./assets/hiking-4.jpg) no-repeat;
+      background-size: 100% 110%;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+      animation: photo_four_reverse .1s ease-in-out forwards;
+      transform-origin: bottom right;
+    }
+  }
+
+  &:hover .card_photo_one {
+    animation: reveal_photo_one var(--timer) ease-in-out forwards;
+  }
+
+  &:hover .card_photo_two {
+    animation: reveal_photo_two var(--timer) ease-in-out forwards;
+  }
+
+  &:hover .card_photo_three {
+    animation: reveal_photo_three var(--timer) ease-in-out forwards;
+  }
+
+  &:hover .card_photo_four {
+    animation: reveal_photo_four var(--timer) ease-in-out forwards;
+  }
+}
+
+@keyframes reveal_photo_one {
+  to {
+    rotate: 15deg;
+    translate: -30px 5px;
+  }
+}
+
+@keyframes photo_one_reverse {
+  from {
+    rotate: 15deg;
+    translate: -30px 5px;
+  }
+  to {
+    rotate: 0deg;
+    translate: 0px 0px;
+  }
+}
+
+@keyframes reveal_photo_two {
+  to {
+    rotate: -10deg;
+    translate: 30px -5px;
+  }
+}
+
+@keyframes photo_two_reverse {
+  from {
+    rotate: -10deg;
+    translate: 30px -5px;
+  }
+  to {
+    rotate: 0deg;
+    translate: 0px 0px;
+  }
+}
+
+@keyframes reveal_photo_three {
+  to {
+    rotate: 25deg;
+    translate: 30px -20px;
+  }
+}
+
+@keyframes photo_three_reverse {
+  from {
+    rotate: 25deg;
+    translate: 30px -20px;
+  }
+  to {
+    rotate: 0deg;
+    translate: 0px 0px;
+  }
+}
+
+@keyframes reveal_photo_four {
+  to {
+    rotate: -15deg;
+    translate: -30px -20px;
+  }
+}
+
+@keyframes photo_four_reverse {
+  from {
+    rotate: -15deg;
+    translate: -30px -20px;
+  }
+  to {
+    rotate: 0deg;
+    translate: 0px 0px;
+  }
+}

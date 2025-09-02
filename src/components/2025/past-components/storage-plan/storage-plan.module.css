@@ -1,0 +1,237 @@
+.storage_container {
+  --border-color: rgb(245 245 245);
+  --bg-color: rgb(255 255 255);
+  --button-bg-color: rgb(51 92 255);
+  --button-text-color: rgb(237 252 255);
+  --item-active-border-color: rgb(152 165 230);
+  --item-regular-border-color: rgb(245 245 245);
+  --popular-badge-bg: rgb(235 241 255);
+  --supporting-color: rgb(247 247 247);
+  --text-base-color: rgb(47 47 47);
+  --text-supporting-color: rgb(111 111 111);
+
+  max-width: 50rem;
+  display: flex;
+  border-radius: 1rem;
+  background-color: #ffffff;
+
+  @media (max-width: 50rem) {
+    flex-direction: column;
+  }  
+
+  .storage_plan,
+  .storage_summary {
+    padding: 1.5rem;
+
+    .storage_title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    &:not(.storage_summary) {
+      border-right: 1px solid #e0e0e0;
+    }
+  }
+
+  .storage_plan {
+    min-width: 30rem;
+
+    .storage_plan_header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      .storage_tabs_container {
+        text-align: right;
+        margin-left: auto;
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+        background-color: var(--supporting-color);
+
+        .storage_tab {
+          padding: 0.25rem 0.5rem;
+          color: rgb(162 162 162);
+          border: none;
+          background: transparent;
+          cursor: pointer;
+
+          &.storage_tab_active {
+            box-shadow: 0 2px 2px 0px #cccccc;
+            border-radius: 0.25rem;
+            background-color: var(--bg-color);
+            background: linear-gradient(to bottom, var(--bg-color), rgb(253 253 253));
+          }
+        }
+      }
+    }
+
+    .storage_plan_items {
+      .storage_plan_item {
+        padding-block: 1rem;
+        padding-inline: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        border: 1px solid var(--border-color);
+
+        &.storage_plan_selected {
+          border: 1px solid var(--button-bg-color);
+        }
+
+        & > * {
+          cursor: pointer;
+        }
+
+        .storage_input {
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10rem;
+            background-color: #ffffff;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 70%;
+          }
+
+          &:checked {
+            &::after {
+              border-radius: 10rem;
+              outline: 4px solid var(--button-bg-color);
+            }
+          }
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        .storage_item_label {
+          display: flex;
+          gap: 1rem;
+          width: 100%;
+
+          .storage_item_text {
+            position: relative;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+
+            .badge, .category_badge {
+              font-size: 0.6rem;
+              color: var(--text-supporting-color);
+              padding: 0.25rem 0.5rem;
+              border-radius: 10rem;
+              background-color: var(--supporting-color);
+            }
+
+            .category_badge {
+              background: none;
+              font-weight: normal;
+            }
+
+            .popularity_badge {
+              display: flex;
+              gap: 0.25rem;
+              align-items: center;
+              font-size: 0.6rem;
+              color: var(--button-bg-color);
+              border-radius: 10rem;
+              padding: 0.25rem 0.5rem;
+              background-color: var(--popular-badge-bg);
+            }
+          }
+
+          .storage_item_desc {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-supporting-color);
+          }
+
+          .storage_price {
+            flex-basis: 46%;
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-supporting-color);
+
+            &:not(.advance) {
+              flex-basis: 52%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .storage_summary {
+    width: 100%;
+  }
+
+  .storage_summary_desc,
+  .storage_summary_new,
+  .storage_summary_total {
+    margin-bottom: 1rem;
+    display: flex;
+    font-size: 0.9rem;
+
+    &:not(.storage_summary_new, .storage_summary_total) {
+      color: var(--text-supporting-color);
+    }
+
+    &.storage_summary_total {
+      padding-block: 1rem;
+      border-top: 1px solid var(--border-color); 
+    }
+
+    .storage_summary_period {
+      flex-basis: 50%;
+      margin-left: auto;
+      text-align: right;
+      display: block;
+    }
+  }
+
+  position: relative;
+
+  .summary_btn {
+    position: absolute;
+    bottom: 1rem;
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+
+
+    &.summary_btn_cancel {
+      right: 6rem;
+      color: var(--text-base-color);
+      background-color: var(--bg-color);
+    }
+
+    &.summary_btn_submit {
+      right: 1rem;
+      color: var(--button-text-color);
+      background-color: var(--button-bg-color);
+    }
+  } 
+}

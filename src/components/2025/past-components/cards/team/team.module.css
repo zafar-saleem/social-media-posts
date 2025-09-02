@@ -1,0 +1,246 @@
+.card_container {
+  --primary-color: #f5faee;
+  --secondary-color: #d8dbca;
+  --tertiary-color: #e4edd3;
+  --brand-dark-color: #2a2a2d;
+  --brand-light-color: #fefefe;
+  --border-color: #f7fbfa;
+  --text-size-1: 1.2rem;
+  --text-size-2: 0.9rem;
+  --text-size-3: 0.7rem;
+  --border-radius: 1.5rem;
+  --border-radius-05: 0.5rem;
+
+  position: relative;
+  width: min(450px);
+  height: min(450px);
+  color: var(--primary-color);
+  padding: 1rem;
+  background: url(./assets/photo.jpg) no-repeat;
+  background-size: cover;
+  background-position: 35% 0%;
+  box-shadow: 0 10px 10px 0 #666666;
+  border: 2px solid #ffffff;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  .flex {
+    display: flex;
+  }
+
+  .flex_col {
+    flex-direction: column;
+  }
+
+  .flex_row {
+    flex-direction: row;
+  }
+
+  .flex_gap_05 {
+    gap: 0.5rem;
+  }
+
+  .flex_gap_1 {
+    gap: 1rem;
+  }
+
+  .flex_right {
+    text-align: end;
+  }
+
+  .flex_basis {
+    flex: 1 1 100%;
+  }
+
+  .card_profile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    backdrop-filter: blur(4px);
+    max-height: 80px;
+
+    &.slide_up {
+      animation: slide_up 1s ease-in-out forwards;
+    }
+
+    &.slide_down {
+      animation: slide_down 1s ease-in-out forwards;
+    }
+
+    .card_button {
+      cursor: pointer;
+      position: absolute;
+      right: 1rem;
+      bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--border-radius-05);
+      background-color: var(--primary-color);
+      color: var(--brand-dark-color);
+      transition: min-width .5s .5s;
+      min-width: 150px;
+      min-height: 40px;
+      font-weight: bold;
+      z-index: 1;
+
+      .card_button_label {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 13px;
+
+        &.fade_out {
+          transition: opacity .3s;
+          opacity: 0;
+        }
+
+        &.fade_in {
+          transition: opacity 1s .8s;
+          opacity: 1;
+        }
+      }
+
+      .card_button_contact {
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        top: 13px;
+        display: flex;
+
+        .button_icon {
+          padding: 0.25rem;
+          border-radius: var(--border-radius-05);
+          background-color: #000000;
+          margin-left: auto;
+          margin-top: -5px;
+        }
+
+        &.fade_out {
+          transition: opacity .2s;
+          opacity: 0;
+        }
+
+        &.fade_in {
+          transition: opacity .5s 1.3s;
+          opacity: 1;
+        }
+      }
+      
+      &.scaleup_button {
+        transition: min-width 1s .3s;
+        min-width: 415px;
+      }
+    }
+
+    .card_profile_personal {
+      padding: 1rem;
+
+      .card_dp {
+        width: min(50px);
+        height: min(50px);
+        border-radius: var(--border-radius-05);
+        background: url(./assets/photo.jpg) no-repeat;
+        background-size: cover;
+        border: 1px solid #ffffff;
+      }
+  
+      .card_profile_details {
+        .title {
+          color: var(--primary-color);
+          font-size: var(--text-size-1);
+        }
+
+        .subtitle {
+          color: var(--secondary-color);
+          font-size: var(--text-size-2);
+        }
+      }
+    }
+
+    .card_info {
+      padding: 1rem;
+      font-size: var(--text-size-2);
+      border-bottom: 1px solid rgba(180, 180, 180, 0.7);
+
+      .social_icon_container {
+        padding: 0.25rem;
+        background-color: #5e5f5b;
+        border-radius: 5rem;
+        opacity: 0.8;
+
+        .icon {
+          padding-top: 2px;
+          margin-right: 5px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    } 
+  }
+
+  .drawer_container {
+    transform: scale(0);
+    transform-origin: center center;
+
+    &.show {
+      animation: show .5s linear forwards .2s;
+    }
+
+    &.hide {
+      animation: hide .8s linear forwards;
+    }
+  }
+}
+
+@keyframes slide_up {
+  0% {
+    min-height: 80px;
+  }
+  40% {
+    min-height: 340px;
+  }
+  100% {
+    min-height: 320px;
+  }
+}
+
+@keyframes slide_down {
+  0% {
+    min-height: 320px;
+  }
+  30% {
+    min-height: 340px;
+  }
+  100% {
+    min-height: 80px;
+  }
+}
+
+@keyframes hide {
+  0% {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1, 1.1);
+  }
+  100% {
+    transform: scale(1, 0);
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: scale(1, 0);
+  }
+  30% {
+    transform: scale(1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

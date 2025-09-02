@@ -1,0 +1,113 @@
+.container {
+  --bg-color: #fafafa;
+  --state-pending: #fbcb4a;
+  --state-submitted: #8aa2ff;
+  --state-success: #6fe28b;
+  --state-failed: #fb9b9d;
+  --state-expired: #bebfbe;
+  --round: 10rem;
+  --padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .button {
+    padding: var(--padding);
+    border-radius: var(--round);
+    border: none;
+    background-color: var(--bg-color);
+    
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    perspective: 800em;
+    transition: all .3s;
+    perspective-origin: center;
+    z-index: 1;
+
+    .label {
+      transition: all .1s;
+      translate: 0 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--state-pending);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: 0;
+      border-radius: var(--round);
+    }
+
+    &:hover {
+      color: #555555;
+      .label {
+        transition: all 1s;
+        translate: -0.5rem 0;
+      }
+      &::before {
+        animation: inverted_flip .5s ease-in-out forwards;
+      }
+    }
+
+    
+  }
+  
+  .pending {
+    color: var(--state-pending);
+    &::before {
+      background-color: var(--state-pending);
+    }
+  }
+
+  .submitted {
+    color: var(--state-submitted);
+    &::before {
+      background-color: var(--state-submitted);
+    }
+  }
+
+  .success {
+    color: var(--state-success);
+    &::before {
+      background-color: var(--state-success);
+    }
+  }
+
+  .failed {
+    color: var(--state-failed);
+    &::before {
+      background-color: var(--state-failed);
+    }
+  }
+
+  .expired {
+    color: var(--state-expired);
+    &::before {
+      background-color: var(--state-expired);
+    }
+  }
+}
+
+@keyframes inverted_flip {
+  from {
+    transform: rotateX(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(180deg);
+    opacity: 1;
+  }
+}
+

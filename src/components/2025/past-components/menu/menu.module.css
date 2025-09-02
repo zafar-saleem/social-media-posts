@@ -1,0 +1,43 @@
+.menu_container {
+  --bg-color: #000000;
+  --normal-state-color: #1a1a1a;
+  --hover-state-color: #414144;
+  --icon-border-color: #6d6d6d;
+  --gradient-dark-color: #ff7601;
+  --gradient-tint-color: #ffbf00;
+  --border-top-color-100: #0d0e0b;
+  --border-top-color-200: #989897;
+
+  border-radius: 10rem;
+  /* padding: 1rem; */
+  border-top: 1px solid var(--border-top-color-200);
+  background-color: var(--bg-color);
+  overflow: hidden;
+  display: flex;
+
+  .menu_icon_button {
+    border: none;
+    /* padding: 0 1rem; */
+    width: 100px;
+    cursor: pointer;
+    border-radius: 10rem;
+    transition: 0.5s;
+    background:
+      linear-gradient(
+        to right,
+        var(--gradient-dark-color),
+        var(--gradient-tint-color)
+      );
+
+    &:hover {
+      background:
+        linear-gradient(
+          to right,
+          var(--gradient-dark-color),
+          #f8cd4c
+        );
+    }
+  }
+  
+  
+}

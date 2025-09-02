@@ -1,0 +1,217 @@
+.membership_wrapper {
+  --regular-color: #fbfbfb;
+  --active-color: #f5f5f5;
+  --badge-bg-color: #fdf1df;
+  --badge-text-color: #e1a78b;
+  --primary-text-color: #545454;
+  --secondary-text-color: #a0a0a0;
+  --radio-regular-border: #f4f4f4;
+  --radio-active-color: #191919;
+  --border-color: #f0f0f0;
+  --rounded: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  height: min(40rem);
+
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .text {
+    color: var(--secondary-text-color);
+    margin-bottom: 1rem;
+  }
+
+  .membership_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    .membership_contents {
+      width: 100%;
+      display: flex;
+      padding: 1.5rem;
+      border-radius: var(--rounded);
+      background-color: var(--regular-color);
+      color: var(--secondary-text-color);
+      transition: .5s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--active-color);
+      }
+
+      .membership_label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        flex: 1 1 1rem;
+        
+        .membership_label_text {
+          font-weight: bold;
+          color: var(--primary-text-color);
+
+          .membership_badge {
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            margin-left: 0.25rem;
+            color: var(--badge-text-color);
+            background-color: var(--badge-bg-color);
+          }
+        }
+
+        .membership_label_support {
+          font-size: 0.9rem;
+        }
+      }
+
+      .membership_price {
+        margin-right: 2rem;
+        font-size: 0.9rem;
+      }
+
+      .membership_field {
+        .membership_input {
+          position: relative;
+
+          &::before {
+            transition: .5s;
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            border-radius: 100%;
+            width: 1rem;
+            height: 1rem;
+            z-index: 1;
+            border: 1px solid var(--border-color);
+            background-color: var(--radio-regular-border);
+          }
+
+          &::after {
+            transition: .5s;
+            content: "";
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            border-radius: 100%;
+            width: .75rem;
+            height: .75rem;
+            z-index: 2;
+          }
+
+          &:checked {
+            &::before {
+              border: 1px solid var(--radio-active-color);
+            }
+
+            &::after {
+              background-color: var(--radio-active-color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .membership_visuals {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--active-color);
+    text-align: center;
+    font-weight: bold;
+    padding: 5rem;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    &.silver {
+      animation: gradient_silver_show 0.8s linear forwards;
+    }
+
+    &.orange {
+      animation: gradient_orange_show 0.8s linear forwards;
+    }
+
+    .card {
+      position: absolute;
+      width: 23rem;
+      height: 13rem;
+      border-radius: 1rem;
+      z-index: 1;
+      rotate: -10deg;
+
+      &.card_orange {
+        transform: translate(-40%, 40rem);
+        background: linear-gradient(to bottom left, #b24610 10%, #d38609 90%);
+
+        &.card_show {
+          animation: card_show .8s ease-in-out forwards;
+        }
+
+        &.card_hide {
+          animation: card_hide .6s ease-in-out forwards;
+        }
+      }
+
+      &.card_silver {
+        transform: translate(-40%, 40rem);
+        background: linear-gradient(to bottom left, #91918f 10%, #9a9897 90%);
+
+        &.card_show {
+          animation: card_show .8s ease-in-out forwards;
+        }
+
+        &.card_hide {
+          animation: card_hide .6s ease-in-out forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes card_show {
+  to {
+    rotate: -10deg;
+    transform: translate(-10%, 70%);
+  }
+}
+
+@keyframes card_hide {
+  0% {
+    rotate: -10deg;
+    transform: translate(-10%, 70%);
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    transform: translate(-10%, 40rem);
+    opacity: 0;
+    rotate: 0deg;
+  }
+}
+
+@keyframes gradient_orange_show {
+  from {
+    background-image: radial-gradient(#91918f, #000000);
+  }
+  to {
+    background-image: radial-gradient(#d38609, #000000);
+  }
+}
+
+@keyframes gradient_silver_show {
+  from {
+    background-image: radial-gradient(#d38609, #000000);
+  }
+  to {
+    background-image: radial-gradient(#91918f, #000000);
+  }
+}

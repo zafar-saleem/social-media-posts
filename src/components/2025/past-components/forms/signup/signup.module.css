@@ -1,0 +1,151 @@
+.from_container {
+  --surface-color: #e8e8e8;
+  --bg-color: #fafafa;
+  --field-bg-color: #efefef;
+  --brand-color: #050505;
+  --text-color-200: #757575;
+  --text-color-300: #8f8f8f;
+  --round: 2rem;
+
+  width: min(400px);
+  padding: 0.65rem;
+  border-radius: var(--round);
+  background-color: var(--surface-color);
+
+  .flex {
+    display: flex;
+  }
+
+  .gap_1 {
+    gap: 1rem;
+  }
+
+  .gap_05 {
+    gap: 0.5rem;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  .left {
+    justify-content: start;
+  }
+
+  .right {
+    justify-content: end;
+  }
+
+  .justify_center {
+    justify-content: center;
+  }
+
+  .top {
+    align-items: top;
+  }
+
+  .align_center {
+    align-items: center;
+  }
+
+  .bottom {
+    align-items: end;
+  }
+
+  .form_wrapper {
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--bg-color);
+
+    .title {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    .subtitle {
+      display: block;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-color-200);
+    }
+
+    .form_field_label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .form_field_group {
+      position: relative;
+
+      .form_field {
+        padding-block: 0.75rem;
+        padding-inline: 2rem;
+        border-radius: 0.75rem;
+        border: none;
+        background-color: var(--field-bg-color);
+        outline: none;
+      }
+      
+      .form_field_icon {
+        position: absolute;
+        top: 2.20rem;
+        left: 0.5rem;
+      }
+    }
+
+    .separator {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin: .75rem 0;
+      align-items: center;
+      border-bottom: 2px solid #f2f2f2;
+
+      .separator_label {
+        position: absolute;
+        font-size: 0.8rem;
+        color: var(--text-color-200);
+        background-color: var(--bg-color);
+        padding-inline: 1rem;
+        text-align: center;
+        /* width: 100%; */
+        display: block;
+      }
+    }
+
+    .button_login {
+      background-color: var(--brand-color);
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .button_google_login {
+    background-color: #ffffff;
+    color: var(--brand-color);
+    border: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    border-radius: 0.75rem;
+    border: 1px solid #d3d3d3;
+    cursor: pointer;
+  }
+
+  .text_signup {
+    font-size: 0.8rem;
+    color: var(--text-color-200);
+    text-align: center;
+    padding: 1.25rem 0;
+    padding-bottom: 1rem;
+
+    .link {
+      text-decoration: underline;
+      font-weight: bold;
+      color: var(--brand-color);
+    }
+  }
+}

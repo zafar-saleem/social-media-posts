@@ -1,0 +1,77 @@
+.faq_container {
+  --gradient-light-color: rgb(174 202 253);
+  --gradient-dark-color: rgb(59 125 251);
+  --text-color: rgb(251 255 255);
+  --border-radius: 1rem;
+  --initial-rotation: 3deg;
+
+  .faq_card {
+    position: sticky;
+    bottom: 50px;
+    left: 10rem;
+    display: flex;
+    align-items: flex-end;
+    color: var(--text-color);
+    width: min(13rem);
+    height: min(15rem);
+    padding: 1rem;
+    box-shadow: 0 0 .25rem 0px #a0a0a0;
+    border-radius: var(--border-radius);
+  }
+
+  & > :nth-child(1) {
+    rotate: var(--initial-rotation);
+    background-color: var(--gradient-dark-color);
+    animation: rotate_on_scroll_initial 1s ease-in-out forwards;
+    animation-timeline: view();
+    animation-range: 30% 100%;
+  }
+
+  & > :where(:nth-child(2), :nth-child(3), :nth-child(4)) {
+    animation: rotate_on_scroll ease-in-out forwards 1s;
+    animation-timeline: view();
+  }
+
+  & > :nth-child(2) {
+    --initial-rotation: -3deg;
+    rotate: var(--initial-rotation);
+    animation-delay: .5s;
+    z-index: -1;
+    animation-range: 10% 100%;
+    background: linear-gradient(to bottom left, rgb(95 152 251) 50%, var(--gradient-dark-color));
+  }
+
+  & > :nth-child(3) {
+    --initial-rotation: -6deg;
+    rotate: var(--initial-rotation);
+    animation-delay: 1s;
+    z-index: -2;
+    background: linear-gradient(to bottom left, rgb(163, 194, 247), var(--gradient-dark-color));
+  }
+
+  & > :nth-child(4) {
+    --initial-rotation: -9deg;
+    rotate: var(--initial-rotation);
+    animation-delay: 1.3s;
+    z-index: -3;
+    background: linear-gradient(to bottom left, rgb(199, 217, 249), var(--gradient-dark-color));
+  }
+}
+
+@keyframes rotate_on_scroll_initial {
+  from {
+    rotate: var(--initial-rotation);
+  }
+  to {
+    rotate: calc(var(--initial-rotation) * -10);
+  }
+}
+
+@keyframes rotate_on_scroll {
+  from {
+    rotate: var(--initial-rotation);
+  }
+  to {
+    rotate: calc(var(--initial-rotation) * 15);
+  }
+}

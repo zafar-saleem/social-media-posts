@@ -1,0 +1,226 @@
+.account_container {
+  --bg-color: rgb(255 255 255);
+  --base-text-color: rgb(18 18 18);
+  --supporting-text-color: rgb(93 93 93);
+  --badge-bg-color-warning: rgb(255 243 236);
+  --badge-text-color-warning: rgb(246 129 61);
+  --badge-bg-color-regular: rgb(245 245 245);
+  --badge-text-color-regular: rgb(123 123 123);
+  --icon-info-bg-color: rgb(209 209 209);
+  --icon-close-bg-color: rgb(41 41 41);
+  --brand-color: rgb(53 91 255);
+  --brand-text-color: rgb(255 255 255);
+  --brand-supporting-text-color: rgb(96 95 96);
+  --border-color: rgb(235 235 235);
+  --padding: 1rem;
+  --radius: 1rem;
+
+  width: 35rem;
+  border-radius: var(--radius);
+  background-color: var(--bg-color);
+  position: relative;
+
+  .btn_close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    
+    & > img {
+      width: 15px;
+      aspect-ratio: 1;
+    }
+  }
+
+  .btn {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  .account_icon_container {
+    border-radius: 100%;
+    padding: 0.5rem;
+    padding-bottom: 0.25rem;
+    border: 1px solid var(--border-color);
+  }
+
+  .account_label_text {
+    font-weight: bold;
+    color: var(--base-text-color);
+  }
+
+  .account_desc {
+    font-size: 0.9rem;
+    color: var(--supporting-text-color);
+  }
+
+  .account_header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: var(--padding);
+    border-bottom: 1px solid var(--border-color);
+
+    .account_label_container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+
+
+  .account_content {
+    & > details {
+      .account_icon_status {
+        .light {
+          display: block;
+        }
+        .dark {
+          display: none;
+        }
+      }
+    }
+
+    & > details[open] {
+      .account_icon_status {
+        .light {
+          display: none;
+        }
+        .dark {
+          display: block;
+        }
+        background-color: #000;
+        rotate: 0deg;
+      }
+    }
+
+    .account_accordion_summary {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: var(--padding);
+      cursor: pointer;
+
+      .account_label_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+        & > div {
+          flex-basis: 70%;
+        }
+
+        .account_label_text {
+          position: relative;
+        }
+
+        .icon_info_container {
+          position: absolute;
+          right: -18px;
+          width: 15px;
+          aspect-ratio: 1;
+          font-size: 0.6rem;
+          font-weight: bolder;
+          border-radius: 100%;
+          background-color: var(--icon-info-bg-color);
+        }
+      }
+
+      .badge_container {
+        flex-basis: 60%;
+        text-align: right;
+        margin-left: auto;
+        justify-content: flex-end;
+
+        .badge {
+          border-radius: 0.25rem;
+          padding: 0.25rem 0.5rem;
+          font-size: 0.8rem;
+          
+          &.badge_warning {
+            color: var(--badge-text-color-warning);
+            background-color: var(--badge-bg-color-warning);
+          }
+
+          &.badge_regular {
+            color: var(--badge-text-color-regular);
+            background-color: var(--badge-bg-color-regular);
+          }
+        }
+      }
+
+      .account_icon_status {
+        padding: 0.25rem;
+        padding-bottom: 0.20rem;
+        border-radius: 100%;
+        border: 1px solid var(--border-color);
+        transition: 0.4s;
+      }
+    }
+
+    .account_accordion_content {
+      margin-left: calc(2rem + 15px + 1rem);
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      padding: var(--padding);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+
+      .form_group {
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+          margin-top: 1rem;
+        }
+
+        & > label {
+          flex-basis: 70%;
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          font-size: 0.9rem;
+          color: var(--supporting-text-color);
+        }
+
+        & > input:where([type="text"], [type="tel"], [type="date"], [type="email"]) {
+          border-radius: 0.25rem;
+          padding: 0.5rem 1rem;
+          width: 100%;
+          border: 1px solid var(--border-color);
+          background-color: transparent;
+          outline: none;
+          color: var(--base-text-color);
+        }
+      }
+    }
+  }
+
+
+
+
+  .account_footer {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding: var(--padding);
+    border-top: 1px solid var(--border-color);
+
+    .btn {
+      flex-grow: 1;
+      padding: 0.5rem 1rem;
+      color: var(--brand-supporting-text-color);
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-color);
+
+      &.btn_proceed {
+        border: 1px solid var(--brand-color);
+        color: var(--brand-text-color);
+        background-color: var(--brand-color);
+      }
+    }
+  }
+}
