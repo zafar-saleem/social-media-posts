@@ -1,0 +1,81 @@
+.button_switch {
+  --state-disable-bg-color: rgb(225 229 235);
+  --state-enable-bg-color: rgb(42 183 115);
+  --handle-bg-disable-color: rgb(249, 249, 249);
+  --handle-bg-enable-color: rgb(209 231 224);
+  --width: 6rem;
+  --speed: 0.4s;
+
+  background-color: var(--state-disable-bg-color);
+  padding: 0.15rem 0.75rem;
+  border-radius: 10rem;
+  width: var(--width);
+  cursor: pointer;
+  transition: var(--speed);
+  position: relative;
+
+  &:has(.switch_input:checked) {
+    background-color: var(--state-enable-bg-color);
+
+    &::after {
+      content: "ON";
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "OFF";
+    top: 2.5rem;
+    left: calc(var(--width) / 2 - 0.75rem);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .switch_input {
+    display: none;
+
+    &:checked {
+      & + .handle {
+        translate: calc(calc(var(--width) - 16px) - 1.90rem) 0;
+        rotate: 360deg;
+        background-color: var(--handle-bg-enable-color);
+
+        .off_icon {
+          opacity: 0;
+          scale: 0;
+        }
+
+        .on_icon {
+          opacity: 1;
+          scale: 1;
+        }
+      }
+    }
+  }
+
+  .handle {
+    display: grid;
+    background-color: var(--handle-bg-disable-color);
+    width: fit-content;
+    padding: 0.5rem 0.5rem;
+    padding-bottom: 0.20rem;
+    border-radius: 10rem;
+    transition: var(--speed);
+    translate: -0.60rem 0;
+
+    & > * {
+      grid-area: 1 / 1;
+      transition: var(--speed);
+      
+    }
+    .on_icon {
+      opacity: 0;
+      scale: 0;
+    }
+
+    .off_icon {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+}
