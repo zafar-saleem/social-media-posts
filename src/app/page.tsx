@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { SocialMediaCard } from "@/components/2025/week-36/social-card";
+import { TaskMind } from "@/components/2025/week-36/task-mind";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <SocialMediaCard />
+      <TaskMind />
     </main>
   );
 }
