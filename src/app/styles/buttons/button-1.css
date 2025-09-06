@@ -5,7 +5,7 @@
 
   --position-y: 0;
   --bounce: cubic-bezier(.47, 1.64, .41, .8);
-  --speed: 0.5s;
+  --speed: 0.8s;
   overflow: hidden;
 
   & > * {
@@ -14,22 +14,12 @@
   }
 
   &:hover {
-    & > span:nth-child(1) {
+    & > span:nth-child(odd) {
       --position-y: -2.5rem;
       animation: slide_text_in var(--speed) var(--bounce) forwards;
     }
 
-    & > span:nth-child(2) {
-      --position-y: 2.5rem;
-      animation: slide_text_in var(--speed) var(--bounce) forwards;
-    }
-
-    & > span:nth-child(3) {
-      --position-y: -2.5rem;
-      animation: slide_text_in var(--speed) var(--bounce) forwards;
-    }
-
-    & > span:nth-child(4) {
+    & > span:nth-child(even) {
       --position-y: 2.5rem;
       animation: slide_text_in var(--speed) var(--bounce) forwards;
     }
