@@ -4,7 +4,6 @@
 
   --padding: 1rem;
   --border-radius: 0.5rem;
-  /* --outer-radius: calc(var(--border-radius) + var(--padding)); */
   --outer-radius: 0.75rem;
 
   --nav-regular-state-bg-color: rgb(239 239 237);
@@ -22,7 +21,6 @@
   box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 0.1);
   padding: 2rem;
   border-radius: 1rem;
-  /* min-width: 30rem; */
   width: 100%;
 
   .navigation {
@@ -32,12 +30,6 @@
       gap: 1rem;
 
       .navigation_item {
-        /* &:last-child {
-          .item_container {
-            border: 1px solid rgb(202 130 143);
-          }
-        } */
-
         .item_container {
           padding: var(--nav-padding);
           cursor: pointer;
@@ -59,9 +51,6 @@
 
           & > input {
             display: none;
-          }
-
-          .item_label {
           }
         }
       }
