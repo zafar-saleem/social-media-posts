@@ -15,6 +15,9 @@
 
   --base-text-color: rgb(65 65 63);
 
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+  --speed: .3s;
+
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -65,41 +68,47 @@
 
   &:has(.navigation .field_mammals:checked) {
     .card {
-      display: none;
+      /* display: none; */
+      animation: scale_down var(--speed) ease-in-out forwards;
     }
     
     .contents .mammals {
       display: flex;
+      animation: scale_up var(--speed) ease-in-out forwards;
     }
   }
   
   &:has(.navigation .field_birds:checked) {
     .card {
-      display: none;
+      /* display: none; */
+      animation: scale_down var(--speed) ease-in-out forwards;
     }
     
     .contents .birds {
       display: flex;
+      animation: scale_up var(--speed) ease-in-out forwards;
     }
   }
   
   &:has(.navigation .field_aquatic:checked) {
     .card {
-      display: none;
+      animation: scale_down var(--speed) ease-in-out forwards;
     }
     
     .contents .aquatic {
       display: flex;
+      animation: scale_up var(--speed) ease-in-out forwards;
     }
   }
   
   &:has(.navigation .field_reptiles:checked) {
     .card {
-      display: none;
+      animation: scale_down var(--speed) ease-in-out forwards;
     }
     
     .contents .reptiles {
       display: flex;
+      animation: scale_up var(--speed) ease-in-out forwards;
     }
   }
 
@@ -116,6 +125,14 @@
       border-radius: var(--outer-radius);
       box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 0.1);
 
+      scale: 1;
+      transition: all 0.5s;
+      animation: scale_up var(--speed) ease-in-out alternate;
+
+      @starting-style {
+        scale: 1;
+      }
+
       .card_media {
         width: 100%;
         aspect-ratio: 2;
@@ -127,5 +144,43 @@
         font-size: 3rem;
       }
     }
+  }
+}
+
+@keyframes scale_up {
+  0% {
+    scale: 0;
+    filter: blur(2px);
+  }
+  80% {
+    scale: 1.1;
+  }
+  85% {
+    scale: 0.9;
+  }
+  90% {
+    scale: 1.05;
+    filter: blur(2px);
+  }
+  95% {
+    scale: 0.95;
+  }
+  100% {
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes scale_down {
+  0% {
+    scale: 1;
+  }
+  95% {
+    scale: 0;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    scale: 0;
   }
 }
