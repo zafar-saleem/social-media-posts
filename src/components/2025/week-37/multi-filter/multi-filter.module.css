@@ -1,0 +1,142 @@
+.container {
+  --surface-bg-color: rgb(234 234 232);
+  --media-bg-color: rgb(225 225 223);
+
+  --padding: 1rem;
+  --border-radius: 0.5rem;
+  /* --outer-radius: calc(var(--border-radius) + var(--padding)); */
+  --outer-radius: 0.75rem;
+
+  --nav-regular-state-bg-color: rgb(239 239 237);
+  --nav-regular-state-text-color: rgb(16 16 13);
+  --nav-active-state-bg-color: rgb(21 21 21);
+  --nav-active-state-text-bg-color: rgb(224 224 224);
+  --nav-border-radius: 10rem;
+  --nav-padding: 0.5rem 1rem;
+
+  --base-text-color: rgb(65 65 63);
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  /* min-width: 30rem; */
+  width: 100%;
+
+  .navigation {
+    .navigation_list {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+
+      .navigation_item {
+        /* &:last-child {
+          .item_container {
+            border: 1px solid rgb(202 130 143);
+          }
+        } */
+
+        .item_container {
+          padding: var(--nav-padding);
+          cursor: pointer;
+          background-color: var(--nav-regular-state-bg-color);
+          border-radius: var(--nav-border-radius);
+          color: var(--nav-regular-state-text-color);
+
+          &:has(> input:checked) {
+            background-color: var(--nav-active-state-bg-color);
+            color: var(--nav-active-state-text-bg-color);
+          }
+
+          & > button {
+            background-color: transparent;
+            border: none;
+            color: rgb(169 37 44);
+            cursor: pointer;
+          }
+
+          & > input {
+            display: none;
+          }
+
+          .item_label {
+          }
+        }
+      }
+    }
+  }
+
+  &:has(.navigation .field_all:checked) {
+    .contents .card {
+      display: flex;
+    }
+  }
+
+  &:has(.navigation .field_mammals:checked) {
+    .card {
+      display: none;
+    }
+    
+    .contents .mammals {
+      display: flex;
+    }
+  }
+  
+  &:has(.navigation .field_birds:checked) {
+    .card {
+      display: none;
+    }
+    
+    .contents .birds {
+      display: flex;
+    }
+  }
+  
+  &:has(.navigation .field_aquatic:checked) {
+    .card {
+      display: none;
+    }
+    
+    .contents .aquatic {
+      display: flex;
+    }
+  }
+  
+  &:has(.navigation .field_reptiles:checked) {
+    .card {
+      display: none;
+    }
+    
+    .contents .reptiles {
+      display: flex;
+    }
+  }
+
+  .contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: var(--outer-radius);
+      box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 0.1);
+
+      .card_media {
+        width: 100%;
+        aspect-ratio: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--border-radius);
+        background-color: var(--surface-bg-color);
+        font-size: 3rem;
+      }
+    }
+  }
+}
