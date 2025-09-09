@@ -19,8 +19,8 @@ export const Permissions = () => {
             alt=""
           />
           <figcaption className={styles.controls}>
-            <button className={styles.btn_play}>
-              <span className={styles.label}>Watch tutorial</span>
+            <button className={`button_one  ${styles.btn_play}`}>
+              <span className={`${styles.label}`}>Watch tutorial</span>
               <span className={styles.icon}>
                 <svg
                   width="12"
@@ -43,7 +43,7 @@ export const Permissions = () => {
       </main>
       <div className={styles.divider} />
       <footer className={styles.footer}>
-        <button className={styles.btn_cancel}>Cancel</button>
+        <button className={`button_one ${styles.btn_cancel}`}><span>Cancel</span></button>
         <button className={`button_one ${styles.btn_on}`}>
           <span>Turn</span> <span>device</span> <span>camera</span> <span>on</span>
         </button>
