@@ -23,12 +23,12 @@ export const Permissions = () => {
               <span className={styles.label}>Watch tutorial</span>
               <span className={styles.icon}>
                 <svg
-                  width="20"
-                  height="20"
+                  width="12"
+                  height="16"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="rgb(255 255 255)"
-                  strokeWidth="1"
+                  strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className="lucide lucide-youtube-icon lucide-youtube"
