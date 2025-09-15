@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { Disclosure } from "@/components/2025/week-38/disclosure";
+import { Menu } from "@/components/2025/week-38/menu";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <Disclosure />
+      <Menu />
     </main>
   );
 }
