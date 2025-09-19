@@ -1,0 +1,75 @@
+.button {
+  --bg-color: rgb(24 24 24);
+  --surface-color: rgb(53 53 53);
+  --text-color: rgb(254 254 254);
+  --icon-bg-color: rgb(45 45 45);
+
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  width: min(13rem);
+  position: relative;
+  cursor: pointer;
+
+  .button_icon {
+    font-size: 1rem;
+  }
+
+  .button_icon_grid {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+      grid-area: stack;
+    }
+
+    .button_hovered_label {
+      opacity: 0;
+      transition: 0.3s;
+      position: absolute;
+      left: 0.75rem;
+      background-color: var(--surface-color);
+      padding: 1rem;
+      border-radius: 10rem;
+      
+    }
+
+    .icon {
+      translate: -1.85rem 0;
+      background-color: var(--icon-bg-color);
+      padding: 1rem;
+      border-radius: 10rem;
+      transition: 0.3s;
+    }
+  }
+
+  .button_regular_label {
+    left: -1.25rem;
+    position: relative;
+    transition: 0.3s;
+  }
+
+  &:hover {
+    .icon {
+      translate: 7rem 0;
+      rotate: 180deg;
+    }
+
+    .button_hovered_label {
+      width: calc(13rem - 2rem + 0.75rem);
+      opacity: 1;
+    }
+
+    .button_regular_label {
+      left: -2rem;
+      opacity: 0;
+    }
+  }
+}
