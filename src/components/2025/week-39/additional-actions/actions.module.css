@@ -1,0 +1,85 @@
+.container {
+  --bg-color: rgb(254 254 254);
+  --text-color: rgb(105 105 105);
+  --fire-regular-color: rgb(0 0 0);
+  --fire-hovered-color: rgb(247 64 97);
+
+  --icon-bg-color: rgb(247 247 247);
+  --icon-color: rgb(105 105 105);
+
+  --badge-color: rgb(235 250 210);
+  --badge-text-color: rgb(73 119 2);
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+  background-color: var(--bg-color);
+  padding: 0.5rem;
+  box-shadow: 0 0 6px 5px rgb(0 0 0 / 0.2);
+  border-radius: 20rem;
+  corner-shape: squircle;
+  overflow: hidden;
+  font-weight: 600;
+
+  .container_icon {
+    color: var(--icon-color);
+    padding: 0.5rem;
+    border-right: 1px solid rgb(239 239 239);
+
+    & svg {
+      transition: 0.5s;
+    }
+  }
+
+  .icons_list {
+    display: flex;
+    gap: 0.5rem;
+
+    & > * {
+      padding: 0.35rem 0.5rem;
+      background-color: var(--icon-bg-color);
+      cursor: pointer;
+      border: none;
+      color: var(--icon-color);
+      translate: 0 3rem;
+      transition: 0.6s var(--bounce);
+
+      & svg {
+        transition: 0.5s;
+      }
+
+      &:hover {
+        & svg {
+          stroke: var(--fire-hovered-color);
+        }
+      }
+
+      &:nth-of-type(odd) {
+        transition-delay: 0.1s;
+      }
+    }
+  }
+
+  .badge {
+    padding: 0.5rem;
+    background-color: var(--badge-color);
+    border-radius: 10rem;
+    corner-shape: squircle;
+    margin-left: auto;
+  }
+
+  &:hover {
+    .container_icon {
+      & svg {
+        stroke: var(--fire-hovered-color);
+      }
+    }
+    .icons_list {
+      & > * {
+        translate: 0 0;
+      }
+    }
+  }
+}
