@@ -14,12 +14,12 @@
   }
 
   &:hover {
-    & > span:nth-child(odd) {
+    & > *:nth-child(odd) {
       --position-y: -2.5rem;
       animation: slide_text_in var(--speed) var(--bounce) forwards;
     }
 
-    & > span:nth-child(even) {
+    & > *:nth-child(even) {
       --position-y: 2.5rem;
       animation: slide_text_in var(--speed) var(--bounce) forwards;
     }

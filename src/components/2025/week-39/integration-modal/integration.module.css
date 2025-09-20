@@ -1,0 +1,140 @@
+.container {
+  border-radius: 1rem;
+  background-color: rgb(255 255 255);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 0 10px 0px rgb(0 0 0 / 0.2);
+
+  & button {
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    background: none;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+
+  .title {
+    padding-inline: 2rem;
+  }
+
+  .desc {
+    padding-inline: 2rem;
+    color: rgb(127 126 134);
+    width: 75%;
+    text-align: center;
+  }
+
+  .copy_section {
+    background-color: rgb(255 255 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 100%;
+    padding-inline: 2rem;
+
+    & > * {
+      border-radius: 0.5rem;
+    }
+    
+    & input {
+      background-color: rgb(255 255 255);
+      border: 1px solid rgb(231 231 231);
+      padding: 0.5rem 1rem;
+      flex-basis: 100%;
+      color: rgb(34 34 34);
+    }
+
+    & button {
+      background-color: rgb(255 255 255);
+      color: rgb(29 29 29);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: 1px solid rgb(234 234 234);
+    }
+  }
+
+  .features {
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(240 240 240);
+    border-top: 1px solid rgb(240 240 240);
+    width: 100%;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+
+    .list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      
+      .list_item {
+        display: flex;
+        gap: 0.5rem;
+
+        .icon {
+          background-color: blue;
+          border-radius: 50%;
+          padding: 0.10rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &:first-child {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    .section_label {
+      font-weight: bold;
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding-inline: 2rem;
+    padding-bottom: 1rem;
+
+    & * {
+      border-radius: 0.5rem;
+    }
+
+    .buttons {
+      margin-left: auto;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .button_demo {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button_demo, .button_cancel {
+      border: 1px solid rgb(234 234 234);
+      color: rgb(34 34 34);
+    }
+
+    .button_allow {
+      background-color: rgb(0 0 0);
+    }
+  }
+}
