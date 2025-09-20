@@ -1,0 +1,60 @@
+.container {
+  --bg-color: rgb(215 211 210);
+  --label-bg-color: rgb(254 254 254);
+  --text-color: rgb(17 17 17);
+  --support-text-color: rgb(115 110 109);
+  --border-radius: 0.65rem;
+  --padding: 0.20rem;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  background-color: var(--bg-color);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  width: 6.90rem;
+  transition: 0.5s var(--bounce);
+  box-shadow: 0 0px 5px 0 rgb(0 0 0 / 0.2);
+
+  &.open {
+    width: fit-content;
+  }
+
+  & button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--support-text-color);
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    transition: 0.5s;
+
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+
+  .nav_list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .nav_list_item:first-child {
+      background-color: var(--label-bg-color);
+      border-radius: calc(var(--border-radius) - var(--padding));
+      
+      & button {
+        color: var(--text-color);
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        background: var(--label-bg-color);
+        border-radius: calc(var(--border-radius) - var(--padding));
+        transition: 0.5s;
+      }
+    }
+  }
+}
