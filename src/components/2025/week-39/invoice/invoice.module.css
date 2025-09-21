@@ -1,0 +1,440 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  width: 100%;
+  height: 100svh;
+
+  .invoice_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: rgb(41 41 56);
+      padding: 0.5rem;
+    }
+
+    & input[type="checkbox"] {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: -1px;
+          left: -1px;
+          width: 101%;
+          height: 101%;
+          background-color: rgb(255 255 255);
+          border-radius: 0.25rem;
+          border: 1px solid rgb(210 211 212);
+          z-index: 1;
+        }
+
+        &::after {
+          content: "✓";
+          position: absolute;
+          top: -1.5px;
+          left: 1.5px;
+          /* font-size: 1rem; */
+          z-index: 2;
+          display: none;
+        }
+
+        &:checked {
+          &::before {
+            background-color: rgb(0 113 255);
+            border-color: rgb(0 113 255);
+          }
+
+          &::after {
+            display: block;
+            color: white;
+          }
+        }
+      }
+
+    & input, & select {
+      padding: 0.5rem;
+      color: rgb(33 34 44);
+      background-color: rgb(255 255 255);
+      border: 1px solid rgb(234 234 236);
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+
+    & select {
+      appearance: base-select;
+
+      &::picker(select) {
+        appearance: base-select;
+      }
+
+      &::picker-icon {
+        color: transparent;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgb(141 146 153)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>') no-repeat;
+        padding-right: 0.25rem;
+        margin-top: 0.25rem;
+      }
+
+      &:open {
+        &::picker(select) {
+          background-color: rgb(255 255 255);
+          border: 1px solid rgb(238 238 240);
+          border-radius: 0.5rem;
+          box-shadow: 0 0 10px 0 rgb(0 0 0 / 0.2);
+          color: rgb(67 68 82);
+          padding: 0.25rem;
+        }
+      }
+
+      & optgroup {
+        padding: 0.5rem;
+
+        &:has(> option:checked) {
+          background-color: rgb(247 249 250);
+        }
+      }
+
+      & option, & optgroup {
+        border-radius: 0.25rem;
+        transition: 0.5s;
+        cursor: pointer;
+        
+        &:not(:last-child) {
+          margin-bottom: 0.25rem;
+        }
+
+        &::checkmark {
+          display: none;
+        } 
+
+        &:checked {
+          background-color: rgb(247 249 250);
+        }
+
+        &:hover {
+          background-color: rgb(247 249 250);
+        }
+      }
+    }
+
+    .form_block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      & label {
+        color: rgb(59 60 68);
+        font-weight: bold;
+      }
+
+      
+
+      .people_wrapper {
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(244 244 244);
+        padding-inline: 0.5rem;
+        border-radius: 0.5rem;
+
+        .consumer {
+          display: flex;
+          flex-direction: column;
+          flex-basis: 100%;
+
+          .consumer_email {
+            color: rgb(189 190 196);
+          }
+        }
+
+        .badge {
+          flex-basis: 30%;
+          background-color: rgb(236 243 255);
+          color: rgb(81 144 239);
+          text-align: center;
+          padding: 0.10rem;
+          border-radius: 10rem;
+          font-weight: bold;
+        }
+
+        .button_edit {
+          background: none;
+          border:  none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .product {
+      border-bottom: 1px solid rgb(241 241 243);
+
+      .button_new {
+        color: rgb(9 115 240);
+        font-weight: bold;
+        margin-block: 0.5rem;
+        padding-inline: 0;
+      }
+
+      & table {
+        width: 100%;
+        & thead {
+          margin-bottom: 1rem;
+        }
+
+        & th {
+          text-align: left;
+          margin-bottom: 0.5rem;
+        }
+
+        & tbody {
+          & td {
+            .item {
+              & img {
+                object-fit: cover;
+              }
+
+              display: flex;
+              gap: 0.5rem;
+              align-items: center;
+
+              .item_details {
+                display: flex;
+                flex-direction: column;
+
+                & > *:first-child {
+                  font-weight: bold;
+                }
+
+                & > *:last-child {
+                  color: rgb(155 156 163);
+                }
+              }
+            }
+
+            & input[type="number"] {
+              width: 4rem;
+            }
+          }
+        }
+      }
+    }
+
+    .discounts {
+      border-bottom: 1px solid rgb(241 241 243);
+      padding-bottom: 1rem;
+
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      &:has(.check_discount:checked) select {
+        opacity: 1;
+      }
+
+      & label {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      & > * {
+        display: flex;
+        gap:0. 5rem;
+
+        & select {
+          margin-left: auto;
+          opacity: 0;
+        }
+      }
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      & ul {
+        list-style: none;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        & label {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+        }
+      }
+    }
+
+    .controls {
+      margin-left: auto;
+      display: flex;
+      gap: 1rem;
+
+      .button_cancel {
+        color: rgb(0 0 0);
+        position: relative;
+        padding:0;
+        
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 2px;
+          left: 0;
+          width: 100%;
+          height: 1.5px;
+          background-color: rgb(0 0 0);
+        }
+      }
+
+      .button_send {
+        background-color: rgb(0 0 0);
+        color: rgb(255 255 255);
+        border-radius: 10rem;
+        padding: 0.25rem 1rem;
+      }
+    }
+  }
+
+  .invoice_preview {
+    padding: 1rem 2rem;
+    background-color: rgb(247 249 250);
+    border-radius: 1rem;
+    position: relative;
+
+    &::before {
+      content: ">";
+      position: absolute;
+      top: calc(0.5rem * 2);
+      left: calc(0.5rem * -2);
+      padding: 0.45rem 0.85rem;
+      border-radius: 50%;
+      z-index: 1;
+      font-size: 1rem;
+      background-color: rgb(255 255 255);
+      border: 1px solid rgb(245 246 246);
+    }
+
+    & h1 {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgb(231 233 234);
+    }
+
+    .block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 5px 0 rgb(0 0 0 / 0.2);
+      background-color: rgb(255 255 255);
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        font-weight: bold;
+
+        &.header {
+          font-weight: bold;
+          padding-bottom: 0.5rem;
+          border-bottom: 1px solid rgb(231 231 234);
+          grid-column: span 2;
+        }
+
+        .label {
+          color: rgb(174 176 178);
+        }
+      }
+
+      .table_container {
+        grid-column: span 2;
+        width: 100%;
+
+        & thead {
+          text-align: left;
+          width: 100%;
+          background-color: rgb(247 249 250);
+
+          & tr {
+            width: 100%;
+
+            & > * {
+              padding: 0.25rem 0.5rem;
+            }
+
+            & th:nth-of-type(1) {
+              width: 50%;
+            }
+            
+            & th:nth-of-type(2) {
+              width: 10%;
+              text-align: center;
+            }
+            
+            & th:nth-of-type(3) {
+              width: 20%;
+              text-align: center;
+            }
+            
+            & th:nth-of-type(4) {
+              width: 10%;
+              text-align: center;
+            }
+          }
+        }
+
+        & tbody {
+          & tr {
+            & td {
+              padding-block: 1rem;
+              border-bottom: 1px solid rgb(217 218 224);
+
+              &:not(:first-child) {
+                text-align: center;
+              }
+
+              .item {
+                display: flex;
+                gap: 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      .total_container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        grid-column: span 2;
+
+        & > * {
+          margin-left: auto;
+
+          .label {
+            font-weight: bold;
+            margin-right: 1rem;
+            width: 5rem;
+          }
+
+          .value {
+            width: 3rem;
+            text-align: right;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         port: '',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.stockcake.com',
+        port: '',
+        search: '',
+      },
     ],
   },
 
