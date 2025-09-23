@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { Invoice } from "@/components/2025/week-39/invoice";
+import { TaskTrackerCard } from "@/components/2025/week-40/task-tracker";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <Invoice />
+      <TaskTrackerCard />
     </main>
   );
 }
