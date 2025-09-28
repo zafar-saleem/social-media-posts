@@ -1,0 +1,124 @@
+.container {
+  --border-color: rgb(235 235 235);
+  --border-radius: 0.75rem;
+  --base-text-color: rgb(68 68 68);
+  --support-text-color: rgb(137 137 137);
+
+  --goal-met: rgb(76 197 103);
+  --above-average: rgb(255 182 57);
+  --bar-bg-color: rgb(243 245 246);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 25rem;
+  max-width: 30rem;
+
+  & h1 {
+    align-self: center;
+    text-align: center;
+    width: 15rem;
+  }
+
+  .contents {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    transition: 0.4s;
+
+    &:hover {
+      box-shadow: 0 5px 5px 0px rgb(0 0 0 / 0.2);
+    }
+
+    .days_container {
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+
+      & > * {
+        flex-basis: 100%;
+        text-align: center;
+      }
+
+      & > .day {
+        border-radius: 50%;
+        font-weight: bold;
+        background-color: rgb(255 255 255);
+        position: relative;
+        z-index: 2;
+        transition: 0.4s;
+
+        & > svg {
+          position: absolute;
+          left: 22%;
+          bottom: -15px;
+          z-index: 3;
+        }
+
+        & > span {
+          position: relative;
+          z-index: 2;
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: 1rem;
+          border-radius: 50%;
+          background-color: rgb(255 255 255);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -10%;
+          left: -10%;
+          background-color: var(--bar-bg-color);
+          width: 120%;
+          height: 120%;
+          z-index: -1;
+          border-radius: 50%;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -10%;
+          left: -10%;
+          background-image: conic-gradient(from 0deg, var(--color) var(--goal), var(--bar-bg-color) 0%);
+          width: 120%;
+          height: 120%;
+          z-index: 1;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .meta_info {
+      display: flex;
+      gap: 1rem;
+      padding-top: 1rem;
+
+      .week_highlight {
+        display: flex;
+        gap: 0.25rem;
+        flex-basis: 100%;
+        align-items: center;
+
+        & > div {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          justify-content: center;
+
+          .label {
+            color: var(--support-text-color);
+          }
+
+          .value {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
