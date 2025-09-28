@@ -1,0 +1,191 @@
+.container {
+  --surface-color: rgb(246 246 246);
+  --bg-color: rgb(255 255 255);
+  --border-color: rgb(244 244 244);
+  --text-color: rgb(39 39 39);
+  --support-text-color: rgb(153 153 153);
+  --button-border-color: rgb(232 232 232);
+
+  padding: 0.20rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 30rem;
+  background-color: var(--surface-color);
+
+  & button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      .title {
+        font-weight: bold;
+      }
+
+      .timestamp {
+        color: var(--support-text-color);
+        font-size: 0.8rem;
+      }
+    }
+
+    & button {
+      margin-left: auto;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 2px 0 rgb(0 0 0 / 0.2);
+      font-weight: bold;
+      background-color: var(--bg-color);
+    }
+  }
+
+  & ul {
+    list-style: none;
+  }
+
+  .contents {
+    .list {
+      background-color: var(--bg-color);
+      border-radius: 0.60rem;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      box-shadow: 0 0 3px 1px rgb(0 0 0 / 0.2);
+      transition: 0.3s;
+
+      &:hover {
+        box-shadow: 0 0 0px 1px rgb(0 0 0 / 0);
+      }
+
+      .list_item {
+        & > div {
+          display: flex;  
+          gap: 0.5rem;
+          border: 1px solid var(--border-color);
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          
+          &:first-child {
+            padding-bottom: 1rem;
+          }
+        }
+
+        .additional_actions {
+          background-color: var(--surface-color);
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          translate: 0 -5px;
+          font-size: 0.7rem;
+          display: flex;
+          align-items: center;
+          color: rgb(58 58 58);
+          font-weight: bold;
+
+          .actions {
+            margin-left: auto;
+            display: flex;
+            gap: 0.25rem;
+
+            & button {
+              font-size: 0.7rem;
+              border-radius: 10rem;
+              border: 1px solid var(--button-border-color);
+              padding: 0.25rem 0.5rem;
+            }
+          }
+        }
+
+        .calender {
+          border: 1px solid var(--border-color);
+          align-self: center;
+          padding: 0.25rem 0.75rem;
+          border-radius: 0.5rem;
+          box-shadow: 0 3px 2px 0 rgb(0 0 0 / 0.2);
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          align-items: center;
+          font-size: 0.7rem;
+          font-weight: bold;
+          color: orange;
+
+          &.method_stripe {
+            color: rgb(2, 203, 2);
+          }
+        }
+
+        .bill_details {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          justify-content: center;
+
+          & > .text {
+            font-weight: bold;
+          }
+
+          .payments {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.6rem;
+
+            .badge {
+              padding: 0.25rem 0.5rem;
+              background-color: var(--surface-color);
+              border-radius: 10rem;
+              color: rgb(124 124 124);
+              font-weight: bold;
+            }
+
+            .timestamp {
+              display: flex;
+              gap: 0.25rem;
+              align-items: center;
+              color: var(--support-text-color);
+            }
+          }
+        }
+
+        .recurring {
+          margin-left: auto;
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          justify-content: center;
+
+          & > div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            text-align: center;
+            font-size: 0.8rem;
+
+            .label {
+              color: var(--support-text-color);
+            }
+
+            .amount {
+              font-weight: bold;
+            }
+          }
+        }
+
+
+        
+      }
+    }
+  }
+}
