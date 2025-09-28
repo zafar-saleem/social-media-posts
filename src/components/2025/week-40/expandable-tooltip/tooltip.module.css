@@ -1,0 +1,121 @@
+.container {
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  display: flex;
+  flex-direction: column;
+
+  & > button {
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    color: rgb(0 0 0 / 0.8);
+    background-color: rgb(255 255 255);
+    border-bottom: 1px solid rgb(0 0 0 / 0.2);
+    transition: 0.3s;
+
+    & > svg {
+      transition: 0.2s;
+    }
+
+    &:hover {
+      background-color: rgb(0 0 0 / 0.1);
+
+      & > svg {
+        rotate: 90deg;
+      }
+    }
+
+    &:first-child {
+      anchor-name: --tooltip-analytics;
+      
+      &:hover + .tooltip {
+        display: flex;
+        position-anchor: --tooltip-analytics;
+        position-area: right center;
+
+        height: 8rem;
+        width: 15rem;
+
+        @starting-style {
+          height: 3rem;
+          width: 5.25rem;
+        }
+        
+        & > p {
+          opacity: 1;
+          display: flex;
+
+          @starting-style {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    &:last-of-type {
+      anchor-name: --tooltip-partner;
+
+      &:hover + .tooltip {
+        display: flex;
+        position-anchor: --tooltip-partner;
+        position-area: right center;
+        height: 8rem;
+        width: 15rem;
+
+        @starting-style {
+          height: 3rem;
+          width: 8.65rem;
+        }
+        
+        & > p {
+          opacity: 1;
+          display: flex;
+
+          @starting-style {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: rgb(0 0 0);
+    color: rgb(255 255 255);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: 0.4s var(--bounce);
+    height: 3rem;
+    width: 8.65rem;
+    transition-delay: 0.3s;
+    overflow: hidden;
+    box-shadow: 0 0 5px 5px rgb(0 0 0 / 0.2);
+
+    &.tooltip_analytics {
+      width: 2rem;
+    }
+
+    .tooltip_title {
+      font-weight: bold;
+    }
+
+    & > p {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      opacity: 0;
+      transition: 0.4s;
+      transition-delay: 0.5s;
+      /* height: 5rem; */
+
+      & > a {
+        text-decoration: underline;
+        font-weight: bold;
+      }
+    }
+  }
+}
