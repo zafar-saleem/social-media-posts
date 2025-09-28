@@ -147,11 +147,11 @@ body {
   color: var(--foreground);
   background: var(--background);
   /* background-color: rgb(149, 149, 149); */
-  font-family: 'Manrope', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   inset: 0;
-  font-size: 0.75rem;
+  font-size: 0.90rem;
   /* width: 100vw;
   height: 100svh;
   background: url(https://images.pexels.com/photos/32843030/pexels-photo-32843030.jpeg) no-repeat;
