@@ -1,0 +1,171 @@
+.container {
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  position: relative;
+
+  .contents {
+    display: none;
+    position: absolute;
+    left: 15rem;
+    opacity: 0;
+    transition: 0.3s var(--bounce);
+    translate: 3rem 0;
+    width: 25%;
+    aspect-ratio: 1;
+    padding: 0.5rem;
+    background-color: rgb(0 0 0 / 0.1);
+    border-radius: 1rem;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.75rem;
+    }
+  }
+
+  &:has(.marketing:checked) {
+    .marketing_contents {
+      display: block;
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 3rem 0;
+      }
+    }
+  }
+  
+  &:has(.product:checked) {
+    .product_contents {
+      display: block;
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 3rem 0;
+      }
+    }
+  }
+  
+  &:has(.sales:checked) {
+    .sales_contents {
+      display: block;
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 3rem 0;
+      }
+    }
+  }
+  
+  &:has(.customer:checked) {
+    .customer_contents {
+      display: block;
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 3rem 0;
+      }
+    }
+  }
+  
+  &:has(.engineering:checked) {
+    .engineering_contents {
+      display: block;
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 3rem 0;
+      }
+    }
+  }
+  
+  &:has(.management:checked) {
+    .management_contents {
+      display: block;
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 3rem 0;
+      }
+    }
+  }
+
+  & ul {
+    list-style: none;
+  }
+
+  .nav_list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .list_item {
+      & label {
+        border: none;
+        background: rgb(255 255 255);
+        padding: 0.5rem 0.75rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: rgb(119 119 120);
+        cursor: pointer;
+
+        & input {
+          display: none;
+        }
+
+        & span {
+          transition: 0.3s var(--bounce);
+          font-weight: bold;
+        }
+
+        & svg {
+          scale: 0;
+          display: none;
+          opacity: 0;
+          transition: 0.3s var(--bounce);
+          transition-delay: 0.2s;
+        }
+
+        &:hover, &:has(> input:checked) {
+          color: rgb(0 0 0);
+          
+          & span {
+            translate: 0.25rem 0;
+          }
+
+          & svg {
+            scale: 1;
+            opacity: 1;
+            display: block;
+            stroke: rgb(0 0 0);
+
+            @starting-style {
+              opacity: 0;
+              scale: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .list_item:not(:last-child) {
+      border-bottom: 1px solid rgb(0 0 0 / 0.1);
+    }
+  }
+}
