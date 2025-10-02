@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { Services } from "@/components/2025/week-40/services";
+import { Assigned } from "@/components/2025/week-41/assignment";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <Services />
+      <Assigned />
     </main>
   );
 }

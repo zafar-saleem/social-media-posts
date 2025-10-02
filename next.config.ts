@@ -27,6 +27,12 @@ const nextConfig: NextConfig = {
         port: '',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'avataaars.io/**',
+        port: '',
+        search: '',
+      },
     ],
   },
 
