@@ -1,12 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { WeeklyFitnessTracker } from "@/components/2025/week-41/FitnessTracker";
-import { Assigned } from "@/components/2025/week-41/assignment";
+import { Filter } from "@/components/2025/week-41/filter";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <Assigned />
+      <Filter />
     </main>
   );
 }
