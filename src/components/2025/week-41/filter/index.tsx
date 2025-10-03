@@ -5,6 +5,7 @@ import styles from "./filter.module.css";
 
 export const Filter = () => {
   const [appliedFilters, setAppliedFilters] = React.useState<number>(1);
+  const [numberOfToilets, setToilets] = React.useState(0);
 
   return (
     <form className={styles.container}>
@@ -75,20 +76,38 @@ export const Filter = () => {
       </section>
 
       <section className={`${styles.filter_inners} ${styles.form_block}`}>
-        <span className={styles.label}>Toilets</span>
+        <section>
+          <span className={styles.label}>Toilets</span> <span>({numberOfToilets} selected)</span>
+        </section>
         <div>
           <label className={`${styles.input_label}`}>
             <span className={styles.text}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(37 37 37)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-toilet-icon lucide-toilet"><path d="M7 12h13a1 1 0 0 1 1 1 5 5 0 0 1-5 5h-.598a.5.5 0 0 0-.424.765l1.544 2.47a.5.5 0 0 1-.424.765H5.402a.5.5 0 0 1-.424-.765L7 18"/><path d="M8 18a5 5 0 0 1-5-5V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8"/></svg>
             </span>
-            <input type="radio" className={`${styles.form_field}`} name="toilets" onChange={() => setAppliedFilters(2)} />
+            <input
+              type="radio"
+              className={`${styles.form_field}`}
+              name="toilets"
+              onChange={() => {
+                setAppliedFilters(2);
+                setToilets(1);
+              }}
+            />
           </label>
           <label className={`${styles.input_label}`}>
             <span className={styles.text}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(37 37 37)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-toilet-icon lucide-toilet"><path d="M7 12h13a1 1 0 0 1 1 1 5 5 0 0 1-5 5h-.598a.5.5 0 0 0-.424.765l1.544 2.47a.5.5 0 0 1-.424.765H5.402a.5.5 0 0 1-.424-.765L7 18"/><path d="M8 18a5 5 0 0 1-5-5V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8"/></svg>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(37 37 37)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-toilet-icon lucide-toilet"><path d="M7 12h13a1 1 0 0 1 1 1 5 5 0 0 1-5 5h-.598a.5.5 0 0 0-.424.765l1.544 2.47a.5.5 0 0 1-.424.765H5.402a.5.5 0 0 1-.424-.765L7 18"/><path d="M8 18a5 5 0 0 1-5-5V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8"/></svg>
             </span>
-            <input type="radio" className={`${styles.form_field}`} name="toilets" onChange={() => setAppliedFilters(2)} />
+            <input
+              type="radio"
+              className={`${styles.form_field}`}
+              name="toilets"
+              onChange={() => {
+                setAppliedFilters(2);
+                setToilets(2);
+              }}
+            />
           </label>
           <label className={`${styles.input_label}`}>
             <span className={styles.text}>
@@ -96,7 +115,15 @@ export const Filter = () => {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(37 37 37)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-toilet-icon lucide-toilet"><path d="M7 12h13a1 1 0 0 1 1 1 5 5 0 0 1-5 5h-.598a.5.5 0 0 0-.424.765l1.544 2.47a.5.5 0 0 1-.424.765H5.402a.5.5 0 0 1-.424-.765L7 18"/><path d="M8 18a5 5 0 0 1-5-5V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8"/></svg>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(37 37 37)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-toilet-icon lucide-toilet"><path d="M7 12h13a1 1 0 0 1 1 1 5 5 0 0 1-5 5h-.598a.5.5 0 0 0-.424.765l1.544 2.47a.5.5 0 0 1-.424.765H5.402a.5.5 0 0 1-.424-.765L7 18"/><path d="M8 18a5 5 0 0 1-5-5V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8"/></svg>
             </span>
-            <input type="radio" className={`${styles.form_field}`} name="toilets" onChange={() => setAppliedFilters(2)} />
+            <input
+              type="radio"
+              className={`${styles.form_field}`}
+              name="toilets"
+              onChange={() => {
+                setAppliedFilters(2);
+                setToilets(3);
+              }}
+            />
           </label>
         </div>
       </section>
