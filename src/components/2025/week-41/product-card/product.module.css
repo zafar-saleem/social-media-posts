@@ -64,12 +64,6 @@
       content: "►";
       left: calc(anchor(right) - 35px);
     }
-    
-
-    .carousal {
-      display: flex;
-      gap: 0.5rem;
-    }
 
     .media {
       width: 100%;
@@ -99,6 +93,18 @@
     .brief {
       color: rgb(0 0 0 / 0.4);
     }
+
+    .ratings {
+      display: flex;
+      /* gap: 0.25rem; */
+      align-items: center;
+      color: rgb(0 0 0 / 0.4);
+
+      & span {
+        padding-inline-start: 0.5rem;
+        font-size: 0.75rem;
+      }
+    }
   }
 
   & button {
@@ -119,10 +125,56 @@
     font-weight: bold;
     transition: 0.2s var(--bounce);
     box-shadow: 0 0 5px 0px rgb(0 0 0 / 0.3);
+    anchor-name: --tooltip;
 
     &:active {
       scale: 0.99;
       box-shadow: 0 0 0 0px rgb(0 0 0 / 0.3);
+
+      & > svg {
+        animation: shake 0.3s forwards;
+      }
     }
+
+    &:hover + .basket_tooltip{
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+
+  .basket_tooltip {
+    position: absolute;
+    position-anchor: --tooltip;
+    top: calc(anchor(top) + 0.55rem);
+    left: calc(anchor(left) - 6.15rem);
+    opacity: 0;
+    z-index: 10;
+    background-color: rgb(243, 243, 243);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem 0.25rem rgb(0 0 0 / 0.3);
+    transition: 0.3s;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes shake {
+  0% {
+    rotate: 25deg;
+  }
+  25% {
+    rotate: -25deg;
+  }
+  50% {
+    rotate: 15deg;
+  }
+  75% {
+    rotate: -15deg;
+  }
+  100% {
+    rotate: 0deg;
   }
 }
