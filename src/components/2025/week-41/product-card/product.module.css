@@ -1,0 +1,128 @@
+.card {
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+  
+  box-shadow: 0 0 1rem 0 rgb(0 0 0 / 0.2);
+  border-radius: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+  aspect-ratio: 1;
+  width: 30rem;
+  position: relative;
+  overflow: hidden;
+
+  &:has(:hover) {
+    .box {
+      bottom: -10rem;
+    }
+
+    & button {
+      scale: 1;
+      filter: blur(0);
+    }
+
+    .product::scroll-button(*) {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
+  .product {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    display: flex;
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    anchor-name: --my-carousel;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::scroll-button(*) {
+      position: absolute;
+      opacity: 0;
+      scale: 0;
+      z-index: 10;
+      cursor: pointer;
+      position-anchor: --my-carousel;
+      align-self: anchor-center;
+      transition: 0.2s var(--bounce);
+      border-radius: 10rem;
+      border: none;
+      padding: 0.5rem 0.55rem;
+    }
+
+    &::scroll-button(left) {
+      content: "◄";
+      right: calc(anchor(left) - 35px);
+    }
+
+    &::scroll-button(right) {
+      content: "►";
+      left: calc(anchor(right) - 35px);
+    }
+    
+
+    .carousal {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .media {
+      width: 100%;
+      aspect-ratio: 1;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0.75rem;
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+    }
+  }
+
+  .box {
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    z-index: 1;
+    background-color: rgb(255 255 255);
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 -5px 15px 0 rgb(0 0 0 / 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: 0.2s;
+
+    .brief {
+      color: rgb(0 0 0 / 0.4);
+    }
+  }
+
+  & button {
+    position: absolute;
+    filter: blur(5px);
+    scale: 0;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 1rem;
+    border-radius: 10rem;
+    border: none;
+    cursor: pointer;
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    transition: 0.2s var(--bounce);
+    box-shadow: 0 0 5px 0px rgb(0 0 0 / 0.3);
+
+    &:active {
+      scale: 0.99;
+      box-shadow: 0 0 0 0px rgb(0 0 0 / 0.3);
+    }
+  }
+}
