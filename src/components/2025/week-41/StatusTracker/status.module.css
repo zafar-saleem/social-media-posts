@@ -1,0 +1,130 @@
+.container {
+  --border-color: rgb(236 236 236);
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  min-width: 25rem;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 0.3);
+  transition: 0.4s var(--bounce);
+
+  &:hover {
+    rotate: 5deg;
+    box-shadow: 0 0 0 rgb(0 0 0 / 0);
+  }
+
+  & ul {
+    list-style: none;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex_col {
+    flex-direction: column;
+  }
+
+  .gap_half {
+    gap: 0.5rem;
+  }
+
+  .gap_quarter {
+    gap: 0.25rem;
+  }
+
+  .gap_1 {
+    gap: 1rem;
+  }
+
+  .primary_text {
+    color: rgb(0 0 0 / 0.9);
+  }
+  
+  .secondary_text {
+    color: rgb(0 0 0 / 0.7);
+  }
+
+  .size_100 {
+    font-size: 0.9rem;
+  }
+  
+  .size_200 {
+    font-size: 0.8rem;
+  }
+  
+  .size_300 {
+    font-size: 0.7rem;
+  }
+  
+  .size_400 {
+    font-size: 0.6rem;
+  }
+
+  .separator {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .badge {
+    padding-inline: 0.30rem;
+    padding-block: 0.20rem;
+    border-radius: 10rem;
+    align-items: center;
+
+    margin-left: auto;
+
+    &.absent_badge {
+      background-color: rgb(233, 233, 233);
+      color: rgb(101 106 112);
+    }
+
+    &.away_badge {
+      color: rgb(129 51 0);
+      background-color: rgb(255 218 198);
+    }
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-block-end: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+
+    .button_see_all {
+      margin-left: auto;
+      border: 1px solid var(--border-color);
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .absent_container {
+    display: flex;
+
+    .absent {
+      .item {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .away {
+    .item {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

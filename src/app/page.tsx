@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { ProductCard } from "@/components/2025/week-41/product-card";
+import { StatusTracker } from "@/components/2025/week-41/StatusTracker";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <ProductCard />
+      <StatusTracker />
     </main>
   );
 }
