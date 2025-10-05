@@ -3,7 +3,6 @@
   --bounce: cubic-bezier(.47, 1.64, .41, .8);
 
   min-width: 25rem;
-  border: 1px solid var(--border-color);
   padding: 1rem;
   border-radius: 1rem;
   display: flex;
@@ -66,7 +65,7 @@
   }
 
   .separator {
-    border-bottom: 1px solid var(--border-color);
+    
   }
 
   .badge {
@@ -112,6 +111,8 @@
 
   .absent_container {
     display: flex;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
 
     .absent {
       .item {
