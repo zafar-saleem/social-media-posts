@@ -1,0 +1,90 @@
+.switch_view {
+  --width: 4.10rem;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  display: flex;
+  gap: 1rem;
+  background-color: rgb(243 243 245);
+  padding: 0.25rem;
+  border-radius: 10rem;
+  position: relative;
+  z-index: 1;
+
+  & > * {
+    user-select: none;
+  }
+
+  &::before {
+    content: "";
+    width: 42%;
+    width: var(--width);
+    height: 88%;
+    position: absolute;
+    top: 2.5px;
+    left:  2.75px;
+    background: linear-gradient(to bottom, rgb(219 219 229), rgb(191 190 209));
+    z-index: -1;
+    border-radius: 10rem;
+    position-anchor: --active;
+    left: calc(anchor(left) - 2px);
+    right: anchor(center);
+    transition: 0.5s var(--bounce);
+    box-shadow: 0 1px 2px 0px rgb(0 0 0 / 0.1);
+  }
+
+  &:has(> .list_view > .switch_view_input:checked) {
+    --width: 5.15rem;
+
+    .list_view {
+      anchor-name: --active;
+
+      &::before {
+        scale: 1;
+      }
+    }
+  }
+  
+  &:has(> .grid_view > .switch_view_input:checked) {
+    --width: 5.45rem;
+
+    .grid_view {
+      anchor-name: --active;
+
+      &::before {
+        scale: 1;
+      }
+    }
+  }
+
+  .switch_view_input {
+    display: none;
+  }
+
+  .labels {
+    display: flex;
+    gap: 0.25rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 10rem;
+    transition: 0.5s;
+    position: relative;
+    
+    & > * {
+      z-index: 2;
+    }
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10rem;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      transition: 0.5s var(--bounce);
+      scale: 0;
+      z-index: 1;
+    }
+  }
+}
