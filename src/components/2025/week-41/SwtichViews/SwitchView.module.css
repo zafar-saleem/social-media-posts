@@ -22,14 +22,15 @@
     position: absolute;
     top: 2.5px;
     left:  2.75px;
-    background: linear-gradient(to bottom, rgb(219 219 229), rgb(191 190 209));
+    opacity: 0.2;
+    background: linear-gradient(to bottom, rgb(219 219 229), rgb(104, 103, 113));
     z-index: -1;
     border-radius: 10rem;
     position-anchor: --active;
     left: calc(anchor(left) - 2px);
     right: anchor(center);
     transition: 0.5s var(--bounce);
-    box-shadow: 0 1px 2px 0px rgb(0 0 0 / 0.1);
+    box-shadow: 0 1px 2px 0px rgb(0 0 0 / 0.4);
   }
 
   &:has(> .list_view > .switch_view_input:checked) {
