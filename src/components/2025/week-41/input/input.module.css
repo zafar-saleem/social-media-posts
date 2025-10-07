@@ -1,0 +1,112 @@
+.list {
+  list-style: none;
+  min-width: 15rem;
+
+  .list_item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
+
+    &:hover, &:has(.phone_input:popover-open) {
+      background-color: rgb(247 247 247);
+    }
+
+    .label {
+      color: rgb(130 130 130);
+    }
+
+    .value {
+      background: none;
+      border: none;
+      color: rgb(30 50 45);
+      cursor: pointer;
+
+      .additional_values {
+        color: rgb(34 49 46);
+        margin-inline-start: 0.75rem;
+      }
+
+      .phone_input {
+        flex-direction: column;
+        gap: 0.25rem;
+        anchor-name: --phone-input;
+        left: anchor(left);
+        right: anchor(left);
+        top: anchor(bottom);
+        border-radius: 0.20rem;
+        border: 1px solid rgb(232 232 232);
+        background-color: rgb(255 255 255);
+        min-width: 13rem;
+        align-items: flex-start;
+        box-shadow: 0 1rem 10px 0 rgb(0 0 0 / 0.1);
+
+        & > section {
+          border-bottom: 1px solid rgb(226 232 231);
+          padding: 0.25rem;
+          width: 100%;
+
+          & input {
+            background: rgb(238 239 239);
+            border: none;
+            padding: 0.5rem 0.75rem;
+            width: 100%;
+            color: rgb(11 49 42);
+            outline: none;
+
+            &::placeholder {
+              color: rgb(133 147 144);
+            }
+          }
+        }
+
+        &:popover-open {
+          display: flex;
+        }
+      }
+
+      .phones_list {
+        padding: 0.25rem;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        color: rgb(35 61 55);
+        width: 100%;
+        text-align: left;
+
+        & li {
+          padding: 0.5rem;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          
+          & > svg {
+            margin-inline-end: 0.25rem;
+          }
+
+          &:hover {
+            background-color: rgb(247 247 247);
+          }
+
+          & a {
+            background: none;
+            border: none;
+            margin-left: auto;
+            cursor: pointer;
+
+            &:hover {
+              background: rgb(216, 216, 216);;
+            }
+          }
+        }
+
+        .code {
+          color: rgb(135 142 141);
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
