@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { ProductCard } from "@/components/2025/week-41/product-card";
+import { AccountCard } from "@/components/2025/week-42/AccountCard";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <ProductCard />
+      <AccountCard />
     </main>
   );
 }

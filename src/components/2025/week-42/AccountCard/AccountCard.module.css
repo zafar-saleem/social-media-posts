@@ -1,0 +1,252 @@
+.container {
+  --surface-color: rgb(247 247 249);
+  --bg-color: rgb(255 255 255);
+  --base-text-color: rgb(55 55 58);
+  --secondary-text-color: rgb(101 101 103);
+  --border-color: rgb(234 234 236);
+  --border-radius: 0.75rem;
+  --padding: 0.15rem;
+  --parent-border: calc(var(--border-radius) + var(--padding));
+
+  --active-bg-bar-color: rgb(111 70 255);
+  --inactive-bg-bar-color: rgb(217 217 222);
+  --handle-bg-color: rgb(252 249 255);
+
+  --speed: 0.5s;
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  background-color: var(--surface-color);
+  padding: var(--padding);
+  border-radius: var(--parent-border);
+  min-width: 30rem;
+  max-width: 40rem;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 0.2);
+
+  .header {
+    padding: calc(var(--padding) + 0.5rem);
+    display: flex;
+
+    & div {
+      display: flex;
+      gap: 0.25rem;
+      flex-direction: column;
+    }
+
+    .label {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .brief {
+      color: var(--secondary-text-color);
+    }
+    
+    .toggle {
+      margin-left: auto;
+      width: 3rem;
+      height: 1.5rem;
+      border-radius: 10rem;
+      cursor: pointer;
+      background: var(--inactive-bg-bar-color);
+      position: relative;
+      transition: var(--speed);
+
+      &:has(> input:checked) {
+        background-color: var(--active-bg-bar-color);
+
+        &::before {
+          left: calc(3rem - 1.35rem - 1.25px);
+        }
+      }
+
+      &::before {
+        content: "";
+        top: 1.20px;
+        left: 1.25px;
+        width: 1.35rem;
+        height: 1.35rem;
+        background-color: var(--handle-bg-color);
+        border-radius: 50%;
+        z-index: 1;
+        position: absolute;
+        transition: 0.3s;
+      }
+
+      & input {
+        display: none;
+      }
+    }
+  }
+
+  &:has(.toggle > input:checked) {
+    .content {
+      max-height: fit-content;
+      border: 1px solid var(--border-color);
+    }
+  }
+
+  & input[type="text"], & select {
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    background-color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    color: rgb(45 45 47);
+  }
+
+  & input[type="radio"] {
+    position: relative;
+    cursor: pointer;
+    transition: var(--speed);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -3px;
+      width: 100%;
+      height: 100%;
+      padding-inline: 0.10rem;
+      border-radius: 10rem;
+      z-index: 1;
+      background-color: rgb(36 36 39);
+      transition: var(--speed);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 25%;
+        left: 0.75px;
+        border-radius: 10rem;
+        width: 65%;
+        height: 50%;
+        z-index: 2;
+        background-color: rgb(255 255 255);
+        transition: var(--speed);
+        opacity: 0;
+      }
+
+    &:checked {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  & select {
+    width: 6rem;
+  }
+
+  .inputs_group {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .content {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    max-height: 0;
+    border: none;
+    transition: var(--speed) var(--bounce), border 0s, padding 0s;
+
+    & > section {
+      display: flex;
+      gap: 1rem;
+      padding: calc(var(--padding) + 0.75rem);
+
+      
+
+      &:first-of-type {
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      & > div {
+        flex-basis: 50%;
+      }
+
+      & > div, & > label, & label:first-of-type > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      & label > div > span {
+        display: flex;
+        gap: 0.25rem;
+      }
+
+      & > div > label:last-of-type {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        & > span {
+          display: flex;
+          gap: 0.25rem;
+        }
+      }
+
+      &:last-of-type {
+        & > div:last-of-type {
+          gap: 1.5rem;
+        }
+      }
+    }
+
+    .label {
+      font-weight: bold;
+    }
+
+    .desc, .value_desc {
+      color: var(--secondary-text-color);
+    }
+
+    .value_desc {
+      width: 10rem;
+      width: 100%;
+    }
+  }
+
+  .controls {
+    padding-inline: calc(var(--padding) + 0.5rem);
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--speed) var(--bounce);
+
+    & button {
+      cursor: pointer;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      border: none;
+      transition: var(--speed);
+
+      &.button_save {
+        background: linear-gradient(to bottom, rgb(132 102 255), rgb(104 65 238));
+
+        &:hover {
+          background: linear-gradient(to bottom, rgb(104 65 238), rgb(132 102 255));
+        }
+      }
+      
+      &.button_reset {
+        border: 1px solid rgb(225, 225, 225);
+        color: rgb(39 39 42);
+        background: linear-gradient(to bottom, rgb(255 255 255), rgb(235 235 235));
+
+        &:hover {
+          background: linear-gradient(to bottom, rgb(235 235 235), rgb(255 255 255));
+        }
+      }
+    }
+
+    &.slide {
+      padding-block: calc(var(--padding) + 0.5rem);
+      max-height: fit-content;
+    }
+  }
+}
