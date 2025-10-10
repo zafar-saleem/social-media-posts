@@ -52,6 +52,13 @@
           }
         }
 
+        &.company_column {
+          & div {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+          }
+        }
         .column_text {
           display: flex;
           align-items: center;
