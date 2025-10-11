@@ -94,13 +94,44 @@
       display: none;
     }
     
-    & button {
+    & button, & a {
       background: none;
       border: 1px solid var(--border-color);
       padding: 0.25rem;
       padding-bottom: 0rem;
       border-radius: 0.25rem;
       cursor: pointer;
+    }
+
+    & a{
+      anchor-name: --email-tooltip;
+      
+      &:hover + .tooltip {
+        position-anchor: --email-tooltip;
+        top: calc(anchor(top) + 0.25rem);
+        right: calc(anchor(left));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+
+    .tooltip {
+      font-size: 0.7rem;
+      position: absolute;
+      display: none;
+      opacity: 0;
+      transition: var(--speed);
+
+      background-color: rgb(0 0 0);
+      color: rgb(255 255 255);
+      padding: 0.25rem;
+      border-radius: 0.25rem;
     }
 
     .button_add {
