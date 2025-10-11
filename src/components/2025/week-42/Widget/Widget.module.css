@@ -1,0 +1,156 @@
+.container {
+  --text-color: rgb(6 48 39);
+  --secondary-text-color: rgb(113 117 117);
+
+  --badge-bg-color: rgb(232, 232, 232);
+  --surface-color: rgb(248 248 248);
+
+  --border-color: rgb(242 242 243);
+
+  --speed: 0.5s;
+
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  min-width: 25rem;
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--surface-color);
+    border-radius: 0.25rem;
+    position: relative;
+
+    .header_counter {
+      background-color: var(--badge-bg-color);
+      padding: 0.25rem 0.45rem;
+      border-radius: 10rem;
+      font-size: 0.7rem;
+    }
+
+    .header_control {
+      margin-left: auto;
+      color: var(--secondary-text-color);
+
+      .control_label {
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+        cursor: pointer;
+
+        &:has(> input:checked) {
+          & svg {
+            rotate: 0deg;
+          }
+        }
+
+        & svg {
+          rotate: 90deg;
+          transition: calc(var(--speed) - 0.2s) var(--bounce);
+        }
+
+        .control_toggle {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .header:has(input:checked) + .contents > .card {
+    translate: 0 0;
+    scale: 1;
+  }
+  
+  .header:has(input:checked) + .contents > .button_add {
+    translate: 0 0;
+    scale: 1;
+  }
+
+  .contents {
+    margin-inline: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-block-start: 0.5rem;
+    max-height: 25dvh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    padding-block-end: 1rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      bottom: -1rem;
+      left: 0;
+      width: 100%;
+      min-height: 2rem;
+      background: linear-gradient(to bottom, rgb(255 255 255 / 0.5) -100%, rgb(255 255 255));
+      z-index: 101;
+      position: sticky;
+    }
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    
+    & button {
+      background: none;
+      border: 1px solid var(--border-color);
+      padding: 0.25rem;
+      padding-bottom: 0rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
+
+    .button_add {
+      padding-block: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--surface-color);
+      transition: var(--speed) var(--bounce);
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+
+      z-index: var(--zIndex);
+      translate: 0 var(--positionY);
+      scale: var(--scale);
+      
+      &:hover {
+        background-color: rgb(243, 243, 243);
+      }
+    }
+
+    .card {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 0.75rem;
+      border-radius: 0.35rem;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+      transition: var(--speed) var(--bounce);
+      position: relative;
+      background-color: rgb(255 255 255);
+
+      z-index: var(--zIndex);
+      translate: 0 var(--positionY);
+      scale: var(--scale);
+
+      & > svg {
+        border-radius: 10rem;
+        background: linear-gradient(to bottom, rgb(229 230 228), rgb(242 248 255));
+        padding: 0.25rem;
+      }
+
+      .card_role {
+        color: var(--secondary-text-color);
+      }
+
+      .button_email {
+        margin-left: auto;
+      }
+    }
+  }
+}
+ 

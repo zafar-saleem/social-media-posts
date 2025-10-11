@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { ActionBar } from "@/components/2025/week-42/ActionBar";
+import { Widget } from "@/components/2025/week-42/Widget";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <ActionBar />
+      <Widget />
     </main>
   );
 }
