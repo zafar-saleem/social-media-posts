@@ -27,15 +27,15 @@
       }
 
       & > tr:has(input:checked) {
-        background-color: rgb(248, 253, 223);
+        background-color: rgb(252, 255, 236);
       }
 
       & tr:nth-of-type(even) {
-        background-color: rgb(253, 236, 245);
+        background-color: rgb(255, 244, 250);
       }
       
       & tr:hover {
-        background-color: rgb(255, 244, 231);
+        background-color: rgb(255, 247, 237);
       }
 
       .body_column {
