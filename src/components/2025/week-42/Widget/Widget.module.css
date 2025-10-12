@@ -109,7 +109,7 @@
       &:hover + .tooltip {
         position-anchor: --email-tooltip;
         top: calc(anchor(top) + 0.25rem);
-        right: calc(anchor(left));
+        right: calc(anchor(left) + 0.25rem);
         display: flex;
         align-items: center;
         justify-content: center;
