@@ -1,0 +1,120 @@
+.button {
+  --regular-bg-color: rgb(252 252 252);
+  --regular-border-color: rgb(140 140 140);
+
+  border: none;
+  cursor: pointer;
+  background-color: var(--regular-bg-color);
+  position: relative;
+  width: 2.75rem;
+  height: 2rem;
+  color: #000;
+  border-radius: 0.5rem;
+  border: 3px solid var(--regular-border-color);
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+
+  &:active {
+    scale: 0.95;
+  }
+
+  &:hover + .tooltip {
+    display: block;
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    border: 3px solid rgb(85 85 85);
+
+    .separator {
+      height: 70%;
+      translate: -0.75rem 0.25rem;
+      background-color: rgb(85 85 85);
+    }
+
+    & > svg {
+      display: flex;
+      opacity: 1;
+      scale: 1;
+      translate: 0.75rem -1.05rem;
+
+      @starting-style {
+        opacity: 0;
+        scale: 0;
+      }
+    }
+
+    &::before {
+      background-color: rgb(86, 86, 86);
+    }
+  }
+
+  & > svg {
+    rotate: 180deg;
+    opacity: 0;
+    transition: 0.4s;
+    display: none;
+    scale: 0;
+    translate: 1rem -4rem;
+  }
+
+  .separator {
+    display: inline-flex;
+    width: 3px;
+    height: 100%;
+    background-color: var(--regular-border-color);
+    transition: 0.4s;
+    translate: 0 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 4.75rem;
+    height: 4rem;
+    background-color: var(--regular-bg-color);
+    z-index: 1;
+    border-radius: 1rem;
+    cursor: pointer;
+    top: -1.20rem;
+    left: -1.20rem;
+    opacity: 0.1;
+    transition: 0.4s;
+  }
+  
+  anchor-name: --tooltip;
+}
+
+.tooltip {
+  position: absolute;
+  position-anchor: --tooltip;
+  left: calc(anchor(left) - 1.5rem);
+  top: calc(anchor(bottom) + 1.5rem);
+  background-color: rgb(27 31 30);
+  color: rgb(250 252 253);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  display: none;
+  opacity: 0;
+  transition: 0.3s 0.2s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: red;
+    top: -0.25rem;
+    opacity: 1;
+    left: 2.5rem;
+    rotate: 45deg;
+    z-index: -1;
+    background-color: rgb(27 31 30);
+  }
+}
