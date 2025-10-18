@@ -81,25 +81,34 @@
 
               .channel_image {
                 position: relative;
+                /* background-color: red; */
+                padding-top: 0.5rem;
                 overflow: hidden;
 
-                &::before {
+                &::before, &::after {
                   transition: 0.5s;
                   content: "";
                   position: absolute;
-                  bottom: -4px;
-                  left: 40%;
+                  left: 38%;
                   background-color: rgb(255 255 255);
                   z-index: 1;
-                  width: 10px;
+                  width: 12px;
                   aspect-ratio: 1;
                   border-radius: 4px;
                   rotate: 45deg;
                   opacity: 0;
                 }
 
+                &::before {
+                  top: -4px;
+                }
+                
+                &::after {
+                  bottom: -4px;
+                }
+
                 &:has( > input:checked) {
-                  &::before {
+                  &::before, &::after {
                     opacity: 1;
                   }
                 }
