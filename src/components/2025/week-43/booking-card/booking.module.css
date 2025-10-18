@@ -87,7 +87,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.25rem 0.75rem;
+      padding: 0.5rem 0.75rem;
       border: none;
       background-color: var(--button-bg-color);
       color: var(--button-text-color);
