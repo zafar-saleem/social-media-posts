@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { SeatCounter } from "@/components/2025/week-44/SeatCounter";
+import { SignUp } from "@/components/2025/week-44/SignUp";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <SeatCounter />
+      <SignUp />
     </main>
   );
 }
