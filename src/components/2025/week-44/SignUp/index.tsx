@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "./SignUp.module.css";
 import { Header } from "./components/Header";
-import { Stepper } from "./components/Stepper";
+import { SignupSteps } from "./components/SignupSteps";
 import { ProgressBar } from "./components/ProgressBar";
 import { ScreensList } from "./components/ScreensList";
 
@@ -18,7 +18,7 @@ export const SignUp = () => {
     <form className={styles.form_signup}>
       <Header />
       <main className={styles.contents}>
-        <Stepper {...step} />
+        <SignupSteps {...step} />
         <ProgressBar {...step} />
         <ScreensList step={step} setStep={setStep} />
       </main>

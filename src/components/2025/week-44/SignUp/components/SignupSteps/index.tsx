@@ -1,7 +1,7 @@
 import styles from "../../SignUp.module.css";
 import { TypeSteps } from "../../types";
 
-export const Stepper = ({ ...props }: TypeSteps) => {
+export const SignupSteps = ({ ...props }: TypeSteps) => {
   const {
     label,
   } = props;
