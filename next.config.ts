@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
         port: '',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.icons8.com/**',
+        port: '',
+        search: '',
+      },
     ],
   },
 
