@@ -1,0 +1,146 @@
+[
+  {
+    "id": 2,
+    "title": "User Interface",
+    "filter": {
+      "task": [],
+      "time": {
+        "label": "Tomorrow",
+        "bg": "rgb(255 243 205)",
+        "text": "rgb(201 155 22)"
+      },
+      "status": {
+        "type": "lead",
+        "label": "Incomming",
+        "bg": "rgb(231 248 237)",
+        "text": "rgb(42 144 75)"
+      }
+    },
+    "text": "Showcasing new design elements and styles.",
+    "collaborators": [
+      {
+        "avatar": "M",
+        "color": "lime",
+        "name": "Miguel"
+      },
+      {
+        "avatar": "J",
+        "color": "lightblue",
+        "name": "Jon"
+      },
+      {
+        "avatar": "H",
+        "color": "pink",
+        "name": "Hane"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Design System V-2.0",
+    "filter": {
+      "task": [],
+      "time": {
+        "label": "Today",
+        "text": "rgb(196 66 60)",
+        "bg": "rgb(255 237 236)"
+      },
+      "status": {
+        "type": "progress",
+        "label": "Ongoing",
+        "text": "rgb(15 157 243)",
+        "bg": "rgb(234 247 255)"
+      }
+    },
+    "text": "Showcasing new design elements and styles.",
+    "collaborators": [
+      {
+        "avatar": "M",
+        "color": "orange",
+        "name": "Miguel"
+      },
+      {
+        "avatar": "J",
+        "color": "gold",
+        "name": "Jon"
+      },
+      {
+        "avatar": "H",
+        "color": "lightgrey",
+        "name": "Hane"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Design System V-1.0",
+    "filter": {
+      "task": [],
+      "time": {
+        "type": "Past",
+        "label": "Yesterday",
+        "text": "rgb(109 120 129)",
+        "bg": "rgb(241 241 241)"
+      },
+      "status": {
+        "type": "done",
+        "text": "rgb(109 120 129)",
+        "bg": "rgb(241 241 241)"
+      }
+    },
+    "text": "Showcasing new design elements and styles.",
+    "collaborators": [
+      {
+        "avatar": "M",
+        "color": "pink",
+        "name": "Miguel"
+      },
+      {
+        "avatar": "J",
+        "color": "lightgrey",
+        "name": "Jon"
+      },
+      {
+        "avatar": "H",
+        "color": "lightblue",
+        "name": "Hane"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Typography Styles",
+    "filter": {
+      "task": [],
+      "time": {
+        "type": "Past",
+        "label": "Dec 18",
+        "text": "rgb(109 120 129)",
+        "bg": "rgb(241 241 241)"
+      },
+      "status": {
+        "type": "done",
+        "text": "rgb(109 120 129)",
+        "bg": "rgb(241 241 241)"
+      }
+    },
+    "text": "Showcasing new design elements and styles.",
+    "collaborators": [
+      {
+        "avatar": "M",
+        "color": "gold",
+        "name": "Miguel"
+      },
+      {
+        "avatar": "J",
+        "color": "lightblue",
+        "name": "Jon"
+      },
+      {
+        "avatar": "H",
+        "color": "orange",
+        "name": "Hane"
+      }
+    ]
+  }
+]

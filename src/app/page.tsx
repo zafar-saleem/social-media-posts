@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
 import React from "react";
-import { PaymentProcess } from "@/components/2025/week-44/PaymentProcess";
+import { Notes } from "@/components/2025/week-45/Notes";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <PaymentProcess />
+      <Notes />
     </main>
   );
 }
