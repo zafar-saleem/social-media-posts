@@ -18,6 +18,7 @@ export const Notes = async () => {
       <ul className={styles.notes_list}>
         <ItemListContainer notes={Data} />
       </ul>
+      <button className={styles.all_button}>Share All Notes</button>
     </section>
   )
 }

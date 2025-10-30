@@ -1,11 +1,12 @@
 import styles from "../../Note.module.css";
+import { TypeItem } from "../../types";
 import { Chip } from "./components";
 
-export const ChipContainer = ({ item }) => {
+export const ChipContainer = ({ ...item }: TypeItem) => {
   return (
     <>
-      <Chip item={item} type="time" />
-      <Chip item={item} type="status" />
+      <Chip {...item} type="time" />
+      <Chip {...item} type="status" />
     </>
   )
 }

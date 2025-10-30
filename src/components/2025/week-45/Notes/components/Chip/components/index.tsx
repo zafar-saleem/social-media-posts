@@ -1,6 +1,7 @@
 import styles from "../../../Note.module.css";
+import { TypeItem } from "../../../types";
 
-export const Chip = ({ item, type }) => {
+export const Chip = ({ type, ...item }: any & TypeItem) => {
   return (
     <span
       className={`${styles.chip}`}

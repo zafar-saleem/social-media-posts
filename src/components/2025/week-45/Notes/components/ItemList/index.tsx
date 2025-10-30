@@ -1,8 +1,8 @@
-import styles from "../../Note.module.css";
+import { TypeItem } from "../../types";
 import { Item } from "../Item";
 
-export const ItemListContainer = ({ notes }) => {
+export const ItemListContainer = ({ notes }: any) => {
   return (
-    <>{notes.default.map((item) => ( <Item item={item} key={item.id} />))}</>
+    <>{notes.default.map((item: TypeItem) => ( <Item {...item} key={item.id} />))}</>
   )
 }

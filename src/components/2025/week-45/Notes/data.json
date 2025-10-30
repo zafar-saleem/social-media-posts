@@ -60,6 +60,11 @@
         "name": "Miguel"
       },
       {
+        "avatar": "L",
+        "color": "lightgrey",
+        "name": "Lisam"
+      },
+      {
         "avatar": "J",
         "color": "gold",
         "name": "Jon"
@@ -103,42 +108,6 @@
       {
         "avatar": "H",
         "color": "lightblue",
-        "name": "Hane"
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "title": "Typography Styles",
-    "filter": {
-      "task": [],
-      "time": {
-        "type": "Past",
-        "label": "Dec 18",
-        "text": "rgb(109 120 129)",
-        "bg": "rgb(241 241 241)"
-      },
-      "status": {
-        "type": "done",
-        "text": "rgb(109 120 129)",
-        "bg": "rgb(241 241 241)"
-      }
-    },
-    "text": "Showcasing new design elements and styles.",
-    "collaborators": [
-      {
-        "avatar": "M",
-        "color": "gold",
-        "name": "Miguel"
-      },
-      {
-        "avatar": "J",
-        "color": "lightblue",
-        "name": "Jon"
-      },
-      {
-        "avatar": "H",
-        "color": "orange",
         "name": "Hane"
       }
     ]
