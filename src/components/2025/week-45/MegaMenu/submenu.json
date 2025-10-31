@@ -1,0 +1,97 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "menu_id": 1,
+      "label": "Link Managment",
+      "children": [
+        {
+          "icon": "https://img.icons8.com/wired/64/link--v1.png",
+          "label": "Smart link shortening",
+          "summary": "Turn long messy URLs into clean, branded short links"
+        },
+        {
+          "icon": "https://img.icons8.com/ios-filled/50/synchronize.png",
+          "label": "Retargeting pixels",
+          "summary": "Add retargeting pixels to any links you need"
+        },
+        {
+          "icon": "https://img.icons8.com/sf-regular-filled/48/define-location.png",
+          "label": "A/B testing",
+          "summary": "Run split tests on your links to see best"
+        },
+        {
+          "icon": "https://img.icons8.com/ios-glyphs/30/analytics.png",
+          "label": "Deep analytics",
+          "summary": "Track every click with advanced metrics"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "menu_id": 1,
+      "label": "Customization",
+      "children": [
+        {
+          "icon": "https://img.icons8.com/ios-filled/50/constructing.png",
+          "label": "UTM Builder",
+          "summary": "Easily create and manage UTM parameters"
+        },
+        {
+          "icon": "https://img.icons8.com/ios/50/domain--v1.png",
+          "label": "Custom domains",
+          "summary": "Use your own domain for build trust"
+        },
+        {
+          "icon": "https://img.icons8.com/ios/50/expired.png",
+          "label": "Link expiration",
+          "summary": "Set expiration dates or click limits on links"
+        },
+        {
+          "icon": "https://img.icons8.com/ios/50/conference-call--v1.png",
+          "label": "Team collaboration",
+          "summary": "Invite team members and manage compaigns"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "menu_id": 1,
+      "label": "Advanced",
+      "children": [
+        {
+          "icon": "https://img.icons8.com/ios/50/api-settings.png",
+          "label": "API access",
+          "summary": "Automate link creation and management"
+        },
+        {
+          "icon": "https://img.icons8.com/ios/50/qr-code--v1.png",
+          "label": "QR code generator",
+          "summary": "Instantly create branded QR codes"
+        },
+        {
+          "icon": "https://img.icons8.com/material-outlined/24/multiple-pages-mode--v1.png",
+          "label": "Smart pages",
+          "summary": "Create mini landing pages with multiple links"
+        },
+        {
+          "icon": "https://img.icons8.com/ios/50/merge-docunemts.png",
+          "label": "Integrations",
+          "summary": "Connect Switchy with your favorite tools"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "menu_id": 1,
+      "label": "Read blog",
+      "children": [
+        {
+          "icon": "https://img.icons8.com/ios-filled/50/up-right-arrow.png",
+          "label": "Smart link shortening",
+          "summary": "Turn long messy URLs into clean, branded short links."
+        }
+      ]
+    }
+  ]
+}
