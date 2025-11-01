@@ -1,0 +1,27 @@
+{
+  "cals": {
+    "consumed": 1425,
+    "total": 2000,
+    "unit": "cal"
+  },
+  "items": [
+    {
+      "label": "Protein",
+      "consumed": 122,
+      "total": 160,
+      "unit": "g"
+    },
+    {
+      "label": "Carbs",
+      "consumed": 27,
+      "total": 135,
+      "unit": "g"
+    },
+    {
+      "label": "Fat",
+      "consumed": 90,
+      "total": 90,
+      "unit": "g"
+    }
+  ]
+}
