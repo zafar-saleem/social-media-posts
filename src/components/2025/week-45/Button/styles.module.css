@@ -1,0 +1,73 @@
+.button {
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  position: relative;
+
+  & * {
+    transition: 0.4s var(--bounce);
+  }
+  
+  &:has(:hover) {
+    & > .initial_icon {
+      scale: 0;
+      opacity: 0;
+
+      & > svg {
+        translate: -0.75rem 0.75rem;
+      }
+
+      @starting-style {
+        scale: 1;
+        opacity: 1;
+      }
+    }
+
+    & > .button_label {
+      rotate: -5deg;
+      translate: -1.81rem -0.25rem;
+    }
+  }
+
+  .button_label {
+    background-color: rgb(31 87 29);
+    border: none;
+    border-radius: 10rem;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+
+    z-index: 100;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(31 87 29);
+
+    border-radius: 100%;
+    padding: 0.25rem;
+
+    &.initial_icon {
+      overflow: hidden;
+    }
+
+    &.result_icon {
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      overflow: hidden;
+
+      & > svg {
+        translate: -0.75rem 0.75rem;
+        translate: 0;
+      }
+    }
+  }
+}
