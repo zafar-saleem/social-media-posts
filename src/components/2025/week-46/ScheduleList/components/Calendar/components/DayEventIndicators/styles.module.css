@@ -1,0 +1,16 @@
+.indicators {
+  display: flex;
+  gap: 0.10rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  .event {
+    width: 3px;
+    aspect-ratio: 1;
+    background-color: red;
+    display: block;
+    border-radius: 1rem;
+    margin-bottom: -3px;
+  }
+}

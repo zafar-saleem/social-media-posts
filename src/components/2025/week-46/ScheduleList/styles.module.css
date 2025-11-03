@@ -1,0 +1,35 @@
+.wrapper {
+  --speed: 0.3s;
+
+  padding-block: 1rem;
+  box-shadow: 0 0 1rem 1rem rgb(40 40 40 / 0.2);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid rgb(40 40 40 / 0.2);
+  position: relative;
+
+  & * {
+    transition: var(--speed);
+  }
+
+  &::before, &::after {
+    position: absolute;
+    content: "";
+    top: 78px;
+    width: 25px;
+    height: 120px;
+    z-index: 100;
+  }
+
+  &::before {
+    left: 0;
+    background-image: linear-gradient(to right, rgb(255 255 250), transparent);
+  }
+  
+  &::after {
+    right: 0;
+    background-image: linear-gradient(to left, rgb(255 255 250), transparent);
+  }
+}

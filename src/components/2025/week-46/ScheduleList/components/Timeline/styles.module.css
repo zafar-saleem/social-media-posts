@@ -1,0 +1,37 @@
+.relative {
+  position: relative;
+}
+
+.container {
+  overflow-x: scroll;
+  max-width: 30rem;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .timeline {
+    position: relative;
+    display: flex;
+    background-color: rgb(243, 243, 243);
+    margin-left: calc(calc(var(--handle-min-position) / 1.40) * -1);
+
+    .current_time_handle {
+      width: 2px;
+      height: 100%;
+      background-color: red;
+      position: absolute;
+      z-index: 100;
+      opacity: 0.7;
+      border-radius: 1rem;
+      box-shadow: 0px 0 15px 2px rgb(40 40 40 / 0.6);
+      top: 2.5%;
+      top: 0;
+      translate: calc(var(--handle-min-position)) 0;
+    }   
+  } 
+}

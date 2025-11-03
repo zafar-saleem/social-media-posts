@@ -1,0 +1,24 @@
+.hour_block {
+  display: flex;
+  flex: 1 0 60px;
+  justify-content: center;
+  font-size: 0.7rem;
+  height: 100px;
+  position: relative;
+
+  &:nth-of-type(even) {
+    background-color: rgb(200 200 200 / 0.3);
+  }
+
+  .time_label {
+    padding: 0.25rem 0.35rem;
+    border-radius: 1rem;
+    translate: 0 -25px;
+    height: 1.25rem;
+
+    &.active {
+      background-color: red;
+      color: rgb(240 240 240);
+    }
+  }
+}

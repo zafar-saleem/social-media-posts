@@ -1,0 +1,44 @@
+.tooltip {
+  position: fixed;
+  min-width: 10rem;
+  max-width: 10rem;
+  background-color: rgb(255 255 255 / 0.5);
+  backdrop-filter: blur(4px);
+  color: rgb(40 40 40);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  z-index: 900;
+  justify-content: center;
+  box-shadow: 0 0 5px 0px rgb(40 40 40 / 0.3);
+
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+
+
+  position-anchor: var(--anchor-position);
+  left: calc(anchor(left) - calc(5rem / 2));
+  top: calc(anchor(bottom) - 6.25rem);
+
+  .title {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  & > div {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+
+    .avatar {
+      padding: 0.15rem 0.35rem;
+      border-radius: 1rem;
+      background-color: var(--t-bg-color);
+      
+      &:nth-child(n + 2) {
+        margin-left: -10px;
+      }
+    }
+  }
+}

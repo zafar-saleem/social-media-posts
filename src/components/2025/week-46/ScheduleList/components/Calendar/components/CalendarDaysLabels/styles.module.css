@@ -1,0 +1,8 @@
+.day_labels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  column-gap: 2rem;
+  /* background-color: red; */
+  padding: 1rem;
+}
