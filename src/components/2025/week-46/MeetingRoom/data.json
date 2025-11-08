@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Hugh",
+    "handle": "@hugh",
+    "avatar": "H",
+    "color": "pink",
+    "host": true,
+    "mute": false,
+    "video": true
+  },
+  {
+    "id": 2,
+    "name": "Jackman",
+    "handle": "@jack",
+    "avatar": "J",
+    "color": "lime",
+    "host": false,
+    "mute": true,
+    "video": true
+  },
+  {
+    "id": 4,
+    "name": "Madonna",
+    "handle": "@madonna",
+    "avatar": "M",
+    "color": "cyan",
+    "host": false,
+    "mute": true,
+    "video": true
+  },
+  {
+    "id": 5,
+    "name": "Casandra",
+    "handle": "@cas",
+    "avatar": "C",
+    "color": "skyblue",
+    "host": false,
+    "mute": true,
+    "video": false
+  },
+  {
+    "id": 6,
+    "name": "Nova",
+    "handle": "@nova",
+    "avatar": "N",
+    "color": "gold",
+    "host": false,
+    "mute": true,
+    "video": false
+  },
+  {
+    "id": 7,
+    "name": "Sherina",
+    "handle": "@sherina",
+    "avatar": "S",
+    "color": "aqua",
+    "host": false,
+    "mute": true,
+    "video": false
+  },
+  {
+    "id": 8,
+    "name": "Bruce",
+    "handle": "@bruce",
+    "avatar": "B",
+    "color": "bisque",
+    "host": false,
+    "mute": true,
+    "video": true
+  },
+  {
+    "id": 9,
+    "name": "Banner",
+    "handle": "@banner",
+    "color": "beige",
+    "avatar": "B",
+    "host": false,
+    "mute": true,
+    "video": true
+  },
+  {
+    "id": 10,
+    "name": "Lee",
+    "handle": "@lee",
+    "avatar": "L",
+    "color": "brown",
+    "host": false,
+    "mute": true,
+    "video": true
+  },
+  {
+    "id": 11,
+    "name": "Hyun",
+    "handle": "@hyuan",
+    "avatar": "H",
+    "color": "blanchedalmond",
+    "host": false,
+    "mute": true,
+    "video": true
+  }
+]
