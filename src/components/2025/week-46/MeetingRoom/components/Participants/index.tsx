@@ -1,5 +1,7 @@
 import Link from "next/link";
 import styles from "../../styles.module.css";
+import Image from "next/image";
+import audio from "../../assets/audio.gif";
 
 type TItem = {
   id: number,
@@ -38,7 +40,7 @@ export const Participante = ({ ...props }: Props) => {
                 </button>
                 :
                 <button className={styles.unmute}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(18 149 255)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-audio-lines-icon lucide-audio-lines"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg>
+                  <Image src={audio} width={16} height={16} alt="" />
                 </button>
               }
               {
