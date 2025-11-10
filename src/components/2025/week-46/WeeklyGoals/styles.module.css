@@ -68,7 +68,7 @@
             top: 0;
             left: 0;
             height: 100%;
-            background-color: rgb(0 167 57);
+            background-color: var(--progress-color);
             z-index: 1;
             content: "";
             border-radius: 10rem;

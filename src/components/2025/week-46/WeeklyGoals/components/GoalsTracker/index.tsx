@@ -6,17 +6,26 @@ export type TTask = {
   id: number,
   text: string,
   done: boolean,
+  hours: number,
 }
 
-const getTotalCompletedTasks = (tasks: TTask[]) => tasks.filter(item => item.done).length;
+const getTotalCompletedTasks = (tasks: TTask[]) => 
+  tasks.filter(item => item.done).length;
 
-const getProgress = (tasks: TTask[]) => `${getTotalCompletedTasks(tasks) / tasks.length * 100}%`;
+const getTotalWorkingHours = (tasks: TTask[]) => 
+  tasks.reduce((prev, item) => prev + item.hours, 0);
+
+const getCompletedTasksHours = (tasks: TTask[]) => 
+  tasks.reduce((combinator, item) => item.done ? combinator + item.hours : combinator, 0);
+
+const getProgress = (tasks: TTask[]) => 
+  `${getTotalCompletedTasks(tasks) / tasks.length * 100}%`;
 
 const getCompletedFocusHours = (tasks: TTask[]) => {
-  if (getTotalCompletedTasks(tasks) * Math.ceil(120 / tasks.length) > 120)
-    return "120";
+  if (getTotalCompletedTasks(tasks) * Math.ceil(getTotalWorkingHours(tasks) / tasks.length) > 100)
+    return "100";
 
-  return getTotalCompletedTasks(tasks) * Math.ceil(120 / tasks.length);
+  return getTotalCompletedTasks(tasks) * Math.ceil(getTotalWorkingHours(tasks) / tasks.length);
 };
 
 const getProgressInPercentage = (completedTasks: number, tasks: TTask[]) => `${Math.floor(completedTasks / tasks.length * 100)}%`;
@@ -42,6 +51,7 @@ export const GoalsTracker = ({ tasks, meeting }: Props) => {
             className={styles.label_progress}
             style={{
               "--tasks-progress": `${getProgress(tasks)}`,
+              "--progress-color": `${getTotalCompletedTasks(tasks) < 4 ? "red" : "rgb(0 167 57)"}`
             }}
           />
           <ProgressInPercent tasks={tasks} />
@@ -50,11 +60,12 @@ export const GoalsTracker = ({ tasks, meeting }: Props) => {
         
         <div className={`${styles.focus} ${styles.weekly_goal}`}>
           <span className={styles.label_text}>Focus Hours</span>
-          <span className={styles.label_trackers}>{getCompletedFocusHours(tasks)} / 120</span>
+          <span className={styles.label_trackers}>{getCompletedFocusHours(tasks)} / {getTotalWorkingHours(tasks)}</span>
           <span
             className={styles.label_progress}
             style={{
-              "--focus-progress": `${getProgress(tasks)}`,
+              "--focus-progress": `${getCompletedTasksHours(tasks) / getTotalWorkingHours(tasks) * getTotalWorkingHours(tasks)}%`,
+              "--progress-color": `${getTotalCompletedTasks(tasks) < 4 ? "red" : "rgb(0 167 57)"}`
             }}
           />
           <ProgressInPercent tasks={tasks} />
@@ -67,6 +78,7 @@ export const GoalsTracker = ({ tasks, meeting }: Props) => {
             className={styles.label_progress}
             style={{
               "--meeting-progress": `${meeting / 10 * 100}%`,
+              "--progress-color": `${meeting < 4 ? "red" : "rgb(0 167 57)"}`
             }}
           />
           <div className={styles.goals_completion}>
