@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Serrano House",
+    "price": "450",
+    "currency": "$",
+    "occurence": "m",
+    "size": "120 m",
+    "deposit": "+1 mo deposit",
+    "location": {
+      "lon": "5rem",
+      "lat": "-5rem"
+    },
+    "amneties": {
+      "beds": 4,
+      "bath": 2
+    },
+    "main_image": {
+      "src": "https://images.pexels.com/photos/4258275/pexels-photo-4258275.jpeg",
+      "width": 1082,
+      "height": 1268,
+      "alt": ""
+    },
+    "images": [
+      {
+        "src": "https://images.pexels.com/photos/4258275/pexels-photo-4258275.jpeg",
+        "width": 75,
+        "height": 75,
+        "alt": ""
+      },
+      {
+        "src": "https://images.pexels.com/photos/4469168/pexels-photo-4469168.jpeg",
+        "width": 75,
+        "height": 75,
+        "alt": ""
+      },
+      {
+        "src": "https://images.pexels.com/photos/13460178/pexels-photo-13460178.jpeg",
+        "width": 75,
+        "height": 75,
+        "alt": ""
+      },
+      {
+        "src": "https://images.pexels.com/photos/33675973/pexels-photo-33675973.jpeg",
+        "width": 75,
+        "height": 75,
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "title": "Ammano House",
+    "price": "550",
+    "currency": "$",
+    "occurence": "m",
+    "size": "140 m",
+    "deposit": "+1 mo deposit",
+    "location": {
+      "lon": "-5rem",
+      "lat": "-1rem"
+    },
+    "amneties": {
+      "beds": 5,
+      "bath": 2
+    },
+    "main_image": {
+      "src": "https://images.pexels.com/photos/4258282/pexels-photo-4258282.jpeg",
+      "width": 1082,
+      "height": 1268,
+      "alt": ""
+    },
+    "images": [
+      {
+        "src": "https://images.pexels.com/photos/4258282/pexels-photo-4258282.jpeg",
+        "width": 75,
+        "height": 75,
+        "alt": ""
+      },
+      {
+        "src": "https://images.pexels.com/photos/7031408/pexels-photo-7031408.jpeg",
+        "width": 75,
+        "height": 75,
+        "alt": ""
+      },
+      {
+        "src": "https://images.pexels.com/photos/33675973/pexels-photo-33675973.jpeg",
+        "width": 75,
+        "height": 75,
+        "alt": ""
+      }
+    ]
+  }
+]

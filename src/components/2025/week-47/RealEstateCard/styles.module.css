@@ -1,0 +1,233 @@
+.container {
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+  display: flex;
+  gap: 1rem;
+  position: relative;
+
+  & * {
+    transition: 0.3s var(--bounce);
+  }
+
+  .card {
+    background-color: rgb(255 255 255);
+    padding: 0.35rem;
+    border: 1px solid rgb(231 231 231);
+    border-radius: 0.5rem;
+    width: 20rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    anchor-name: --card;
+
+    &:hover {
+      .card_media > .card_images {
+        scale: 0.20;
+        border-radius: 1rem;
+        rotate: -5deg;
+        box-shadow: 0 0 1rem 0 rgb(40 40 40 / 1);
+        translate: var(--pos-x) var(--pos-y);
+      }
+
+      .images_list {
+        translate: 0 -5.5rem;
+        scale: 1;
+        width: 100%;
+        opacity: 1;
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+          scale: 0;
+          translate: 0 2rem;
+        }
+
+        & > * {
+          flex-basis: 1;
+          flex-shrink: 1;
+          flex-grow: 0;
+        }
+      }
+
+      .card_media > .card_map {
+        scale: 1;
+      }
+
+      .card_brief > .card_amneties {
+        .btn_detail {
+          margin-left: auto;
+          display: flex;
+          opacity: 1;
+          translate: 0rem -1rem;
+
+          @starting-style {
+            opacity: 0;
+          }
+        }
+
+        .deposit {
+          opacity: 0;
+          translate: -0.5rem 0;
+
+          @starting-style {
+            opacity: 1;
+          }
+        }
+      }
+
+      .card_info > .card_price {
+        opacity: 0;
+        translate: -0.5rem 0;
+        
+        @starting-style {
+          opacity: 1;
+        }
+      }
+    }
+
+    .images_list {
+      display: none;
+      opacity: 0;
+      gap: 1rem;
+      translate: 0 2rem;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+      scale: 1;
+      transition-delay: 0.2s;
+      
+      position-anchor: --card;
+      left: anchor(center);
+      top: anchor(top);
+
+      & > * {
+        box-shadow: 0 0 0.5rem 0 rgb(40 40 40 / 1);
+        border-radius: 0.5rem;
+        object-fit: cover;
+      }
+      /* transition: scale 0s; */
+
+      & > img:nth-child(even) {
+        rotate: 2deg;
+      }
+      
+      & > img:nth-child(odd) {
+        rotate: -2deg;
+      }
+    }
+
+    .card_media {
+      position: relative;
+      display: grid;
+
+      .mark {
+        /* align-self: center; */
+        justify-self: center;
+        position: absolute;
+        /* z-index: 10; */
+        top: 61%;
+        left: 49%;
+        z-index: 1;
+        translate: var(--pos-x) var(--pos-y);
+      }
+
+      & > * {
+        grid-area: 1 / 1;
+      }
+
+      .card_map {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 0.25rem;
+        scale: 0.6;
+        transition: scale 0s;
+      }
+
+      .card_images {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1;
+        border-radius: 0.25rem;
+        z-index: 1;
+      }
+
+      .images_indicator {
+        position: absolute;
+        top: 0.25rem;
+        right: 0.25rem;
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        background-color: rgb(112 113 111);
+        color: rgb(255 255 255);
+        font-size: 0.7rem;
+        display: flex;
+        gap: 0.25rem;
+        z-index: 2;
+      }
+    }
+
+    .card_brief {
+      padding-inline: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .card_info {
+        display: flex;
+        align-items: center;
+
+        .card_title {
+          font-size: 1.1rem;
+        }
+
+        .card_price {
+          margin-left: auto;
+          color: rgb(50 163 222);
+          font-weight: bold;
+        }
+      }
+
+      .card_amneties {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        color: rgb(127 127 127);
+        font-size: 0.7rem;
+
+        .btn_detail {
+          display: flex;
+          padding: 0.60rem 0.60rem;
+          border-radius: 10rem;
+          border: 1px solid rgb(40 40 40 / 0.2);
+          display: none;
+          translate: -0.5rem -1rem;
+          position: absolute;
+          right: 0.75rem;
+          opacity: 0;
+          
+          &:hover {
+            border-color: rgb(50 163 222);
+          }
+        }
+
+        & > * {
+          display: flex;
+          gap: 0.25rem;
+          align-items: center;
+        }
+
+        .deposit {
+          display: flex;
+          margin-left: auto;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
