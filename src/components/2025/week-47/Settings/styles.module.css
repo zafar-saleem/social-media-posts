@@ -1,0 +1,69 @@
+.settings {
+  width: 30rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .item {
+    border: 1px solid rgb(241 241 243);
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.5rem 0 rgb(40 40 40 / 0.3);
+    align-items: center;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .label {
+        font-weight: bold;
+      }
+    }
+
+    .toggle_input {
+      margin-left: auto;
+      cursor: pointer;
+      position: relative;
+      align-self: flex-start;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0rem;
+        border-radius: 10rem;
+        right: -0.5rem;
+        width: 3rem;
+        height: 1.5rem;
+        background-color: rgb(235 235 239);
+        transition: 0.3s;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+        width: 1.25rem;
+        aspect-ratio: 1;
+        background-color: rgb(254 255 254);
+        translate: -1.55rem 0.13rem;
+        border-radius: 10rem;
+        transition: 0.3s var(--bounce);
+      }
+
+      &:checked {
+        &::after {
+          translate: -0.05rem 0.13rem;
+        }
+
+        &::before {
+          background-color: rgb(66 67 75);
+        }
+      }
+    }
+  }
+}

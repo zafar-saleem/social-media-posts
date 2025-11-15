@@ -122,7 +122,7 @@
 
   --gutter: 1rem;
   interpolate-size: allow-keywords;
-  /* --bounce: cubic-bezier(.47, 1.64, .41, .8); */
+  --bounce: cubic-bezier(.47, 1.64, .41, .8);
 }
 
 
