@@ -1,0 +1,128 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 20rem;
+
+  & button {
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  & ul {
+    list-style: none;
+  }
+
+  .types_list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: rgb(255 255 255);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+    &.list_range {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+        & > label {
+          position: absolute;
+          z-index: 1;
+          font-size: 0.8rem;
+          color: rgb(40 40 40 / 0.5);
+          left: 0.5rem;
+        }
+      }
+    }
+
+    .input_range {
+      border: 1px solid rgb(236, 236, 236);
+      padding: 0.5rem;
+      padding-inline-start: 1rem;
+      width: 100%;
+      background-color: rgb(255 255 255);
+      border-radius: 0.35rem;
+      color: rgb(40 40 40);
+      position: relative;
+
+      &::-webkit-inner-spin-button {
+        display: none;
+      }
+    }
+
+    .item_label {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+
+      &::before, &::after {
+        position: absolute;
+        content: "";
+        width: 1rem;
+        aspect-ratio: 1;
+        border-radius: 10rem;
+        transition: 0.4s;
+        border: 1px solid rgb(40 40 40 / 0);
+        border: 1px solid rgb(236, 236, 236);
+      }
+      
+      &::before {
+        background-color: rgb(246 246 246);
+        border: 1px solid rgb(248 248 248);
+      }
+
+      &:has(> .label_input:checked) {
+        &::after {
+          z-index: 100;
+          border: 1px solid rgb(40 40 40 / 1);
+        }
+
+        &::before {
+          width: 0.85rem;
+          translate: 0.08rem 0.01rem;
+          background-color: rgb(40 40 40 / 1);
+        }
+      }
+    }
+  }
+
+  .filter_header {
+    display: flex;
+
+    & h1 {
+      font-size: 1rem;
+    }
+
+    & button {
+      color: rgb(85 85 85);
+    }
+  }
+
+  .filter_section {
+    padding: 0.5rem;
+    background-color: rgb(243 243 243);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .section_header {
+      display: flex;
+      gap: 0.5rem;
+
+      .section_label {
+        font-weight: bold;
+      }
+    }
+  }
+}
