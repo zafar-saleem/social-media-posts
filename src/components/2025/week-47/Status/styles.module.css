@@ -1,0 +1,163 @@
+.button_status {
+  --pos-y: 0rem;
+
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  background-color: rgb(246 246 250);
+  border-radius: 10rem;
+  position: relative;
+  color: rgb(40 40 40);
+  border: none;
+  /* width: 10rem; */
+  height: 3rem;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  anchor-name: --button;
+  overflow: hidden;
+
+  & * {
+    transition: 0.3s;
+  }
+
+  .button_label {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    translate: 0 var(--pos-y);
+    transition: 0.3s var(--bounce);
+
+    & > * {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.on_vacation {
+      --pos-y: -2.20rem;
+    }
+    
+    &.sick {
+      --pos-y: -4.60rem;
+    }
+    
+    &.in_meeting {
+      --pos-y: -6.95rem;
+    }
+    
+    &.running {
+      --pos-y: -9.25rem;
+    }
+    
+    &.traveling {
+      --pos-y: -11.65rem;
+    }
+  }
+
+  .popover {
+    position-anchor: --button;
+    top: calc(anchor(top) - 3.25rem);
+    left: calc(anchor(left) - 4.25rem);
+    position: absolute;
+
+    background-color: rgb(255 255 255);
+    border: 1px solid rgb(244 244 244);
+    border-radius: 10rem;
+    display: none;
+    /* translate: 0 1rem;
+    opacity: 0; */
+    gap: 0.5rem;
+    transition: 0.2s var(--bounce);
+
+    &:popover-open {
+      display: flex;
+      /* opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 0 1rem;
+      } */
+    }
+
+    & button {
+      border: none;
+      background: none;
+      color: rgb(40 40 40);
+      cursor: pointer;
+      font-size: 1.25rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 10rem;
+
+      &.button_vacation {
+        anchor-name: --vacation;
+      }
+      
+      &.button_sick {
+        anchor-name: --sick;
+      }
+      
+      &.button_meeting {
+        anchor-name: --meeting;
+      }
+      
+      &.button_running {
+        anchor-name: --running;
+      }
+      
+      &.button_traveling {
+        anchor-name: --traveling;
+      }
+
+      &:hover {
+        background-color: rgb(80 80 80 / 0.1);
+      }
+
+      &:hover + .tooltip {
+        display: flex;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+
+    .tooltip {
+      color: rgb(80 80 80);
+      position: fixed;
+      top: calc(anchor(top) - 2.75rem);
+      left: anchor(left);
+      display: none;
+      opacity: 0;
+      padding: 0.5rem;
+      background-color: rgb(246 246 250);
+      border-radius: 10rem;
+      transition: 0.2s var(--bounce);
+
+      &.tooltip_vacation {
+        position-anchor: --vacation;
+      }
+      
+      &.tooltip_sick {
+        position-anchor: --sick;
+        
+      }
+      
+      &.tooltip_meeting {
+        position-anchor: --meeting;
+      }
+      
+      &.tooltip_running {
+        position-anchor: --running;
+      }
+      
+      &.tooltip_traveling {
+        position-anchor: --running;
+      }
+    }
+  }
+}
