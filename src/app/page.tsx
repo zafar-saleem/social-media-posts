@@ -1,11 +1,10 @@
-import { Status } from "@/components/2025/week-47/Status";
 import styles from "./page.module.css";
-import { RealEstateFilters } from "@/components/2025/week-47/RealEstateFilter";
+import { ProfileCompletenessRing } from "@/components/2025/week-48/ProfileRing";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <RealEstateFilters />
+      <ProfileCompletenessRing />
     </main>
   );
 }

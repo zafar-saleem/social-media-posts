@@ -1,0 +1,152 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 10deg;
+}
+
+.profile_ring {
+  background-color: rgb(255 255 255);
+  box-shadow: 0 0 1rem 0 rgb(40 40 40 / 0.2);
+  border-radius: 1rem;
+  width: 25rem;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1rem;
+
+  .ring {
+    width: 125px;
+    aspect-ratio: 1;
+    background-color: rgb(225 231 238);
+    border-radius: 10rem;
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & > span {
+      z-index: 1;
+      font-size: 0.7rem;
+      color: rgb(40 40 40 / 0.6);
+    }
+
+    .progress_percentage {
+      font-weight: bold;
+      font-size: 1.75rem;
+      color: rgb(40 40 40);
+    }
+
+    &::before {
+      --angle: var(--updatedAngle);
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: conic-gradient(from 0deg, rgb(0 100 232) var(--angle), rgb(0 0 0 / 0) 0deg);
+      border-radius: 10rem;
+      transition: --angle 0.5s var(--bounce);
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 8%;
+      left: 8%;
+      width: 85%;
+      height: 85%;
+      background-color: rgb(255, 255, 255);
+      border-radius: 10rem;
+    }
+  }
+
+  .profile_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .title {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .text {
+      font-size: 0.7rem;
+      color: rgb(40 40 40 / 0.6);
+    }
+
+    .steps_list {
+      height: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      padding-top: 0.35rem;
+      overflow: hidden;
+    }
+
+    .steps {
+      display: flex;
+      gap: 0.25rem;
+      color: rgb(60, 145, 255);
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      align-items: center;
+      transition: 0.4s var(--bounce);
+      translate: 0 var(--position-y);
+
+      &.visible {
+        display: flex;
+      }
+    }
+
+    .button {
+      background-color: rgb(72 222 168);
+      border: none;
+      padding: 0.75rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      transition: 0.2s var(--bounce);
+
+      &.completed {
+        background-color: rgb(100 100 100);
+
+        &:hover {
+          background-color: rgb(100 100 100);
+        }
+      }
+
+      &:hover {
+        background-color: rgb(62, 197, 148);
+      }
+
+      &:active {
+        scale: 0.98;
+      }
+    }
+
+    .next_step {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      height: 1.5rem;
+      
+      overflow: hidden;
+
+      & > div {
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+        translate: 0 calc(var(--position-y) + 0.75rem);
+        transition: 0.4s var(--bounce);
+      }
+    }
+  }
+}
