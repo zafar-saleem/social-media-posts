@@ -15,7 +15,7 @@ export const RealEstateFilters = () => {
 
       <section className={`${styles.filter_section} ${styles.filter_type}`}>
         <div className={styles.section_header}>
-          <span className={styles.section_icon}>G</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(26 26 26)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>
           <span className={styles.section_label}>Home type</span>
         </div>
         <ul className={styles.types_list}>
@@ -52,7 +52,7 @@ export const RealEstateFilters = () => {
       
       <section className={`${styles.filter_section} ${styles.filter_type}`}>
         <div className={styles.section_header}>
-          <span className={styles.section_icon}>G</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(26 26 26)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-banknote-arrow-down-icon lucide-banknote-arrow-down"><path d="M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5"/><path d="m16 19 3 3 3-3"/><path d="M18 12h.01"/><path d="M19 16v6"/><path d="M6 12h.01"/><circle cx="12" cy="12" r="2"/></svg>
           <span className={styles.section_label}>Price range</span>
         </div>
         <div className={`${styles.types_list} ${styles.list_range}`}>
@@ -104,7 +104,7 @@ export const RealEstateFilters = () => {
 
       <section className={`${styles.filter_section} ${styles.filter_type}`}>
         <div className={styles.section_header}>
-          <span className={styles.section_icon}>G</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(26 26 26)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
           <span className={styles.section_label}>Rooms</span>
         </div>
         <ul className={styles.types_list}>
@@ -133,7 +133,7 @@ export const RealEstateFilters = () => {
       
       <section className={`${styles.filter_section} ${styles.filter_type}`}>
         <div className={styles.section_header}>
-          <span className={styles.section_icon}>G</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(26 26 26)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-layout-panel-left-icon lucide-layout-panel-left"><rect width="7" height="18" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>
           <span className={styles.section_label}>Layout Selection</span>
         </div>
         <ul className={styles.types_list}>
