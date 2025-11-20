@@ -73,12 +73,13 @@ export const ProfileCompletenessRing = () => {
           </div>
           <div>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(151 151 153)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg>
-            <span>Next step: Add Summary</span>
+            <span>Next step: Attachment</span>
           </div>
           <div>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(151 151 153)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg>
-            <span>Next step: Attachment</span>
+            <span>Final Step</span>
           </div>
+          
           <div>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(151 151 153)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg>
             <span>Done</span>
