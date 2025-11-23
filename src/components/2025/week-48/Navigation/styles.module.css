@@ -1,0 +1,72 @@
+.navigation {
+  background-color: rgb(40 40 40);
+  color: rgb(230 230 230);
+  border-radius: 10rem;
+  box-shadow: 0 0 0.5rem 0 rgb(40 40 40 / 0.8);
+  width: 22rem;
+
+  & ul {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.25rem 0.25rem;
+    border-radius: 10rem;
+    list-style: none;
+
+    & li {
+      flex-basis: 100%;
+
+      & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+        border-radius: 10rem;
+        padding: 0.25rem 2.25rem;
+        position: relative;
+
+        .label {
+          display: none;
+          opacity: 0;
+          transition: 0.3s;
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 10rem;
+          background-image: linear-gradient(to right, rgb(240 240 240) 100%, transparent 0%);
+          background-repeat: no-repeat;
+          background-size: 0%;
+          transition: 0.3s var(--bounce);
+        }
+
+        &.active {
+          color: rgb(40 40 40);
+          position: relative;
+          z-index: 1;
+
+          .label {
+            display: flex;
+            opacity: 1;
+
+            @starting-style {
+              opacity: 0;
+            }
+          }
+
+          & > * {
+            z-index: 1;
+          }
+
+          &::before {
+            background-size: 100%;
+          }
+        }
+      }
+    }
+  }
+}
