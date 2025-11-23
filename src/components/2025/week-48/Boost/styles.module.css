@@ -1,0 +1,52 @@
+.button {
+  background-color: rgb(246 246 246);
+  color: rgb(135 135 135);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  overflow: hidden;
+  height: 3rem;
+  position: relative;
+  transition: 0.2s var(--bounce);
+
+  &.clicked {
+    background-color: rgb(255 243 236);
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 13px;
+    left: 30%;
+    background-color: red;
+    z-index: 1;
+  }
+
+  &::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgb(246 246 246), transparent);
+  }
+
+  &::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgb(246 246 246), transparent);
+  }
+
+  .button_scroller {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: .3s var(--bounce);
+    translate: 0 var(--position);
+  }
+}
