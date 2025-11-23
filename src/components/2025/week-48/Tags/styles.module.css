@@ -1,0 +1,207 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+
+  &:has(.tag_input:checked) {
+    .new_tag {
+      opacity: 1;
+      display: flex;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+
+  .button_tag {
+    background-color: rgb(249 250 252);
+    border: 1px solid rgb(213 214 220);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: rgb(20 20 20);
+    font-weight: bold;
+    user-select: none;
+    transition: 0.2s;
+
+    anchor-name: --tag-list;
+
+    &:active {
+      scale: 0.96;
+    }
+
+    .tag_input {
+      display: none;
+    }
+
+    .tags_list {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+      justify-content: center;
+
+      & > .tag {
+        margin-right: -15px;
+        border: 2px solid rgb(255 255 255);
+        width: 20px;
+        aspect-ratio: 1;
+        background-color: rgb(217 217 218);
+        border-radius: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(255 255 255);
+        padding-bottom: 0.05rem;
+
+        &:last-of-type {
+          background-color: rgb(115 115 115);
+        }
+      }
+    }
+  }
+
+
+
+
+  
+
+  .new_tag {
+    padding: 0.75rem;
+    border: 1px solid rgb(240 241 242);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 20rem;
+    position-anchor: --tag-list;
+    top: calc(anchor(bottom) + 0.5rem);
+    left: calc(anchor(left) - 5rem);
+    box-shadow: 0 0.75rem 1rem 0.5rem rgb(40 40 40 / 0.1);
+    opacity: 0;
+    display: none;
+    transition: 0.3s;
+    
+    position: absolute;
+
+    .header {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .tag_name {
+      border: 1px solid rgb(211 211 215);
+      background-color: rgb(255 255 255);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      color: rgb(40 40 40);
+    }
+
+    .tag_color_list {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 0.5rem;
+
+      & input {
+        display: none;
+      }
+    }
+
+    .tag_color {
+      display: flex;
+      justify-self: center;
+      width: 20px;
+      aspect-ratio: 1;
+      border-radius: 10rem;
+      cursor: pointer;
+      opacity: 1;
+      transition: 0.3s;
+      position: relative;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 4px;
+        width: 10px;
+        height: 20%;
+        rotate: -45deg;
+        border-left: 1.5px solid rgb(255 255 255);
+        border-bottom: 1.5px solid rgb(255 255 255);
+        transition: 0.2s;
+        opacity: 0;
+      }
+
+      &:has(input:checked) {
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &.color_1 {
+        background-color: rgb(249 114 22);
+      }
+      &.color_2 {
+        background-color: rgb(234 162 65);
+      }
+      &.color_3 {
+        background-color: rgb(228 184 68);
+      }
+      &.color_4 {
+        background-color: rgb(150 204 71);
+      }
+      &.color_5 {
+        background-color: rgb(93 193 107);
+      }
+      &.color_6 {
+        background-color: rgb(93 193 107);
+      }
+      &.color_7 {
+        background-color: rgb(88 180 167);
+      }
+      &.color_8 {
+        background-color: rgb(88 180 167);
+      }
+      &.color_9 {
+        background-color: rgb(77 178 208);
+      }
+      &.color_10 {
+        background-color: rgb(72 161 229);
+      }
+      &.color_11 {
+        background-color: rgb(77 127 240);
+      }
+      &.color_12 {
+        background-color: rgb(99 105 231);
+      }
+      &.color_13 {
+        background-color: rgb(158 91 240);
+      }
+      &.color_14 {
+        background-color: rgb(219 87 153);
+      }
+      &.color_15 {
+        background-color: rgb(228 79 98);
+      }
+      &.color_16 {
+        background-color: rgb(115 115 115);
+      }
+    }
+
+    .button_create {
+      background-color: rgb(40 40 40);
+      padding: 0.5rem;
+      border-radius: 0.75rem;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
