@@ -1,0 +1,119 @@
+.container {
+  border: 0px solid rgb(40 40 40 / 0.1);
+  width: minmax(12rem, 12rem);
+  height: 4rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow: hidden;
+  transition: 0.5s var(--bounce);
+
+  & * {
+    transition: 0.5s var(--bounce);
+  }
+
+  & button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: rgb(40 40 40);
+  }
+
+  &.expand {
+    height: 18.5rem;
+    width: 20rem;
+    border-width: 1px;
+    box-shadow: 0 0 1rem 0 rgb(40 40 40 / 0.1);
+
+    .header {
+      opacity: 1;
+      display: flex;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+
+    & > canvas {
+      display: flex;
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+
+  &.collapse {
+    width: 13rem;
+    height: 4rem;
+    border-width: 0;
+
+    .header {
+      opacity: 0;
+      display: none;
+    }
+
+    & > canvas {
+      display: none;
+    }
+  }
+
+  .header {
+    display: flex;
+    opacity: 0;
+    display: none;
+
+    .title {
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgb(205 205 205);
+    }
+
+    .button_close {
+      margin-left: auto;
+    }
+  }
+
+  & > canvas {
+    opacity: 0;
+    display: none;
+    height: 0;
+    cursor: cell;
+    height: 100%;
+    border-radius: 0.75rem;
+  }
+
+  .controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .button {
+    justify-self: flex-end;
+    background-color: rgb(245 245 249);
+    color: rgb(40 40 40);
+    font-weight: bold;
+    padding: 0.75rem;
+    border-radius: 10rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    justify-content: center;
+
+    &.button_done {
+      background-color: rgb(40 40 40);
+      color: rgb(230 230 230);
+    }
+  }
+
+  .button_edit {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+  }
+}
