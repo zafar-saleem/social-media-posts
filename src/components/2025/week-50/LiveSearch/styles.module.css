@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+
+  .search_container {
+    position: relative;
+    margin: auto;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+
+    .search_icon {
+      position: absolute;
+      /* background-color: red; */
+      /* left: 0.5rem; */
+      /* top: 0.65rem; */
+      width: 2.5rem;
+      height: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* padding: 0.5rem 0.75rem; */
+      border-radius: 10rem;
+    }
+    .search_input {
+      background-color: rgb(240 240 240);
+      padding: 0.75rem 1.25rem;
+      padding-inline-start: 2.75rem;
+      border-radius: 10rem;
+      border: none;
+      color: rgb(40 40 40);
+      outline: none;
+    }
+  }
+
+  .list {
+    display: grid;
+    /* background-color: red; */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+      background-color: rgb(244 244 244);
+      padding: 0.75rem;
+      border-radius: 1rem;
+
+      .media {
+        width: 100%;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(255 255 255);
+        border-radius: 0.5rem;
+        font-size: 2rem;
+      }
+
+      .ingredients {
+        position: absolute;
+        top: 1.25rem;
+        left: 1.25rem;
+        display: flex;
+        gap: 0.25rem;
+
+        .chip {
+          background-color: rgb(244 244 244);
+          padding: 0.25rem 0.5rem;
+          border-radius: 10rem;
+          font-size: 0.7rem;
+          color: rgb(40 40 40);
+        }
+      }
+    }
+  }
+
+  .empty_state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .empty {
+      font-size: 5rem;
+    }
+  }
+}
