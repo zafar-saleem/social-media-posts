@@ -1,0 +1,79 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  background-color: rgb(0 101 226);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  .icon_tick {
+    scale: 0;
+    transition: 0.2s;
+    transition-delay: 0.7s;
+  }
+
+  .button_arrow {
+    transition: 0.2s;
+  }
+
+  &.active {
+    .button_arrow {
+      animation: --download 0.5s forwards;
+    }
+
+    .button_icon {
+      animation: --hide 0.4s 0.5s forwards;
+    }
+
+    .icon_tick {
+      scale: 1;
+    }
+  }
+
+  .icon {
+    background-color: rgb(68 133 229);
+    border-radius: 10rem;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    & > svg {
+      position: absolute;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 0.5rem 0.5rem rgb(40 40 40 / 0.1);
+  }
+
+  &:active {
+    box-shadow: none;
+    scale: 0.98;
+  }
+}
+
+@keyframes --download {
+  50% {
+    translate: 0 -1rem;
+  }
+  100% {
+    translate: 0 2rem;
+  }
+}
+
+@keyframes --hide {
+  95% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
