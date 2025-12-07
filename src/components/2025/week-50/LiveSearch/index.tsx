@@ -8,7 +8,7 @@ import Image from "next/image";
 export const LiveSearch = () => {
   const [filter, setFilter] = React.useState(data);
 
-  const filterList = (value) => {
+  const filterList = (value: string) => {
     const recipe = data.filter(item => {
       if (item.ingredients.join(" ").includes(value)) {
         return item;
@@ -41,7 +41,10 @@ export const LiveSearch = () => {
         {
           filter.length > 0 && filter.map(item => (
             <div className={styles.card} key={item.id}>
-              <div className={styles.media}>{item.image}</div>
+              <div className={styles.media}>
+                <span>{item.image}</span>
+                <span>{item.image}</span>
+              </div>
               <div className={styles.ingredients}>
                 {item.ingredients.map((ing, index) => (<span key={index} className={styles.chip}>{ing}</span>))}
               </div>
