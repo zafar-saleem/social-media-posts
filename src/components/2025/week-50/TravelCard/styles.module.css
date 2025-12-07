@@ -1,0 +1,82 @@
+.card {
+  width: 20rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1.5rem 0rem rgb(40 40 40 / 0.3);
+  position: relative;
+  overflow: hidden;
+
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+    transition: 0.2s;
+  }
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.75rem 0 rgb(255 255 255 / 1) inset;
+  }
+
+  .details {
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(40 40 40);
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0.1), rgb(0 0 0 / 1) 40%);
+    width: 100%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: rgb(250 250 250);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .card_title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .price {
+      color: rgb(99 251 204);
+      font-size: 0.8rem;
+    }
+
+    .badges {
+      display: flex;
+      gap: 0.75rem;
+      
+      .badge {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        background-color: rgb(45 50 51);
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 10rem;
+      }
+    }
+
+    & a {
+      border: none;
+      cursor: pointer;
+      border-radius: 10rem;
+      background-color: rgb(255 255 255);
+      color: rgb(80 80 80);
+      padding-block: 0.5rem;
+      font-weight: bold;
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
