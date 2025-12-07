@@ -51,8 +51,11 @@ export const ProductListing = () => {
   return (
     <section className={styles.listing}>
       <section className={styles.filter}>
-        <div className={styles.category}>
-          <span className={styles.filter_title}>Category</span>
+        <div className={`${styles.section} ${styles.category}`}>
+          <div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(40 40 40)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-footprints-icon lucide-footprints"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg>
+            <span className={styles.filter_title}>Category</span>
+          </div>
           <label>
             <input
               type="checkbox"
@@ -92,8 +95,11 @@ export const ProductListing = () => {
         </div>
 
 
-        <div className={styles.delivery_type}>
-          <span className={styles.filter_title}>Free Delivery Only</span>
+        <div className={`${styles.section} ${styles.delivery_type}`}>
+          <div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(40 40 40)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-van-icon lucide-van"><path d="M13 6v5a1 1 0 0 0 1 1h6.102a1 1 0 0 1 .712.298l.898.91a1 1 0 0 1 .288.702V17a1 1 0 0 1-1 1h-3"/><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h12c1.1 0 2.1.8 2.4 1.8l1.176 4.2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            <span className={styles.filter_title}>Free Delivery Only</span>
+          </div>
           <label>
             <input
               type="checkbox"
@@ -106,14 +112,18 @@ export const ProductListing = () => {
 
 
 
-        <div className={styles.colors}>
-          <span className={styles.filter_title}>Colors</span>
+        <div className={`${styles.section} ${styles.colors}`}>
+          <div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(40 40 40)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-paint-bucket-icon lucide-paint-bucket"><path d="m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z"/><path d="m5 2 5 5"/><path d="M2 13h15"/><path d="M22 20a2 2 0 1 1-4 0c0-1.6 1.7-2.4 2-4 .3 1.6 2 2.4 2 4Z"/></svg>
+            <span className={styles.filter_title}>Colors</span>
+          </div>
           <ul>
             <li>
-              <label>
+              <label style={{ "--color": "beige" }}>
                 <input
                   type="checkbox"
                   name="Beige"
+                  className={styles.beige}
                   defaultChecked={category.join(" ").includes("Beige") ? true : false}
                   onChange={(event) => filterCategory(event, "Beige")}
                 />
@@ -121,7 +131,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "black" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Black")}
@@ -131,7 +141,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "blue" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Blue")}
@@ -141,7 +151,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "brown" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Brown")}
@@ -151,7 +161,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "gray" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Gray")}
@@ -161,7 +171,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "green" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Green")}
@@ -171,7 +181,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "orange" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Orange")}
@@ -181,7 +191,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "pink" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Pink")}
@@ -191,7 +201,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "purple" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Purple")}
@@ -201,7 +211,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "red" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Red")}
@@ -211,7 +221,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "white" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "White")}
@@ -221,7 +231,7 @@ export const ProductListing = () => {
               </label>
             </li>
             <li>
-              <label>
+              <label style={{ "--color": "yellow" }}>
                 <input
                   type="checkbox"
                   onChange={(event) => filterCategory(event, "Yellow")}
