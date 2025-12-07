@@ -7,22 +7,15 @@
   .search_container {
     position: relative;
     margin: auto;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
 
     .search_icon {
       position: absolute;
-      /* background-color: red; */
-      /* left: 0.5rem; */
-      /* top: 0.65rem; */
       width: 2.5rem;
       height: 100%;
       aspect-ratio: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      /* padding: 0.5rem 0.75rem; */
       border-radius: 10rem;
     }
     .search_input {
@@ -38,7 +31,6 @@
 
   .list {
     display: grid;
-    /* background-color: red; */
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 
@@ -75,6 +67,7 @@
           border-radius: 10rem;
           font-size: 0.7rem;
           color: rgb(40 40 40);
+          text-transform: capitalize;
         }
       }
     }
