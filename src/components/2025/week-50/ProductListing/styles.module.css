@@ -253,7 +253,7 @@
 
       &:hover {
         .image {
-          rotate: 5deg;
+          rotate: 2deg;
           scale: 1.1;
         }
       }
