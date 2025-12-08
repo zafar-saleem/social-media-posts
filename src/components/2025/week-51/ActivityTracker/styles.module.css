@@ -1,0 +1,264 @@
+.activity_card {
+  --bg-color: rgb(254 254 254);
+  --title-color: rgb(79 79 79);
+  --support-text-color: rgb(179 179 179);
+  --base-text-color: rgb(148 148 148);
+  --chart-line-color: rgb(226 226 226);
+  --bar-color: rgb(97 167 229);
+  --bar-bg-color: rgb(239 239 239);
+  --icon-bg-color: rgb(220 247 49);
+  --duration: 0.3s;
+
+  background-color: var(--bg-color);
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem 1rem rgb(40 40 40 / 0.1);
+  width: max(25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-inline: 1rem;
+
+    > .icon {
+      border-radius: 10rem;
+      padding: 0.25rem 0.30rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--icon-bg-color);
+
+      > img {
+        width: 1.75rem;
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 10rem;
+      }
+    }
+
+    .title {
+      font-size: 1.1rem;
+    }
+
+    .info {
+      color: var(--support-text-color);
+      font-size: 0.6rem;
+    }
+  }
+
+  .chart {
+    border-bottom: 1px solid var(--chart-line-color);
+    margin-block-end: 1rem;
+
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
+
+    .bar {
+      flex-basis: 4%;
+      flex-shrink: 0;
+      background-color: var(--bar-bg-color);
+      border-radius: 10rem;
+      transition: var(--duration) var(--bounce);
+      height: 100px;
+      translate: 1.60rem -1rem;
+      display: block;
+      box-shadow: 0 0 4px 4px rgb(40 40 40 / 0.1) inset;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 1%;
+        width: 98%;
+        background-color: var(--bar-color);
+        height: var(--metrics);
+        transition: var(--duration) var(--bounce);
+        border-radius: 10rem;
+        box-shadow: 0 0 4px 4px rgb(255 255 255 / 0.2) inset;
+        cursor: pointer;
+        anchor-name: --var(--anchor-name);
+      }
+
+      /* anchor-name: var(--anchor-name); */
+      
+      &:hover + * + .tooltip_monday {
+        position-anchor: --monday;
+        top: calc(var(--top) * -1 - 10px);
+        left: calc(anchor(left) + calc(10 / 2));
+        left: calc(10rem / 3.25 * -1);
+        /* left: 0.25rem; */
+        opacity: 1;
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+      
+      &:hover + * + .tooltip_tuesday {
+        position-anchor: --tuesday;
+        top: calc(var(--top) * -1 - 10px);
+        left: calc(anchor(left) + calc(10 / 4));
+        left: 0.25rem;
+        opacity: 1;
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+      
+      &:hover + * + .tooltip_wednesday {
+        position-anchor: --wednesday;
+        top: calc(var(--top) * -1 - 10px);
+        left: calc(anchor(left) + calc(10rem));
+        left: calc(10rem / 2.25 - 1rem);
+        opacity: 1;
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+      
+      &:hover + * + .tooltip_thursday {
+        position-anchor: --thursday;
+        top: calc(var(--top) * -1 - 10px);
+        left: calc(anchor(left) + calc(10rem));
+        left: calc(5rem * 2 - 3.12rem);
+        opacity: 1;
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+      
+      &:hover + * + .tooltip_friday {
+        position-anchor: --friday;
+        top: calc(var(--top) * -1 - 10px);
+        left: calc(anchor(left) + calc(10rem));
+        left: calc(5rem * 2);
+        opacity: 1;
+        display: flex;
+
+        &::after {
+          translate: calc(10rem / 2.85) 3.25rem;
+        }
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+      
+      &:hover + * + .tooltip_saturday {
+        position-anchor: --saturday;
+        top: calc(var(--top) * -1 - 10px);
+        left: calc(anchor(left) + calc(10rem));
+        left: calc(5rem * 2 + 3rem);
+        opacity: 1;
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+      
+      &:hover + * + .tooltip_sunday {
+        position-anchor: --sunday;
+        top: calc(var(--top) * -1 - 10px);
+        left: calc(anchor(left) + calc(10rem));
+        left: calc(5rem * 2 + 6rem);
+        opacity: 1;
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+      
+    }
+
+    /* &:has(> .bar::before:hover) {
+      background-color: green;
+    } */
+
+    
+
+    .tooltip {
+      position: absolute;
+      opacity: 0;
+      display: none;
+      transition: var(--duration) var(--bounce);
+      background-color: rgb(40 40 40);
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 0 5px 5px rgb(255 255 255 / 0.4);
+      color: rgb(255 255 255);
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 1;
+      box-shadow: 0 0 0.25rem 0.25rem rgb(40 40 40 / 0.3);
+      width: 10rem;
+
+      & > p {
+        display: flex;
+        gap: 1rem;
+
+        > span {
+          margin-left: auto;
+        }
+      }
+
+      &::after {
+        content: "";
+        width: 25px;
+        height: 25px;
+        background-color: rgb(40 40 40);
+        rotate: 45deg;
+        translate: calc(10rem / 3) 3.25rem;
+        position: absolute;
+        z-index: -1;
+      }
+
+      &.tooltip_monday {
+        /* position-anchor: --bar;
+        top: anchor(top);
+        left: anchor(center); */
+      }
+      
+      &.tooltip_tuesday {
+        /* position-anchor: --bar;
+        top: anchor(top);
+        left: anchor(center); */
+      }
+    }
+
+    .label {
+      font-size: 0.8rem;
+      color: var(--support-text-color);
+      translate: 0 113px;
+      position: relative;
+
+      &::before {
+        content: "|";
+        position: absolute;
+        translate: 0.40rem -1.30rem;
+        color: rgb(40 40 40 / 0.1); 
+      }
+    }
+  }
+
+  .details {
+    color: var(--base-text-color);
+    font-size: 0.6rem;
+    text-align: center;
+  }
+}
