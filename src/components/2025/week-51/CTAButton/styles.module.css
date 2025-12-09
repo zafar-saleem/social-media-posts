@@ -1,0 +1,75 @@
+.button {
+  padding: 1rem 1.5rem;
+  padding: 0.25rem;
+  border-radius: 10rem;
+  background: transparent;
+  border: 1px solid rgb(255 255 255);
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-weight: bold;
+    border-radius: 10rem;
+    padding: 0.5rem;
+    padding-inline-end: 1rem;
+    background-color: rgb(41 53 94);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 5px 5px rgb(137 200 243 / 0.3) inset;
+
+    .button_icon {
+      padding: 0.60rem 0.75rem;
+      background-color: rgb(46 58 85);
+      background: linear-gradient(to right bottom, rgb(63 79 105), rgb(43 56 83));
+      /* background-color: red; */
+      border-radius: 10rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 107%;
+        height: 107%;
+        top: -3.5%;
+        left: -3.5%;
+        background-color: rgb(255 255 255 / 0.3);
+        background: linear-gradient(to right bottom, rgb(255 255 255 / 0.3), rgb(51 64 91 / 1));
+        z-index: -1;
+        border-radius: 10rem;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12.5%;
+    left: -7.5%;
+    width: 115%;
+    height: 125%;
+    background: linear-gradient(to right, rgb(134 232 234 / 1), rgb(137 200 243 / 1));
+    filter: blur(10px);
+    border-radius: 10rem;
+    z-index: -1;
+    transition: 0.2s;
+  }
+
+  &:active {
+    scale: 0.98;
+    border: 1px solid rgb(255 255 255);
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: transparent;
+    }
+  }
+}
