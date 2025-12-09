@@ -1,0 +1,222 @@
+.card {
+  --bg-color: rgb(246 248 247);
+  --border-top-color: rgb(234, 234, 234);
+  --border-bottom-color: rgb(255, 255, 255);
+
+  --text-color: rgb(70 71 71);
+  --secondary-text-color: rgb(109 110 110);
+
+  --info-badge-color: rgb(255 255 255);
+  --info-badge-text-color: rgb(135 135 135);
+
+  width: max(25rem);
+  background-color: var(--bg-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: 0 2rem 1rem rgb(40 40 40 / 0.1);
+  transition: 0.3s var(--bounce);
+
+  > section {
+    padding-block: 0.75rem;
+  }
+
+  .separator {
+    border-top: 1.75px solid var(--border-top-color);
+    border-bottom: 1.75px solid var(--border-bottom-color);
+    border-radius: 1rem;
+  }
+
+  .small_text {
+    font-size: 0.7rem;
+  }
+
+  .support_color {
+    color: var(--secondary-text-color);
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .badge {
+    background-color: var(--info-badge-color);
+    padding: 0.35rem 0.5rem;
+    border-radius: 10rem;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+
+    .client_details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .header_info {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  }
+
+
+
+
+  .misc_info {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+
+
+    .assignees {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      .roles {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .role {
+          display: flex;
+          gap: 0.25rem;
+          align-items: center;
+
+          .avatar {
+            background-color: var(--color);
+            padding: 0.25rem 0.45rem;
+            border-radius: 10rem;
+          }
+
+          .label {
+            background-color: var(--color);
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+          }
+        }
+      }
+    }
+
+    z-index: 10;
+  }
+
+
+  overflow: hidden;
+  height: 12.5rem;
+
+  &:hover {
+    height: 21rem;
+    .milestones {
+      translate: 0 0;
+      z-index: 1;
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+
+  .milestones {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    padding-block-end: 3rem;
+    translate: 0 -10rem;
+    transition: 0.3s var(--bounce);
+    z-index: -5;
+    opacity: 0;
+    filter: blur(5px);
+
+    .milestone_duration {
+      height: 8px;
+      width: 100%;
+      background-color: rgb(238 237 237);
+      border-radius: 10rem;
+      box-shadow: inset 0 0 2px 2px rgb(40 40 40 / 0.2);
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: var(--start-date);
+        width: var(--width);
+        height: 100%;
+        background-color: var(--color);
+        border-radius: 10rem;
+        box-shadow: inset 0 0 3px 3px rgb(40 40 40 / 0.2);
+      }
+
+      .label {
+        position: absolute;
+        bottom: -100px;
+        width: 3.5rem;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+        box-shadow: 0 10px 10px rgb(40 40 40 / 0.1);
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 1.5px;
+          height: 5rem;
+          background-color: rgb(249 107 130);
+          top: -80px;
+          left: 1.5rem;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -85px;
+          left: 1.40rem;
+          background-color: rgb(249 107 130);
+          width: 5px;
+          aspect-ratio: 1;
+          border-radius: 10rem;
+        }
+      }
+
+
+      &:nth-of-type(1) {
+        .label {
+          left: var(--end-date);
+          bottom: -90px;
+
+          &::after {
+            left: 22.18px;
+          }
+        }
+      }
+      
+      &:nth-of-type(2) {
+        .label {
+          left: calc(var(--end-date));
+          bottom: -65px;
+
+          &::after {
+            left: 22px;
+          }
+        }
+      }
+      
+      &:nth-of-type(3) {
+        .label {
+          left: calc(var(--end-date));
+          bottom: -40px;
+
+          &::after {
+            left: 22.20px;
+          }
+        }
+      }
+    }
+  }
+}
