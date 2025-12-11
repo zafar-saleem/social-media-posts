@@ -35,6 +35,9 @@ importers:
       react-signature-canvas:
         specifier: 1.1.0-alpha.2
         version: 1.1.0-alpha.2(@types/react@19.2.2)(prop-types@15.8.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      react-webcam:
+        specifier: ^7.2.0
+        version: 7.2.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       yup:
         specifier: ^1.7.1
         version: 1.7.1
@@ -1821,6 +1824,12 @@ packages:
         optional: true
       '@types/react':
         optional: true
+
+  react-webcam@7.2.0:
+    resolution: {integrity: sha512-xkrzYPqa1ag2DP+2Q/kLKBmCIfEx49bVdgCCCcZf88oF+0NPEbkwYk3/s/C7Zy0mhM8k+hpdNkBLzxg8H0aWcg==}
+    peerDependencies:
+      react: '>=16.2.0'
+      react-dom: '>=16.2.0'
 
   react@19.2.0:
     resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
@@ -3996,6 +4005,11 @@ snapshots:
       trim-canvas: 0.1.2
     optionalDependencies:
       '@types/react': 19.2.2
+
+  react-webcam@7.2.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    dependencies:
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
 
   react@19.2.0: {}
 
