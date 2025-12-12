@@ -66,7 +66,7 @@ export const data = {
     {
       day: "sunday",
       label: "Sun",
-      metrics: 97,
+      metrics: 87,
       tooltip: {
         miles: "19",
         total_steps: "38000",
