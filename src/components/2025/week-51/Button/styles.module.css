@@ -9,15 +9,15 @@
   justify-content: center;
   display: grid;
   cursor: pointer;
-  box-shadow: 0 2px 0.5rem 0 rgb(40 40 40 / 0.5);
+  box-shadow: 0 1.5px 0.25rem 0 rgb(40 40 40 / 0.5);
   transition: 0.2s;
   
   &:active {
-    scale: 0.96;
+    scale: 0.97;
     box-shadow: none;
 
     .label {
-      box-shadow: 0 0 3px 3px rgb(40 40 40 / 0.2) inset;
+      box-shadow: 0 0 2px 1px rgb(40 40 40 / 0.2) inset;
     }
   }
 
@@ -26,16 +26,16 @@
   }
 
   .label {
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
     padding-block-start: 0.85rem;
     text-shadow: 0 0.5px 1px rgb(255 255 255 / 1);
     color: rgb(40 40 40 / 0.9);
     font-size: 1rem;
-    box-shadow: 0 0 6px 3px rgb(255 255 255 / 0.9) inset;
+    box-shadow: 0 0 3px 2px rgb(255 255 255 / 0.9) inset;
     border-radius: 1.5rem;
     height: 3rem;
     transition: 0.2s;
-    mix-blend-mode:luminosity;
+    background-color: rgb(153 163 163 / 0.3);
   }
 
   .webcam {
