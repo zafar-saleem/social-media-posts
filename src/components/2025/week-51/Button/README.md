@@ -4,14 +4,14 @@ A highly interactive button component built with React, Next.js, and CSS, featur
 
 # ✨ Features
 
-• Glassmorphism Design
-• Dynamic Mouse Interaction
-• Pure React & CSS.
+* Glassmorphism Design
+* Dynamic Mouse Interaction
+* Pure React & CSS.
 
 # 🛠️ Technology Stack
 
-• **React / Next.js:** For component structure and state management.
-• **CSS:** Utilizing CSS variables for dynamic positioning and transitions.
+* **React / Next.js:** For component structure and state management.
+* **CSS:** Utilizing CSS variables for dynamic positioning and transitions.
 
 # Author
 [Zafar Saleem](https://github.com/zafar-saleem)
