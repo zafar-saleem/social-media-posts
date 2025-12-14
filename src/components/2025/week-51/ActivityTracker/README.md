@@ -5,15 +5,20 @@ A sleek, interactive React component designed to visualize weekly physical activ
 This component is ideal for dashboards, fitness applications, and user profile pages where clear, concise weekly metrics are required.
 
 ## ✨ Features
+```bash
 • Weekly Overview: Displays activity metrics for seven days (Monday to Sunday).
-• Interactive Tooltips: Shows detailed metrics (Miles, Steps, and a bonus metric like goals or flights) on hover for each specific day.
+• Interactive Tooltips: Shows detailed metrics (Miles, Steps, and a bonus metric like goals or flights)
+on hover for each specific day.
 • Performance Summary: Includes a dynamic footer showing week-over-week performance changes.
 • Modern Design: Features a clean, card-based layout with smooth CSS transitions for a high-quality user experience.
+```
 
 ## 💻 Tech Stack
+```bash
 • React.js / Next.js.
 • TypeScript.
 • HTML5 / CSS3.
+```
 
 # Author
 [Zafar Saleem](https://github.com/zafar-saleem)
