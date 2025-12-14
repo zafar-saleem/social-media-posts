@@ -147,7 +147,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  background-color: rgb(223 227 231);
+  /* background-color: rgb(223 227 231); */
   /* background-color: rgb(149, 149, 149); */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
