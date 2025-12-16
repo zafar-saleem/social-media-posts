@@ -1,0 +1,15 @@
+.page_title {
+  text-align: center;
+  margin-block: 1rem;
+  border-bottom: 1px solid rgb(40 40 40 / 0.2);
+  padding-block: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 70vw;
+  margin: 0 auto;
+  padding-block-end: 6rem;
+}

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "formik": "^2.4.8",
+    "immer": "^11.0.1",
     "next": "16.0.1",
     "nuqs": "^2.8.1",
     "papaparse": "^5.5.3",

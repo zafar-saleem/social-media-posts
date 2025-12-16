@@ -1,4 +1,4 @@
-import { ProductCategory } from "@/components/2025/week-52/ProductCategory";
+import { ProductCategory } from "@/components/2025/week-52/ProductCategoryFilter";
 import styles from "./page.module.css";
 
 export default function Home() {
