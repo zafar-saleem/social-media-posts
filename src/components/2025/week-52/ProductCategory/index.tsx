@@ -24,7 +24,10 @@ export const ProductCategory = () => {
 
 export const PageTitle = ({ title }) => {
   return (
-    <h1 className={styles.page_title}>{title}</h1>
+    <div className={styles.header}>
+      <h1 className={styles.page_title}>{title}</h1>
+      {/* <Link href="shopping-cart">Cart</Link> */}
+    </div>
   )
 }
 
@@ -43,10 +46,10 @@ export const Card = ({ ...props }) => {
           <Link href={props.link_url} className={styles.buy_button}>
             <span className={styles.button_label}>Buy it now</span>
             <span className={styles.button_icon}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#282828" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#282828" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </span>
           </Link>
-          <span className={styles.product_price}>{props.price}</span>
+          <span className={styles.product_price}>{props.currency}{props.price}</span>
           
         </figcaption>
       </figure>
