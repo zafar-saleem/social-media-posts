@@ -9,6 +9,38 @@
     .product_photo {
       box-shadow: 0 0 0.25rem 0.5rem rgb(40 40 40 / 0.2);
     }
+
+    .images {
+      translate: 0 -4rem;
+      opacity: 1;
+    }
+  }
+
+  .images {
+    display: flex;
+    gap: 1rem;
+    transition: 0.3s 0.2s var(--bounce);
+    translate: 0 5rem;
+    position: absolute;
+    opacity: 0;
+
+    display: flex;
+    align-self: center;
+    justify-self: center;
+
+    > div {
+      width: 40px;
+      
+
+      > img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 0.25rem;
+        object-fit: cover;
+        box-shadow: 0 0.25rem 0.25rem rgb(40 40 40 / 0.2);
+      }
+    }
   }
 
   .product_photo {

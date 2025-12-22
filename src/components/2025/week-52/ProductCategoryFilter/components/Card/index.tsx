@@ -5,6 +5,20 @@ import Link from "next/link";
 export const Card = ({ ...props }) => {
   return (
     <div className={styles.card} key={props.id}>
+      <div className={styles.images}>
+        {
+          props.images.map((image, index) => (
+            <div key={index}>
+              <Image
+                src={image.src}
+                width={image.width}
+                height={image.height}
+                alt=""
+              />
+            </div>
+          ))
+        }
+      </div>
       <figure className={styles.product_image}>
         <Image
           src={props.image.src}
@@ -20,7 +34,7 @@ export const Card = ({ ...props }) => {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#282828" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </span>
           </Link>
-          <span className={styles.product_price}>{props.price}</span>
+          <span className={styles.product_price}>{props.currecy}{props.price}</span>
           
         </figcaption>
       </figure>
