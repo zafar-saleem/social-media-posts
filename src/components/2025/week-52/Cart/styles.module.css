@@ -1,0 +1,134 @@
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  .page_title {
+    grid-row: 1 / 1;
+    grid-column: span 2;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .items_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-basis: 60%;
+
+    @media screen and (max-width: 800px) {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  .cart_item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    flex-basis: 70%;
+
+    &:nth-child(even) {
+      background-color: rgb(40 40 40 / 0.2);
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  .image {
+    width: 100px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  .button_delete {
+    margin-left: auto;
+    align-self: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background-color: rgb(40 40 40 / 0.3);
+    }
+  }
+
+  .aggregation_container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-basis: 40%;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(to bottom right, rgb(165, 42, 42, 0.2) 40%, rgb(165, 42, 42, 1));
+    outline: 3px solid rgb(255, 255, 255, .2);
+    color: rgb(255 255 255);
+    align-self: flex-end;
+    position: relative;
+    box-shadow: 0 1rem 0.5rem rgb(40 40 40 / 0.2);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      background-color: rgb(165, 42, 42, .8);
+      z-index: -1;
+      border-radius: 1.25rem;
+    }
+
+    @media screen and (max-width: 800px) {
+      align-self: center;
+      width: 100%;
+    }
+
+    .box {
+      display: flex;
+
+      .value {
+        margin-left: auto;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .button_checkout {
+    background-color: rgb(240 240 240);
+    color:  rgb(40 40 40 / 1);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    width: 6rem;
+    margin-left: auto;
+    margin-block-start: 2rem;
+    transition: 0.2s, scale 0.1s;
+
+    &:hover {
+      box-shadow: 0 0 0.5rem rgb(40 40 40 / 1);
+    }
+
+    &:active {
+      box-shadow: none;
+      scale: 0.98;
+    }
+  }
+}

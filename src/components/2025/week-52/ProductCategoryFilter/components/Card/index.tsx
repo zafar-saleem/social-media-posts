@@ -4,21 +4,7 @@ import Link from "next/link";
 
 export const Card = ({ ...props }) => {
   return (
-    <div className={styles.card} key={props.id}>
-      <div className={styles.images}>
-        {
-          props.images.map((image, index) => (
-            <div key={index}>
-              <Image
-                src={image.src}
-                width={image.width}
-                height={image.height}
-                alt=""
-              />
-            </div>
-          ))
-        }
-      </div>
+    <div className={`${styles.card} ${props.featured && styles.featured}`} key={props.id}>
       <figure className={styles.product_image}>
         <Image
           src={props.image.src}

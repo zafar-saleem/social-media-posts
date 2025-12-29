@@ -1,0 +1,36 @@
+.product_quantity {
+  display: flex;
+  align-items: center;
+
+  :where(.button, .quantity) {
+    background-color: rgb(221, 221, 221);
+    border: none;
+    cursor: pointer;
+    color: rgb(40 40 40);
+    
+  }
+
+  .button {
+    padding: 0.5rem 1rem;
+    transition: 0.1s, scale 0.1s;
+    box-shadow: 0 0 0.5rem 0 rgb(40 40 40 / 0.2);
+    z-index: 1;
+
+    &:hover {
+      box-shadow: 0 0 1rem 0 rgb(40 40 40 / 0.2);
+    }
+
+    &:active {
+      box-shadow: none;
+      scale: 0.98;
+    }
+  }
+
+  .quantity {
+    width: 3rem;
+    height: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    outline: none;
+  }
+}

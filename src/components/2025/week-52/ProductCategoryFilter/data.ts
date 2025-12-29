@@ -5,6 +5,7 @@ export const data = [
     short_desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     price: 21.99,
     currecy: "$",
+    featured: true,
     link_url: "/product/details/",
     image: {
       src: "https://as1.ftcdn.net/v2/jpg/03/28/90/22/1000_F_328902200_E0jG2bye4pJvQGGlI98PMnAecH9eseOx.jpg",
@@ -99,26 +100,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -131,7 +132,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -152,6 +153,7 @@ export const data = [
     price: 43.99,
     currecy: "$",
     currency: "$",
+    featured: false,
     link_url: "/product/details/",
     image: {
       src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
@@ -245,26 +247,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -277,7 +279,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -538,26 +540,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -570,7 +572,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -681,26 +683,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -713,7 +715,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -825,26 +827,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -857,7 +859,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -970,26 +972,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1002,7 +1004,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1114,26 +1116,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1146,7 +1148,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1257,26 +1259,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1289,7 +1291,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1400,26 +1402,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1432,7 +1434,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1544,26 +1546,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1576,7 +1578,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1687,26 +1689,26 @@ export const data = [
     ],
     similar_products: [
       {
-        id: 3,
+        id: 2,
         name: "Aspire Comfortwear",
         price: 67.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/6766385/pexels-photo-6766385.jpeg",
+          src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
           width: 2000,
           height: 2000,
           alt: "",
         }
       },
       {
-        id: 4,
+        id: 3,
         name: "Shoreline Hat",
         price: 31.99,
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/1089243/pexels-photo-1089243.jpeg",
+          src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
           width: 2000,
           height: 2000,
           alt: "",
@@ -1719,7 +1721,7 @@ export const data = [
         currency: "$",
         link_url: "/product/details/",
         image: {
-          src: "https://images.pexels.com/photos/2327683/pexels-photo-2327683.jpeg",
+          src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
           width: 2000,
           height: 2000,
           alt: "",
