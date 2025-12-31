@@ -17,48 +17,56 @@ type Action = {
 export const ProductsList: any = data;
 
 const cart = [
+
   {
-    quantity: 1,
+    id: 1,
+    name: "Shoreline Hat",
+    price: 21.99,
     currency: "$",
-    id: 6,
     image: {
-      alt: "",
-      height: 2000,
-      src: "https://as1.ftcdn.net/jpg/02/75/74/58/1000_F_275745846_slBI2EsTudIShef6hMliS6Oa123tC9Zv.jpg",
+      src: "https://as1.ftcdn.net/v2/jpg/03/28/90/22/1000_F_328902200_E0jG2bye4pJvQGGlI98PMnAecH9eseOx.jpg",
       width: 2000,
+      height: 2000,
+      alt: "",
     },
-    name: "Aspire Comfortwear",
-    price: 67.99,
-    color: 'beige',
+    size: "small",
+    color: "Navy Blue",
+    quantity: 1,
   },
   {
-    quantity: 1,
+    id: 2,
+    name: "Zephyr Gown",
+    price: 43.99,
     currency: "$",
-    id: 7,
     image: {
-      alt: "",
-      height: 2000,
-      src: "https://as1.ftcdn.net/jpg/02/75/74/58/1000_F_275745846_slBI2EsTudIShef6hMliS6Oa123tC9Zv.jpg",
+      src: "https://t3.ftcdn.net/jpg/03/51/34/08/240_F_351340803_L9IokosgWo3JmeecNaVbpf0z9sMRYZzk.jpg",
       width: 2000,
+      height: 2000,
+      alt: "",
     },
-    name: "Aspire Comfortwear",
-    price: 67.99,
-    color: 'beige',
+    size: "medium",
+    color: "beige",
+    quantity: 1,
   },
   {
-    quantity: 1,
-    currency: "$",
-    id: 8,
-    image: {
-      alt: "",
-      height: 2000,
-      src: "https://as1.ftcdn.net/jpg/02/75/74/58/1000_F_275745846_slBI2EsTudIShef6hMliS6Oa123tC9Zv.jpg",
-      width: 2000,
-    },
+    id: 3,
     name: "Aspire Comfortwear",
     price: 67.99,
-    color: 'beige',
-  }
+    currency: "$",
+    image: {
+      src: "https://as1.ftcdn.net/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
+      width: 2000,
+      height: 2000,
+      alt: "",
+    },
+    size: "medium",
+    color: "beige",
+    quantity: 1,
+  },
+
+
+
+  
 ]
 
 export const useProductCategory = create<State & Action>((set) => ({

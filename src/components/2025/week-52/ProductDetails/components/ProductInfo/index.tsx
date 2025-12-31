@@ -18,7 +18,7 @@ export const ProductInfo = ({ product }) => {
       </div>
 
 
-      <span className={styles.product_price}>{product.currency}{product.price}</span>
+      <span className={styles.product_price}>{product.currecy}{product.price}</span>
       <p className={styles.product_overview}>{product.brief_desc}</p>
 
       <FeatureSelection title={`Colors`} data={product.colors} color={true} />

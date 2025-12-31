@@ -16,7 +16,7 @@ export const SimilarProducts = ({ similar }) => {
               height={product.image.height}
               alt={product.image.alt}
             />
-            <span>{product.name}</span>
+            <span className={styles.product_title}>{product.name}</span>
             <span className={styles.product_price}>{product.currency}{product.price}</span>
           </Link>
         ))

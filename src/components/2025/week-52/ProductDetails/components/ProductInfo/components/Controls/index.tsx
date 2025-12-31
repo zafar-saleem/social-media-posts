@@ -15,11 +15,10 @@ export const Controls = ({ product }) => {
         price: product.price,
         amount: 1,
         image: product.image,
+        quantity: 1,
       }
     ]);
   }
-
-  console.log(cart);
   
   return (
     <div className={styles.controls}>

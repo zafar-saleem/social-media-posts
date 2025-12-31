@@ -50,12 +50,27 @@
       opacity: 0;
       flex-direction: column;
       gap: 1rem;
+
+      > div {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+      }
+    }
+
+    &.tab_specs {
+      display: flex;
+      flex-direction: column;
     }
   }
 
 
 
   &:has(.tab_overview > input:checked) {
+    .tab_desc {
+      display: none;
+    }
+
     .tab_overview {
       display: flex;
       opacity: 1;
@@ -68,6 +83,10 @@
   }
   
   &:has(.tab_specs > input:checked) {
+    .tab_desc {
+      display: none;
+    }
+
     .tab_specs {
       display: flex;
       opacity: 1;
@@ -80,6 +99,10 @@
   }
   
   &:has(.tab_reviews > input:checked) {
+    .tab_desc {
+      display: none;
+    }
+
     .tab_reviews {
       display: flex;
       opacity: 1;
@@ -88,6 +111,31 @@
       @starting-style {
         opacity: 0;
       }
+    }
+  }
+
+  .review_author {
+    font-size: 0.8rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .author_label {
+      display: flex;
+      gap: 0.5rem;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar {
+      display: flex;
+      width: 1.5rem;
+      aspect-ratio: 1;
+      border-radius: 10rem;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(40 40 40 / 0.1);
     }
   }
 }

@@ -32,11 +32,14 @@ export const Cart = () => {
   }
 
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} ${cart.length <= 0 && styles.center}`}>
       <div className={styles.items_list}>
-        <h2 className={styles.page_title}>Items In Your Cart</h2>
+        {cart.length > 0 && <h2 className={styles.page_title}>Items In Your Cart</h2>}
         {
-          cart.map(product => (
+          cart.length <= 0 && <p className={styles.empty_state}>No items in your cart</p>
+        }
+        {
+          cart.length > 0 && cart.map(product => (
             <div key={product.id} className={styles.cart_item}>
               <Image
                 src={product.image.src}
@@ -61,21 +64,23 @@ export const Cart = () => {
           ))
         }
       </div>
-      <div className={styles.aggregation_container}>
-        <div className={`${styles.box} ${styles.subtotal}`}>
-          <span className={styles.label}>Subtotal</span>
-          <span className={styles.value}>${calculateSubtotal()}</span>
+      {
+        cart.length > 0 && <div className={styles.aggregation_container}>
+          <div className={`${styles.box} ${styles.subtotal}`}>
+            <span className={styles.label}>Subtotal</span>
+            <span className={styles.value}>${calculateSubtotal()}</span>
+          </div>
+          <div className={`${styles.box} ${styles.shipping_fee}`}>
+            <span className={styles.label}>Shipping Fee</span>
+            <span className={styles.value}>$9.99</span>
+          </div>
+          <div className={`${styles.box} ${styles.shipping_fee}`}>
+            <span className={styles.label}>Total</span>
+            <span className={styles.value}>${totalCost()}</span>
+          </div>
+          <button className={styles.button_checkout}>Checkout</button>
         </div>
-        <div className={`${styles.box} ${styles.shipping_fee}`}>
-          <span className={styles.label}>Shipping Fee</span>
-          <span className={styles.value}>$9.99</span>
-        </div>
-        <div className={`${styles.box} ${styles.shipping_fee}`}>
-          <span className={styles.label}>Total</span>
-          <span className={styles.value}>${totalCost()}</span>
-        </div>
-        <button className={styles.button_checkout}>Checkout</button>
-      </div>
+      }
     </section>
   )
 }

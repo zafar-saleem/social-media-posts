@@ -46,6 +46,17 @@
     }
   }
 
+  &.center {
+    align-items: center;
+    justify-content: center;
+    height: 50svh;
+  }
+
+  .empty_state {
+    align-self: center;
+    justify-self: center;
+  }
+
   .image {
     width: 100px;
     height: auto;

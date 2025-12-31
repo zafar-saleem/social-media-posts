@@ -658,27 +658,42 @@ export const data = [
       "S", "M", "L", "XL", "XXL"
     ],
     isBookmarked: false,
-    brief_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam minima atque nemo eos, consequuntur.",
-    overview: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam minima atque nemo eos, consequuntur consequatur impedit nulla repellat eveniet recusandae cum nam voluptate distinctio, rem id, sapiente corporis saepe repellendus tempore eaque. Asperiores repellendus quibusdam magnam eius corrupti cumque! Ipsa, dolore blanditiis. Ratione perferendis quasi tenetur porro debitis error cum eum impedit nostrum, laboriosam vel aperiam. Quisquam amet fugiat vero nam. Mollitia quaerat distinctio quibusdam quidem possimus quia magni nemo? Sint, voluptatibus maxime! Natus dolor magnam voluptatum? Esse architecto magni explicabo nobis omnis tenetur, ducimus temporibus quisquam fugit distinctio quod atque, velit tempore fugiat reprehenderit labore, recusandae vel facilis cupiditate?",
-    specs: "SPECS",
+    brief_desc: "Veniam minima atque nemo eos, consequuntur. Quisquam amet fugiat vero nam.",
+    overview: [
+      "Laboriosam vel aperiam. Quisquam amet fugiat vero nam. Mollitia quaerat distinctio quibusdam quidem possimus quia magni nemo? Sint, voluptatibus maxime! Natus dolor magnam voluptatum? Esse architecto magni explicabo nobis omnis tenetur, ducimus temporibus quisquam fugit distinctio quod atque, velit tempore fugiat reprehenderit labore, recusandae vel facilis cupiditate?",
+      "Sint, voluptatibus maxime! Natus dolor magnam voluptatum? Esse architecto magni explicabo nobis omnis tenetur, ducimus temporibus quisquam fugit distinctio quod atque, velit tempore fugiat reprehenderit labore, recusandae vel facilis cupiditate?"
+    ],
+    specs: [
+      "Modern material",
+      "Water proof",
+      "Available in many colors",
+      "In all sizes",
+      "Adjustable cap"
+    ],
     reviews_list: [
       {
         id: 1,
-        text: "REVIEW",
-        author: "AUTHOR",
+        text: "Perfectly fit cap",
+        author: "McLean Jozeph",
         stars: 5,
+        avatar: "J",
+        url: "/profile/",
       },
       {
         id: 2,
-        text: "REVIEW",
-        author: "AUTHOR",
+        text: "Delivered in perfect condition",
+        author: "Markuz",
         stars: 4,
+        avatar: "M",
+        url: "/profile/",
       },
       {
         id: 3,
-        text: "REVIEW",
-        author: "AUTHOR",
+        text: "The description of the product matches the product",
+        author: "Rob",
         stars: 5,
+        avatar: "R",
+        url: "/profile/",
       },
     ],
     similar_products: [
@@ -716,6 +731,19 @@ export const data = [
         link_url: "/product/details/",
         image: {
           src: "https://as2.ftcdn.net/jpg/01/10/30/65/1000_F_110306593_fqN1f1N1E8CJAfSLdT9KsKzneCVBeVuA.jpg",
+          width: 2000,
+          height: 2000,
+          alt: "",
+        },
+      },
+      {
+        id: 9,
+        name: "Comfortwear",
+        price: 43.99,
+        currency: "$",
+        link_url: "/product/details/",
+        image: {
+          src: "https://as2.ftcdn.net/jpg/03/84/72/63/1000_F_384726362_6aHGpJ9h4eiCA61Pu0R1XKIoQuZClhYi.jpg",
           width: 2000,
           height: 2000,
           alt: "",

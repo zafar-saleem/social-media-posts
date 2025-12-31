@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  margin: auto;
   margin-block-end: 4rem;
   width: 81%;
 
@@ -30,19 +31,32 @@
     text-align: center;
   }
 
+  .product_title {
+    font-weight: bold;
+  }
+
   .section_subtitle {
     grid-column: span 4;
     grid-row: 2 / 2;
     text-align: center;
     margin-block-end: 1.5rem;
+    color: rgb(40 40 40 / 0.7);
+  }
+
+  .product_price {
+    color: rgb(40 40 40 / 0.9);
   }
 
   .similar_container {
     grid-row: 3 / 3;
-    width: 20rem;
+    width: 10rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
 
     img {
       width:  100%;
