@@ -1,0 +1,131 @@
+.fitness_list {
+  list-style: none;
+  width: 25rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .fitness_item {
+    padding: 1rem;
+    background-color: rgb(255 255 255);
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: 0.2s;
+
+    &:hover {
+      translate: -0.25rem 0;
+      box-shadow: 0.75rem 0 0.75rem 0 rgb(40 40 40 / 0.1);
+    }
+  }
+
+  .exercise {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .exercise_icon {
+    align-self: flex-start;
+    padding: 0.25rem 0.35rem;
+    border-radius: 0.5rem;
+
+    border: 1px solid var(--border);
+    background-color: var(--background);
+  }
+
+  .fitness_details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .fitness_title {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .misc {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    color: rgb(130 138 158);
+
+    list-style: none;
+
+    > li {
+      position: relative;
+
+      &:not(:last-child) {
+        &::after {
+          content: "";
+          position: absolute;
+          width: 5px;
+          top: 6px;
+          border-radius: 10rem;
+          aspect-ratio: 1;    
+          background-color: rgb(130 138 158);
+          right: -0.65rem;
+          z-index: 10;
+        }
+      }
+    }
+  }
+
+  .fitness_level {
+    margin-left: auto;
+    color: rgb(107 115 136);
+    background-color: rgb(246 247 248);
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 0.5rem;
+    border-radius: 10rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  .controls {
+    display: flex;
+
+    .timestamp {
+      display: flex;
+      gap: 0.5rem;
+      background-color: rgb(246 247 248);
+      padding: 0.5rem 1rem;
+      border-radius: 10rem;
+      font-weight: bold;
+      color: rgb(130 138 158);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .buttons {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .button_bookmark {
+        border-radius: 10rem;
+        padding: 0.5rem 0.5rem;
+        border: 1px solid rgb(235 237 245);
+        background-color: rgb(255 255 255);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .button_start {
+        padding: 0.5rem 0.75rem;
+        border-radius: 10rem;
+        border: none;
+        background-color: rgb(40 40 40);
+        cursor: pointer;
+      }
+    }
+  }
+}
