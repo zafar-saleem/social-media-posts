@@ -1,14 +1,15 @@
 .header {
-  width: 100%;
+  max-width: 80vw;
   grid-column: span 3;
   display: grid;
   grid-template-columns: 1fr auto;
   position: relative;
+  margin: auto;
+  margin-block-end: 4rem;
 }
 
 .page_title {
   text-align: center;
-  margin-block: 1rem;
   border-bottom: 1px solid rgb(40 40 40 / 0.2);
   padding-block: 1rem;
 }

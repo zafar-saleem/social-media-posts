@@ -1,0 +1,142 @@
+.card_travel {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 1rem 1rem 0 rgb(40 40 40 / 0.3);
+  border-radius: 1rem;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 1rem 0 rgb(40 40 40 / 0.3);
+  }
+
+  .card_media {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.5 / 2;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgb(40 40 40 / 0.2);
+    border-radius: 1rem;
+  }
+
+  .card_details {
+    background-color: rgb(40 40 40 / 0.6);
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    color: rgb(255 255 255);
+    border: 1px solid rgb(255 255 255 / 0.2);
+    border-radius: 0.85rem;
+    width: calc(100% - 1rem);
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 0 0.25rem 1rem 0 rgb(40 40 40 / 1);
+    z-index: 2;
+  }
+
+  .card_box {
+    display: flex;
+    align-items: center;
+  }
+
+  .card_title {
+    font-size: 0.9rem;
+  }
+
+  .card_ratings {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .ratings_total {
+    color: rgb(144 149 146);
+    font-size: 0.7rem;
+  }
+
+  .card_location {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    font-size: 0.7rem;
+    color: rgb(255 255 255 / 0.8);
+  }
+
+  .card_description {
+    font-size: 0.8rem;
+  }
+
+  .card_tags {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .tag {
+      background-color: rgb(111 111 111);
+      font-size: 0.7rem;
+      padding: 0.10rem 0.5rem;
+      border-radius: 10rem;
+      position: relative;
+      border: 1px solid rgb(255 255 255 / 0.3);
+    }
+  }
+
+  .control {
+    margin-top: 0.5rem;
+    display: flex;
+
+    .card_price {
+      display: flex;
+      align-items: center;
+      gap: 0.10rem;
+
+      .price {
+        font-weight: bold;
+      }
+
+      .occurence {
+        color: rgb(171 175 178);
+        font-size: 0.7rem;
+      }
+    }
+
+    .button {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 0.35rem 0.5rem;
+      gap: 0.25rem;
+      background-color: rgb(255 255 255);
+      color: rgb(40 40 40);
+      border-radius: 10rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: rgb(255 255 255 / 0.6);
+      }
+
+      &:active {
+        scale: 0.98;
+      }
+    }
+  }
+}

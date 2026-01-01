@@ -11,9 +11,9 @@
   .page_title {
     grid-row: 1 / 1;
     grid-column: span 2;
-    text-align: center;
     align-items: center;
     justify-content: center;
+    margin-block-start: 4rem;
   }
 
   .items_list {
@@ -88,7 +88,6 @@
     padding: 1rem;
     border-radius: 1rem;
     background-image: linear-gradient(to bottom right, rgb(165, 42, 42, 0.2) 40%, rgb(165, 42, 42, 1));
-    outline: 3px solid rgb(255, 255, 255, .2);
     color: rgb(255 255 255);
     align-self: flex-end;
     position: relative;

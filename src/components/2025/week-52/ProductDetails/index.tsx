@@ -18,16 +18,18 @@ export const ProductDetails = () => {
   })[0];
 
   return (
-    <section className={styles.container}>
-      <PageTitle title="Apparel Collection" />
-      <ProductCarousel images={product.images} />
-      <ProductInfo product={product} />
-      <ProductDescriptions
-        overview={product.overview}
-        specs={product.specs}
-        reviews={product.reviews_list}
-      />
-      <SimilarProducts similar={product.similar_products} />
-    </section>
+    <>
+      <PageTitle title="Apparel Collection" />    
+      <section className={styles.container}>
+        <ProductCarousel images={product.images} />
+        <ProductInfo product={product} />
+        <ProductDescriptions
+          overview={product.overview}
+          specs={product.specs}
+          reviews={product.reviews_list}
+        />
+        <SimilarProducts similar={product.similar_products} />
+      </section>
+    </>
   )
 }
