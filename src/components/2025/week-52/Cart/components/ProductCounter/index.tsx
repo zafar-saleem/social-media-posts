@@ -33,12 +33,16 @@ export const ProductCounter = ({ ...props }) => {
       <button
         className={`${styles.button} ${styles.button_decrease}`}
         onClick={() => changeQuantity('reduce')}
-      >-</button>
+      >
+        <svg width="12" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(40 40 40)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-minus-icon lucide-minus"><path d="M5 12h14"/></svg>
+      </button>
       <input type="text" defaultValue={props.quantity} className={`${styles.quantity}`} />
       <button
         className={`${styles.button} ${styles.button_increase}`}
         onClick={() => changeQuantity('add')}
-      >+</button>
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(40 40 40)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+      </button>
     </div>
   )
 }

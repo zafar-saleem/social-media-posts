@@ -1,10 +1,10 @@
+import { ProductCategory } from "@/components/2025/week-52/ProductCategoryFilter";
 import styles from "./page.module.css";
-import { TravelCard } from "@/components/2026/1.jan/5-9/TravelCard";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <TravelCard />
+      <ProductCategory />
     </main>
   );
 }

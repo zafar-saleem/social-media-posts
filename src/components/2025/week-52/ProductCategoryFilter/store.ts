@@ -45,7 +45,7 @@ const cart = [
       alt: "",
     },
     size: "medium",
-    color: "beige",
+    color: "charcoal",
     quantity: 1,
   },
   {
@@ -59,8 +59,8 @@ const cart = [
       height: 2000,
       alt: "",
     },
-    size: "medium",
-    color: "beige",
+    size: "large",
+    color: "grey",
     quantity: 1,
   },
 
