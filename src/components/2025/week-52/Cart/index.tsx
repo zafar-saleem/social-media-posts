@@ -7,6 +7,23 @@ import { ProductCounter } from "./components/ProductCounter";
 import { PageTitle } from "../ProductCategoryFilter";
 import Link from "next/link";
 
+export const calculateSubtotal = (cart) => {
+  let price: number;
+
+  return cart.reduce((combinator, item) => {
+    if (item.quantity > 1) {
+      price = item.price * item.quantity;
+      return parseInt(combinator + price);
+    }
+
+    return parseInt(combinator + item.price);
+  }, 0);
+}
+
+export const totalCost = (cart) => {
+  return calculateSubtotal(cart) - 9.99;
+}
+
 export const Cart = () => {
   const cart = useProductCategory((state) => state.cart);
   const setCart = useProductCategory((state) => state.setCart);
@@ -14,23 +31,6 @@ export const Cart = () => {
   const deleteCartItem = (id: number) => {
     const newCart = cart.filter(item => item.id !== id);
     setCart(newCart);
-  }
-
-  const calculateSubtotal = () => {
-    let price: number;
-
-    return cart.reduce((combinator, item) => {
-      if (item.quantity > 1) {
-        price = item.price * item.quantity;
-        return parseInt(combinator + price);
-      }
-
-      return parseInt(combinator + item.price);
-    }, 0);
-  }
-
-  const totalCost = () => {
-    return calculateSubtotal() - 9.99;
   }
 
   return (
@@ -79,11 +79,11 @@ export const Cart = () => {
         </div>
         {
           cart.length > 0 && <div className={styles.aggregation_container}>
-            <h3 className={styles.value}>${totalCost()}</h3>
+            <h3 className={styles.value}>${totalCost(cart)}</h3>
             <div className={`${styles.box} ${styles.subtotal}`}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(40 40 40)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-closed-caption-icon lucide-closed-caption"><path d="M10 9.17a3 3 0 1 0 0 5.66"/><path d="M17 9.17a3 3 0 1 0 0 5.66"/><rect x="2" y="5" width="20" height="14" rx="2"/></svg>
               <span className={styles.label}>Subtotal</span>
-              <span className={styles.value}>${calculateSubtotal()}</span>
+              <span className={styles.value}>${calculateSubtotal(cart)}</span>
             </div>
             <div className={`${styles.box} ${styles.shipping_fee}`}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(40 40 40)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
@@ -93,9 +93,9 @@ export const Cart = () => {
             <div className={`${styles.box} ${styles.shipping_fee} ${styles.total}`}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(40 40 40)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-calculator-icon lucide-calculator"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
               <span className={styles.label}>Total</span>
-              <span className={styles.value}>${totalCost()}</span>
+              <span className={styles.value}>${totalCost(cart)}</span>
             </div>
-            <Link href="#" className={styles.button_checkout}>Checkout</Link>
+            <Link href="/checkout" className={styles.button_checkout}>Checkout</Link>
           </div>
         }
       </section>

@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'img.icons8.com/**',
+        port: '',
+        search: '',
+      },
+      {
+        protocol: 'https',
         hostname: 't3.ftcdn.net/**',
         port: '',
         search: '',
