@@ -1,0 +1,96 @@
+.flight_container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgb(40 40 40 / 0.1);
+  border-radius: 1rem;
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+
+    .title {
+      color: rgb(71 71 71);
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    .city {
+      color: rgb(143 147 155);
+      font-size: 0.8rem;
+    }
+
+    .time {
+      background-color: rgb(226, 226, 226);
+      padding: 0.25rem;
+      border-radius: 10rem;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: rgb(62 64 70);
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .separator {
+    width: 10rem;
+    position: relative;
+
+    .separator_title {
+      color: rgb(247 91 19);
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+
+    .duration {
+      color: rgb(64 64 64);
+      font-size: 0.8rem;
+    }
+
+    &::before {
+      content: "";
+      top: 50%;
+      left: 5%;
+      width: 30%;
+      height: 1.5px;
+      background-color: rgb(221 221 223);
+      background-image: linear-gradient(to right, rgb(221 221 223) 50%, rgb(247 91 19) 50%);
+      background-position: -10px 0;
+      position: absolute;
+      animation: --bg 5s linear infinite;
+    }
+    
+    &::after {
+      content: "";
+      top: 48%;
+      right: 5%;
+      width: 30%;
+      height: 1.5px;
+      background-color: rgb(221 221 223);
+      position: absolute;
+    }
+
+    > svg {
+      rotate: 45deg;
+      transition: 0.3s;
+    }
+  }
+}
+
+@keyframes --bg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -50px 0;
+  }
+}
