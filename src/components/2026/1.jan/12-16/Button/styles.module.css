@@ -1,0 +1,40 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+
+  padding: 0.5rem;
+  padding-inline-end: 1rem;
+  border-radius: 10rem;
+  border: none;
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  background-image: linear-gradient(to bottom, rgb(59 52 54), rgb(46 42 43));
+
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 0.5rem 0.25rem rgb(40 40 40 / 0.2);
+  }
+
+  &:active {
+    box-shadow: 0 0 0.5rem 0.25rem rgb(40 40 40 / 0);
+    scale: 0.98;
+  }
+
+  .button_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(to bottom, rgb(69 64 65), rgb(103 93 98));
+    padding: 0.5rem;
+    border-radius: 10rem;
+    position: relative;
+    outline: 3px solid rgb(87, 80, 83);
+  }
+}
