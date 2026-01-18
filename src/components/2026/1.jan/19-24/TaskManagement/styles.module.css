@@ -1,0 +1,175 @@
+.container {
+  background-color: rgb(250 250 250);
+  padding: 2rem;
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 0.5rem 0.5rem 0 rgb(40 40 40 / .1);
+
+  .header {
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 0.25rem;
+
+    border-bottom: 1px solid rgb(232 232 233);
+    padding-block-end: 1rem;
+  }
+
+  .title {
+    font-size: 1.125rem;
+    grid-column: 1 / 1;
+  }
+
+  .desc {
+    color: rgb(153 154 160);
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+  }
+
+  .button_more {
+    grid-column: 2 / 2;
+    grid-row: 1 / 2;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    margin-left: auto;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    padding-block-start: 1rem;
+    margin-block-end: 0.75rem;
+
+    .section_title {
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    .section_counter {
+      background-color: rgb(244 244 244);
+      padding: 0.25rem 0.55rem;
+      border-radius: 10rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: rgb(118 123 127);
+    }
+
+    .section_link {
+      margin-left: auto;
+      color: rgb(118 123 127);
+      font-weight: bold;
+    }
+  }
+
+
+
+
+
+  .cards_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid rgb(232 232 234);
+    padding: 0.75rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 2px 0 rgb(40 40 40 / 0.1);
+  }
+
+  .card_header {
+    display: flex;
+    align-items: center;
+
+    .card_title {
+      font-weight: bold;
+    }
+
+    .card_more {
+      margin-left: auto;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+    }
+  }
+
+
+
+
+  .card_main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgb(233 233 235);
+    padding-block-end: 0.5rem;
+  }
+
+  .card_tags {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+
+    .card_pill {
+      text-transform: capitalize;
+      padding: 0.25rem 0.5rem;
+      border-radius: 10rem;
+      border: 1px solid rgb(239 239 239);
+      border-radius: 10rem;
+
+      &.high {
+        background-color: rgb(251 243 240);
+        border: 1px solid rgb(235 227 226);
+      }
+      
+      &.medium {
+        background-color: rgb(253 251 231);
+        border: 1px solid rgb(244 242 230);
+      }
+      
+      &.low {
+        background-color: rgb(235 255 245);
+        border: 1px solid rgb(184 243 218);
+      }
+    }
+  }
+
+
+
+
+  .card_footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-block-end: 0.5rem;
+    font-size: 0.7rem;
+
+    .card_timestamp,
+    .card_comments,
+    .card_attachment {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .author {
+      margin-left: auto;
+      background-color: var(--color);
+      padding: 0.25rem 0.25rem;
+      border-radius: 10rem;
+      color: rgb(255 255 255);
+    }
+  }
+}
