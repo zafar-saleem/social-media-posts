@@ -1,0 +1,41 @@
+.button {
+  --size: 3%;
+
+  background: rgb(255 255 255);
+  padding: 0.75rem 1rem;
+  color: rgb(40 40 40);
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  transition: 0.2s;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    z-index: 5;
+    position: relative;
+  }
+
+  &:hover {
+    --size: 100%;
+
+    box-shadow: 0 10px 10px 0 rgb(40 40 40 / .1);
+  }
+
+  &:active {
+    box-shadow: none;
+    scale: 0.98;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--size);
+    height: 100%;
+    background-color: rgb(255 184 35);
+    transition: 0.3s var(--bounce);
+  }
+
+}
