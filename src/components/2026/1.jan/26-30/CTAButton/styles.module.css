@@ -1,0 +1,65 @@
+.button {
+  --x: 0px;
+  --y: 0px;
+  --w: 10px;
+  --h: 10px;
+
+  background-color: rgb(0 0 0);
+  border: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: 0.1s, width 0.3s, height 2s;
+  text-transform: uppercase;
+
+  &:active {
+    scale: 0.98;
+
+    .border {
+      --w: 100%;
+      --h: 100%;
+    }
+  }
+
+  &:hover {
+    .border {
+      --x: -5px;
+      --y: -5px;
+    }
+  }
+
+  .border {
+    width: var(--w);
+    height: var(--h);
+    position: absolute;
+    transition: 0.2s var(--bounce);
+  }
+
+  .border_top_left {
+    border-top: 1px solid rgb(40 40 40);
+    border-left: 1px solid rgb(40 40 40);
+    top: var(--y);
+    left: var(--x);
+  }
+  
+  .border_top_right {
+    border-top: 1px solid rgb(40 40 40);
+    border-right: 1px solid rgb(40 40 40);
+    top: var(--x);
+    right:  var(--y);
+  }
+  
+  .border_bottom_right {
+    border-bottom: 1px solid rgb(40 40 40);
+    border-right: 1px solid rgb(40 40 40);
+    bottom: var(--x);
+    right:  var(--y);
+  }
+  
+  .border_bottom_left {
+    border-bottom: 1px solid rgb(40 40 40);
+    border-left: 1px solid rgb(40 40 40);
+    bottom: var(--x);
+    left: var(--y);
+  }
+}
