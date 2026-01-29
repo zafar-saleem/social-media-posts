@@ -1,0 +1,154 @@
+.card {
+  border: 1px solid rgb(236 234 239);
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background-color: rgb(255 255 255);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 30rem;
+
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    background-color: rgb(228, 228, 228);
+    padding: 0.25rem;
+    border-radius: 1.25rem;
+    width: fit-content;
+
+    .tab_label {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      color: rgb(150 150 150);
+      transition: 0.2s;
+      border-radius: 1rem;
+
+      &:has(> .tab:checked) {
+        background: linear-gradient(to bottom, rgb(255 255 255), rgb(249 249 249));
+        color: rgb(0 0 0);
+      }
+
+      &:has(> .tab:hover) {
+        background: linear-gradient(to bottom, rgb(255 255 255), rgb(249 249 249));
+      }
+    }
+
+    .tab {
+      display: none;
+    }
+  }
+
+  &:has(.tab_all:checked) {
+    > .contents > div {
+      display: none;
+      opacity: 0;
+    }
+
+    > .contents > .tab_all {
+      display: flex;
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+  
+  &:has(.tab_active:checked) {
+    > .contents > div {
+      display: none;
+      opacity: 0;
+    }
+
+    > .contents > .tab_active {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+  
+  &:has(.tab_unactive:checked) {
+    > .contents > div {
+      display: none;
+      opacity: 0;
+    }
+
+    > .contents > .tab_unactive {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+
+    > div {
+      display: none;
+      transition: 0.4s;
+      opacity: 0;
+    }
+
+    .tab_all {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .card_title_container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .card_title {
+      font-weight: normal;
+    }
+
+    .title_label {
+      color: rgb(153 153 153);
+    }
+
+    .chart {
+      display: flex;
+      gap: 1rem;
+      min-height: 200px;
+
+      > div {
+        flex-basis: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        position: relative;
+      }
+
+      .bar_label {
+        position: absolute;
+        bottom: 10;
+      }
+
+      .bar {
+        position: absolute;
+        bottom: 40px;
+        left: 25px;
+        height: var(--value);
+        width: 10px;
+        border-radius: 10rem;
+        /* background: linear-gradient(to bottom, rgb(255, 174, 131), rgb(239 33 10)); */
+        background-color: var(--color);
+      }
+    }
+  }
+}
