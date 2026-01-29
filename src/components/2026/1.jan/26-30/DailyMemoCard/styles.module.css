@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  gap: 1rem;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    aspect-ratio: 1;
+    color: rgb(253 253 255);
+    background: linear-gradient(to bottom, rgb(91, 94, 110) 1%, rgb(33 37 46) 30%);
+    border-radius: 1.5rem;
+    position: relative;
+    box-shadow: 0 0 0.25rem 0.25rem rgb(40 40 40 / 0.5);
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      background: linear-gradient(to bottom, rgb(253, 254, 254), rgb(9, 10, 15) 30%);
+      z-index: -1;
+      border-radius: 1.65rem;
+    }
+  }
+
+  .value {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .label {
+    text-transform: uppercase;
+  }
+}
