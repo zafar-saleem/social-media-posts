@@ -1,0 +1,112 @@
+@property --color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgb(16 15 20);
+}
+
+.card {
+  background: linear-gradient(to bottom, rgb(254 254 254), rgb(247 247 247));
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 0 0.5rem 0.5rem 0.5rem rgb(40 40 40 / 0.1);
+
+  > h1 {
+    text-align: center;
+    padding-block-start: 1rem;
+    width: 10rem;
+    margin: auto;
+    font-weight: normal;
+  }
+
+  &:hover {
+    .chart::after {
+      --color: rgb(253, 203, 145);
+    }
+  }
+
+  .calories_list {
+    display: flex;
+    gap: 2rem;
+    background-color: rgb(255 255 255);
+    border-radius: 0.85rem;
+    padding: 1.5rem;
+
+    .chart {
+      width: 8rem;
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 10rem;
+      background-color: rgb(255 255 255);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      > span {
+        position: relative;
+        z-index: 100;
+
+        &:first-child {
+          font-size: 1.5rem;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: calc(100%);
+        height: calc(100%);
+        background-color: rgb(249 249 249);
+        border-radius: 10rem;
+        z-index: 1;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        background: conic-gradient(from 0deg, var(--color) 180deg, rgb(0 0 0 / 0.1) 0deg);
+        border-radius: 10rem;
+        transition: 0.3s;
+      }
+    }
+
+    .calories_left {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+
+      > li {
+        display: flex;
+        gap: 0.5rem;
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+
+          > .value {
+            font-weight: bold;
+          }
+
+          > .text {
+            color: rgb(164 164 164);
+          }
+        }
+      }
+    }
+  }
+}
