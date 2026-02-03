@@ -1,0 +1,81 @@
+.toggle {
+  cursor: pointer;
+  width: 8rem;
+  aspect-ratio: 2 / 1;
+  border-radius: 1rem;
+  background-color: rgb(39 39 39);
+  box-shadow: 0 0 0.5rem 0.5rem rgb(0 0 0 / 0.2) inset;
+  position: relative;
+
+  & input {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    aspect-ratio: 1.42 / 1;
+    top: 0.25rem;
+    left: 0.25rem;
+    background: linear-gradient(to bottom, rgb(95 95 95) 1%, rgb(67 67 67), rgb(60, 60, 60) 60%);
+    border-radius: 0.85rem;
+    transition: 0.3s var(--bounce);
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 60%;
+    background-color: rgb(43 43 43);
+    border-radius: 10rem;
+    right: 3.65rem;
+    top: 20%;
+    z-index: 2;
+    transition: 0.3s var(--bounce);
+  }
+
+  .beep {
+    position: absolute;
+    background-color: rgb(133 253 164);
+    width: 5px;
+    aspect-ratio: 1;
+    border-radius: 10rem;
+    top: 1.85rem;
+    left: 1.25rem;
+    
+    &::before {
+      position: absolute;
+      content: "";
+      top: -5%;
+      left: -5%;
+      background-color: rgb(133 253 164);;
+      width: 110%;
+      height: 110%;
+      border-radius: 10rem;
+      filter: blur(0px);
+      animation: beep 1s linear infinite;
+    }
+  }
+
+  &:has(> input:checked) {
+    &::before {
+      left:  calc(8rem - 5rem - 0.20rem);
+    }
+
+    &::after {
+      right: 1rem;
+    }
+  }
+}
+
+@keyframes beep {
+  from {
+    filter: blur(0);
+  }
+  to {
+    filter: blur(3px);
+  }
+}
