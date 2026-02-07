@@ -24,16 +24,28 @@
       font-weight: bold;
       text-transform: capitalize;
       font-size: 1.25rem;
+      transition: 0.3s;
     }
 
     .duration {
       color: rgb(130 130 130);
+      transition: 0.3s;
     }
 
     div {
       display: flex;
       gap: 0.25rem;
       flex-direction: column;
+    }
+
+    &:has(input:checked) {
+      label::after {
+        opacity: 1;
+      }
+
+      .title, .duration {
+        text-decoration: line-through;
+      }
     }
 
     label {
@@ -46,12 +58,6 @@
 
       & input {
         display: none;
-      }
-
-      &:has(input:checked) {
-        &::after {
-          opacity: 1;
-        }
       }
 
       &::before {
