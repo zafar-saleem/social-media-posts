@@ -1,0 +1,33 @@
+.button {
+  background-color: rgb(139 139 139);
+  border: none;
+  display: flex;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:active {
+    animation: shake 0.3s linear forwards;
+  }
+}
+
+@keyframes shake {
+  0% {
+    translate: -0.35rem 0;
+  }
+  20% {
+    translate: 0.30rem 0;
+  }
+  40% {
+    translate: -0.20rem 0;
+  }
+  60% {
+    translate: 0.15rem 0;
+  }
+  80% {
+    translate: -0.10rem 0;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
