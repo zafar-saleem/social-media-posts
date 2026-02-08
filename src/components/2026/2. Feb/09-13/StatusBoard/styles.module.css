@@ -1,0 +1,100 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgb(255 255 255);
+  padding: 1rem;
+  border-radius: 1rem;
+
+  .filter {
+    display: flex;
+    gap: 1rem;
+
+    .btn {
+      background: none;
+      border: none;
+      color: rgb(101 101 101);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: 0.2s;
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.25rem;
+      border: 1px solid rgb(225 225 225 / 0);
+
+      &.active {
+        border: 1px solid rgb(225 225 225 / 1);
+      }
+
+      &:hover {
+        background-color: rgb(227, 227, 227);
+      }
+    }
+
+    .color {
+      display: flex;
+      width: 6px;
+      aspect-ratio: 1;
+      border-radius: 0.15rem;
+    }
+
+    .btn_todo > .color {
+      background-color: rgb(45 105 255);
+    }
+    
+    .btn_loa > .color {
+      background-color: rgb(228 39 45);
+    }
+    
+    .btn_progress > .color {
+      background-color: rgb(90 32 202);
+    }
+    
+    .btn_review > .color {
+      background-color: rgb(217 144 0);
+    }
+    
+    .btn_completed > .color {
+      background-color: rgb(73 124 96);
+    }
+  }
+
+
+
+
+  .status_badge {
+    color: rgb(var(--color) / 1);
+    background-color: rgb(var(--color) / 0.1);
+    border: 1px solid rgb(var(--color) / 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+
+
+
+
+
+
+  .table {
+    border: 1px solid rgb(232 232 232);
+
+    .table_head {
+      background-color: rgb(249 249 249);
+      text-align: left;
+      
+      th {
+        padding: 1rem;
+      }
+    }
+
+    .table_body {
+      background-color: rgb(255 255 255);
+      td {
+        padding: 1rem;
+      }
+    }
+  }
+}
