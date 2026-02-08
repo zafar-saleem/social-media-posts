@@ -32,11 +32,12 @@
     border-radius: 0.5rem;
     cursor: pointer;
     box-shadow: 0 3px 0.25rem 0.25rem rgb(40 40 40 / 0.1);
-    transition: 0.3s;
+    transition: 0.2s;
     font-weight: bold;
 
     &:active {
       scale: 0.98;
+      box-shadow: none;
     }
   }
 }
