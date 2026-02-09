@@ -25,11 +25,28 @@
       text-transform: capitalize;
       font-size: 1.25rem;
       transition: 0.3s;
+      position: relative;
     }
 
     .duration {
       color: rgb(130 130 130);
       transition: 0.3s;
+      position: relative;
+      width: fit-content;
+    }
+
+    .title, .duration {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 0;
+        height: 2px;
+        background-color: rgb(40 40 40 / 0.6);
+        transition: 0.3s var(--bounce);
+      }
     }
 
     div {
@@ -44,7 +61,9 @@
       }
 
       .title, .duration {
-        text-decoration: line-through;
+        &::before {
+          width: 110%;
+        }
       }
     }
 
