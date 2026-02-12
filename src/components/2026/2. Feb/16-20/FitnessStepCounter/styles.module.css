@@ -1,0 +1,213 @@
+.container {
+  padding: 2rem;
+  background-color: rgb(255 255 255);
+  width: 20rem;
+  border-radius: 1.75rem;
+  box-shadow: 0 0 0.5rem 0.5rem rgb(40 40 40 / 0.1);
+
+  .header {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgb(227, 227, 227);
+    padding-block-end: 0.5rem;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+
+      > div {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .title, .value {
+        text-transform: uppercase;
+      }
+
+      .title {
+        color: rgb(153 159 156);
+        font-size: 1.1rem;
+      }
+
+      .value {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .label {
+        display: flex;
+        align-items: flex-end;
+        text-transform: uppercase;
+        margin-bottom: 0.05rem;
+      }
+    }
+
+    > div:last-child {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+  .days {
+    padding-block-start: 1rem;
+    display: flex;
+    gap: 0.5rem;
+
+    > * {
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      color: rgb(155 155 155);
+    }
+
+    .chart {
+      width: 25px;
+      aspect-ratio: 1;
+      display: flex;
+      border-radius: 10rem;
+      background-color: rgb(241 241 241);
+
+      &.progress {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        margin-top: 0.15rem;
+
+        & + .label {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          height: 100%;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          width: calc(100% + 4px);
+          height: calc(100% + 4px);
+          background: conic-gradient(
+            from 0,
+            rgb(64 241 121) 240deg,
+            rgb(226 226 226) 0%
+          );
+          border-radius: 10rem;
+          z-index: 1;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-color: rgb(255 255 255);
+          z-index: 2;
+          border-radius: 10rem;
+        }
+      }
+
+      &.done {
+        background-color: rgb(64 241 121);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        + .label {
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: rgb(40 40 40 / .6);
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-block-start: 1.25rem;
+
+    .label {
+      color: rgb(159 159 159);
+      font-size: 1rem;
+    }
+
+    .value {
+      color: rgb(77 77 77);
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    .total {
+      color: rgb(123 123 123);
+    }
+
+    > div {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .percentage {
+      margin-left: auto;
+      color: rgb(145 145 145);
+      font-weight: bold;
+    }
+
+    .progress {
+      width: 100%;
+      background-color: rgb(241 241 241);
+      height: 10px;
+      border-radius: 10rem;
+      margin-top: 0.5rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 68%;
+        height: 100%;
+        border-radius: 10rem;
+        background: linear-gradient(to bottom, rgb(109 244 153), rgb(167, 249, 129), rgb(109 244 153));
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 68%;
+        height: 120%;
+        background-color: rgb(109 244 153 / .8);
+        border-radius: 10rem;
+        filter: blur(5px);
+      }
+    }
+  }
+}
