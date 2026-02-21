@@ -1,0 +1,90 @@
+.button {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 2.25rem;
+  position: relative;
+
+  > div {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    > * {
+      grid-area: 1 / 1;
+    }
+  }
+
+  .bracket {
+    color: rgb(217 217 218);
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: 0.2s var(--bounce);
+    position: absolute;
+
+    &:first-child {
+      left: 0;
+    }
+    
+    &:last-child {
+      right: 0;
+    }
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.25rem;
+    transition: 0.2s;
+  }
+
+  .label {
+    color: rgb(74 74 74);
+    scale: 0;
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    margin-top: 0.25rem;
+    font-weight: bold;
+  }
+
+  &:active {
+    .bracket:first-child {
+      left: 0.25rem;
+    }
+    
+    .bracket:last-child {
+      right: 0.25rem;
+    }
+  }
+
+  &:hover {
+    width: 4rem;
+
+    .icon {
+      scale: 0;
+      opacity: 0;
+    }
+
+    .bracket {
+      color: rgb(74 74 74);
+    }
+
+    .label {
+      display: flex;
+      opacity: 1;
+      scale: 1;
+
+      @starting-style {
+        opacity: 0;
+        scale: 0;
+      }
+    }
+  }
+}
