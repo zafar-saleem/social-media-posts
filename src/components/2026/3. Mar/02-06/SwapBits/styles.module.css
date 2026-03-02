@@ -1,0 +1,125 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 25rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 0.5rem 0.5rem rgb(40 40 40 / 0.1);
+  background-color: rgb(255 255 255);
+
+  button {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .large {
+    font-size: 1.3rem;
+  }
+
+  .secondary {
+    color: rgb(139 139 139);
+  }
+
+  .highlight {
+    color: rgb(40 40 40);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+
+    .title {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .button {
+      margin-left: auto;
+    }
+  }
+
+
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .transfer_icon {
+    position: absolute;
+    background-color: rgb(49 165 230);
+    width: 2.5rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10rem;
+    bottom: -1.5rem;
+    z-index: 2;
+    left: calc(100% / 2.25);
+    outline: 3px solid rgb(255 255 255);
+    box-shadow: 0 0 0.5rem 0.5rem rgb(40 40 40 / 0.1);
+  }
+
+  .box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: rgb(245 245 245);
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    > div:first-child {
+      display: flex;
+
+      > select {
+        margin-left: auto;
+        background: none;
+        color: rgb(40 40 40);
+        border: none;
+        box-shadow: 0 0 0.25rem rgb(40 40 40 / 0.2);
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+      }
+    }
+
+    > div:last-child {
+      display: flex;
+
+      > span:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+
+  .button_confirm {
+    background-color: rgb(40 162 229);
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    outline: 1px solid rgb(255 255 255 / .3);
+    outline-offset: -3px;
+    font-weight: bold;
+    box-shadow: 0 0.5rem 0.5rem 0 rgb(40 40 40 / 0.2);
+    transition: 0.2s;
+
+    &:active {
+      scale: 0.98;
+      box-shadow: none;
+    }
+  }
+}
