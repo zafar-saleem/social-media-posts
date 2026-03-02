@@ -116,7 +116,15 @@
     .chart {
       width: 7rem;
       aspect-ratio: 1;
-      background-image: conic-gradient(from 0deg, rgb(76 195 148) 0deg, rgb(76 195 148) 180deg, rgb(63 63 63) 180deg, rgb(63 63 63) 270deg, rgb(90 117 125) 270deg, rgb(90 117 125) 360deg);
+      background-image: conic-gradient(
+        from 0deg,
+        rgb(76 195 148) 0deg, rgb(76 195 148) 175deg,
+        rgb(255 255 255) 175deg, rgb(255 255 255) 180deg,
+        rgb(63 63 63) 180deg, rgb(63 63 63) 265deg,
+        rgb(255 255 255) 265deg, rgb(255 255 255) 270deg,
+        rgb(90 117 125) 270deg, rgb(90 117 125) 355deg,
+        rgb(255 255 255) 355deg, rgb(255 255 255) 360deg
+      );
       border-radius: 10rem;
       position: relative;
       margin-left: auto;
