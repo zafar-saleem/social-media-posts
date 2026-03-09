@@ -1,0 +1,111 @@
+.container {
+  .button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    color: rgb(40 40 40);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    anchor-name: --button;
+
+    > input {
+      display: none;
+    }
+  }
+
+  .button:has(input:checked) {
+    & + .dropdown {
+      height: auto;
+      opacity: 1;
+
+      .item {
+        scale: 1;
+        opacity: 1;
+      }
+    }
+  }
+
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 0.5rem;
+    width: 15rem;
+    padding: 0.25rem;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: 0.3s var(--bounce);
+    box-shadow: 0 0.25rem 0.25rem 0rem rgb(40 40 40 / 0.1);
+
+    position: absolute;
+    position-anchor: --button;
+    top: calc(anchor(bottom) + 0.25rem);
+    left: calc(anchor(left) - 15rem + 6.75rem);
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      transition: 0.2s;
+      cursor: pointer;
+      scale: 1 0;
+      opacity: 0;
+      transition: scale 0.4s var(--bounce), 0.3s;
+
+      &:hover {
+        background-color: rgb(231, 231, 231);
+      }
+
+      &:has(> .input:checked) {
+        .input::before {
+          background-color: rgb(82 102 255);
+        }
+
+        .input::after {
+          scale: 1;
+        }
+      }
+
+      .input {
+        margin-left: auto;
+        position: relative;
+        
+        &::before {
+          content: "";
+          width: 110%;
+          aspect-ratio: 1;
+          border-radius: 0.25rem;
+          background-color: rgb(211, 211, 211);
+          top: -5%;
+          left: -5%;
+          z-index: 1;
+          position: absolute;
+          transition: 0.2s;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          scale: 0;
+          border-left: 1px solid rgb(255 255 255);
+          border-bottom:  1px solid rgb(255 255 255);
+          height: 3px;
+          width: 8px;
+          left: 2px;
+          top: 3px;
+          z-index: 2;
+          rotate: -45deg;
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+}
