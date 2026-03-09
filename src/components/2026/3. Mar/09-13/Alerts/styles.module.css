@@ -1,0 +1,112 @@
+.container {
+  color: rgb(117 117 117);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 25rem;
+  border: 1px solid rgb(224, 224, 224);
+  
+  border-radius: 1rem;
+  box-shadow: 0 0 0.75rem 0.25rem rgb(40 40 40 / 0.1);
+
+  > .header, .footer {
+    padding: 1rem;
+  }
+
+  .header {
+    padding-bottom: 0;
+  }
+
+  > p {
+    padding-inline: 1rem;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+      font-weight: bold;
+      color: rgb(40 40 40);
+    }
+
+    > svg {
+      margin-left: auto;
+      rotate: 90deg;
+    }
+  }
+
+  .footer {
+    background-color: rgb(250 250 250);
+    padding: 0.5rem 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid rgb(224, 224, 224);
+
+    .icon {
+      background-color: rgb(251 232 201);
+      padding: 0.25rem 0.35rem;
+      border-radius: 0.35rem;
+      display: flex;
+    }
+
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      background-color: rgb(250 250 250);
+      border: 1px solid rgb(224, 224, 224);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &.alerts {
+        anchor-name: --chip;
+      }
+
+      &:hover {
+        background-color: rgb(242 242 242);
+      }
+    }
+
+    .chip:last-child {
+      margin-left: auto;
+    }
+
+    &:has(.alerts:hover) {
+      & + .tooltip {
+        display: flex;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .tooltip {
+    position:  absolute;
+    position-anchor: --chip;
+    top: calc(anchor(top) - 1.75rem);
+    left: calc(anchor(left) - 0.5rem);
+
+    color:  rgb(255 255 255);
+    font-size:  0.8rem;
+
+    display: none;
+    opacity: 0;
+    transition: 0.3s;
+
+    background-color: rgb(40 40 40);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.75rem 0.25rem rgb(40 40 40 / 0.3);
+  }
+}
