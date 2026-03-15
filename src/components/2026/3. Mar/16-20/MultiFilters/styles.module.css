@@ -1,0 +1,120 @@
+.container {
+  color: rgb(205 205 205);
+  display: flex;
+  border-radius: 10rem;
+
+  .filter_label {
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 10rem;
+    user-select: none;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
+    > .label_text {
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      border-radius: 10rem;
+      border: 1px solid rgba(102, 102, 102, 0.5);
+      transition: 0.2s;
+    }
+  }
+
+  &:has(.filter_label:nth-child(2) > .label_checkbox:checked) {
+    .filter_label:nth-child(1) {
+      margin-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      > .label_text {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+      }
+    }
+    
+    .filter_label:nth-child(2) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      > .label_text {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+      }
+    }
+  }
+  
+  &:has(.filter_label:nth-child(3) > .label_checkbox:checked) {
+    .filter_label:nth-child(2), .filter_label:nth-child(3) {
+      margin-right: 0;
+    }
+    
+    .filter_label:nth-child(2) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      > .label_text {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+      }
+    }
+    
+    .filter_label:nth-child(3) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-radius: 0;
+
+      > .label_text {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+      }
+    }
+
+    .filter_label:nth-child(4) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+      > .label_text {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+      }
+    }
+  }
+  
+  &:has(.filter_label:nth-child(4) > .label_checkbox:checked) {
+    .filter_label:nth-child(4) {
+      margin-right: 0;
+
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      > .label_text {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+      }
+    }
+    
+    .filter_label:nth-child(5) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+      > .label_text {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+      }
+    }
+  }
+
+  input {
+    display: none;
+  }
+}
