@@ -1,0 +1,96 @@
+.nav {
+  background-color: rgb(235 235 235);
+  padding: 0.25rem;
+  border-radius: 10rem;
+  box-shadow: 0 0 0.75rem 0.25rem rgb(40 40 40 / .1);
+  outline: 1px solid rgb(40 40 40 / 0.1);
+  
+  &.shake {
+    animation: --shake 0.2s forwards;
+  }
+
+  .list {
+    display: flex;
+    gap: 0.25rem;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: rgb(255 255 255);
+      width: 34%;
+      height: 100%;
+      border-radius: 10rem;
+      z-index: -1;
+      transition: 0.3s var(--bounce);
+      box-shadow: 0 0 0.05rem 0.05rem rgb(40 40 40 / 0.1);
+
+      position-anchor: --active;
+      top: anchor(top);
+      left: anchor(left);
+    }
+
+    > .item:first-child > .active > svg {
+      stroke: rgb(254 135 0);
+    }
+    
+    > .item:nth-child(2) > .active > svg {
+      > path:first-child {
+        stroke: rgb(19 186 129);
+        fill: rgb(19 186 129);
+      }
+      
+      > path:last-child {
+        stroke: rgb(182 241 216);
+      }
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.5rem 0.5rem;
+      transition: 0.1s;
+
+      > svg {
+        transition: 0.3s;
+        > * {
+          transition: 0.3s;
+        }
+      }
+
+      &.active {
+        anchor-name: --active;
+      }
+
+      &.disable {
+        color: rgb(155 155 155);
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+@keyframes --shake {
+  0% {
+    translate: 0 0;
+  }
+  20% {
+    translate: -10px 0;
+  }
+  60% {
+    translate: 10px 0;
+  }
+  80% {
+    translate: -5px 0;
+  }
+  100% {
+    translate: 0px 0;
+  }
+}
