@@ -1,0 +1,87 @@
+.nav {
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    li:hover {
+      a {
+        padding: 0.75rem;
+      }
+      
+      &:first-child {
+        > a {
+          min-width: 6rem;
+          color: rgb(0 220 41);
+
+          > svg {
+            stroke: rgb(0 220 41);
+          }
+        }
+      }
+      
+      &:nth-child(2) {
+        > a {
+          min-width: 8rem;
+          color: rgb(245 41 85);
+
+          > svg {
+            stroke: rgb(245 41 85);
+          }
+        }
+      }
+      
+      &:last-child {
+        > a {
+          min-width: 8rem;
+          color: rgb(4 129 252);
+
+          > svg {
+            stroke: rgb(4 129 252);
+          }
+        }
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      border-radius: 10rem;
+      box-shadow: 0 0 0.5rem 0.15rem rgb(40 40 40 / 0.3);
+      padding: 0.5rem;
+      transition: 0.2s var(--bounce);
+      width: 2.5rem;
+      overflow: hidden;
+
+      > svg {
+        transition: 0.3s;
+      }
+
+      &:hover {
+        > svg {
+          rotate: -5deg;
+        }
+
+        .text {
+          opacity: 1;
+          display: flex;
+
+          @starting-style {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .text {
+      opacity: 0;
+      display: none;
+      font-weight: bold;
+      transition: 0.3s var(--bounce);
+    }
+  }
+}
