@@ -1,0 +1,60 @@
+.button_language {
+  display: flex;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  transition: 0.1s;
+
+  &:active {
+    scale: 0.98;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    aspect-ratio: 1;
+    background-color: rgb(153 153 153);
+    border-radius: 0.5rem;
+    z-index: 1;
+    transition: 0.5s var(--bounce);
+  }
+
+  &:has(.input:checked) {  
+    &::before {
+      rotate: 90deg;
+      translate: 3.5rem 0;
+    }
+
+    .text_en {
+      color: rgb(255 255 255);
+    }
+  }
+
+  &:has(.input:not(:checked)) {
+    .text_jp {
+      color: rgb(255 255 255);;
+    }
+  }
+
+  > .input {
+    display: none;
+  }
+
+  .text_jp,
+  .text_en {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 2;
+    transition: 0.5s;
+    color: rgb(154 154 154);
+    /* color: rgb(255 255 255); */
+  }
+}
