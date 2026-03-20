@@ -10,7 +10,7 @@
       a {
         padding: 0.75rem;
       }
-      
+
       &:first-child {
         > a {
           min-width: 6rem;
