@@ -1,0 +1,125 @@
+.btn_chip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgb(39 39 41);
+  padding: 0.5rem;
+  border-radius: 10rem;
+  cursor: pointer;
+
+  &:has(.input:checked) {
+    svg {
+      rotate: 90deg;
+    }
+
+    & + .dropdown {
+      display: flex;
+      opacity: 1;
+      min-height: 5rem;
+
+      @starting-style {
+        opacity: 0;
+        min-height: 0;
+      }
+    }
+  }
+
+  .input {
+    display: none;
+  }
+
+  > svg {
+    margin-inline-start: 1rem;
+    transition: 0.2s;
+  }
+
+  .media {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10rem;
+    position: relative;
+    z-index: 1;
+    
+    &:not(:last-child) {
+      margin-inline-end: -1.5rem;
+    }
+
+    &::before {
+      --top: -3x;
+      --left: -3px;
+
+      content: "";
+      position: absolute;
+      top: var(--top);
+      left: var(--left);
+      width: calc(100% + calc(var(--left) * -2));
+      height: calc(100% + calc(var(--top) * -2));
+      background-color: rgb(255 255 255 / 1);
+      border-radius: 10rem;
+      z-index: -1;
+    }
+
+    > .image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 10rem;
+    }
+  }
+  
+  anchor-name: --chips-list;
+}
+
+.dropdown {
+  display: flex;
+  gap: 1.25rem;
+  flex-direction: column;
+  width: 20rem;
+  min-height: 0;
+  background-color: rgb(39 39 41);
+  color: rgb(255 255 255);
+  display: none;
+  opacity: 0;
+  transition: 0.2s;
+  overflow: hidden;
+
+  position-anchor: --chips-list;
+  position: absolute;
+  top: calc(anchor(bottom) + 0.5rem);
+  right: anchor(right);
+
+  padding: 0.75rem;
+  border-radius: 1rem;
+  justify-content: flex-end;
+
+  .text {
+    font-size: 1.25rem;
+  }
+
+  div:last-child,
+  span:last-child {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  a {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    > svg {
+      margin-left: auto;
+    }
+  }
+
+  .image {
+    width: 3rem;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 10rem;
+  }
+}
