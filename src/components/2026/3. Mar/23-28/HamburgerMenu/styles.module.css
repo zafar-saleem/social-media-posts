@@ -1,0 +1,41 @@
+.btn_menu {
+  cursor: pointer;
+  transition:  0.2s;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+
+  &:hover {
+    background-color: rgb(40 40 40 / .1);
+  }
+
+  &:has(input:checked) {
+    svg {
+      > path:first-child {
+        translate: 2rem 0;
+      }
+
+      > path:last-child {
+        rotate: 45deg;
+        translate: 1.05rem -0.63rem;
+      }
+      
+      > path:nth-child(2) {
+        rotate: -45deg;
+        translate: -0.35rem 0.75rem;
+      }
+    }
+  }
+
+  svg > * {
+    transition: 0.3s var(--bounce);
+  }
+
+  .box {
+    overflow: hidden;
+    display: flex;
+  }
+
+  input {
+    display: none;
+  }
+}
