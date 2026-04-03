@@ -1,0 +1,292 @@
+.container {
+  display: flex;
+  border-radius: 0.5rem;
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    content: "";
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    border-radius: 0.5rem;
+    background: linear-gradient(to bottom, rgb(68 68 81) 70%, rgb(40 40 40));
+    position: absolute;
+  }
+
+  & > .btn_like > .tooltip {
+    top: calc(1.25rem * -1 - 1.5rem);
+    left: 0;
+  }
+  
+  & > .btn_dislike > .tooltip {
+    top: calc(1.25rem * -1 - 1.5rem);
+    left: 0;
+  }
+  
+  & > .btn_edit > .tooltip {
+    top: calc(1.25rem * -1 - 1.5rem);
+    left: 0;
+  }
+  
+  & > .btn_delete > .tooltip {
+    top: calc(1.25rem * -1 - 1.5rem);
+    left: 0;
+  }
+
+  .btn {
+    display: flex;
+    padding: 0.5rem 0.75rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: rgb(52 52 67);
+    position: relative;
+
+    &:has(input:not(:checked)) {
+      > .tooltip {
+        > span:first-child {
+          display: flex;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: rgb(64, 64, 71);
+
+      > .tooltip {
+        opacity: 1;
+        filter: blur(0);
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+          filter: blur(5px);
+          display: none;
+        }
+      }
+    }
+
+    .tooltip {
+      opacity: 0;
+      filter: blur(5px);
+      display: none;
+
+      background-color: rgb(65 67 86);
+      padding: 0.5rem;
+      display: grid;
+      position: absolute;
+      border-radius: 0.25rem;
+      transition: 0.3s;
+      z-index: 10;
+      width: fit-content;
+      color: rgb(255 255 255);
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        aspect-ratio: 1;
+        background-color: rgb(65 67 86);
+        rotate:  45deg;
+        bottom: -5px;
+        left: 1rem;
+        z-index: -1;
+        transition: 0.3s;
+      }
+
+      > span {
+        display: none;
+      }
+
+      > * {
+        grid-area: 1 / 1;
+      }
+    }
+
+    > svg {
+      transition: 0.3s;
+    }
+
+    &.btn_like {
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      anchor-name: --btn-like;
+
+      &:has(input:checked) {
+        > svg {
+          stroke: rgb(111 233 127);
+        }
+
+        > .tooltip {
+          left: -0.25rem;
+          min-width: fit-content;
+
+          &::before {
+            left: 1.25rem;
+          }
+
+          > span { 
+            display: none;
+            opacity: 0;
+            transition: 0.3s;
+          }
+
+          > span:last-child {
+            display: flex;
+            opacity: 1;
+
+            @starting-style {
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      &:has(input:checked):has(:hover) {
+        background-image: linear-gradient(to bottom, rgb(111 233 127 / .1), rgb(111 233 127 / .4));
+
+        > svg {
+          stroke: rgb(111 233 127);
+        }
+
+        > .tooltip {
+          display: grid;
+          opacity: 1;
+          filter: blur(0);
+
+          @starting-style {
+            opacity: 0;
+            filter: blur(0);
+          }
+        }
+      }
+    }
+    
+    &.btn_dislike {
+      anchor-name: --btn-dislike;
+
+      .tooltip {
+        left: -0.35rem;
+
+        &::before {
+          left: 1.45rem;
+        }
+      }
+
+      &:has(input:checked) {
+        > svg {
+          stroke: rgb(244 92 90);
+        }
+
+        > .tooltip {
+          left: -0.5rem;
+
+          &::before {
+            left: 1.75rem;
+          }
+
+          > span { 
+            display: none;
+          }
+
+          > span:last-child {
+            display: flex;
+          }
+        }
+      }
+
+      &:has(input:checked):has(:hover) {
+        background-image: linear-gradient(to bottom, rgb(244 92 90 / .1), rgb(244 92 90 / .4));
+
+        > svg {
+          stroke: rgb(244 92 90);
+        }
+      }
+    }
+    
+    &.btn_edit {
+      anchor-name: --btn-edit;
+
+      &:has(input:checked) {
+        > svg {
+          stroke: rgb(90 205 244);
+        }
+
+        > .tooltip {
+          left: -0.25rem;
+
+          &::before {
+            left: 1.5rem;
+          }
+
+          > span { 
+            display: none;
+          }
+
+          > span:last-child {
+            display: flex;
+          }
+        }
+      }
+      
+      &:has(input:checked):has(:hover) {
+        background-image: linear-gradient(to bottom, rgb(90 205 244 / .1), rgb(90 205 244 / .4));
+
+        > svg {
+          stroke: rgb(90 205 244);
+        }
+      }
+    }
+    
+    &.btn_delete {
+      anchor-name: --btn-delete;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+
+      .tooltip {
+        left: -0.5rem;
+
+        &::before {
+          left:  1.5rem;
+        }
+      }
+
+      &:has(input:checked) {
+        > svg {
+          stroke: rgb(246 79 79);
+        }
+
+        > .tooltip {
+          left: -0.5rem;
+
+          &::before {
+            left: 1.75rem;
+          }
+
+          > span { 
+            display: none;
+          }
+
+          > span:last-child {
+            display: flex;
+          }
+        }
+      }
+
+      &:has(input:checked):has(:hover) {
+        background-image: linear-gradient(to bottom, rgb(246 79 79 / .2), rgb(246 79 79 / .4));
+
+        > svg {
+          stroke: rgb(246 79 79);
+        }
+      }
+    }
+
+    input {
+      display: none;
+    }
+  }
+}
