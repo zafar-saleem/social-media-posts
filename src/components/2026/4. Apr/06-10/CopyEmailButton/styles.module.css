@@ -1,0 +1,144 @@
+.button {
+  display: flex;
+  gap: 0.35rem;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  .hover_text {
+    transition: 0.1s;
+  }
+
+  
+
+  .box {
+    background-color: rgb(20 20 20);
+    color: rgb(240 240 240);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    transition: 0.3s var(--bounce);
+    overflow: hidden;
+
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+    
+
+
+    max-width: 0;
+    height: 1.75rem;
+    padding-inline: 0.25rem;
+
+
+    
+    
+    
+    &:first-child {
+      max-width: fit-content;
+
+      > .text {
+        display: flex;
+        height: auto;
+        width: 100%;
+        padding-inline: 0.25rem;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+
+
+    .text {
+      display: none;
+      transition:  0.3s;
+      opacity: 0;
+    }
+
+  }
+
+
+
+
+  &:hover {
+    .initial_text {
+      width:  0;
+      
+      .text {
+        display: none;
+      }
+    }
+
+    .hover_text {
+      max-width: fit-content;
+
+      .text {
+        display: flex;
+        height: auto;
+        width: 100%;
+        padding-inline: 0.25rem;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+
+
+
+
+  &:has(input:checked) {
+    .hover_text, .initial_text {
+      width: 0;
+
+      > .text {
+        display: none;
+        opacity: 0;
+      }
+    }
+
+    .final_text {
+      max-width: fit-content;
+
+      .text {
+        display: flex;
+        height: auto;
+        width: 100%;
+        padding-inline: 0.25rem;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+
+
+
+  &:has(:hover):has(:active) {
+    .hover_text {
+      scale: 0.98;
+    }
+  }
+}
+
+
+.test_copy {
+  background-color: rgb(255 255 255);
+  border: 1px solid rgb(40 40 40 / 0.2);
+  padding:  1rem;
+  color: rgb(40 40 40);
+  margin-block-start: 2rem;
+}
