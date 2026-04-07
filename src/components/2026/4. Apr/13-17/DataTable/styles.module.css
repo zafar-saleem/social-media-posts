@@ -1,0 +1,191 @@
+@function --padding(--value: 1rem) {
+  result: var(--value);
+}
+
+.table {
+  > * {
+    transition: 0.3s;
+  }
+
+  > thead {
+    > tr {
+      display: flex;
+      gap: 4rem;
+      padding-block: --padding(0.75rem);
+      border-bottom: 1.5px solid rgb(212, 212, 214);
+
+      > th {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: rgb(148 147 151);
+      }
+    }
+  }
+
+  &:has(tbody > tr:first-child .btn_edit > input:checked) {
+    thead {
+      filter: blur(5px);
+    }
+    
+    tbody tr:not(:first-child) {
+      filter: blur(5px);
+    }
+    
+    tbody tr:first-child td > .text {
+      filter: blur(5px);
+    }
+  }
+  
+  &:has(tbody > tr:nth-child(2) .btn_edit > input:checked) {
+    thead {
+      filter: blur(5px);
+    }
+    
+    tbody tr:not(:nth-child(2)) {
+      filter: blur(5px);
+    }
+
+    tbody tr:nth-child(2) td > .text {
+      filter: blur(5px);
+    }
+  }
+  
+  &:has(tbody > tr:last-child .btn_edit > input:checked) {
+    thead {
+      filter: blur(5px);
+    }
+    
+    tbody tr:not(:last-child) {
+      filter: blur(5px);
+    }
+
+    tbody tr:last-child td > .text {
+      filter: blur(5px);
+    }
+  }
+
+  > tbody {
+    > tr {
+      display: flex;
+      padding-block: --padding(0.75rem);
+      border-bottom: 1.5px solid rgb(212, 212, 214);
+      transition: 0.3s var(--bounce);
+
+      &:has(.btn_edit > input:checked) {
+        min-height: 16rem;
+
+        .form {
+          display: flex;
+          opacity: 1;
+
+          @starting-style {
+            opacity: 0;
+          }
+        }
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        opacity: 0;
+        /* display: none; */
+        transition: 0.1s;
+        /* background-color: red; */
+        position: absolute;
+        top: 1rem;
+        left: calc(100%);
+        /* background-color: rgb(255 255 255); */
+        padding: 2rem;
+        z-index: 1;
+        border-radius: 1rem;
+
+        label {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+
+          > input {
+            margin-left: auto;
+            color: rgb(40 40 40);
+          }
+        }
+
+        .actions {
+          display: flex;
+          justify-content: flex-end;
+
+          button  {
+            border-radius: 0.5rem;
+            padding: 0.35rem 0.5rem;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.15rem;
+          }
+
+          button:first-child {
+            background-color: rgb(221, 221, 222);
+            color: rgb(40 40 40);
+          }
+          
+          button:last-child {
+            margin-left: 0.75rem;
+            background-color: rgb(45 44 47);
+          }
+        }
+
+        input {
+          border: 1px solid rgb(188 188 188);
+          background: transparent;
+          padding: 0.5rem 0.75rem;
+          border-radius: 0.5rem;
+        }
+      }
+
+      > td {
+        flex-basis: 100%;
+        color: rgb(92 92 92);
+        display: flex;
+        /* height: 2.5rem; */
+        position:  relative;
+
+        
+
+        &:nth-child(2) {
+          margin-inline-start: 6rem;
+        }
+        
+        &:nth-child(3) {
+          margin-inline-start: 6rem;
+        }
+
+        &:first-child {
+          font-weight: bold;
+          margin-inline-start: 0;
+        }
+        
+        &:last-child {
+          margin-inline-start: 0;
+        }
+
+        .btn_edit {
+          margin-left: auto;
+          cursor: pointer;
+          background: none;
+          border: none;
+          padding-inline-end: 0.5rem;
+
+          input {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+
+}
