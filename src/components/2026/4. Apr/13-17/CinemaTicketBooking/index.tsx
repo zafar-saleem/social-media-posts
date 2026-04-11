@@ -4,6 +4,8 @@ import { DATA } from "./data";
 export const CinemaTicketBooking = () => {
   return (
     <div className={styles.container}>
+      <h1>Where do you want to sit?</h1>
+      <p className={styles.info}>Select Seat</p>
       <iframe
         width="560" height="315"
         src="https://www.youtube.com/embed/QRfj1VCg16Y?si=hoBBFFSlN-1wysMd"
