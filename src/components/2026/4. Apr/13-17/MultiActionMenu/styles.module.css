@@ -1,0 +1,120 @@
+.container {
+  * {
+    transition: 0.3s;
+  }
+
+  .button {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 2rem;
+    color: rgb(255 255 255);
+    background-color: rgb(40 40 40);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    anchor-name: --button;
+
+    transition: 0.3s, scale 0.05s;
+
+    &:hover {
+      box-shadow: 0 0.25rem 0.5rem 0.15rem rgb(40 40 40 / 0.1);
+    }
+
+    &:active {
+      scale: 0.98;
+      box-shadow: none;
+    }
+
+    > svg {
+      rotate: 180deg;
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  &:has(input:checked) {
+    > .button {
+      box-shadow: 0 0.25rem 0.75rem 0.5rem rgb(40 40 40 / 0.1);
+
+      > svg {
+        rotate: 0deg;
+      }
+    }
+
+    .menu {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      height: auto;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(5px);
+        height: 0;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    padding-block-start: 1rem;
+    padding-block-end: 1rem;
+    background-color: rgb(255 255 255);
+    min-width: 20rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.75rem 0.5rem rgb(40 40 40 / 0.1);
+
+    position-anchor: --button;
+    top: calc(anchor(bottom) + 0.25rem);
+    right: anchor(right);
+    position: absolute;
+
+    opacity: 0;
+    filter: blur(5px);
+    display: none;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s, height 0.3s var(--bounce);
+
+    > * {
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      > * {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .button {
+      width:  100%;
+      border: none;
+      cursor: pointer;
+    }
+
+    .text_color_02 {
+      color: rgb(20 20 20 / 0.5);
+    }
+
+    .right {
+      margin-left: auto;
+    }
+
+    .button_action {
+      background: none;
+      color: rgb(20 20 20);
+      width: 100%;
+      text-align: left;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
