@@ -1,0 +1,97 @@
+.container {
+  --w: 4rem;
+
+  * {
+    transition: 0.2s;
+  }
+
+  .button_save {
+    cursor: pointer;
+    outline: 1.5px solid rgb(221 221 221);
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgb(255 255 255);
+    anchor-name: --button;
+
+    &:hover {
+      background-color: rgb(252 252 252);
+    }
+
+    &:hover + .tooltip {
+      opacity: 1;
+    }
+
+    &:has(input:checked) + .tooltip {
+      --w: 6rem;
+      left: calc(anchor(left) - 2rem);
+
+      span {
+        display: none;
+        opacity: 0;
+      }
+
+      > span:last-child {
+        opacity: 1;
+        display: flex;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+
+    &:has(input:checked):has(:active) {
+      & + .tooltip {
+        scale: 1.1;
+      }
+    }
+
+    &:active {
+      > svg {
+        stroke: rgb(130 130 130);
+      }
+
+      outline-color: rgb(236 236 236);
+    }
+
+    
+
+    > svg {
+      transition: 0.1s;
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  .tooltip {
+    text-wrap: nowrap;
+    width: var(--w);
+    background-color: rgb(255 255 255);
+    padding: 0.5rem;
+    outline: 1.5px solid rgb(221 221 221);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    position-anchor: --button;
+    top: calc(anchor(top) - 2.5rem);
+    left: calc(anchor(left) - 0.75rem);
+    box-shadow: 0 0.15rem 0.5rem 0.25rem rgb(40 40 40 / 0.1);
+    opacity: 0;
+    display: grid;
+    user-select: none;
+
+    > * {
+      grid-area: 1 / 1;
+
+      &:last-child {
+        opacity: 0;
+        display: none;
+      }
+    }
+  }
+}
