@@ -1,0 +1,169 @@
+.nav {
+  color: rgb(190, 189, 189);
+
+  * {
+    transition: 0.2s;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    display: flex;
+  }
+
+  a {
+    padding: 0.5rem 0.75rem;
+  }
+
+
+
+
+  .nav_list {
+    display: flex;
+
+    .link_features {
+      anchor-name: --features;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+
+      &:hover {
+        > svg {
+          rotate: 0deg;
+        }
+      }
+
+      > svg {
+        transition: 0.2s;
+        rotate: 180deg;
+      }
+    }
+  }
+
+  &:has(.link_features:hover, .dropdown_nav:hover) {
+    svg {
+      rotate: 0deg;
+    }
+    .dropdown_nav {
+      opacity: 1;
+      display: flex;
+      
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+
+  .dropdown_nav {
+    position-anchor: --features;
+    position: absolute;
+    top: calc(anchor(bottom) + 0rem);
+    left: anchor(left);
+
+    transition:  0.2s;
+    width: 25rem;
+    display: flex;
+    display: none;
+    opacity:  0;
+    gap: 1rem;
+
+    border: 1px solid rgb(240 240 240 / .3);
+    padding: 1rem;
+    height: 35%;
+
+    ul > li:first-child > a {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    a {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        aspect-ratio: 1;
+        background-color: rgb(240 240 240);
+        border-radius: 10rem;
+        left:  -0rem;
+        top: 0.90rem;
+        opacity: 0;
+        transition: 0.2s;
+      }
+    }
+
+    ul:has(a:hover) {
+      a::before {
+        opacity: 0;
+      }
+
+      a:hover {
+        color: rgb(240 240 240);
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    
+
+    .info_container {
+      /* background-color: red; */
+      overflow: hidden;
+      flex-basis: 100%;
+      position: relative;
+      /* height: 10%; */
+
+      .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .slider {
+        height: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .info_copy {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 1rem;
+
+          background-color: rgb(44 31 22);
+          border: 1px solid rgb(141, 100, 70);
+          border-radius: 1rem;
+
+          > svg {
+            align-self: center;
+          }
+        }
+      }
+    }
+
+    &:has(.realtime_link:hover) {
+      .slider {
+        translate: 0 -25%;
+      }
+    }
+    
+    &:has(.performance_link:hover) {
+      .slider {
+        translate: 0 -50%;
+      }
+    }
+    
+    &:has(.profiles_link:hover):hover {
+      .slider {
+        translate: 0 -75.5%;
+      }
+    }
+  }
+}
