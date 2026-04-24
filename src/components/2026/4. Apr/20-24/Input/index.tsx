@@ -17,8 +17,8 @@ export const Input = () => {
         className={styles.input}
         ref={inputRef} placeholder="Search members"
         onChange={(event) => {
-          event.target.value.length >= 24 && setHide('hide')
-          event.target.value.length <= 23 && setHide('show')
+          event.target.value.length >= 23 && setHide('hide')
+          event.target.value.length <= 22 && setHide('show')
         }}
       />
       <p className={`${styles[hide]}`}>
