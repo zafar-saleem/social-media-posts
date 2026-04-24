@@ -1,0 +1,189 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 30rem;
+
+  * {
+    transition: 0.2s allow-discrete var(--bounce);
+  }
+
+  .box {
+    display: flex;
+  }
+
+  label {
+    user-select: none;
+  }
+
+  .group {
+    display: flex;
+    background-color: rgb(218 218 218);
+    border-radius: 10rem;
+
+    input {
+      display: none;
+    }
+
+    &:last-child {
+      margin-left: auto;
+      background-color: rgb(10 10 10);
+      padding: 0.25rem;
+      
+      display: flex;
+
+
+      width: 2.45rem;
+      overflow: hidden;
+
+      &:has(.close_button > input:checked) {
+        width: 18.5rem;
+
+        .close_button > svg {
+          rotate: 540deg;
+        }
+
+        select {
+          display: flex;
+          opacity: 1;
+
+          @starting-style {
+            opacity: 0;
+          }
+        }
+      }
+
+      select {
+        border-radius: 10rem;
+        padding-inline: 0.25rem;
+        border: none;
+        background-color: rgb(10 10 10);
+        text-align: center;
+
+        display: none;
+        opacity: 0;
+      }
+
+      .divider {
+        height: 50%;
+        margin-block-start: 0.5rem;
+        border-right: 1px solid rgb(63 63 63);
+
+        display: none;
+      }
+
+      position: relative;
+
+      .close_button {
+        background-color: rgb(255 255 255);
+        border-radius: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        padding-inline: 0.55rem;
+        cursor: pointer;
+        position: absolute;
+        right: 0.22rem;
+        top: 0.26rem;
+        width: 2rem;
+        aspect-ratio: 1;
+
+        > svg {
+          rotate: 45deg;
+        }
+      }
+    }
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    border-radius: 10rem;
+    cursor: pointer;
+      
+    .label {
+      border-radius: 10rem;
+      background: transparent;
+      padding: 0.5rem 0.75rem;
+
+      &:hover {
+        background-color: rgb(10 10 10 / 0.1);
+      }
+    }
+
+    &:has(input:checked) {
+      .label {
+        background-color: rgb(10 10 10);
+        color: rgb(255 255 255);
+      }
+    }
+  }
+
+
+  .textarea {
+    background-color: rgb(255 255 255);
+    border: 1px solid rgb(234 234 234);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: rgb(40 40 40);
+    outline: 1px solid rgb(40 40 40 / 0);
+    min-height: 20vh;
+  }
+
+  textarea, input, select {
+    outline: 1px solid rgb(40 40 40 / 0);
+
+    &:focus {
+      outline: 1px solid rgb(40 40 40 / 0.2);
+    }
+  }
+
+
+
+
+
+
+  position: relative;
+
+  .actions {
+    display: flex;
+    padding-inline: 1.5rem;
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+
+    .box {
+      display: flex;
+      gap: 1rem;
+    }
+
+    select {
+      background: none;
+      border: none;
+      color: rgb(66 66 66);
+      border-radius: 10rem;
+      padding: 0.25rem;
+    }
+
+    button {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &.send_button {
+        background-color: rgb(0 0 0);
+        padding: 0.5rem;
+        border-radius: 10rem;
+      }
+    }
+
+    .box:last-child { 
+      margin-left: auto;
+    }
+  }
+}
