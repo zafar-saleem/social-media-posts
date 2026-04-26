@@ -1,0 +1,226 @@
+.container {
+  position: relative;
+  width: 8rem;
+  height: 3rem;
+}
+
+.toggle_button {
+  background-color: rgb(219, 218, 218);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 10rem;
+  transition: 0.2s;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+
+  &:hover {
+    box-shadow: 0 0rem 0.25rem 0.25rem rgb(40 40 40 / .07);
+  }
+
+  * {
+    transition: 0.4s var(--bounce);
+  }
+
+  input {
+    display: none;
+  }
+
+  &:has(input:checked) {
+    & + * + .leaf {
+      opacity: 1;
+      scale: 1;
+      rotate: 0deg;
+    }
+
+    & + * + * + .small_leaf {
+      opacity: 1;
+      rotate: -15deg;
+      scale: 1;
+    }
+
+    .greens {
+      scale: 1;
+      opacity: 1;
+    }
+
+    .chicken_leg {
+      scale: 0;
+      opacity: 0;
+    }
+
+    .egg {
+      opacity: 0;
+      scale: 0;
+    }
+
+    & + .chicken_bone {
+      scale: 0;
+      opacity: 0;
+    }
+    
+    .toggle_handle {
+      translate: 3rem 0;
+    }
+    .toggle_handle > p {
+      translate: -3.25rem 0;
+    }
+  }
+
+  .toggle_handle {
+    overflow: hidden;
+    background-color: rgb(0 0 0);
+    color: rgb(255 255 255);
+    border-radius: 10rem;
+    height: 3rem;
+    width: 5rem;
+    z-index: 20;
+
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 10rem;
+      height: 100%;
+      translate: 0.90rem 0;
+    }
+
+    span {
+      width: 10rem;
+      flex-basis: 100rem;
+    }
+  }
+
+
+  position: relative;
+  overflow: hidden;
+
+  .greens {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 40px solid rgb(54 168 85);
+    border-radius: 10rem;
+    z-index: 20;
+    rotate: -25deg;
+    position: absolute;
+    left: 30px;
+    top: 33px;
+    scale: 0;
+    opacity: 0;
+  }
+
+  .chicken_leg {
+    position: absolute;
+    border: 28px solid transparent;
+    border-bottom: 55px solid rgb(234 87 54);
+    border-radius: 10rem;
+    right: 5px;
+    top: -23px;
+    rotate: 20deg;
+    z-index: 20;
+  }
+
+  .egg {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background-color: rgb(255 255 255);
+    z-index: 1;
+    right: 5px;
+    bottom: -5px; 
+    rotate: -50deg;
+    border-radius: 50%;
+    z-index: 20;
+
+    &::before {
+      content: "";
+      aspect-ratio: 1;
+      border-radius: 100%;
+      z-index: 100;
+      background-color: #ebad38;
+      width: 15px;
+      top: 3px;
+      left: 6px;
+      position: absolute;
+    }
+  }
+}
+
+.chicken_bone {
+  border: 10px solid transparent;
+  border-top: 35px solid rgb(222, 221, 221);
+  position: absolute;
+  rotate: 20deg;
+  border-radius: 10rem;
+  top: -10px;
+  right: 20px;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.leaf {
+  transition: 0.4s var(--bounce);
+  background: rgb(58 177 92);
+  width: 45px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -3px;
+  opacity: 0;
+  rotate: -15deg;
+  scale: 0;
+  z-index: 20;
+  box-shadow: 
+    -15px -5px 0 0px rgb(58 177 92 / 1),
+    5px -18px 0 -10px rgb(58 177 92 / 1),
+    18px -10px 0 -10px rgb(58 177 92 / 1),
+    18px 10px 0 -10px rgb(58 177 92 / 1),
+    -5px 20px 0 -8px rgb(58 177 92 / 1)
+  ;
+}
+
+.small_leaf {
+  z-index: 20;
+  transition: 0.4s var(--bounce);
+  transition-delay: 0.03s;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  
+  border-top: 15px solid rgb(63, 197, 99);
+  border-radius: 10rem;
+  position: absolute;
+  top: 23px;
+  left: 33px;
+  opacity: 0;
+  rotate: -30deg;
+  scale: 0;
+
+  > div {
+    width: 10px;
+    aspect-ratio: 1;
+    background-color: rgb(63, 197, 99);
+    border-radius: 10rem;
+  }
+
+  > div:first-child {
+    translate: -13px -20px;
+    transition: 0.4s;
+  }
+  
+  > div:nth-child(2) {
+    width: 10px;
+    translate: -5px -33px;
+    transition: 0.4s;
+  }
+  
+  > div:nth-child(3) {  
+    translate: 3px -40px;
+    transition: 0.4s;
+  }
+}
