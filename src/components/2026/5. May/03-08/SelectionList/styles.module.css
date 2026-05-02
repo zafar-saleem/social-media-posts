@@ -52,10 +52,10 @@
 
     &:has(.checkbox:checked) {
       text-shadow:
-        0.25px 0 0 currentColor,
-        0 0.25px 0 currentColor,
-        -0.25px 0 0 currentColor,
-        0 -0.25px 0 currentColor;
+        0.10px 0 0 currentColor,
+        0 0.10px 0 currentColor,
+        -0.10px 0 0 currentColor,
+        0 -0.10px 0 currentColor;
       color: rgb(245 245 245);
       background-color: rgb(48 48 48);
 
