@@ -19,9 +19,10 @@
     height: calc(100% + 20px);
     top: -10px;
     left: -10px;
-    border-radius: 3rem;
+    border-radius: 5rem;
     corner-shape: squircle;
     z-index: -1;
+    box-shadow: 0 0.5rem 1rem 0.25rem rgb(40 40 40 / .2);
   }
 
   &::after {
@@ -32,9 +33,10 @@
     top: 0;
     left: 0;
     position: absolute;
-    border-radius: 2.25rem;
+    border-radius: 4.25rem;
     corner-shape: squircle;
     z-index: -1;
+    box-shadow: 0 0 1px 1px rgb(40 40 40 / .1);
   }
 
 
@@ -65,7 +67,7 @@
   }
 
   .icon {
-    grid-row: 2 / 2;
+    grid-row: 2 / 4;
     font-size: 1.25rem;
     margin-block-start: 0.5rem;
   }
@@ -87,7 +89,6 @@
 
   .progress {
     height: 13px;
-    background-color: red;
     grid-row: 4 / 4;
     grid-column: 1 / 12;
     border-radius: 10rem;
