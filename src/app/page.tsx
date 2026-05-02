@@ -1,10 +1,10 @@
-import { DietToggleButton } from "@/components/2026/5. May/01/ToggleButton";
 import styles from "./page.module.css";
+import { Button } from "@/components/2026/5. May/03-08/InteractiveButton";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <DietToggleButton />
+      <Button />
     </main>
   );
 }

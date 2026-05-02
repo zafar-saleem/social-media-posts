@@ -1,0 +1,50 @@
+.button {
+  border: none;
+  background: rgb(255 255 255);
+  color: rgb(40 40 40);
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  corner-shape: squircle;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.2s;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3.5px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(20 20 20);
+    transition: 0.2s;
+  }
+
+  &:hover {
+    box-shadow: 0 0.25rem 0.5rem 0.25rem rgb(40 40 40 / .1);
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    color:  rgb(255 255 255);
+
+    &::before {
+      height: 100%;
+      bottom: 2px;
+      left: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      border-radius: 0.45rem;
+      corner-shape: squircsle;
+    }
+  }
+}
