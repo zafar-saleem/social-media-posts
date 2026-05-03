@@ -1,0 +1,246 @@
+.container {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    aspect-ratio: 1;
+    background-color: rgb(252 105 49);
+    border-radius: 10rem;
+
+    position-anchor: --button;
+    right: calc(anchor(right) + 0.20rem);
+    top: calc(anchor(top) + 0.25rem);
+    z-index: 1;
+    transition: 0.2s var(--bounce);
+  }
+
+  * {
+    transition: 0.2s;
+  }
+
+  .button_label {
+    border-radius: 10rem;
+    border: 1px solid rgb(222, 222, 222);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    background-color: rgb(255 255 255);
+    align-self: flex-end;
+
+    anchor-name: --button;
+
+    &:hover {
+      background-color: rgb(40 40 40 / .0001);
+    }
+    
+    &:active {
+      scale: 0.97;
+    }
+
+    > .button_icon {
+      width: 100%;
+      height: 100%;
+      border-radius: 10rem;
+      
+      > div:not(:last-child) {
+        width: calc(100% - 50%);
+        height: 2px;
+        background-color: rgb(40 40 40);
+        transition-timing-function: var(--bounce);
+
+        &:first-child {
+          translate: 50% 0.75rem;
+        }
+        
+        &:nth-child(2) {
+          translate: 50% 1.05rem;
+        }
+      }
+
+      > div:last-child {
+        width: calc(100% - 50%);
+        height: 3px;
+        display: flex;
+        justify-content: space-between;
+        translate: 50% 1.30rem;
+
+        > span {
+          width: 3px;
+          aspect-ratio: 1;
+          background-color: rgb(40 40 40);
+          display: flex;
+          border-radius: 10rem;
+        }
+      }
+    }
+  }
+
+  &:has(.button_label > input:checked) {
+    &::before {
+      right: 0.5rem;
+      top: -3.15rem;
+    }
+
+    .button_icon {
+      > div:first-child {
+        rotate: 45deg;
+        translate: 0.60rem 1.10rem;
+      }
+      
+      > div:nth-child(2) {
+        rotate: -45deg;
+        translate: 0.60rem 1rem;
+      }
+
+      > div:last-child {
+        opacity: 0;
+      }
+    }
+
+
+
+    .menu {
+      opacity: 1;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  position: relative;
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    position-anchor: --button;
+    bottom: calc(anchor(top) - 0.5rem);
+    right: calc(anchor(right) - 1rem);
+    opacity: 0;
+
+    > div {
+      background-color: rgb(255 255 255);
+      width: 100%;
+      padding:  0.75rem 1.25rem;
+      border-radius: 10rem;
+      border: 1px solid rgb(222, 222, 222);
+      box-shadow: 0 0 0.75rem 0.25rem rgb(40 40 40 / .2);
+    }
+
+    .sub_menu {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      > div:first-child {
+        display: flex;
+
+        > .submenu_label {
+          margin-left: auto;
+          cursor: pointer;
+        }
+      }
+
+      &:has(input:checked) {
+        border-radius: 1rem;
+
+        ol {
+          height: auto;
+          display: flex;
+          opacity: 1;
+
+          @starting-style {
+            height: 0;
+            opacity: 0;
+          }
+        }
+      }
+
+      overflow: hidden;
+
+      ol {
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 1.75rem;
+        min-height: 0;
+        display: none;
+        opacity: 0;
+        color: rgb(142 142 142);
+
+        li {
+          /* width: 100%; */
+          &:hover {
+            color: rgb(40 40 40);
+          }
+        }
+      }
+
+      a {
+        display: flex;
+        padding: 0.25rem;
+        width: 100%;
+        color: rgb(142 142 142);
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 2px;
+          height: 100%;
+          background-color: rgb(234 111 73);
+          opacity: 0;
+          transition: 0.3s;
+          left: -1.5rem;
+          top: 0;
+        }
+
+        &:hover {
+          color: rgb(40 40 40);
+
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+
+
+
+
+    .notifications {
+      display: flex;
+      anchor-name: --not;
+
+      > svg {
+        margin-left: auto;
+      }
+    }
+  }
+}
