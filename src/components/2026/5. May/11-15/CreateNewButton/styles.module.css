@@ -1,0 +1,166 @@
+.container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  > * {
+    grid-area: 1 / 1;
+  }
+}
+
+.label {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 0.5rem;
+  user-select: none;
+  cursor: pointer;
+  border: 1px solid rgb(222 227 233);
+  border-radius: 0.75rem;
+  corner-shape: squircle;
+  padding: 0.5rem 0.75rem;
+  transition: 0.2s;
+  position: relative;
+  background-color: rgb(248 249 251);
+  background: linear-gradient(to bottom right, rgb(254 255 255), rgb(237 243 250));
+  width: 8rem;
+  margin: auto;
+
+  > * {
+    transition: 0.2s;
+  }
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0;
+    transition: 0.4s var(--bounce);
+    z-index: 1;
+    background-color: rgb(40 40 40 / 0.05);
+  }
+
+  &::before {
+    left: 0;
+  }
+  
+  &::after {
+    right: 0;
+  }
+
+  &:hover {
+    &::before, &::after {
+      width: 50%;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  &:has(input:checked) + .list_wrapper {
+    height: auto;
+    width: 100%;
+    scale: 1;
+  }
+}
+
+.list_wrapper {
+  scale: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  z-index: 10;
+  transition: 0.3s var(--bounce);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: rgb(248 249 251);
+  background: linear-gradient(to bottom right, rgb(254 255 255), rgb(237 243 250));
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  corner-shape: squircle;
+  border: 1px solid rgb(222 227 233);
+  min-width: 18rem;
+  transform-origin: center;
+  margin: auto;
+  position: relative;
+
+  .item {
+    &:first-child > .link > .icon {
+      background-color: rgb(227 238 254);
+    }
+    
+    &:nth-child(2) > .link > .icon {
+      background-color: rgb(248 228 230);
+    }
+    
+    &:nth-child(3) > .link > .icon {
+      background-color: rgb(247 236 224);
+    }
+
+    &:last-child > .link > .icon {
+      background-color: rgb(221 239 237);
+    }
+  }
+
+  .link {
+    display: flex;
+    gap: 1rem;
+
+    &:hover {
+      .icon {
+        svg {
+          animation: --bell 0.5s ease-in-out forwards;
+        }
+      }
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      border-radius: 1rem;
+      corner-shape: squircle;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      .copy {
+        font-size: 0.725rem;
+        color: rgb(40 40 40 / .8);
+      }
+    }
+  }
+}
+
+@keyframes --bell {
+  0%, 100% {
+    rotate: 0deg;
+    opacity: 1;
+  }
+
+  25% {
+    rotate: 20deg;
+    opacity: 0.5;
+  }
+
+  50% {
+    rotate: -10deg;
+    opacity: 1;
+  }
+
+  75% {
+    rotate: 5deg;
+    opacity: 0.5;
+  }
+}

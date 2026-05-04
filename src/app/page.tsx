@@ -1,10 +1,10 @@
+import { CreateNewButton } from "@/components/2026/5. May/11-15/CreateNewButton";
 import styles from "./page.module.css";
-import { ExpandableMenu } from "@/components/2026/5. May/03-08/ExpandableMenu";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <ExpandableMenu />
+      <CreateNewButton />
     </main>
   );
 }
