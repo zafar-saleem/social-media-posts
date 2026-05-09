@@ -1,0 +1,65 @@
+.button_chat {
+  background-color: rgb(38 38 38);
+  color: rgb(212 212 212);
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 10rem;
+  letter-spacing: 1px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(60 60 60);
+
+    .smile_icon {
+      scale: 1;
+    }
+
+    .lock_icon {
+      scale: 0;
+    }
+  }
+
+  * {
+    transition: 0.3s var(--bounce);
+  }
+
+  > div {
+    display: grid;
+    position: relative;
+
+    > * {
+      grid-area: 1 / 1;
+    }
+
+    > .lock_icon {
+      position: absolute;
+      width: 10px;
+      aspect-ratio: 1;
+      right: -5px;
+      top: -4px;
+      background-color: rgb(38 38 38);
+      border-radius: 10rem;
+      /* background-color: red; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1rem;
+      aspect-ratio: 1;
+    }
+
+    .smile_icon {
+      position: absolute;
+      top: 15%;
+      left: 15%;
+      scale: 0;
+    }
+  }
+}
