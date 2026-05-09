@@ -1,0 +1,163 @@
+.container {
+
+  * {
+    transition: 0.2s;
+    corner-shape: squircle;
+    border-radius: 1rem;
+  }
+
+  &:has(input:checked) {
+    .status_list {
+      opacity: 1;
+      display: flex;
+      filter: blur(0);
+      animation: --shake 0.3s linear forwards;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+  
+  .button {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem .75rem;
+    cursor: pointer;
+    background-color: rgb(255 255 255);
+    color: rgb(43 43 43);
+    border: none;
+    box-shadow: 0 2px 2px 0px rgb(40 40 40 / .1);
+    anchor-name: --button;
+    user-select: none;
+
+    input {
+      display: none;
+    }
+
+    &:active {
+      scale: 0.98;
+      box-shadow: none;
+    }
+
+    &:hover {
+      background-color: rgb(40 40 40 / .001);
+    }
+  }
+
+  .status_list {
+    display: none;
+    gap: 0.5rem;
+    background-color: rgb(255 255 255);
+    padding: 0.5rem;
+    box-shadow: 0 2px 2px 0px rgb(40 40 40 / .1);
+    anchor-name: --list;
+    position: absolute;
+    position-anchor: --button;
+    bottom: calc(anchor(top) + 0.25rem);
+    left: calc(anchor(center) - calc(8.85rem / 2));
+    width: calc(anchor-size(width) + 1.75rem);
+    opacity: 0;
+    filter: blur(2px);
+    width: 8.85rem;
+    transition: 1s;
+
+    &:hover {
+      opacity: 1;
+      display: flex;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+
+    button {
+      border: none;
+      background: transparent;
+      display: flex;
+      cursor: pointer;
+      padding: 0.25rem;
+
+      &:hover {
+        background-color: rgb(40 40 40 / .1);
+      }
+
+      &:hover + .tooltip {
+        opacity: 1;
+        display: flex;
+        animation: --shake 0.3s linear forwards;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+
+    .button_draft {
+      anchor-name: --draft;
+    }
+
+    .button_review {
+      anchor-name: --review;
+    }
+
+    .button_approval {
+      anchor-name: --approval;
+    }
+
+    .button_done {
+      anchor-name: --done;
+    }
+
+    .tooltip {
+      opacity: 0;
+      display: none;
+      background-color: rgb(59 58 63);
+      padding: 0.25rem;
+      border-radius: .5rem;
+      color: rgb(230 230 230);
+      position: absolute;
+      bottom: calc(anchor(top) + 0.75rem);
+      left: calc(anchor(left) - 0.5rem);
+    }
+
+    .draft {
+      position-anchor: --draft;
+    }
+
+    .review {
+      position-anchor: --review;
+      left: calc(anchor(left) - 0.85rem);
+    }
+
+    .approval {
+      position-anchor: --approval;
+      left: calc(anchor(left) - 1.25rem);
+    }
+
+    .done {
+      position-anchor: --done;
+    }
+  }
+}
+
+@keyframes --shake {
+  0%, 100% {
+    rotate: 0;
+    translate: 0;
+  }
+  25% {
+    rotate: -10deg;
+    translate: -5px;
+  }
+  50% {
+    rotate: 10deg;
+    translate: 5px;
+  }
+  75% {
+    rotate: 5deg;
+    translate: 0;
+  }
+}
