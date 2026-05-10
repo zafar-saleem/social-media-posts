@@ -1,0 +1,240 @@
+.card {
+  background-color: rgb(23 27 35);
+  background: linear-gradient(to bottom, rgb(62, 63, 70), rgb(23 27 35) 10%);
+  border-radius: 1.5rem;
+  corner-shape: squircle;
+  color: rgb(233 232 235);
+  min-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: 0.3s;
+  position: relative;
+  box-shadow: 0 0 1px 1px rgb(93, 94, 99);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    background-color: rgb(28 28 26);
+    z-index: -1;
+    border-radius: 2rem;
+    corner-shape: squircle;
+    box-shadow: 0 1rem 1.5rem .25rem rgb(40 40 40 / .5);
+  }
+
+  * {
+    transition: 0.3s;
+    corner-shape: squircle;
+  }
+
+  .text_large {
+    font-size: 1.7rem;
+  }
+
+  .text_secondary {
+    color: rgb(149 155 167);
+  }
+
+  .card_header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .card_badge {
+    color: rgb(181 105 74);
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    text-transform: uppercase;
+    gap: 0.25rem;
+    background-color: rgb(81, 17, 0);
+    padding: 0.25rem 0.75rem;
+    border-radius: 10rem;
+    font-size: 0.675rem;
+  }
+
+  .card_body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-inline: 1rem;
+
+    &:has(.card_pill.groceries:hover) {
+      .card_chart {
+        .bar.groceries {
+          background: linear-gradient(to bottom, rgb(var(--bar-color) / .3), rgb(var(--bar-color)), rgb(var(--bar-color) / .3));
+          translate: 0 -1rem;
+        }
+      }
+    }
+    
+    &:has(.card_pill.dining:hover) {
+      .card_chart {
+        .bar.dining {
+          background: linear-gradient(to bottom, rgb(var(--bar-color) / .3), rgb(var(--bar-color)), rgb(var(--bar-color) / .3));
+          translate: 0 -1rem;
+        }
+      }
+    }
+    
+    &:has(.card_pill.transport:hover) {
+      .card_chart {
+        .bar.transport {
+          background: linear-gradient(to bottom, rgb(var(--bar-color) / .3), rgb(var(--bar-color)), rgb(var(--bar-color) / .3));
+          translate: 0 -1rem;
+        }
+      }
+    }
+    
+    &:has(.card_pill.shopping:hover) {
+      .card_chart {
+        .bar.shopping {
+          background: linear-gradient(to bottom, rgb(var(--bar-color) / .3), rgb(var(--bar-color)), rgb(var(--bar-color) / .3));
+          translate: 0 -1rem;
+        }
+      }
+    }
+  }
+
+  .card_chart {
+    border: 1px solid rgb(40 42 51);
+    border-radius: 10rem;
+    height: 1rem;
+    padding: 0.10rem;
+    background: linear-gradient(to bottom, rgb(17 21 30), rgb(33 35 47), rgb(17 21 30));
+    display: flex;
+    gap: 2px;
+    corner-shape: round;
+
+    .bar {
+      background: linear-gradient(to bottom, rgb(var(--bar-color) / .6), rgb(var(--bar-color)), rgb(var(--bar-color) / .6));
+      height: 100%;
+      width: var(--width);
+      border-radius: 0.15rem;
+      corner-shape: round;
+      transition-timing-function: var(--bounce);
+
+      &:first-child {
+        border-radius: 1rem 0.5rem 0.5rem 1rem;
+      }
+      
+      &:last-child {
+        border-radius: 0.5rem 1rem 1rem 0.5rem;
+      }
+    }
+  }
+
+
+  .card_grid {
+    display: grid;
+    gap: 0.25rem;
+    grid-template-columns: 1fr 1fr;
+
+    .card_pill {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.40rem;
+      border-radius: 10rem;
+      corner-shape: round;
+      background: linear-gradient(to bottom, rgb(45 48 59), rgb(28 32 41));
+      box-shadow: inset 0 0 1px 0px rgb(255 255 255 / .5), 0 2px 1px 0px rgb(0 0 0 / .2);
+      text-transform: capitalize;
+      cursor: pointer;
+
+      &:hover {
+        background: linear-gradient(to bottom, rgb(28 32 41), rgb(45 48 59));
+      }
+
+      .spent {
+        margin-left: auto;
+      }
+    }
+  }
+
+
+  .card_footer {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    background-color: rgb(34 36 48);
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    corner-shape: round;
+    border-top: 1px solid rgb(78 80 92);
+
+    .block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .toggle {
+      margin-left: auto;
+      background-color: red;
+      width: 4rem;
+      height: 1.75rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      background-color: rgb(16 17 21);
+      border: 1px solid rgb(74 76 85);
+      position: relative;
+      transition: 0.2s;
+      corner-shape: round;
+
+      &:hover {
+        background-color: rgb(28, 30, 36);
+      }
+
+      &:has(input:checked) {
+        &::before {
+          left: calc(4rem / 2 - 4px);
+        }
+
+        &::after {
+          scale: 1;
+          rotate: calc(360deg - 45deg);
+        }
+      }
+
+      &::before {
+        content: "";
+        position:absolute;
+        top: 2px;
+        left: 2px;
+        width: 2rem;
+        height: calc(1.75rem - 6px);
+        background: linear-gradient(to bottom, rgb(253 253 253), rgb(234 234 234));
+        border-radius: 10rem;
+        transition: 0.3s var(--bounce);
+        z-index: 10;
+        corner-shape: round;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 27%;
+        border-left: 2px solid rgb(240 240 240);
+        border-bottom: 2px solid rgb(240 240 240);
+        height: 5px;
+        width: 10px;
+        rotate: -45deg;
+        transition: 0.2s .1s var(--bounce);
+        scale: 0;
+        border-radius: 0 0 0 0.15rem;
+        corner-shape: round;
+      }
+
+      input {
+        display: none;
+      }
+    }
+  }
+}
