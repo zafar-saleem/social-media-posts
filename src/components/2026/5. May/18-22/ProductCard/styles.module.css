@@ -1,0 +1,103 @@
+.product_card {
+  width: min(20rem, 100%);
+  background-color: rgb(242 242 242);
+  padding: 0.35rem;
+  border-radius: 2rem;
+  display: flex;
+  position:  relative;
+  flex-direction: column;
+  box-shadow: 0 0 0.25rem 0.25rem rgb(40 40 40 / .1), 0 0 1px 1px rgb(255 255 255) inset;
+
+  .card_media {
+    --r: 1.25rem;
+    --s: 30px;
+    --x: 10px;
+    --y: 10px;
+
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-view-box: inset(20% 20% -15% 40%);
+    border-radius: 1.75rem;
+    --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
+    --_g:conic-gradient(at calc(100% - var(--r)) var(--r),#0000 25%,#000 0);
+    --_d:(var(--s) + var(--r));
+
+    mask: calc(100% - var(--_d) - var(--x)) 0 var(--_m),
+      100% calc(var(--_d) + var(--y)) var(--_m),
+      radial-gradient(var(--s) at 100% 0,#0000 99%,#000 calc(100% + 1px)) 
+        calc(-1*var(--r) - var(--x)) calc(var(--r) + var(--y)),
+      var(--_g) calc(-1*var(--_d) - var(--x)) 0,
+      var(--_g) 0 calc(var(--_d) + var(--y));
+    mask-repeat: no-repeat;
+    z-index: 10;
+  }
+
+  .card_figure {
+    border-radius: 1.75rem;
+    background-color: rgb(68 36 15);
+    width: calc(100% - 0.75rem);
+    height: 50%;
+    position: absolute;
+    bottom: 12%;
+    z-index: 1;
+    color: rgb(255 255 255);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 0.725rem;
+    padding-block-end: 0.20rem;
+  }
+
+  .card_icon {
+    background-color: rgb(43 43 43);
+    position: absolute;
+    width: 3.5rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10rem;
+    right: 0.35rem;
+
+    > svg {
+      scale: 1;
+      transition: 1s;
+      transform-origin: bottom left;
+    }
+  }
+
+  &:hover {
+    .card_icon > svg {
+      animation: --stretch 1s ease-in-out infinite;
+    }
+  }
+
+  .box {
+    display: flex;
+    align-items: center;
+    margin-block-start: 1rem;
+    color: rgb(70 70 70);
+  }
+
+  .card_title {
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .card_price {
+    margin-left: auto;
+    padding-inline-end: 0.5rem;
+  }
+}
+
+@keyframes --stretch {
+  0%, 100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+}
