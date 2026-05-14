@@ -51,6 +51,12 @@ const nextConfig: NextConfig = {
         port: '',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.dribbble.com/**',
+        port: '',
+        search: '',
+      },
       // {
       //   protocol: 'https',
       //   hostname: 'cdn.dribbble.com',
