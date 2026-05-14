@@ -10,7 +10,7 @@ export const ProductCard = () => {
 
   React.useEffect(() => {
     setInterval(() => {
-      // setTimer((prev) => prev - 1);
+      setTimer((prev) => prev - 1);
     }, 1000);
   }, []);
 
