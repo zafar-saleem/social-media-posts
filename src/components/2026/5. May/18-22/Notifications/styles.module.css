@@ -1,0 +1,138 @@
+.button_notifications {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  * {
+    transition: 0.3s;
+  }
+
+  &:has(.ring) {
+    svg {
+      animation: --ring-bell 1s ease-in-out forwards;
+
+      > path:first-child {
+        animation: --move ease-in-out forwards 1s;
+      }
+    }
+
+    &::before {
+      animation: --trigger-outer-ripple 1.5s ease-in-out forwards;
+    }
+
+    &::after {
+      animation: --trigger-inner-ripple 1.5s 0.3s ease-in-out forwards;
+    }
+  }
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    aspect-ratio: 1;
+    border-radius: 10rem;
+    border: 1px solid rgb(237, 237, 237);
+    background: transparent;
+    z-index: 1;
+    opacity: 0;
+    filter: blur(1px);
+  }
+
+  .button_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background-color: rgb(255 255 255);
+    width: 100%;
+    height: 100%;
+    padding: 0.75rem;
+    border-radius: 1.25rem;
+    border: 3px solid rgb(246 246 246);
+    background-color: rgb(255 255 255);
+  }
+
+  .button_counter {
+    content: attr(data-counter);
+    position: absolute;
+    background-color: red;
+    border-radius: 10rem;
+    width: fit-content;
+    padding: 0.10rem 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    right: -5px;
+    top: -5px;
+    z-index: 10;
+  }
+}
+
+@keyframes --ring-bell {
+  0% {
+    rotate: 0deg;
+  }
+  20% {
+    rotate: -10deg;
+  }
+  60% {
+    rotate: 5deg;
+  }
+  80% {
+    rotate: -2deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes --move {
+  0% {
+    translate: 0px 0;
+  }
+  20% {
+   translate: -6px 0;
+  }
+  60% {
+    translate: 3px 0;
+  }
+  80% {
+    translate: -3px 0;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes --trigger-outer-ripple {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 10rem;
+  }
+}
+
+@keyframes --trigger-inner-ripple {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 8rem;
+  }
+}
