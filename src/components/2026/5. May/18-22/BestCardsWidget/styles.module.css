@@ -119,6 +119,7 @@
       border-radius: 1rem;
       flex-direction: column;
       gap: 0.25rem;
+      transition-behavior: allow-discrete;
       
       
       display: none;
