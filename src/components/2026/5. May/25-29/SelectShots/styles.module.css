@@ -1,0 +1,337 @@
+.shots {
+  border: 1px solid rgb(228 227 225);
+  padding: 1rem;
+  background-color: rgb(245 244 243);
+  border-radius: 2rem;
+  outline: 10px solid rgb(255 255 255);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: min(25rem, 100%);
+  background-image: radial-gradient(circle, rgb(245 244 243) 70%, rgb(255 255 255));
+  box-shadow: 0 0.5rem 0.5rem 0.75rem rgb(40 40 40 / .15);
+
+  .shots_title {
+    --title-color: rgb(131 131 131);
+
+    font-size: 0.875rem;
+    font-weight: normal;
+    color: var(--title-color);
+    position: relative;
+    text-transform: uppercase;
+
+    &::before, &::after {
+      --_width: 3rem;
+      --_color: rgb(223 223 223);
+
+      content: "";
+      position: absolute;
+      width: var(--_width);
+      height: 1.5px;
+      top: 0.5rem;
+      background-color: var(--_color);
+    }
+
+    &::before {
+      left: calc(calc(var(--_width) + 0.75rem) * -1);
+    }
+    
+    &::after {
+      right: calc(calc(var(--_width) + 0.75rem) * -1);
+    }
+  }
+
+
+
+  .shots_carousel {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-marker-group: after;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .coursel_scroller {
+      display: flex;
+      gap: 1rem;
+      transition: 0.3s var(--bounce);
+
+      &.show_1 {
+          translate: 0rem 0;
+        }
+        
+        &.show_2 {
+          translate: -24rem 0;
+        }
+        
+        &.show_3 {
+          translate: -48rem 0;
+        }
+        
+        &.show_4 {
+          translate: -72rem 0;
+        }
+        
+        &.show_5 {
+          translate: -96rem 0;
+        }
+
+      .scroller_coffee {
+        display: flex;
+        flex-shrink: 0;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        scroll-snap-align: center;
+        transition: 0.3s;
+
+        &:nth-child(1) {
+          .coffee_cup {
+            margin-inline-start: 0.5rem;
+          }
+        }
+        
+        &:nth-child(3), &:nth-child(4) {
+          .coffee_cup {
+            margin-inline-start: 1rem;
+          }
+        }
+        
+        &:nth-child(5) {
+          .coffee_cup {
+            margin-inline-start: 0.75rem;
+          }
+        }
+        
+        
+
+        .coffee_cup {
+          object-fit: cover;
+          filter: drop-shadow(0 0.25rem 0.25rem rgb(0 0 0 / 0.5));
+        }
+
+        .coffee_strength {
+          border: 1px solid rgb(235 203 160);
+          background: linear-gradient(to bottom, rgb(255 224 166), rgb(251 212 162));
+          border-radius: 10rem;
+          padding: 0.25rem 0.75rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgb(167 69 5);
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 0.725rem;
+        }
+      }
+
+
+      
+    }
+
+
+
+
+
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .indicators {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-block-start: -3rem;
+
+    &.show_1 {
+      div:nth-child(n + 2) {
+        background-color: rgb(226, 226, 226);
+      }
+    }
+    
+    &.show_2 {
+      div:nth-child(n + 3) {
+        background-color: rgb(226, 226, 226);
+      }
+    }
+    
+    &.show_3 {
+      div:nth-child(n + 4) {
+        background-color: rgb(226, 226, 226);
+      }
+    }
+    
+    &.show_4 {
+      div:nth-child(n + 5) {
+        background-color: rgb(226, 226, 226);
+      }
+    }
+    
+    &.show_5 {
+      div:nth-child(n + 6) {
+        background-color: rgb(226, 226, 226);
+      }
+    }
+
+    > * {
+      transition: 0.3s;
+      width: 8px;
+      aspect-ratio: 1;
+      background-color: rgb(226, 226, 226);
+      background-color: rgb(78 55 30);
+      border-radius: 10rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+  .shots_toggle {
+    background: linear-gradient(to bottom, rgb(214, 214, 214), rgb(231, 231, 231));
+    padding: 0.5rem;
+    border-radius: 10rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    transition: 0.2s;
+
+    button {
+      border-radius: 10rem;
+      border: none;
+      cursor: pointer;
+      background-color: rgb(255 255 255);
+      color: rgb(40 40 40);
+      width: 3rem;
+      aspect-ratio: 1;
+      box-shadow: 0 2px 0.25rem 0rem rgb(40 40 40 / 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: rgb(250 250 250);
+      }
+      
+      &:active {
+        background-color: rgb(250 250 250);
+        scale: 0.96;
+        box-shadow: 0 0px 0.25rem 0rem rgb(40 40 40 / 0.2);
+      }
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      text-align: center;
+      padding-bottom: 1.5rem;
+      font-size:  1rem;
+      font-weight: bold;
+      width: 5rem;
+      color: rgb(0 0 0);
+      transition: 0.2s;
+    }
+
+    .shots_label {
+      position: absolute;
+      color: rgb(126 126 126);
+      bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 0.725rem;
+      font-weight: bold;
+    }
+  }
+
+
+
+
+
+
+
+
+  .shots_copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-inline: 1rem;
+
+    .copy_title {
+      color: rgb(91 91 91);
+      font-size: 1rem;
+      text-transform: uppercase;
+      position: relative;
+
+      &::after {
+        content:  "";
+        width: calc(100% / 1.90);
+        height: 1px;
+        background-color: rgb(210 210 210);
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+      }
+    }
+
+    .copy_text {
+      color: rgb(143 143 143);
+      line-height: 1.25rem;
+    }
+  }
+
+
+
+
+  .button_order {
+    background-color: rgb(75 55 33);
+    border: none;
+    padding: 1rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    width: 100%;
+    box-shadow: 0 2px 0.25rem 0rem rgb(40 40 40 / 0.2);
+    transition: 0.1s;
+
+    &:hover {
+      background-color: rgb(92, 67, 39);
+    }
+    
+    &:active {
+      background-color: rgb(92, 67, 39);
+      scale: 0.99;
+      box-shadow: 0 0px 0.25rem 0rem rgb(40 40 40 / 0.2);
+    }
+  }
+}
