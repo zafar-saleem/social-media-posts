@@ -62,26 +62,26 @@
     .coursel_scroller {
       display: flex;
       gap: 1rem;
-      transition: 0.3s var(--bounce);
+      transition: 0.3s ease-in-out;
 
       &.show_1 {
           translate: 0rem 0;
         }
         
         &.show_2 {
-          translate: -24rem 0;
+          translate: -23.90rem 0;
         }
         
         &.show_3 {
-          translate: -48rem 0;
+          translate: -47.75rem 0;
         }
         
         &.show_4 {
-          translate: -72rem 0;
+          translate: -71.75rem 0;
         }
         
         &.show_5 {
-          translate: -96rem 0;
+          translate: -95.5rem 0;
         }
 
       .scroller_coffee {
