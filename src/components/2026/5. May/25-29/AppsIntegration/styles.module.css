@@ -1,0 +1,226 @@
+.intergration {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(249 243 245);
+  border-radius: 2rem;
+  inline-size: min(30rem, 100%);
+  box-shadow: 0 2rem 1rem 0 rgb(40 40 40 / .1);
+
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0.75rem 1rem;
+    border-radius: 2rem;
+    corner-shape: squircle;
+    transition: 0.2s;
+  }
+
+  
+
+
+  .box {
+    padding: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .group:first-child {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .dot {
+        position: absolute;
+        width: 7px;
+        aspect-ratio: 1;
+        background-color: rgb(227 227 227);
+        border-radius: 10rem;
+
+        :is(&:nth-child(5), &:nth-child(4)) {
+          background-color: rgb(223 77 146);
+        }
+        
+        :is(&:nth-child(3), &:nth-child(2), &:nth-child(1)) {
+          background-color: rgb(227 227 227);
+        }
+
+        &:nth-child(5) {
+          left: 5.5rem;
+        }
+        
+        &:nth-child(4) {
+          left: 6.25rem;
+        }
+        
+        &:nth-child(3) {
+          left: 7rem;
+        }
+        
+        &:nth-child(2) {
+          left: 7.75rem;
+        }
+      }
+
+      .logo {
+        border-radius: 4rem;
+        corner-shape: squircle;
+        display: flex;
+        padding: 0.5rem;
+      }
+
+      .intergration_logo {
+        background-color: rgb(225 98 171);
+      }
+
+      .target_logo {
+        background-color: rgb(0 0 0);
+
+        img {
+          position: relative;
+          z-index: 1;
+          background-color: rgb(0 0 0);
+        }
+      }
+    }
+
+    > .group:nth-child(2) {
+      flex-direction: column;
+      gap: 1rem;
+
+
+      .intergration_title {
+        font-weight: normal;
+        font-size: 1.75rem;
+      }
+      
+      .intergration_text {
+        color: rgb(104 104 104);
+      }
+    }
+
+    > .group:nth-child(3) {
+      width: 100%;
+      gap: 1rem;
+
+      .button_cancel {
+        background: linear-gradient(to bottom, rgb(254 243 246), rgb(255 235 244));
+        color: rgb(153 63 105);
+        border: 1px solid rgb(230 219 224);
+        flex-basis: 100%;
+        box-shadow: 0 0.25rem 0.25rem 0 rgb(40 40 40 / .2);
+
+        &:active {
+          scale: 0.98;
+          box-shadow: 0 0.25rem 0.25rem 0 rgb(40 40 40 / 0);
+        }
+      }
+
+      .button_approve {
+        background: linear-gradient(to bottom, rgb(232 103 175), rgb(207 71 126));
+        border: 1px solid rgb(183 85 123);
+        flex-basis: 100%;
+        box-shadow: 0 0.25rem 0.25rem 0 rgb(40 40 40 / .2);
+
+        &:active {
+          scale: 0.98;
+          box-shadow: 0 0.25rem 0.25rem 0 rgb(40 40 40 / 0);
+        }
+      }
+    }
+  }
+
+  .box:first-child {
+    background-color: rgb(253 253 253);
+    box-shadow: 0 0.5rem 2rem 0 rgb(40 40 40 / .1);
+    border: 1px solid rgb(223 218 220);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 90%;
+      height: 50%;
+      bottom: 0;
+      left: 5%;
+      
+      z-index: -1;
+    }
+  }
+  
+  
+  
+  &:hover {
+    .box {
+      .group:first-child {
+        .dot {
+          animation: --hightlight 1s linear infinite;
+        }
+      }
+    }
+  }
+  
+  
+  
+  .box:last-child {
+    border-radius: 0 0 2rem 2rem;
+    background-color: rgb(249 243 245);
+    align-items: flex-start;
+    padding-inline: 2rem;
+    gap: 1rem;
+
+    .title {
+      font-weight: bold;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      li {
+        display: flex; 
+        align-items: center;
+        gap: 0.5rem;
+
+        > .icon {
+          display: flex;
+          background-color: rgb(253 219 235);
+          border-radius: 10rem;
+          width: 1.5rem;
+          aspect-ratio: 1;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .text {
+          color: rgb(91 86 89);
+        }
+      }
+    }
+  }
+}
+
+@keyframes --hightlight {
+  from {
+    background-color: rgb(227 227 227);
+  }
+  to {
+    background-color: rgb(223 77 146);
+  }
+}
