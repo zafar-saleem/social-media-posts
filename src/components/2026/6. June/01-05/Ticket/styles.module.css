@@ -1,0 +1,136 @@
+.ticket {
+  width: 18rem;
+  height: auto;
+  background:
+    radial-gradient(circle 15px at top center, transparent 100%, rgb(113 92 40)) top left,
+    radial-gradient(circle 15px at bottom center, transparent 100%, rgb(113 92 40)) bottom left
+  ;
+  background-size: 100% 50%;
+  background-repeat:no-repeat;
+  border-radius: 1rem;
+
+  padding: 1rem;
+  color: rgb(254 252 255);
+  position: relative;
+
+  &::before, &::after {
+    width: 0; 
+    height: 0; 
+    border: 5px solid transparent;
+    border-right: 10px solid #e7e7e7;
+    content: "";
+    position: absolute;
+    top: calc(7rem + 2px);
+  }
+
+  &::before {
+    rotate: 180deg;
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  .ticket_article {
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    gap: 0.5rem;
+    padding-block: 1rem;
+    
+    &:first-child {
+      border-block-end: 1.5px dashed rgb(171 157 146 / 0);
+      border-image: repeating-linear-gradient(
+        90deg, rgb(171 157 146) 0 11px, transparent 8px 20px
+      ) 1;
+    }
+  }
+
+  .article_title {
+    grid-column: span 12;
+    font-size: 1.25rem;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .article_text {
+    color: rgb(212 195 170);
+    grid-column: span 12;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+  }
+
+  .article_price {
+    grid-column: 1 / 1;
+    font-weight: normal;
+  }
+
+  .article_vat {
+    grid-column: 2 / 2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-transform: uppercase;
+    color: rgb(214 211 185);
+  }
+
+  .ticket_offers {
+    grid-row: 4 / 4;
+    grid-column: span 12;
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    color: rgb(214 211 185);
+  }
+
+  .button {
+    border: none;
+    background-color: rgb(240 240 240);
+    color: rgb(42 43 43);
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.25rem;
+    border-radius: 10rem;
+    margin-block-start: 1.75rem;
+    margin-block-end: 1.25rem;
+    transition: box-shadow 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+
+    &:hover {
+      box-shadow: 0 0.25rem 0.5rem rgb(40 40 40 / .3);
+      
+      .button_label {
+        translate: 3rem;
+      }
+
+      .button_icon > svg {
+        rotate: 720deg;
+      }
+    }
+
+    .button_label {
+      margin-inline-start: 1rem;
+      transition: 0.3s;
+      text-align: center;
+      transition: 0.3s ease-in-out;
+    }
+
+    .button_icon {
+      margin-left: auto;
+      border: 1px solid rgb(210 211 215);
+      display: flex;
+      border-radius: 10rem;
+      width: 1.75rem;
+      aspect-ratio: 1;
+      align-items: center;
+      justify-content: center;
+
+      > svg {
+        transition: 0.3s ease-in-out;
+        rotate: 180deg;
+      }
+    }
+  }
+}
