@@ -1,0 +1,169 @@
+.chart {
+  background-color: rgb(255 255 255);
+  padding: 1rem;
+  border-radius: 1rem;
+  inline-size: min(25rem, 100%);
+  box-shadow: 0 0 1px 0 rgb(255 255 255) inset, 0 8px 1rem 0 rgb(0 0 0 / .1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block-end: 3rem;
+
+  .chart_header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .chart_title {
+    color: rgb(16 16 16);
+    font-size: 1.1rem;
+    font-weight: normal;
+  }
+
+  .chart_text {
+    color: rgb(162 162 162);
+    font-size: 0.8rem;
+    align-self: flex-end;
+  }
+
+  .chart_button {
+    margin-left: auto;
+  }
+
+  .chart_summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .chart_total {
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
+
+  .chart_pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    background-color: rgb(241 253 243);
+    border-radius: 0.25rem;
+
+    .chart_text {
+      color: rgb(92 184 96);
+      font-size: 0.725rem;
+      font-weight: bold;
+    }
+  }
+
+
+
+
+
+
+  .chart_bars {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: rgb(238 238 238);
+      position: absolute;
+      transition: 0.3s;
+      bottom: var(--pos);
+    }
+
+    &::after {
+      content: "$48k AVG";
+      bottom: calc(var(--pos) + 0.25rem);
+      position: absolute;
+      transition: 0.3s;
+      font-size: 0.6rem;
+      font-weight: bold;
+    }
+
+    .bars_bar {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-end;
+      position: relative;
+      bottom: -2.04rem;
+    }
+
+    .chart_bar {
+      width: 2rem;
+      background-color: rgb(111 203 112 / .8);
+      height: var(--h);
+      border-radius: 0.5rem;
+      transition: 0.2s;
+      cursor: pointer;
+      position: relative;
+
+      &:hover {
+        background-color: rgb(146 214 146 / .6);
+
+        &::after {
+          transition-delay: 0.01s;
+        }
+
+        &::before, &::after {
+          opacity: 1;
+        }
+      }
+
+      &:not(:hover) {
+        &::before {
+          transition-delay: 0.1s;
+        }
+      }
+
+      &::before {
+        content: attr(data-tooltip);
+        width: max-content;
+        position: absolute;
+        background-color: rgb(14 14 21);
+        color: rgb(255 255 255);
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        transition: 0.2s;
+        top: -1.75rem;
+        left: -1.5rem;
+        opacity: 0;
+        box-shadow: 0 0.25rem 0.25rem 0 rgb(0 0 0 / .5);
+      }
+
+      &::after {
+        content: "";
+        background-color: rgb(14 14 21);
+        width: 0.5rem;
+        aspect-ratio: 1;
+        top: -0.75rem;
+        left: 0.75rem;
+        rotate: 45deg;
+        z-index: 1;
+        position: absolute;
+        transition: 0.3s;
+        opacity: 0;
+        box-shadow: 0 0.25rem 0.25rem 0 rgb(0 0 0 / .5);
+      }
+    }
+
+    .bars_labels {
+      display: flex;
+      gap: 1.55rem;
+      align-items: flex-end;
+      position: relative;
+      bottom: -2rem;
+      color: rgb(176 176 176);
+      font-size: 0.8rem;
+    }
+  }
+}
