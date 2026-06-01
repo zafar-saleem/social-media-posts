@@ -1,0 +1,214 @@
+.units {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgb(255 255 255);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgb(229 229 229);
+  box-shadow: 0 0.5rem 0.75rem 0 rgb(40 40 40 / .2);
+  inline-size: min(30rem, 100%);
+  padding-block-end: 3rem;
+  transition: 0.3s;
+
+  .units_header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    inline-size: 100%;
+  }
+
+  .header_title {
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
+
+  .header_link {
+    margin-left: auto;
+  }
+
+
+
+
+
+  .units_box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .box_title {
+    font-weight: normal;
+
+    .text {
+      color: rgb(117 117 117);
+      font-size: 1.1rem;
+    }
+  }
+
+  .box_available {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .available_bar {
+    inline-size: 100%;
+    block-size: 0.5rem;
+    border-radius: 0.10rem;
+    position: relative;
+
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      block-size: 100%;
+      border-radius: inherit;
+      transition: 0.3s;
+      opacity: 0.7;
+    }
+
+    &::before {
+      inline-size: calc(var(--available_w) - 1.5px);
+      left: 0;
+      background-color: rgb(71 215 137);
+    }
+    
+    &::after {
+      inline-size: calc(var(--unavailable_w) - 1.5px);
+      right: 0;
+      background-color: rgb(214 214 214);
+    }
+  }
+
+  .bar_labels {
+    display: flex;
+    color: rgb(116 116 116);
+
+    *:last-child {
+      margin-left: auto;
+    }
+  } 
+
+
+
+  &:hover {
+    box-shadow: 0 0rem 0.75rem 0 rgb(40 40 40 / .2);
+
+    .units_chart > .chart_pie {
+      opacity: 1;
+    }
+
+    .units_chart > .units_charger > .charger > .charger_color {
+      opacity: 1;
+    }
+
+    .units_box > .box_available > .available_bar {
+      &::before, &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  .units_chart {
+    display: flex;
+    gap: 4rem;
+
+    .chart_pie {
+      inline-size: calc(100% - 25%);
+      block-size: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      position: relative;
+      background: conic-gradient(
+        from 0deg,
+        var(--av-color)
+        var(--av-angle),
+
+        var(--oc-color)
+        var(--av-angle)
+        calc(var(--av-angle) + var(--oc-angle)),
+
+        var(--ch-color)
+        calc(var(--av-angle) + var(--oc-angle))
+        calc(var(--oc-angle) + var(--ch-angle)),
+
+        var(--cd-color)
+        calc(var(--oc-angle) + var(--ch-angle))
+        calc(var(--ch-angle) + var(--oc-angle) + var(--av-angle) + var(--cd-angle)),
+        
+        var(--un-color)
+        calc(var(--ch-angle) + var(--oc-angle) + var(--av-angle) + var(--cd-angle))
+        calc(var(--ch-angle) + var(--oc-angle) + var(--av-angle) + var(--cd-angle) + var(--un-angle)),
+        
+        var(--fa-color)
+        calc(var(--ch-angle) + var(--oc-angle) + var(--av-angle) + var(--cd-angle) + var(--un-angle))
+      );
+      
+      opacity: 0.7;
+      transition: 0.3s;
+      
+      &::after {
+        content: "";
+        background-color: lime;
+        position: absolute;
+        border-radius: inherit;
+        z-index: -1;
+      }
+
+      &::after {
+        background-color: rgb(255 255 255);
+        inline-size: calc(100% - 20px);
+        block-size: calc(100% - 20px);
+        z-index: 9;
+      }
+
+      .large {
+        font-size: 1.2rem;
+        z-index: 10;
+      }
+
+      .text {
+        color: rgb(120 120 120);
+        z-index: 10;
+      }
+    }
+
+    .units_charger {
+      margin-left: auto;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      inline-size: 100%;
+
+      .charger {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .charger_color {
+          background-color: var(--color);
+          width: 0.85rem;
+          height: 0.35rem;
+          border-radius: 10rem;
+          opacity: 0.7;
+          transition: 0.3s;
+        }
+
+        .charger_label {
+          color: rgb(117 117 117);
+        }
+
+        .charger_value {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
