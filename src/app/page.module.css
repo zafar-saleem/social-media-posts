@@ -1,5 +1,9 @@
 /* @import "../_vars.css"; */
 
+@view-transition {
+  navigation: auto;
+}
+
 .center {
   display: flex;
   flex-direction: column;
@@ -12,7 +16,7 @@
   /* margin-top: -1rem;
   margin-left: -1rem; */
   /* max-width: 450px; */
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   gap: 1rem;
   padding: 1rem;
