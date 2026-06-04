@@ -1,0 +1,128 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgb(255 255 255);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 0.75rem 0 rgb(40 40 40 / .2);
+
+  .form_box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form_title {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .form_text {
+    color: rgb(157 162 166);
+  }
+
+  .form_copy {
+    background-color: rgb(248 248 248);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(233 233 233);
+    color: rgb(98 104 112);
+    display: flex;
+    align-items: center;
+  }
+
+
+
+
+  .form_rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .form_rating {
+    > label {
+      display: inline-block;
+      position: relative;
+      width: 1.1em;
+      cursor: pointer;
+      transition: 0.3s;
+      
+      input {
+        display: none;
+      }
+
+      &:before {
+        transition: 0.3s;
+        opacity: 0;
+      }
+
+      &:has(input:checked):before,
+      &:has(input:checked) ~ label:before,
+      &:hover:before, &:hover ~ label:before {
+        content: "\2605";
+        position: absolute;
+        color: gold;
+        opacity: 1;
+        transition: 0.3s;
+      }
+    }
+  }
+
+
+
+  .copy_cash {
+    margin-left: auto;
+    background-color: rgb(228, 228, 228);
+    padding: 0.25rem 0.5rem;
+    border-radius: 10rem;
+    font-size: 0.8rem;
+  }
+
+  div {
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+    }
+  }
+
+  .form_input {
+    background-color: rgb(245 247 248);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    inline-size: 100%;
+    transition: 0.2s;
+    color: rgb(40 40 40);
+    outline: 0 solid limegreen;
+    
+    &:focus {
+      outline-width: 2px;
+    }
+  }
+
+  button {
+    background-color: rgb(33 43 54);
+    border: none;
+    border-radius: 10rem;
+    color: contrast-color(rgb(33 43 54));
+    padding: 0.5rem 0.75rem;
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      box-shadow: 0 0.25rem 0.5rem 0.25rem rgb(40 40 40 / .1);
+    }
+
+    &:active {
+      scale: 0.98;
+      box-shadow: 0 0 0 0 rgb(40 40 40 / 0.1);
+    }
+  }
+}
