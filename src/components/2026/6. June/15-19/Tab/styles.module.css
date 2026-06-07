@@ -1,0 +1,106 @@
+.tabs {
+  display: flex;
+  /* gap: 1rem; */
+  color: rgb(240 240 240);
+  align-items: center;
+  background-color: rgb(36 36 36);
+  padding: 0.25rem;
+  border-radius: 10rem;
+  transition: 0.3s;
+  transition: 1s;
+  /* transition-behavior: allow-discrete; */
+  position: relative;
+  isolation: isolate;
+
+  * {
+    transition: 1s;
+  }
+
+  &::before {
+    content: "";
+    width: 5rem;
+    height: calc(100% - 0.5rem);
+    background-color: rgb(63 63 63);
+    position: absolute;
+    border-radius: 10rem;
+    left: anchor(left);
+    top: anchor(top);
+    position-anchor: --tab;
+    width: anchor-size(width);
+    transition: 0.5s;
+  }
+
+  .tabs_label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+
+    > svg {
+      transition: 0.3s;
+    }
+
+    &:hover {
+      svg {
+        stroke: rgb(220, 220, 220);
+      }
+    }
+
+    svg {
+      z-index: 1;
+    }
+
+    .label {
+      display: none;
+      /* scale: 0; */
+      opacity: 0;
+      min-width: 0;
+      transition: 0.3s, opacity 0.3s 0.4s;
+      /* transition: 3s, opacity 3s 4s; */
+      transition-behavior: allow-discrete;
+      z-index: 1;
+      overflow: hidden;
+      text-wrap: nowrap;
+    }
+
+    input {
+      display: none;
+    }
+
+    &:has(input:not(:checked)) {
+      /* background-color: lime; */
+
+      .label {
+        min-width: 0;
+        scale: 0;
+
+        @starting-style {
+          display: flex;
+        }
+      }
+    }
+
+    &:has(input:checked) {
+      anchor-name: --tab;
+
+      svg {
+        stroke: rgb(220, 220, 220);
+      }
+
+      .label {
+        display: flex;
+        opacity: 1;
+        min-width: fit-content;
+        min-width: 0rem;
+        scale: 1;
+
+        @starting-style {
+          opacity: 0;
+          max-width: 0;
+        }
+      }
+    }
+  }
+}
