@@ -1,6 +1,5 @@
 .tabs {
   display: flex;
-  /* gap: 1rem; */
   color: rgb(240 240 240);
   align-items: center;
   background-color: rgb(36 36 36);
@@ -8,7 +7,6 @@
   border-radius: 10rem;
   transition: 0.3s;
   transition: 1s;
-  /* transition-behavior: allow-discrete; */
   position: relative;
   isolation: isolate;
 
@@ -18,7 +16,6 @@
 
   &::before {
     content: "";
-    width: 5rem;
     height: calc(100% - 0.5rem);
     background-color: rgb(63 63 63);
     position: absolute;
@@ -27,7 +24,7 @@
     top: anchor(top);
     position-anchor: --tab;
     width: anchor-size(width);
-    transition: 0.5s;
+    transition: 0.2s, width 0s;
   }
 
   .tabs_label {
@@ -37,6 +34,7 @@
     padding: 0.25rem 0.75rem;
     cursor: pointer;
     transition: 0.3s;
+    min-width: fit-content;
 
     > svg {
       transition: 0.3s;
@@ -53,13 +51,9 @@
     }
 
     .label {
-      display: none;
-      /* scale: 0; */
       opacity: 0;
-      min-width: 0;
-      transition: 0.3s, opacity 0.3s 0.4s;
-      /* transition: 3s, opacity 3s 4s; */
-      transition-behavior: allow-discrete;
+      inline-size: 0;
+      transition: 0.3s, opacity 0.3s 0.3s;
       z-index: 1;
       overflow: hidden;
       text-wrap: nowrap;
@@ -70,11 +64,8 @@
     }
 
     &:has(input:not(:checked)) {
-      /* background-color: lime; */
-
       .label {
-        min-width: 0;
-        scale: 0;
+        inline-size: 0;
 
         @starting-style {
           display: flex;
@@ -90,15 +81,11 @@
       }
 
       .label {
-        display: flex;
         opacity: 1;
-        min-width: fit-content;
-        min-width: 0rem;
-        scale: 1;
+        inline-size: fit-content;
 
         @starting-style {
           opacity: 0;
-          max-width: 0;
         }
       }
     }
