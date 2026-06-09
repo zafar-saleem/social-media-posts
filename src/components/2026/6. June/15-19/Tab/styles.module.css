@@ -73,7 +73,7 @@
       }
     }
 
-    &:has(input:checked) {
+    &:has(input:checked) {   
       anchor-name: --tab;
 
       svg {
