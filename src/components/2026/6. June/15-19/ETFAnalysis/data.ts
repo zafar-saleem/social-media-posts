@@ -7,6 +7,10 @@ export const ETF_ANALYSIS = {
       color: "rgb(85 168 255)",
       label: "United States",
       flag: "🇺🇸",
+      volatility: "14.2%",
+      expense_ratio: "0.03%",
+      sharpe_ration: "0.92",
+      volume: "85M",
     },
     "japan": {
       id: 2,
@@ -15,6 +19,10 @@ export const ETF_ANALYSIS = {
       color: "rgb(123 192 254)",
       label: "Japan",
       flag: "🇯🇵",
+      volatility: "11.12%",
+      expense_ratio: "0.09%",
+      sharpe_ration: "0.42",
+      volume: "35M",
     },
     "united_kingdom": {
       id: 3,
@@ -22,7 +30,11 @@ export const ETF_ANALYSIS = {
       color:  "rgb(141 198 254)",
       opacity: 3.30,
       label: "United Kingdom",
-      flag: "🇬🇧"
+      flag: "🇬🇧",
+      volatility: "07.2%",
+      expense_ratio: "0.13%",
+      sharpe_ration: "0.22",
+      volume: "55M",
     },
     "canada": {
       id: 4,
@@ -30,7 +42,11 @@ export const ETF_ANALYSIS = {
       color: "rgb(162 206 253)",
       opacity: 2.73,
       label: "Canada",
-      flag: "🇨🇦"
+      flag: "🇨🇦",
+      volatility: "13.2%",
+      expense_ratio: "0.21%",
+      sharpe_ration: "0.43",
+      volume: "12M",
     },
     "switzerland": {
       id: 5,
@@ -38,7 +54,11 @@ export const ETF_ANALYSIS = {
       color: "rgb(180 217 255)",
       opacity: 2.43,
       label: "Switzerland",
-      flag: "🇨🇭"
+      flag: "🇨🇭",
+      volatility: "24.2%",
+      expense_ratio: "0.13%",
+      sharpe_ration: "0.22",
+      volume: "15M",
     },
     "france": {
       id: 6,
@@ -46,7 +66,11 @@ export const ETF_ANALYSIS = {
       color:  "rgb(178 213 255)",
       opacity: 2.33,
       label: "France",
-      flag: "🇫🇷"
+      flag: "🇫🇷",
+      volatility: "16.2%",
+      expense_ratio: "0.83%",
+      sharpe_ration: "0.22",
+      volume: "43M",
     },
     "germany": {
       id: 7,
@@ -54,7 +78,11 @@ export const ETF_ANALYSIS = {
       color: "rgb(182 215 255)",
       opacity: 2.10,
       label: "Germany",
-      flag: "🇩🇪"
+      flag: "🇩🇪",
+      volatility: "02.2%",
+      expense_ratio: "0.21%",
+      sharpe_ration: "0.02",
+      volume: "15M",
     },
     "australia": {
       id: 8,
@@ -62,7 +90,11 @@ export const ETF_ANALYSIS = {
       color: "rgb(199 224 252)",
       opacity: 1.66,
       label: "Australia",
-      flag:   "🇦🇺"
+      flag:   "🇦🇺",
+      volatility: "14.2%",
+      expense_ratio: "0.03%",
+      sharpe_ration: "0.92",
+      volume: "85M",
     },
     "ireland": {
       id: 9,
@@ -70,7 +102,11 @@ export const ETF_ANALYSIS = {
       color: "rgb(207 228 252)",
       opacity: 1.34,
       label: "Ireland",
-      flag:   "🇮🇪"
+      flag:   "🇮🇪",
+      volatility: "14.2%",
+      expense_ratio: "0.03%",
+      sharpe_ration: "0.92",
+      volume: "85M",
     },
     "other": {
       id: 10,
@@ -79,6 +115,10 @@ export const ETF_ANALYSIS = {
       opacity: 8.35,
       label: "Other",
       flag:  "",
+      volatility: "56.2%",
+      expense_ratio: "13.23%",
+      sharpe_ration: "9.92",
+      volume: "235M",
     },
   }
 }

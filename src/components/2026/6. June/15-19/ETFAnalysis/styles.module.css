@@ -31,11 +31,28 @@
   .country_map {
     fill: var(--opacity);
     transition: 0.3s;
+    position:  relative;
 
     &:hover {
-      fill: burlywood;
+      fill: steelblue;
+    }
+
+    &.United_States {
+      anchor-name: --us;
     }
   }
+
+
+
+
+
+  
+
+
+
+
+
+
 
   .analysis_table {
     display: grid;
@@ -48,25 +65,13 @@
       display: flex;
       gap: 0.5rem;
       align-items: center;
-      margin-block: 1rem;
       cursor: pointer;
       position: relative;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
 
-      &::after {
-        content: "";
-        inline-size: 0;
-        position: absolute;
-        height: 2px;
-        left: 2rem;
-        background-color: burlywood;
-        bottom: -6.4px;
-        transition: 0.3s;
-      }
-
-      &:has(> div:not(.column_flag)):hover {
-        &::after {
-          inline-size: var(--width);
-        }
+      &:hover {
+        background-color: rgb(0 0 0 / .03);
       }
 
       .column_flag {
@@ -87,21 +92,273 @@
           width: 100%;
           height: 2px;
           background-color: rgb(235 235 235);
-          bottom: -10px;
+          bottom: -12px;
           transition: 0.3s;
         }
 
         &::after {
           width: var(--width);
           height: 2px;
-          background-color: rgb(85 168 253);
+          background-color: steelblue;
         }
         
+      }
+      
+      .column_label {
+        z-index: 1;
       }
 
       .column_value {
         margin-left: auto;
+        z-index: 1;
       }
+    }
+  }
+
+
+
+
+
+
+
+
+
+  &:has(.United_States:hover) {
+    .united_states {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      translate: -15.5rem -14.25rem;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(3px);
+        translate: -15.5rem -16.25rem;
+      }
+    }
+  }
+  
+  &:has(.Japan:hover) {
+    .japan {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      translate: 2.25rem -14rem;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(3px);
+        translate: 2.25rem -16rem;
+      }
+    }
+  }
+  
+  &:has(.United_Kingdom:hover) {
+    .united_kingdom {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      translate: -8.20rem -15.25rem;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(3px);
+        translate: -8.20rem -17.25rem;
+      }
+    }
+  }
+  
+  &:has(.Canada:hover) {
+    .canada {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      translate: -15rem -15.5rem;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(3px);
+        translate: -15rem -17.5rem;
+      }
+    }
+  }
+  
+  &:has(.Australia:hover) {
+    .australia {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      translate: 2.25rem -8.25rem;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(3px);
+        translate: 2.25rem -10.25rem;
+      }
+    }
+  }
+  
+  &:has(.Switzerland:hover) {
+    .switzerland {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      translate: -7.5rem -14.65rem;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(3px);
+        translate: -7.5rem -16.65rem;
+      }
+    }
+  }
+  
+  &:has(.France:hover) {
+    .france {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      translate: -7.85rem -14.5rem;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(3px);
+        translate: -7.85rem -16.5rem;
+      }
+    }
+  }
+  
+  &:has(.Germany:hover) {
+    .germany {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      translate: -7.35rem -15rem;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(3px);
+        translate: -7.35rem -17rem;
+      }
+    }
+  }
+  
+  &:has(.Ireland:hover) {
+    .ireland {
+      display: flex;
+      opacity: 1;
+      filter: blur(0);
+      translate: -8.5rem -15.15rem;
+
+      @starting-style {
+        opacity: 0;
+        filter: blur(3px);
+        translate: -8.5rem -17.15rem;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .tooltip {
+    background-color: rgb(40 40 40);
+    color: rgb(255 255 255);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+    display: none;
+    filter: blur(2px);
+    font-size: 0.8rem;
+    position: absolute;
+    box-shadow: 0 0.25rem 0.5rem 0 rgb(40 40 40 / .3);
+    transition-timing-function: var(--bounce);
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: inherit;
+      width: 10px;
+      aspect-ratio: 1;
+      rotate: 45deg;
+      bottom: -0.25rem;
+      left: 7.5rem;
+      box-shadow: 0 0.25rem 0.5rem 0 rgb(40 40 40 / .3);
+    }
+    
+    table {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      thead {
+        tr {
+          display: flex;
+          gap: 1rem;
+          font-size: 0.62rem;
+          align-items: center;
+          justify-content: center;
+
+          td {
+            display: flex;
+          }
+        }
+      }
+      tbody {
+        tr {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    &.united_states {
+      translate: -15.5rem -16.25rem;
+    }
+    
+    &.japan {
+      translate: 2.25rem -16rem;
+    }
+    
+    &.united_kingdom {
+      translate: -8.20rem -17.25rem;
+    }
+    
+    &.canada {
+      translate: -15rem -17.5rem;
+    }
+    
+    &.switzerland {
+      translate: -7.5rem -16.65rem;
+    }
+    
+    &.france {
+      translate: -7.85rem -18.5rem;
+    }
+    
+    &.germany {
+      translate: -7.35rem -17rem;
+    }
+    
+    &.ireland {
+      translate: -8.5rem -17.15rem;
+    }
+    
+    &.australia {
+      translate: 2.25rem -10.25rem;
     }
   }
 }
