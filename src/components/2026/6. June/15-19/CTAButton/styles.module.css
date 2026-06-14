@@ -25,6 +25,7 @@
     justify-content: center;
     gap: 0.25rem;
     filter: blur(2px);
+    opacity: 0;
     transition-delay: 0.2s;
   }
 
@@ -42,11 +43,16 @@
 
   &:not(:hover) {
     .button_hoverlabel {
-      transition: 0.1s;
+      transition: 0.3s;
+      opacity: 0;
     }
 
     &::before {
-      transition: 0.3s ease-out;
+      transition: 0.6s ease-out;
+    }
+
+    .button_slider {
+      transition: 1s;
     }
   }
 
@@ -59,6 +65,7 @@
 
     .button_hoverlabel {
       filter: blur(0);
+      opacity: 1;
     }
 
     &::before {
