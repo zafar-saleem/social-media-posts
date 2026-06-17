@@ -31,6 +31,7 @@ const ProfilePreview = ({ userProfile }) => {
     return (
       <div className={styles.profile_preview}>
         <div className={styles.preview_contents}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgb(204 204 204)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-sync-icon lucide-cloud-sync"><path d="m17 18-1.535 1.605a5 5 0 0 1-8-1.5"/><path d="M17 22v-4h-4"/><path d="M20.996 15.251A4.5 4.5 0 0 0 17.495 8h-1.79a7 7 0 1 0-12.709 5.607"/><path d="M7 10v4h4"/><path d="m7 14 1.535-1.605a5 5 0 0 1 8 1.5"/></svg>
           <h1 className={styles.empty_state}>Enter your information</h1> 
         </div>
       </div>
@@ -70,7 +71,7 @@ const ProfilePreview = ({ userProfile }) => {
 
 const Form = ({ setUserProfile }) => {
   return (
-    <form className={styles.profile_form}>
+    <form className={styles.profile_form} autoComplete="off">
       <h1 className={styles.profile_title}>Profile details</h1>
       <div className={styles.box}>
         <FormField
@@ -78,7 +79,7 @@ const Form = ({ setUserProfile }) => {
           label="Avatar" type="file" setUserProfile={setUserProfile} name="avatar" />
         <FormField
           icon={<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(155 155 155)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-users-round-icon lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>}
-          label="Fullname" type="text" setUserProfile={setUserProfile} name="name" />
+          label="Fullname" type="text" setUserProfile={setUserProfile} name="name" autoComplete="new-name" />
         <FormField
           icon={<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(155 155 155)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-briefcase-business-icon lucide-briefcase-business"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="18" height="14" x="2" y="6" rx="2"/></svg>}
           label="Role" type="search" setUserProfile={setUserProfile} name="role" />
@@ -87,7 +88,7 @@ const Form = ({ setUserProfile }) => {
           label="Company" type="text" setUserProfile={setUserProfile} name="company" />
         <FormField
           icon={<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(155 155 155)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>}
-          label="Email" type="email" setUserProfile={setUserProfile} name="email" />
+          label="Email" type="email" setUserProfile={setUserProfile} name="email" autoComplete="new-email" />
         <FormField
           icon={<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(155 155 155)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>}
           label="Location" type="text" setUserProfile={setUserProfile} name="location" />
