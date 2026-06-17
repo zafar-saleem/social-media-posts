@@ -1,0 +1,84 @@
+.bento_box {
+  display: grid;
+  grid-template-columns: auto;
+  text-align: center;
+  gap: 1rem;
+  background: linear-gradient(to bottom, rgb(255 255 255), rgb(235 235 248));
+  padding: 1rem;
+  inline-size: 100vw;
+  align-content: center;
+  justify-content: center;
+
+  .box_title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box_copy {
+    color: rgb(17 17 17);
+    max-width: 40vw;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    line-height: 24px;
+  }
+
+  .box {
+    display: grid;
+
+    img {
+      width: 20rem;
+      height: auto;
+      object-fit: contain;
+      display: flex;
+    }
+
+    .box_growth {
+      grid-column: 1 / 1;
+      grid-row: span 2;
+      width: 22rem;
+    }
+
+    .box_time {
+      grid-column: 2 / 2;
+      grid-row: 1 / 1;
+    }
+
+    .box_chart {
+      grid-column: 2 / 2;
+      grid-row: 2 / 2;
+    }
+
+    .box_progress {
+      grid-column: 3 / 3;
+      grid-row: span 2;
+      width: 22rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .box_copy {
+      max-width: 70vw;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+
+      img {
+        width: 100%;
+      }
+
+      .box_growth {
+        width: 100%;
+      }
+
+      .box_progress {
+        width: 100%;
+      }
+    }
+  }
+}
