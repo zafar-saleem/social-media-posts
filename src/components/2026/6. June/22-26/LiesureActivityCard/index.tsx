@@ -89,13 +89,13 @@ export const LiesureActivityCard = () => {
         <Like {...card.card_likes} setCard={setCard} />
         <div className={styles.footer_comment}>
           <button>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(164 164 165)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-more-icon lucide-message-square-more"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 11h.01"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(164 164 165)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-square-more-icon lucide-message-square-more"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 11h.01"/></svg>
           </button>
           <span>{card.card_comments}</span>
         </div>
         <div className={styles.footer_share}>
           <button>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(164 164 165)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(164 164 165)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
           </button>
           <span>{card.card_shares}</span>
         </div>
@@ -121,7 +121,7 @@ const Like = ({ setCard, ...props }) => {
         <button
           onClick={handleUserLike}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="rgb(255 0 94)" stroke="rgb(255 0 94)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="rgb(255 0 94)" stroke="rgb(255 0 94)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
         </button>
         <span>{props.value}</span>
       </div>
@@ -133,7 +133,7 @@ const Like = ({ setCard, ...props }) => {
       <button
         onClick={handleUserLike}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(164 164 165)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(164 164 165)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
       </button>
       <span>{props.value}</span>
     </div>
@@ -151,7 +151,7 @@ const Bookmark = ({ setCard, ...props }) => {
         className={styles.footer_bookmark}
         onClick={handleUserBookmark}
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="rgb(164 164 165)" stroke="rgb(164 164 165)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark-icon lucide-bookmark"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="rgb(164 164 165)" stroke="rgb(164 164 165)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bookmark-icon lucide-bookmark"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"/></svg>
       </button>
     )
   }
@@ -160,7 +160,7 @@ const Bookmark = ({ setCard, ...props }) => {
       className={styles.footer_bookmark}
       onClick={handleUserBookmark}
     >
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(164 164 165)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark-icon lucide-bookmark"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(164 164 165)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bookmark-icon lucide-bookmark"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"/></svg>
     </button>
   )
 }
