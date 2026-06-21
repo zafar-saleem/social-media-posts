@@ -2,70 +2,9 @@
 
 import Image from "next/image";
 import styles from "./styles.module.css";
-import CarSide from "./assets/car_side.png";
-import CarFront from "./assets/car_front.png";
-import CarBack from "./assets/car_back.png";
-import CarDiagnol from "./assets/car_diagnol.png";
 import React from "react";
 import Link from "next/link";
-
-const CAR_DATA = {
-  id: 1,
-  title: "Audi R8 Performance",
-  car_rating: {
-    received: 90,
-    total: 100,
-  },
-  car_specs: {
-    speed: {
-      label: "0 - 100 km/h",
-      value: "3.2s",
-    },
-    engine: {
-      label: "Engine",
-      value: "610 hp 5.2 I",
-    },
-    drive: {
-      label: "Drive",
-      value: "All",
-    },
-    color: {
-      label: "Color",
-      value: "Orange",
-    },
-  },
-  plans: {
-    minute: {
-      label: "Minute Rate",
-      value: "0.5",
-      unit: "min",
-    },
-    hourly: {
-      label: "Hourly",
-      value: "24",
-      unit: "hourly",
-    },
-    daily: {
-      label: "Daily",
-      value: "200",
-      unit: "daily",
-    },
-    monthly: {
-      label: "Monthly",
-      value: "1100",
-      unit: "monthly",
-    },
-  },
-  agency: {
-    avatar: "CA",
-    name: "Car Agency",
-    ratings: {
-      received: 5,
-      reviews: 20,
-    },
-    rental_rules: [],
-  }
-}
+import { CAR_DATA } from "./data";
 
 export const CarRentalBooking = () => {
   const [total, setTotal] = React.useState({ value: "0", unit: ""});
@@ -73,30 +12,17 @@ export const CarRentalBooking = () => {
   return (
     <div className={styles.car_rental}>
       <div className={styles.rental_media}>
-        <Image  
-          src={CarSide}
-          width={1000}
-          height={1000}
-          alt=""
-        />
-        <Image  
-          src={CarBack}
-          width={1000}
-          height={1000}
-          alt=""
-        />
-        <Image  
-          src={CarFront}
-          width={1000}
-          height={1000}
-          alt=""
-        />
-        <Image  
-          src={CarDiagnol}
-          width={1000}
-          height={1000}
-          alt=""
-        />
+        {
+          CAR_DATA.photos.map(item => (
+            <Image  
+              key={item.id}
+              src={item.src}
+              width={1000}
+              height={1000}
+              alt=""
+            />
+          ))
+        }
       </div>
       <div className={styles.group}>
         <div className={styles.box}>
