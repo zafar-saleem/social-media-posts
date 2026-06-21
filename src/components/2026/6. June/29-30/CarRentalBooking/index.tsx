@@ -3,6 +3,9 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 import CarSide from "./assets/car_side.png";
+import CarFront from "./assets/car_front.png";
+import CarBack from "./assets/car_back.png";
+import CarDiagnol from "./assets/car_diagnol.png";
 import React from "react";
 import Link from "next/link";
 
@@ -72,6 +75,24 @@ export const CarRentalBooking = () => {
       <div className={styles.rental_media}>
         <Image  
           src={CarSide}
+          width={1000}
+          height={1000}
+          alt=""
+        />
+        <Image  
+          src={CarBack}
+          width={1000}
+          height={1000}
+          alt=""
+        />
+        <Image  
+          src={CarFront}
+          width={1000}
+          height={1000}
+          alt=""
+        />
+        <Image  
+          src={CarDiagnol}
           width={1000}
           height={1000}
           alt=""

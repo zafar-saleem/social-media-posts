@@ -4,7 +4,6 @@
   inline-size: min(25rem, 100%);
   block-size: auto;
   box-shadow: 0 1rem 1rem 0 rgb(40 40 40 / .1);
-  border-radius: 2rem;
 
   * {
     transition: 0.3s;
@@ -13,13 +12,17 @@
   .rental_media {
     padding: 0.25rem;
     background-color: rgb(255 255 255);
-    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    inline-size: 100%;
+    gap: 0.25rem;
 
     img {
       inline-size: 100%;
       block-size: auto;
       object-fit: contain;
-      border-radius: 1.75rem 1.75rem 0 0;
+      scroll-snap-align: center;
     }
   }
 
