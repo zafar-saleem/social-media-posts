@@ -11,6 +11,38 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: '**',
+        port: '',
+        search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'boldfactory.pt/**',
+        port: '',
+        search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'franka.pt/**',
+        port: '',
+        search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'amq-mcq.dam.kering.com/**',
+        port: '',
+        search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com/**',
+        port: '',
+        search: '',
+      },
+
+
+      {
+        protocol: 'https',
         hostname: 't4.ftcdn.net/**',
         port: '',
         search: '',

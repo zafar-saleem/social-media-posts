@@ -1,0 +1,202 @@
+.saved_items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  inline-size: min(30rem, 100%);
+  min-block-size: 35rem;
+  max-block-size: 40rem;
+  overflow-y: scroll;
+  background-color: rgb(255 255 255);
+  box-shadow: 0 0.25rem 0.75rem 0 rgb(60 60 60 / .2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: 0.3s;
+
+  * {
+    transition: 0.3s;
+    transition-behavior: allow-discrete;
+  }
+
+  .items_header {
+    display: grid;
+    position: sticky;
+    top: -2rem;
+    left: 0;
+    padding-block: 1rem;
+    row-gap: 1rem;
+    background-color: rgb(255 255 255 / .8);
+    backdrop-filter: blur(15px);
+
+    .header_group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .total_items {
+      color: rgb(181 181 181);
+    }
+
+    .total_amount {
+      margin-inline-start: auto;
+      align-self: center;
+      border: 1px solid rgb(242 242 242);
+      padding: 0.5rem 1rem;
+      border-radius: 10rem;
+      grid-column: 12 / 12;
+      grid-row: 1 / 1;
+    }
+  }
+
+
+  .items_filter {
+    display: flex;
+    /* gap: 1rem; */
+    grid-row: 2 / 2;
+    grid-column: span 12;
+    justify-content: space-around;
+    /* background-color: rgb(255 255 255 / .3); */
+
+    .filter_pill {
+      border: 1px solid rgb(242 242 242);
+      padding: 0.5rem 1rem;
+      border-radius: 10rem;
+      cursor: pointer;
+      font-size: 0.7rem;
+
+      &:has(input:checked) {
+        background-color: rgb(20 20 20);
+        color: rgb(255 255 255);
+      }
+
+      &:hover {
+        background-color: rgb(20 20 20 / .1);
+      }
+
+      input {
+        display: none;
+      }
+    }
+  }
+
+  &:has(.all > input:checked) {
+    .item_card {
+      display: none;
+
+      &.all {
+        display: flex;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &:has(.tops > input:checked) {
+    .item_card {
+      display: none;
+
+      &.tops {
+        display: flex;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  
+  &:has(.shoes > input:checked) {
+    .item_card {
+      display: none;
+
+      &.shoes {
+        display: flex;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  
+  &:has(.bottoms > input:checked) {
+    .item_card {
+      display: none;
+
+      &.bottoms {
+        display: flex;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  
+  &:has(.outwear > input:checked) {
+    .item_card {
+      display: none;
+
+      &.outerwear {
+        display: flex;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  
+  &:has(.bags > input:checked) {
+    .item_card {
+      display: none;
+
+      &.bags {
+        display: flex;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+
+
+  .items_contents {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .item_card {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      opacity: 0;
+
+      .card_photo {
+        inline-size: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+
+      .card_brand {
+        color: rgb(181 181 181);
+      }
+
+      .card_title {
+        
+      }
+    }
+  }
+}
