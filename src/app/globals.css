@@ -154,8 +154,18 @@
   --x-hover-state: #424141;
 
   --gutter: 1rem;
+
+
+
+
+
+
+
   interpolate-size: allow-keywords;
   --bounce: cubic-bezier(.47, 1.64, .41, .8);
+
+
+  
 }
 
 
@@ -175,6 +185,8 @@ body {
   /* min-block-size: 300dvh; */
   inset: 0;
   /* overflow: hidden; */
+
+  
 }
 
 body {
