@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Coiny } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Coiny, Russo_One } from "next/font/google";
 import "./globals.css";
 import { NuqsAdapter } from "nuqs/adapters/next";
 
@@ -18,7 +18,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const coiny = Coiny({
+const Ruso = Russo_One({
   subsets: ["latin"],
   weight: "400",
 });
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable}`}>
+      <body className={`${inter.variable} ${geistMono.variable} ${geistSans.variable}`}>
         {/* <ReactScan /> */}
         {/* <header className="header">
           <nav className="nav">
