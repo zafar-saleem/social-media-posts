@@ -1,15 +1,24 @@
 .features {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  row-gap: 2rem;
+  column-gap: 1rem;
   inline-size: 100%;
   padding: 2rem;
   text-align: center;
+
+  .features_title {
+    background: linear-gradient(to right, rgb(251, 139, 234), rgb(42, 145, 255));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   .feature_trust {
     display: flex;
     align-items: flex-end;
     gap: 0.5rem;
+    min-block-size: 20rem;
+    max-inline-size: 100%;
 
     > div {
       display: flex;
@@ -28,47 +37,73 @@
   .feature_list,
   .feature_analytics {
     max-inline-size: 100%;
-    min-inline-size: 12rem;
+    min-inline-size: 13rem;
     block-size: 100%;
     object-fit: cover;
     height: auto;
     aspect-ratio: 1 / 1;
   }
 
+  .features_social {
+    color: rgb(40 40 40 / .7);
+    inline-size: 0;
+  }
+
   .features_businesses {
-    display: flex;
+    display: grid;
     grid-template-columns: repeat(6, auto);
-    gap: 1rem;
-    inline-size: 100%;
+    gap: 2rem;
     overflow-x: scroll;
+    align-items: center;
+    position: relative;
+
+    .features_social {
+      grid-row: 1 / 1;
+      grid-column: span 4;
+      position: sticky;
+      left: 0;
+
+      @media (max-width: 767px) {
+        inline-size: 100%;
+      }
+    }
 
     img {
-      flex-basis: 5%;
-      height: auto;
+      flex-basis: 1rem;
+      inline-size: 100%;
+      block-size: auto;
       margin-inline: auto;
+      grid-row: 2 / 2;
     }
   }
 
   @media (min-width: 767px) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: min(20rem, 100%) auto auto auto;
     inline-size: 80vw;
     margin-inline: auto;
-    gap: 2rem;
+    row-gap: 3rem;
 
     .features_title {
       grid-row: 1 / 1;
       grid-column: span 4;
+      inline-size: 30rem;
+      justify-self: center;
+      align-self: center;
     }
 
     .features_copy {
       grid-row: 2 / 2;
       grid-column: span 4;
+      inline-size: 30rem;
+      justify-self: center;
+      align-self: center;
     }
 
     .feature_trust {
       grid-row: 3 / 3;
       grid-column: 1 / 1;
+
+      min-block-size: 20%;
     }
 
     .feature_list {
@@ -81,11 +116,20 @@
       grid-column: 3 / 4;
     }
 
+    .features_social {
+      color: rgb(40 40 40 / .7);
+      inline-size: 15rem;
+    }
+
     .features_businesses {
-      grid-row: 4 / 4;
+      grid-row: 5 / 5;
       grid-column: span 4;
       display: flex;
       gap: 1rem;
+
+      img {
+        inline-size: 10%;
+      }
     }
   }
 }

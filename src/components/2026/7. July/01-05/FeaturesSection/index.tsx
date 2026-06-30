@@ -11,8 +11,8 @@ import apps from "./assets/Apps.png";
 export const TaskAutomationFeaturesSection = () => {
   return (
     <article className={styles.features}>
-      <h1 className={styles.features_title}>Powerful, easy and built to impress</h1>
-      <p className={styles.features_copy}>Our features are built to save you time, cut out the busy work, and keep your tools working in perfecg sync.</p>
+      <h1 className={styles.features_title}>Automate your marketing and track growth in one place.</h1>
+      <p className={styles.features_copy}>Our features are built to save you time, cut out the busy work, and keep your tools working in <b>perfect sync</b>.</p>
       <div className={styles.feature_trust}>
         <Image
           src={apps}
@@ -39,10 +39,11 @@ export const TaskAutomationFeaturesSection = () => {
         className={styles.feature_analytics}
       />
       <div className={styles.features_businesses}>
+        <h4 className={styles.features_social}>Trusted by fast growing teams at</h4>
         <Image
           src={lemlist}
-          width={250}
-          height={250}
+          width={2250}
+          height={2250}
           alt=""
         />
         <Image
