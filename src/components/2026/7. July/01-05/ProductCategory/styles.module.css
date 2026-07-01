@@ -1,0 +1,92 @@
+.product {
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  inline-size: 90vw;
+  margin-inline: auto;
+  font-family: "Inter";
+  padding: 2rem;
+
+  @media (min-width: 767px) {
+    grid-template-columns: repeat(3, auto);
+    column-gap: 4rem;
+    row-gap: 2rem;
+
+    .product_title {
+      grid-row: 1 / 1;
+      grid-column: span 3;
+    }
+  }
+
+  .product_photo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    isolation: isolate;
+
+    img {
+      inline-size: 100%;
+      min-inline-size: 15rem;
+      block-size: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: linear-gradient(to top, rgb(251, 247, 229, 1) 50%, rgb(251, 247, 229, 0) 50%);
+    }
+
+    .photo_caption {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-inline: 1rem;
+
+      .caption_rating {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+        font-size: 0.775rem;
+        font-weight: bold;
+
+        div {
+          display: flex;
+        }
+      }
+
+      .caption_price {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+
+        .old_price {
+          color: rgb(143, 143, 143);
+          text-decoration: line-through rgb(146, 146, 146) 1.25px;
+        }
+      }
+
+      .caption_copy {
+        line-height: 1.25rem;
+        letter-spacing: 1.5px;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden; 
+      }
+
+      .caption_link {
+        background-color: rgb(20 20 20);
+        color: rgb(255 255 255);
+        margin-inline: auto;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        box-shadow: 0 0 10px 0 rgb(40 40 40 / .6);
+      }
+    }
+  }
+}
