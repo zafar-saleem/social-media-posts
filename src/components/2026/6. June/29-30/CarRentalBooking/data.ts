@@ -9,6 +9,7 @@ export const CAR_DATA = {
   car_rating: {
     received: 90,
     total: 100,
+    reviews_received: 154,
   },
   photos: [
     {
