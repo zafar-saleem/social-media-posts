@@ -1,0 +1,142 @@
+.connect_wallet {
+  --bg-color: light-dark(rgb(255 255 255), rgb(20 20 20));
+  --text-color: light-dark(rgb(19 19 19), rgb(239 239 239));
+
+  --tab-bg-color: light-dark(rgb(250 250 250), rgb(32 32 32));
+  --tab-text-color: light-dark(rgb(173 173 175), rgb(160 160 162));
+  --tab-active-bg-color: light-dark(rgb(255 255 255), rgb(58 58 58));
+  --tab-active-text-color: light-dark(rgb(7 7 7), rgb(224 224 224));
+
+  --content-bg-color: light-dark(rgb(250 250 250), rgb(32 32 32));
+  --content-text-color: light-dark(rgb(186 185 187), rgb(147 147 150));
+
+  --button-bg-color: light-dark(rgb(13 13 13), rgb(250 250 250));
+  --button-text-color: light-dark(rgb(250 250 250), rgb(20 20 20));
+
+  color-scheme: light;
+  background-color: var(--bg-color);
+  inline-size: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.75rem 0 rgb(40 40 40 / .3);
+  text-align: center;
+  color: var(--text-color);
+  font-family: "Inter";
+
+  &:has(.theme > input:checked) {
+    color-scheme: dark;
+
+    .theme::before {
+      content: "Light";
+    }
+  }
+
+  * {
+    transition: 0.2s;
+  }
+
+
+  .wallet_tabs {
+    display: flex;
+    gap: 0.25rem;
+    background-color: var(--tab-bg-color);
+    color: var(--tab-text-color);
+    inline-size: 100%;
+    padding: 0.25rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+
+    input {
+      display: none;
+    }
+
+    * {
+      flex-basis: 100%;
+      padding: 0.75rem;
+    }
+
+    .tabs_label {
+      cursor: pointer;
+      border-radius: 0.60rem;
+
+      &:hover {
+        background-color: var(--tab-active-bg-color);
+        color: var(--tab-active-text-color);
+      }
+
+      &:has(input:checked) {
+        background-color: var(--tab-active-bg-color);
+        color: var(--tab-active-text-color);
+      }
+    }
+  }
+
+  &:hover {
+    .wallet_content > img {
+      rotate: 0deg;
+    }
+  }
+
+
+  .wallet_content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    color: var(--content-text-color);
+    background-color: var(--content-bg-color);
+    padding: 1rem;
+    border-radius: 0.75rem;
+
+    img {
+      rotate: -15deg;
+      transition-duration: 0.5s;
+      transition-timing-function: var(--bounce);
+    }
+  }
+
+  .wallet_button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    inline-size: 100%;
+    border: none;
+    border-radius: 10rem;
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 0.75rem 0 rgb(40 40 40 / .5);
+
+    &:active {
+      scale: 0.99;
+      box-shadow: none;
+    }
+  }
+
+  .theme {
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    &::before {
+      content: "Dark";
+      position: absolute;
+      inline-size: fit-content;
+      block-size: fit-content;
+      border-radius: 10rem;
+      padding: 0.5rem;
+      top: 0;
+      left: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+  }
+}
