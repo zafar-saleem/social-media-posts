@@ -36,7 +36,7 @@
       object-fit: cover;
       background: linear-gradient(to top, rgb(251, 247, 229, 1) 50%, rgb(251, 247, 229, 0) 50%);
     }
-
+    
     .photo_caption {
       display: flex;
       flex-direction: column;
