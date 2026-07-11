@@ -1,0 +1,218 @@
+.hero {
+  background: linear-gradient(to bottom, rgb(194, 65, 164), rgb(92, 31, 78));
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.2s;
+  color: rgb(255 255 255);
+  font-family: "Inter";
+  position: relative;
+  block-size: 100svh;
+
+  ul {
+    list-style: none;
+  }
+
+  * {
+    transition: 0.2s;
+  }
+
+  .hero_header {
+    max-inline-size: 1200px;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 767px) {
+      min-inline-size: 80vw;
+    }
+
+    .nav_desktop {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      inline-size: 100%;
+
+      .menu_list {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+
+    .nav_actions {
+      margin-inline-start: auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      button, a {
+        background: transparent;
+        border: none;
+        display: flex;
+      }
+    }
+    
+    .nav_mobile {
+      display: none;
+      right: 0;
+      top: 0;
+      position: fixed;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      inline-size: 100%;
+      background: transparent;
+
+      input {
+        display: none;
+      }
+
+      /* svg {
+        opacity: 0;
+      } */
+
+      .mobile_breadcrumb > svg:first-child {
+        opacity: 1;
+      }
+      
+      .mobile_breadcrumb > svg:last-child {
+        opacity: 0;
+      }
+
+      &:has(input:checked) {
+        background-color: rgb(194, 65, 164);
+        box-shadow: 0 1rem 0.5rem 0 rgb(40 40 40 / .2);
+
+        .mobile_breadcrumb > svg:first-child {
+          opacity: 0;
+        }
+        
+        .mobile_breadcrumb > svg:last-child {
+          opacity: 1;
+        }
+
+        .menu_list {
+          block-size: fit-content;
+          opacity: 1;
+        }
+      }
+
+      .mobile_breadcrumb {
+        display: grid;
+        position: absolute;
+        right: 1rem;
+        top: 1.45rem;
+        cursor: pointer;
+
+        * {
+          grid-area: 1 / 1;
+        }
+      }
+
+      .menu_list {
+        margin-block-start: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        user-select: none;
+
+        block-size: 0;
+        overflow: hidden;
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .nav_desktop {
+        display: none;
+      }
+
+      .nav_mobile {
+        display: flex;
+      }
+    }
+  }
+
+  .brand_section {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    min-height: 80vh;
+    isolation: isolate;
+    font-weight: normal;
+
+    @media (max-width: 767px) {
+      min-height: 100svh;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      inline-size: 100%;
+
+      .hero_image {
+        inline-size: 100vw;
+      }
+
+      .brand_title {
+        translate: 0 0;
+        font-size: 9rem;
+      }
+
+      .brand_title:first-child {
+        inline-size: 100%;
+        translate: 0 19rem;
+        margin-left: none;
+        display: flex;
+        justify-content: center;
+      }
+
+      .brand_title:last-child {
+        inline-size: 100%;
+        translate: 0 0;
+        translate: 0 -14rem;
+        margin-left: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .brand_title {
+    font-family: "Lobster";
+    font-weight: normal;
+    font-size: clamp(8rem, 15vw, 16rem);
+    translate: 0 -0.75rem;
+    display: inline-flex;
+
+    &:first-child {
+      justify-self: end;
+      translate: 8rem -12.75rem;
+      translate: 11rem -1.75rem;
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+    }
+    
+    &:last-child {
+      justify-self: start;
+      translate: -17rem -0.75rem;
+      grid-column: 3 / 3;
+      grid-row: 1 / 1;
+    }
+  }
+
+  .hero_image {
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    grid-column: span 9;
+    width: min(40vw, 550px);
+
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+  }
+}
