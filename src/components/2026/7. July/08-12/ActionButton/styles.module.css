@@ -1,0 +1,54 @@
+.button {
+  position: relative;
+  display: flex;
+  background: none;
+  border: none;
+  color: rgb(255 255 255);
+  background: linear-gradient(
+    to bottom,
+    rgb(255 138 97),
+    rgb(255 141 88),
+    rgb(255 125 75),
+    rgb(252 127 70),
+    rgb(255 136 81),
+    rgb(255 143 97)
+  );
+  padding: 1rem 2rem;
+  border-radius: 10rem;
+  font-weight: 600;
+  font-family: "Inter";
+  font-size: 1.1rem;
+  isolation: isolate;
+  box-shadow: 0 0.5rem 0.75rem 0 rgb(40 40 40 / .2);
+  transition: 0.1s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0.5rem 0.75rem 0 rgb(40 40 40 / .4);
+  }
+
+  &:active {
+    scale: 0.99;
+    box-shadow: 0 0 0.75rem 0 rgb(40 40 40 / .2);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inline-size: calc(100% - 0.5rem);
+    block-size: calc(100% - 0.5rem);
+    top: 0.25rem;
+    left: 0.25rem;
+    background: linear-gradient(
+      to bottom,  
+      rgb(253 187 116) 1px, 
+      rgb(254 159 66) 5px, 
+      rgb(254 129 37), 
+      rgb(254 105 19), 
+      rgb(255 94 15), 
+      rgb(255 75 7)
+    );
+    z-index: -1;
+    border-radius: inherit;
+  }
+}
