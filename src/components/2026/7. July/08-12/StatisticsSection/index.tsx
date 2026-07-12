@@ -13,7 +13,22 @@ export const StatisticsSection = () => {
       <p className={styles.statistics_copy}>
         From on-time delivery rates to international coverage, our numbers show the standard we operate at every day.
       </p>
-      <Image
+      <div className={styles.stats_mobile}>
+        <div className={styles.bar}>
+          <span>98.7%</span>
+          <span>On-Time Delivery Rate</span>
+        </div>
+        <div className={styles.bar}>
+          <span>250K+</span>
+          <span>Shipments Delivered Annually</span>
+        </div>
+        <div className={styles.bar}>
+          <span>39+</span>
+          <span>Countries Served</span>
+          <span>(12 Years)</span>
+        </div>
+      </div>
+      {/* <Image
         src={mobile}
         width={1000}
         height={1000}
@@ -26,7 +41,7 @@ export const StatisticsSection = () => {
         height={1000}
         alt=""
         className={styles.stats_desktop}
-      />
+      /> */}
     </article>
   )
 }
