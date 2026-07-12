@@ -55,11 +55,14 @@
     line-height: 1.5rem;
   }
 
+  @media (min-width: 767px) {
 
+  }
 
   .pricing_block {
     display: flex;
     flex-direction: column;
+    flex-direction: column-reverse;
     gap: 2rem;
 
     > *:first-child {
@@ -83,6 +86,17 @@
       border-radius: 1rem;
       border: 1px solid rgb(237 238 240);
 
+      .ghost_button {
+        border: 1px solid rgb(40 40 40 / .3);
+        padding: 0.75rem 1rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(40 40 40 / .6);
+        margin-block-end: -1rem;
+      }
+
       .contents_title {
         display: flex;
         align-items: center;
@@ -98,12 +112,41 @@
         }
       }
 
+      .title {
+        font-size:  1.1rem;
+        font-weight: 500;
+        margin-block: -1.5rem;
+      }
+
+      .figure {
+        position: relative;
+        rotate: -5deg;
+
+        figcaption {
+          position: absolute;
+          bottom: 1rem;
+          left: 0;
+          background-color: rgb(246 247 251);
+          padding: 1rem;
+          inline-size: 20rem;
+          border-radius: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          span {
+            font-size: 1.1rem;
+            font-weight: 500;
+          }
+        }
+      }
+
       .pricing_illustration {
         inline-size: calc(100% + 2.5rem);
         block-size: auto;
         object-fit: fill;
         margin-inline-start: -1.25rem;
-        rotate: -5deg;
+        box-shadow: 0 0.5rem 0.5rem 0 rgb(40 40 40 / .1);
         border: 1px solid rgb(243, 244, 245);
         border-radius: 1.5rem;
         
@@ -151,18 +194,31 @@
         inline-size: fit-content;
       }
 
+      .micro_copy {
+        display: flex;
+        justify-content: center;
+        color: rgb(40 40 40 / .6);
+        font-size: 0.8rem;
+      }
+
       .block_price {
         font-weight: 500;
         display: flex;
         flex-direction: column;
 
         span:first-child {
-          font-size: 1.2rem;
+          font-size: 1.6rem;
+
+          mark {
+            background: none;
+            font-size: 0.8rem;
+            color: rgb(40 40 40 / .6);
+          }
         }
         
-        span:last-child {
+        /* span:last-child {
           color: rgb(136 137 141);
-        }
+        } */
       }
 
       .button_call {
@@ -171,7 +227,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
         border-radius: 10rem;
         gap: 0.5rem;
       }

@@ -26,13 +26,21 @@ export const PricingSection = () => {
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
             <span>Let's Talk</span>
           </div>
-          <Image
-            src={illustration}
-            width={2000}
-            height={2000}
-            alt=""
-            className={styles.pricing_illustration}
-          />
+          <span className={styles.title}>Custom Plans</span>
+          <figure className={styles.figure}>
+            <Image
+              src={illustration}
+              width={2000}
+              height={2000}
+              alt=""
+              className={styles.pricing_illustration}
+            />
+            <figcaption>
+              <span>Custom Plans</span>
+              <p>Bespoke Solutions and flexible scaling for large organizations</p>
+            </figcaption>
+          </figure>
+          <Link className={styles.ghost_button} href={`#`}>Get a Custom Quote</Link>
           <p className={styles.contents_mark}>
             <mark>Serious engineering.</mark>
             <mark>Simple pricing.</mark>
@@ -43,14 +51,15 @@ export const PricingSection = () => {
             Product Engineering Subscription
           </span>
           <p className={styles.block_price}>
-            <span>$6,000</span>
-            <span>Monthly Subscription</span>
+            <span>$6,000 <mark>/ month</mark></span>
+            {/* <span>Monthly Subscription</span> */}
           </p>
 
           <Link href="#" className={styles.button_call}>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-outgoing-icon lucide-phone-outgoing"><path d="m16 8 6-6"/><path d="M22 8V2h-6"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
             <span>Book a Free Call</span>
           </Link>
+          <span className={styles.micro_copy}>(No commitment required to book)</span>
 
           <ul className={styles.feature_list}>
             <li className={styles.list_item}>
@@ -75,7 +84,7 @@ export const PricingSection = () => {
               <span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
               </span>
-              <span>Weekly ready progress and continous shipping</span>
+              <span>Weekly ready progress and continuous shipping</span>
             </li>
             <li className={styles.list_item}>
               <span>
