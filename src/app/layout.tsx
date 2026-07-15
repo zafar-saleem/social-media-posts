@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Coiny, Russo_One } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Coiny, Russo_One, Unna, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { NuqsAdapter } from "nuqs/adapters/next";
+
+const unna = Unna({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-source-sans",
 });
 
 const geistMono = Geist_Mono({
@@ -35,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${geistMono.variable} ${geistSans.variable}`}>
+      <body className={`${inter.variable} ${unna.className} ${sourceSans.variable}`}>
         {/* <ReactScan /> */}
         {/* <header className="header">
           <nav className="nav">

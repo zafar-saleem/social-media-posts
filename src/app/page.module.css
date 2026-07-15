@@ -9,7 +9,7 @@
   flex-direction: column;
   position: relative;
   /* padding: 4rem; */
-  height: 100dvh;
+  /* height: 100dvh; */
   height: 100%;
   /* padding-block-end: 2rem; */
   background-color: #e7e7e7;
@@ -20,7 +20,7 @@
   margin-left: -1rem; */
   /* max-width: 450px; */
   /* justify-content: center; */
-  align-items: center;
+  /* align-items: center; */
   gap: 1rem;
   /* padding-block-end: 1rem; */
   /* padding-inline-end: 1rem; */
