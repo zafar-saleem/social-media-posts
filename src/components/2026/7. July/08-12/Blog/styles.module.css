@@ -55,6 +55,27 @@
       flex-direction: column;
       gap: 0.5rem;
       margin-block-end: -3rem;
+
+      .group {
+        align-items: center;
+      }
+
+      > .group > div {
+        display: flex;
+        align-items: center;
+        margin-inline-start: auto;
+
+        .hero_avatar {
+          display: flex;
+          background-color: pink;
+          inline-size: 1.5rem;
+          aspect-ratio: 1;
+          border-radius: 10rem;
+          align-items: center;
+          justify-content: center;
+          color: rgb(0 0 0);
+        }
+      }
     }
   }
 
@@ -68,6 +89,23 @@
   .hero_copy {
     color: #4A4A4A;
     font-weight: normal;
+  }
+
+  .group {
+    display: flex;
+    gap: 0.5rem;
+    color: rgb(40 40 40 / .7);
+    font-weight: normal;
+    font-family: "Inter";
+    text-transform: uppercase;
+    font-size: 0.8rem;
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+    }
   }
 
 
@@ -108,6 +146,21 @@
 
         * {
           grid-area: 1 / 1;
+        }
+
+        .group {
+          align-items: center;
+
+          > div > .blog_author {
+            display: flex;
+            background-color: pink;
+            inline-size: 1.75rem;
+            aspect-ratio: 1;
+            border-radius: 10rem;
+            align-items: center;
+            justify-content: center;
+            color: rgb(0 0 0);
+          }
         }
 
         .block {
@@ -190,6 +243,21 @@
 
         * {
           grid-area: 1 / 1;
+        }
+
+        .group {
+          align-items: center;
+
+          > div > .blog_author {
+            display: flex;
+            background-color: pink;
+            inline-size: 1.75rem;
+            aspect-ratio: 1;
+            border-radius: 10rem;
+            align-items: center;
+            justify-content: center;
+            color: rgb(0 0 0);
+          }
         }
 
         .block {
