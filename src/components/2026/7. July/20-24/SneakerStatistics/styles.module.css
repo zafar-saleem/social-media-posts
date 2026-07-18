@@ -1,0 +1,112 @@
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Inter";
+  padding: 1rem;
+  inline-size: 100%;
+
+  @media (min-width: 767px) {
+    display: grid;
+    grid-template-columns: 0.25fr auto;
+    max-inline-size: 1200px;
+    margin-inline: auto;
+  }
+
+  .stats_pill {
+    background-color: rgba(238, 238, 238, 1);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    inline-size: fit-content;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    @media (min-width: 767px) {
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+      block-size: fit-content;
+    }
+  }
+
+  .stats_title {
+    text-transform: capitalize;
+    font-size: 3rem;
+
+    @media (min-width: 767px) {
+      inline-size: 25rem;
+      grid-column: 1 / 1;
+      grid-row: 2 / 2;
+    }
+  }
+
+  .stats_copy {
+    color: rgba(63, 63, 63, 1);
+    line-height: 1.25rem;
+    word-spacing: 0.20rem;
+    letter-spacing: 1px;
+
+    @media (min-width: 767px) {
+      inline-size: 45rem;
+      grid-column: 1 / 1;
+      grid-row: 3 / 3;
+    }
+  }
+
+  .stats_button {
+    background-color: rgba(79, 59, 145, 1);
+    color: rgb(255 255 255);
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    inline-size: fit-content;
+    font-weight: bold;
+
+    @media (min-width: 767px) {
+      grid-column: 1 / 1;
+      grid-row: 4 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      block-size: fit-content;
+    }
+  }
+
+  .stats_media {
+    inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+
+    @media (min-width: 767px) {
+      grid-column: 2 / 2;
+      grid-row: span 4;
+      min-inline-size: 20rem;
+    }
+  }
+
+  .stats_trust {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    row-gap: 1.5rem;
+    background: linear-gradient(to right, rgba(57, 45, 105, 1), rgba(181, 123, 238, 1));
+    padding: 1rem;
+    color: rgb(255 255 255);
+    grid-column: full;
+
+    @media (min-width: 767px) {
+      grid-row: 5 / 5;
+      grid-column: span 2;
+      padding: 2rem;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      > span:first-child {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
