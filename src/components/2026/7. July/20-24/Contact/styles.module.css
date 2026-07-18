@@ -1,0 +1,162 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-inline: 1rem;
+  margin-block: 1rem;
+  font-family: "Inter";
+
+  @media (min-width: 767px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-inline-size: 1400px;
+    margin-inline: auto;
+  }
+
+  .contact_title {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255 255 255);
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: 16 / 5;
+    background: linear-gradient(to right, rgba(67, 156, 251, 1), rgba(241, 135, 251, 1));
+    border-radius: 1rem;
+
+    @media (min-width: 767px) {
+      aspect-ratio: 16 / 2;
+      grid-column: span 2;
+      grid-row: 1 / 1;
+    }
+  }
+
+  .group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .block_title {
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      .block_text {
+        color: rgb(42, 42, 42);
+      }
+
+  .contact_address {
+    display: flex;
+    gap: 0.5rem;
+
+    @media (min-width: 767px) {
+      grid-column: 1 / 1;
+      grid-row: 2 / 2;
+    }
+
+    .block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      
+    }
+  }
+
+
+
+
+
+  .contacts {
+    @media (min-width: 767px) {
+      grid-column: 1 / 1;
+      grid-row: 3 / 3;
+    }
+
+    .contact_details {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  }
+
+  .map {
+    inline-size: 100%;
+    border: none;
+
+    @media (min-width: 767px) {
+      grid-column: 1 / 1;
+      grid-row: 4 / 4;
+      block-size: auto;
+    }
+  }
+
+
+
+
+  .contact_form {
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    gap: 0.5rem;
+
+    @media (min-width: 767px) {
+      grid-column: 2 / 2;
+      grid-row: span 4;
+    }
+
+    .form_label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      .label_field, .country_codes {
+        background: rgb(255 255 255);
+        border: none;
+        padding: 0.75rem 1rem;
+        border: 1px solid #CCCCCC;
+        border-radius: 0.5rem;
+        font-family: "Inter";
+        color: rgb(0 0 0);
+
+        &:focus {
+          outline: 1px solid rgb(0 0 0);
+        }
+
+        &.label_textarea {
+          block-size: min(6rem, 10rem);
+        }
+      }
+
+      & > div {
+        flex-direction: row;
+
+        > .country_codes {
+          inline-size: 15%;
+          border-radius: 0.5rem 0 0 0.5rem;
+          border-right: 0px;
+          padding-block: 0.70rem;
+        }
+        
+        > .label_field {
+          inline-size: 85%;
+          border-radius: 0 0.5rem 0.5rem 0;
+          border-left: 0px;
+        }
+      }
+    }
+
+
+
+    .form_button {
+      background: rgb(0 0 0);
+      color: rgb(255 255 255);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      font-weight: bold;
+    }
+  }
+}
