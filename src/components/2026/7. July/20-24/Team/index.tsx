@@ -3,6 +3,7 @@ import Photo_One from "./assets/8.png";
 import Photo_Two from "./assets/9.png";
 import Photo_Three from "./assets/10.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Team = () => {
   return (
@@ -20,8 +21,13 @@ export const Team = () => {
           className={styles.member_photo}
         />
         <figcaption className={styles.member_details}>
-          <span className={styles.member_name}>Josh Becker</span>
-          <span className={styles.member_profession}>Founder & CEO</span>
+          <div>
+            <span className={styles.member_name}>Josh Becker</span>
+            <span className={styles.member_profession}>Founder & CEO</span>
+          </div>
+          <Link href="#">
+            <Image width="24" height="24" src="https://img.icons8.com/3d-fluency/94/linkedin--v2.png" alt="linkedin--v2"/>
+          </Link>
         </figcaption>
       </figure>
       <figure className={styles.team_member}>
@@ -33,8 +39,13 @@ export const Team = () => {
           className={styles.member_photo}
         />
         <figcaption className={styles.member_details}>
-          <span className={styles.member_name}>Mike Menesez</span>
+          <div>
+          <span className={styles.member_name}>Miranda Kirr</span>
           <span className={styles.member_profession}>Marketing Director</span>
+          </div>
+          <Link href="#">
+            <Image width="24" height="24" src="https://img.icons8.com/3d-fluency/94/linkedin--v2.png" alt="linkedin--v2"/>
+          </Link>
         </figcaption>
       </figure>
       <figure className={styles.team_member}>
@@ -46,8 +57,13 @@ export const Team = () => {
           className={styles.member_photo}
         />
         <figcaption className={styles.member_details}>
-          <span className={styles.member_name}>Miranda Kirr</span>
+          <div>
+          <span className={styles.member_name}>Mike Menesez</span>
           <span className={styles.member_profession}>CTO</span>
+          </div>
+          <Link href="#">
+            <Image width="24" height="24" src="https://img.icons8.com/3d-fluency/94/linkedin--v2.png" alt="linkedin--v2"/>
+          </Link>
         </figcaption>
       </figure>
     </article>
