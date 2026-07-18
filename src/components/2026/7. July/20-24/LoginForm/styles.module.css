@@ -29,7 +29,7 @@
   }
 
   .login_title {
-    color: rgba(152, 16, 250, 1);
+    color: rgba(40 40 40);
     font-weight: normal;
     text-align: center;
   }
@@ -73,10 +73,44 @@
 
     > .login_label {
       flex-direction: row;
+      gap: 1rem;
       align-items: center;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
 
-      input {
-        accent-color: rgba(173, 70, 255, 1);
+      &::before {
+        content: "";
+        position: absolute;
+        inline-size: 1rem;
+        aspect-ratio: 1;
+        background-color: rgb(255 255 255);
+        border: 1px solid rgb(40 40 40 / .1);
+        border-radius: 0.25rem;
+      }
+
+      &::after {
+        content: "";
+        inline-size: 0.5rem;
+        block-size: 0.25rem;
+        border-left: 1px solid rgb(255 255 255);
+        border-bottom: 1px solid rgb(255 255 255);
+        rotate: -45deg;
+        opacity: 0;
+        z-index: 1;
+        position: absolute;
+        left: 0.28rem;
+        top: 0.28rem;
+      }
+
+      &:has(input:checked) {
+        &::before {
+          background-color: rgba(173, 70, 255, 1);
+        }
+
+        &::after {
+          opacity: 1;
+        }
       }
     }
 
@@ -135,7 +169,8 @@
 
   .login_social {
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1rem;
     inline-size: 100%;
 
     > * {

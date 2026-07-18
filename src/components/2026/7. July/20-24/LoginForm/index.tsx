@@ -19,6 +19,17 @@ export const LoginForm = () => {
         <h1 className={styles.login_title}>Welcome back</h1>
         <p className={styles.login_subtitle}>Sign in to your account to continue</p>
       </div>
+      <div className={styles.login_social}>
+        <Link href="#" className={styles.social_google}>
+          <Image width="24" height="24" src="https://img.icons8.com/fluency/48/google-logo.png" alt="google-logo"/>
+          <span>Google</span>
+        </Link>
+        <Link href="#" className={styles.social_github}>
+          <Image width="24" height="24" src="https://img.icons8.com/ios-glyphs/90/github.png" alt="github"/>
+          <span>Github</span>
+        </Link>
+      </div>
+      <p className={styles.separator}>Or Continue With</p>
       <label className={styles.login_label}>
         <div className={styles.label}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(194, 122, 255, 1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
@@ -48,20 +59,7 @@ export const LoginForm = () => {
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </button>
 
-
-
-      <p className={styles.separator}>Or Continue With</p>
-
-      <div className={styles.login_social}>
-        <Link href="#" className={styles.social_google}>
-          <Image width="24" height="24" src="https://img.icons8.com/fluency/48/google-logo.png" alt="google-logo"/>
-          <span>Google</span>
-        </Link>
-        <Link href="#" className={styles.social_github}>
-          <Image width="24" height="24" src="https://img.icons8.com/ios-glyphs/90/github.png" alt="github"/>
-          <span>Github</span>
-        </Link>
-      </div>
+      
 
       <p className={styles.login_create}>
         Don't have an account? <Link href="#">Sign up</Link>
