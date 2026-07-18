@@ -1,23 +1,103 @@
+import Image from "next/image";
 import styles from "./styles.module.css";
 
 export const ContactSection = () => {
   return (
     <div className={styles.contact}>
-      <h1 className={styles.contact_title}>Get in touch</h1>
-      <article className={styles.contact_address}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-        <div className={styles.block}>
-          <span className={styles.block_title}>Our Office</span>
-          <div className={styles.group}>
-            <p className={styles.block_text}>
-              1234 Round-About Boulevard, Suite 3245, Engineering Valley,
-            </p>
-            <p className={styles.block_text}>
-              Los Angeles, A43-D3E, United States
-            </p>
+      <h1 className={styles.contact_title}>
+        <span>Let's discuss we can help your business grow</span>
+        <p>Tell us a bit about yourself so that we can connect you with the right specialist.</p>
+      </h1>
+
+
+      <div className={styles.contact_customers}>
+        <span className={styles.customers_title}>Trusted by leading teams</span>
+        <div>
+          <div>
+            <Image width="50" height="50" src="https://img.icons8.com/ios/100/little-nightmares.png" alt="little-nightmares"/>
+            <span>Sharp I</span>
+          </div>
+          <div>
+            <Image width="50" height="50" src="https://img.icons8.com/ios/100/war-thunder.png" alt="war-thunder"/>
+            <span>Thunder HW</span>
+          </div>
+          <div>
+            <Image width="50" height="50" src="https://img.icons8.com/ios/100/mts-money.png" alt="mts-money"/>
+            <span>Fintex</span>
           </div>
         </div>
-      </article>
+      </div>
+
+
+      
+
+
+
+
+
+      <form className={styles.contact_form}>
+        <label className={styles.form_label}>
+          <span className={styles.label_text}>I am looking for...</span>
+          <select className={styles.label_field}>
+            <option>Book a demo</option>
+          </select>
+        </label>
+        <label className={styles.form_label}>
+          <span className={styles.label_text}>Full Name</span>
+          <input type="text" name="fname" className={styles.label_field} placeholder="Full Name" />
+        </label>
+        <label className={styles.form_label}>
+          <span className={styles.label_text}>Work Email</span>
+          <input type="email" name="fname" className={styles.label_field} placeholder="name@company.com" />
+        </label>
+        <label className={`${styles.form_label} ${styles._label_phone}`}>
+          <p>
+            <span className={styles.label_text}>Phone Number</span> <span className={styles.optional}>(Optional)</span>
+          </p>
+          <div>
+            <select className={styles.country_codes}>
+              <option>US</option>
+              <option>CA</option>
+            </select>
+            <input type="text" name="fname" className={styles.label_field} placeholder="+1 (555) 123-1234" />
+          </div>
+        </label>
+        <label className={styles.form_label}>
+          <p>
+            <span className={styles.label_text}>Primary Interest</span> <span className={styles.optional}>(Optional)</span>
+          </p>
+          <select className={styles.label_field}>
+            <option>Sales</option>
+            <option>Marketing</option>
+          </select>
+        </label>
+        <label className={styles.form_label}>
+          <p>
+            <span className={styles.label_text}>Message</span> <span className={styles.optional}>(Optional)</span>
+          </p>
+          <textarea className={`${styles.label_textarea} ${styles.label_field}`} placeholder="Your message" />
+        </label>
+        <button className={styles.form_button}>
+          Book my demo
+        </button>
+        <span className={styles.form_note}>*Our response time is typically under 1 hour.</span>
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
       
       
       <article className={`${styles.contact_address} ${styles.contacts}`}>
@@ -34,40 +114,24 @@ export const ContactSection = () => {
       </article>
 
 
+      <article className={styles.contact_address}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        <div className={styles.block}>
+          <span className={styles.block_title}>Our Office</span>
+          <div className={styles.group}>
+            <p className={styles.block_text}>
+              1234 Round-About Boulevard, Suite 3245, Engineering Valley,
+            </p>
+            <p className={styles.block_text}>
+              Los Angeles, A43-D3E, United States
+            </p>
+          </div>
+        </div>
+      </article>
+
+
 
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12445.184912457384!2d-9.245302749999999!3d38.7569092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spt!4v1784369840348!5m2!1sen!2spt" width="600" height="450" styles="border:0" allowFullScreen="" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" className={styles.map}></iframe>
-
-
-
-
-
-      <form className={styles.contact_form}>
-        <label className={styles.form_label}>
-          <span className={styles.label_text}>First Name</span>
-          <input type="text" name="fname" className={styles.label_field} placeholder="First Name" />
-        </label>
-        <label className={styles.form_label}>
-          <span className={styles.label_text}>Last Name</span>
-          <input type="text" name="fname" className={styles.label_field} placeholder="Last Name" />
-        </label>
-        <label className={`${styles.form_label} ${styles._label_phone}`}>
-          <span className={styles.label_text}>Phone Number</span>
-          <div>
-            <select className={styles.country_codes}>
-              <option>US</option>
-              <option>CA</option>
-            </select>
-            <input type="text" name="fname" className={styles.label_field} placeholder="+1 (555) 123-1234" />
-          </div>
-        </label>
-        <label className={styles.form_label}>
-          <span className={styles.label_text}>Message</span>
-          <textarea className={`${styles.label_textarea} ${styles.label_field}`} placeholder="Your message" />
-        </label>
-        <button className={styles.form_button}>
-          Get in touch
-        </button>
-      </form>
     </div>
   )
 }

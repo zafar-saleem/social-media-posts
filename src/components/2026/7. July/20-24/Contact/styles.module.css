@@ -1,5 +1,5 @@
 .contact {
-  display: flex;
+  display: grid;
   flex-direction: column;
   gap: 2rem;
   padding-inline: 1rem;
@@ -16,6 +16,8 @@
   .contact_title {
     font-weight: 600;
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     align-items: center;
     justify-content: center;
     color: rgb(255 255 255);
@@ -24,11 +26,61 @@
     aspect-ratio: 16 / 5;
     background: linear-gradient(to right, rgba(67, 156, 251, 1), rgba(241, 135, 251, 1));
     border-radius: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    grid-column: span 2;
+
+    p {
+      font-size: 0.9rem;
+      text-transform: capitalize;
+      font-weight: normal;
+      padding-inline: 1.5rem;
+    }
 
     @media (min-width: 767px) {
       aspect-ratio: 16 / 2;
       grid-column: span 2;
       grid-row: 1 / 1;
+    }
+  }
+
+  .contact_customers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: rgb(0 0 0 / .1);
+    padding: 1rem;
+    grid-column: span 2;
+
+    @media (min-width: 767px) {
+      grid-row: 2 / 2;
+      grid-column: span 2;
+    }
+
+    .customers_title {
+      font-size:  1rem;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      @media (min-width: 767px) {
+        justify-content: center;
+        gap: 4rem;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        align-items: center;
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -50,18 +102,17 @@
   .contact_address {
     display: flex;
     gap: 0.5rem;
+    grid-column: 1 / 1;
 
     @media (min-width: 767px) {
-      grid-column: 1 / 1;
-      grid-row: 2 / 2;
+      grid-column: 2 / 2;
+      grid-row: 4 / 4;
     }
 
     .block {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-
-      
     }
   }
 
@@ -70,25 +121,29 @@
 
 
   .contacts {
+    grid-column: span 2;
+
     @media (min-width: 767px) {
       grid-column: 1 / 1;
-      grid-row: 3 / 3;
+      grid-row: 4 / 4;
     }
 
     .contact_details {
       display: flex;
       gap: 0.5rem;
-      align-items: center;
+      /* align-items: center; */
     }
   }
 
   .map {
     inline-size: 100%;
     border: none;
+    grid-column: 2 / 2;
+    block-size: fit-content;
 
     @media (min-width: 767px) {
       grid-column: 1 / 1;
-      grid-row: 4 / 4;
+      grid-row: 3 / 4;
       block-size: auto;
     }
   }
@@ -100,17 +155,27 @@
     display: flex;
     flex-direction: column;
     inline-size: 100%;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    grid-column: span 2;
 
     @media (min-width: 767px) {
       grid-column: 2 / 2;
-      grid-row: span 4;
+      grid-row: 3 / 4;
     }
 
     .form_label {
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
+
+      .optional {
+        font-size: 0.7rem;
+        color: rgb(0 0 0 / .4)
+      }
+
+      .label_text {
+        font-weight: 600;
+      }
 
       .label_field, .country_codes {
         background: rgb(255 255 255);
@@ -157,6 +222,12 @@
       border-radius: 0.5rem;
       border: none;
       font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .form_note {
+      font-size: 0.8rem;
+      text-align: center;
     }
   }
 }
