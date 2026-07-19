@@ -19,8 +19,8 @@
   /* margin-top: -1rem;
   margin-left: -1rem; */
   /* max-width: 450px; */
-  /* justify-content: center; */
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
   /* padding-inline: 2rem; */
   gap: 1rem;
   /* padding-block-end: 1rem; */
@@ -28,6 +28,6 @@
   /* padding: 1rem; */
   /* z-index: -100; */
   /* width: minmax(auto, 800px); */
-  /* background-color: rgb(13 13 13); */
+  background-color: rgb(13 13 13);
   /* background-color: rgb(46 46 46); */
 }
