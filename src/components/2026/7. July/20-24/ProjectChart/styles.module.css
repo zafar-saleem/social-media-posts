@@ -11,51 +11,40 @@ body {
   color: rgb(255 255 255);
   font-family: "Inter";
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   grid-template-columns: repeat(2, auto);
   inline-size: 100%;
   margin-inline: auto;
   aspect-ratio: 1;
-  /* container-type: inline-size; */
 
   @media (min-width: 767px) {
     grid-template-columns: repeat(3, auto);
     max-inline-size: 40rem;
-            aspect-ratio: 20 / 9;
-
-    .project_title {
-      grid-column: span 3;
-      grid-row: 1/ 1;
-    }
-
-    .project_total {
-      grid-column: 1 / 1;
-      grid-row: 2 / 2;
-      align-items: center;
-    }
-
-    .project_chart {
-      grid-column: 2 / 2;
-      max-inline-size: 10rem;
-      grid-row: 2 / 2;
-    }
-
-    .project_categories {
-      grid-column: 3 / 3;
-      grid-row: 2 / 2;
-      block-size: fit-content;
-    }
+    aspect-ratio: 20 / 9;
   }
 
   .project_title {
     font-weight: 400;
     grid-column: span 2;
+
+    @media (min-width: 767px) {
+      grid-column: span 3;
+      grid-row: 1 / 1;
+    }
   }
 
   .project_total {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    grid-row: 2 / 2;
+    grid-column: span 2;
+
+    @media (min-width: 767px) {
+      grid-column: 1 / 1;
+      grid-row: 2 / 2;
+      align-items: center;
+    }
 
     .total {
       display: flex;
@@ -93,21 +82,30 @@ body {
 
 
   .project_chart {
-    inline-size: 100%;
+    grid-row: 4 / 4;
+    grid-column: span 2;
+    justify-self: center;
+    inline-size: 20rem;
     aspect-ratio: 1;
     border-radius: 50%;
     position: relative;
     background:
     radial-gradient(
       rgba(38, 36, 45, 1) 45%,
-      transparent 46%
+      transparent 45.5%
     ),
     conic-gradient(
       rgba(83, 83, 83, 1) 0% var(--todo),
       rgba(247, 96, 7, 1) var(--todo) calc(var(--in-progress) + var(--todo)),
       rgba(219, 101, 246, 1) calc(var(--in-progress) + var(--todo)) calc(var(--in-progress) + var(--under-review) + var(--todo)),
       rgba(43, 198, 43, 1) calc(var(--in-progress) + var(--under-review) + var(--todo)) 100%
-    )
+    );
+
+    @media (min-width: 767px) {
+      grid-column: 2 / 2;
+      max-inline-size: 10rem;
+      grid-row: 2 / 2;
+    }
   }
 
   .project_categories {
@@ -115,9 +113,19 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    grid-row: 3 / 3;
+    grid-column: span 2;
+
+    @media (min-width: 767px) {
+      grid-column: 3 / 3;
+      grid-row: 2 / 2;
+      block-size: fit-content;
+      gap: 1rem;
+      justify-self: center;
+      align-self: center;
+    }
 
     .categories_item {
-      inline-size: 100%;
       display: flex;
       align-items: center;
       gap: 0.75rem;
