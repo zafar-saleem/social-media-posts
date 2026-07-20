@@ -1,5 +1,5 @@
+import { ProjectChart } from "@/components/2026/339-ProjectChart";
 import styles from "./page.module.css";
-import { ProjectChart } from "@/components/2026/7. July/20-24/ProjectChart";
 
 export default function Home() {
   return (
