@@ -1,4 +1,4 @@
-import { ProjectChart } from "@/components/2026/339-ProjectChart";
+import { ProjectChart } from "@/components/339-ProjectChart";
 import styles from "./page.module.css";
 
 export default function Home() {
