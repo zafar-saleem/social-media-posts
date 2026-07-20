@@ -11,41 +11,59 @@ export const BuiltFor = () => {
       <div className={styles.group}>
         <h1 className={styles.buitlfor_title}>Built for researchers like you</h1>
         <p className={styles.micro_copy}>
-          We support a wide range of researchers, each with distinct needs. Let us know who you represent so we can tailor out approach.
+          Unlock precision data, scalable panels, and workflow automation - tailored to your role.
         </p>
       </div>
       <div className={`${styles.research} ${styles.box}`}>
         <span className={styles.box_title}>Research Agency</span>
-        <p className={styles.box_copy}>Do you need to expand you sample or add more responses to an existing project?</p>
+        <p className={styles.box_copy}>Scale panel reach and speed data collection</p>
+        <ul className={styles.box_list}>
+          <li>Access 150M+ validated panel respondants</li>
+          <li>Real-time survey health monitoring</li>
+          <li>Multi-market targeting (e.g. Portugal, age 60+)</li>
+        </ul>
         <Image  
           src={research_illustration}
           width={500}
           height={500}
           alt=""
         />
-        <Link className={styles.box_action} href={`#`}>Learn More</Link>
+        <p className={styles.social_proof}><mark>*</mark> 2X faster project delivery for 50+ global agencies</p>
+        <Link className={styles.box_action} href={`#`}>Explore Panel Services</Link>
       </div>
       <div className={`${styles.uni} ${styles.box}`}>
         <span className={styles.box_title}>University</span>
-        <p className={styles.box_copy}>Are you looking for a reliable partner to provide participants for your study?</p>
+        <p className={styles.box_copy}>Validated data & participants for rigorous studies</p>
+        <ul className={styles.box_list}>
+          <li>Recruit specific, hard-to-reach academic samples</li>
+          <li>Guaranteed 99.9% data accuracy with QC</li>
+          <li>IRB-compliant data handling & privacy</li>
+        </ul>
         <Image  
           src={uni_illustration}
           width={500}
           height={500}
           alt=""
         />
-        <Link className={`${styles.action_fill} ${styles.box_action}`} href={`#`}>Learn More</Link>
+        <p className={styles.social_proof}>"The validity and scale we achieved changed our research outcomes." - Dr. Chen, Stanford</p>
+        <Link className={`${styles.action_fill} ${styles.box_action}`} href={`#`}>Request Academic Trial</Link>
       </div>
       <div className={`${styles.marketing} ${styles.box}`}>
         <span className={styles.box_title}>Marketing Agency</span>
-        <p className={styles.box_copy}>Gather insights from your target audience to make better business decisions.</p>
+        <p className={styles.box_copy}>Validate concepts and measure brand lift faster</p>
+        <ul className={styles.box_list}>
+          <li>Innstant A/B testing on marketing assets</li>
+          <li>Competive benchmarking dashboards</li>
+          <li>Shareable insight reports for clients</li>
+        </ul>
         <Image  
           src={marketing_illustration}
           width={500}
           height={500}
           alt=""
         />
-        <Link className={styles.box_action} href={`#`}>Learn More</Link>
+        <p className={styles.social_proof}><mark>*</mark> Increased campaign ROI for 100+ agencies</p>
+        <Link className={styles.box_action} href={`#`}>See Marketing Features</Link>
       </div>
     </div>
   )
