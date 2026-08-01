@@ -1,10 +1,10 @@
-import { RatingsSection } from "@/components/343-RatingsSection";
 import styles from "./page.module.css";
+import { DietSummary } from "@/components/344-diet-summary";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <RatingsSection />
+      <DietSummary />
     </main>
   );
 }
