@@ -1,10 +1,10 @@
-import { CreditRange } from "@/components/345-credit-range";
 import styles from "./page.module.css";
+import { IOTBreakerPanel } from "@/components/346-IOT-Breaker-Panel";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <CreditRange />
+      <IOTBreakerPanel />
     </main>
   );
 }

@@ -1,0 +1,210 @@
+.panel {
+  padding: 0.5rem;
+  background-color: rgb(244 244 244);
+  border-radius: 1rem;
+  font-family: "Inter";
+  inline-size: 25rem;
+  box-shadow: 0 0.75rem 1rem 0 rgb(20 20 20 / .2);
+
+  .switch {
+    display: flex;
+    block-size: 2.75rem;
+    inline-size: 1.95rem;
+    background-color: rgb(229 229 231);
+    border-radius: 10rem;
+    position: relative;
+    transition: 0.2s;
+    cursor: pointer;
+    user-select: none;
+
+    input {
+      display: none;
+    }
+
+    .switch_label {
+      position: absolute;
+      bottom: calc(0rem - 1.25rem);
+      color: rgb(163 163 165);
+      font-size: 0.7rem;
+    }
+
+    &::before {
+      content: "";
+      background-color: rgb(24 24 27);
+      inline-size: 1.5rem;
+      aspect-ratio: 1;
+      position: absolute;
+      border-radius: 10rem;
+      left: 0.13rem;
+      top: 1.13rem;
+      transition: 0.2s;
+    }
+
+    &:has(input:checked) {
+      background-color: rgb(255 104 0);
+
+      &::before {
+        top: 0.13rem;
+      }
+    }
+  }
+
+  .panel_header {
+    display: flex;
+    padding: 0.75rem;
+
+    .panel_title {
+      font-weight: 500;
+    }
+
+    .panel_status {
+      margin-inline-start: auto;
+      font-size: 0.6rem;
+      background-color: rgb(255 248 236);
+      color: rgb(216 82 22);
+      padding: 0.25rem 0.5rem;
+      border-radius: 10rem;
+      text-transform: uppercase;
+    }
+  }
+
+  .panel_breakers {
+    background-color: rgb(255 255 255);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: rgb(165 165 172);
+
+    .breakers_main {
+      border-bottom: 1px solid rgb(237 237 237);
+      padding-block-end: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      
+      .main_progress {
+        display: flex;
+        inline-size: stretch;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .progress_box {
+          display: flex;
+          inline-size: stretch;
+
+          .box_label {
+            color: rgb(165 165 172);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+          }
+
+          .box_total {
+            margin-inline-start: auto;
+
+            .total_current {
+              font-weight: bold;
+            }
+
+            .total {
+              color: rgb(164 164 171);
+              font-size: 0.6rem;
+            }
+          }
+        }
+
+        .meter {
+          .meter_ticks {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.6rem;
+          }
+        }
+
+        .progress_meter {
+          inline-size: stretch;
+          block-size: 1.25rem;
+          transition: 0.2s;
+
+          &::-webkit-meter-bar {
+            background-color: rgb(244 244 244);
+            border-radius: 999px;
+            border: none;
+            transition: 0.2s;
+          }
+
+          &::-webkit-meter-optimum-value {
+            background-color: rgb(255 104 0);
+            border-radius: 999px;
+            transition: 0.2s;
+          }
+        }
+      }
+    }
+
+    .circuits {
+      padding-block: 1rem;
+
+      .circuits_label {
+        margin-block-end: 1rem;
+        display: flex;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+
+      .breakers_list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        /* gap: 1rem; */
+
+        .switch {
+          inline-size: 1.75rem;
+          display: flex;
+          align-items: center;
+
+          .switch_label {
+            position: relative;
+            left: 2.25rem;
+            top: 0rem;
+            text-wrap: nowrap;
+            display: flex;
+            transition: 0.2s;
+          }
+        }
+
+        .breakers_item {
+          display: flex;
+          align-items: center;
+          padding-block: 0.5rem;
+
+          &:has(input:checked) {
+            .switch_label {
+              color: rgb(24 24 24);
+            }
+
+            .item_total {
+              background-color: rgb(255 249 236);
+              color: rgb(240 117 39);
+              font-weight: 500;
+            }
+          }
+
+          &:last-child {
+            padding-block-end: 0;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 1px dashed rgb(237 237 237);
+          }
+        }
+
+        .item_total {
+          margin-inline-start: auto;
+          font-size: 0.675rem;
+          background-color: rgb(244 244 244);
+          padding: 0.25rem 0.5rem;
+          border-radius: 0.25rem;
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+}
