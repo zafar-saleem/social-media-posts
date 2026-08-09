@@ -1,10 +1,10 @@
+import { IslandNavMenu } from "@/components/347-DropdownMenu";
 import styles from "./page.module.css";
-import { IOTBreakerPanel } from "@/components/346-IOT-Breaker-Panel";
 
 export default function Home() {
   return (
     <main className={styles.center}>
-      <IOTBreakerPanel />
+      <IslandNavMenu />
     </main>
   );
 }
